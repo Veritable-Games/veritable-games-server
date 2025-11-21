@@ -16,7 +16,7 @@ If you just invoked `/init` and are reading this, you need to understand:
 
 - **You are on the PRODUCTION SERVER** (192.168.1.15)
 - **This directory (`/home/user`) IS NOW a git repository** - server configuration and infrastructure tracking
-- **GitHub Repository**: https://github.com/cwcorella-git/veritable-games-server
+- **GitHub Repository**: https://github.com/Veritable-Games/veritable-games-server
 - **The Veritable Games project has its OWN separate git repository** (tracked as submodule)
 - **This file** covers server-wide operations, infrastructure, and deployment workflows
 - **Project CLAUDE.md file** covers project-specific development, architecture, and coding patterns
