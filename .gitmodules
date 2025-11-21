@@ -1,0 +1,6 @@
+[submodule "projects/veritable-games/site"]
+	path = projects/veritable-games/site
+	url = git@github.com:Veritable-Games/veritable-games-site.git
+[submodule "btcpayserver-docker"]
+	path = btcpayserver-docker
+	url = https://github.com/btcpayserver/btcpayserver-docker.git
