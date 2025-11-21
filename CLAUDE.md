@@ -8,15 +8,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **CRITICAL: This is `/home/user/CLAUDE.md` - SERVER-LEVEL guidance for the Veritable Games production server**
 
-### ⚠️ THIS DIRECTORY (`/home/user`) IS NOT A GIT REPOSITORY ⚠️
+### ✅ THIS DIRECTORY (`/home/user`) IS NOW A GIT REPOSITORY ✅
+
+**Updated**: November 21, 2025 - This directory is now tracked as `veritable-games-server` repository
 
 If you just invoked `/init` and are reading this, you need to understand:
 
 - **You are on the PRODUCTION SERVER** (192.168.1.15)
-- **This directory (`/home/user`) is NOT a git repository** - it's the home directory hosting the Veritable Games project
-- **The project has its OWN git repository** with its own CLAUDE.md file
+- **This directory (`/home/user`) IS NOW a git repository** - server configuration and infrastructure tracking
+- **GitHub Repository**: https://github.com/cwcorella-git/veritable-games-server
+- **The Veritable Games project has its OWN separate git repository** (tracked as submodule)
 - **This file** covers server-wide operations, infrastructure, and deployment workflows
-- **Repository CLAUDE.md file** covers project-specific development, architecture, and coding patterns
+- **Project CLAUDE.md file** covers project-specific development, architecture, and coding patterns
 
 ### 📍 Which CLAUDE.md Should You Read?
 
@@ -35,10 +38,10 @@ A: Server operations (git workflows, deployments, Docker, PostgreSQL)
    → Keep reading THIS file
 
 A: I just ran /init in /home/user
-   → You invoked /init in the wrong location
-   → /home/user is NOT a git repository
-   → Navigate to the actual repository first
-   → Then run /init there if needed
+   → You are in the server configuration repository
+   → This tracks server infrastructure, not application code
+   → For application development, navigate to:
+     /home/user/projects/veritable-games/site/
 ```
 
 ### 📂 File Locations Reference
@@ -52,14 +55,25 @@ A: I just ran /init in /home/user
 
 ## ⚠️ CRITICAL: Production Server Environment
 
-**Updated**: November 15, 2025
+**Updated**: November 21, 2025
 
 You're working on the Veritable Games production server (192.168.1.15).
 
+### Server Configuration Repository
+
+**veritable-games-server** - This repository
+   - **GitHub**: https://github.com/cwcorella-git/veritable-games-server
+   - **Purpose**: Server configuration, infrastructure documentation, deployment procedures
+   - **Size**: ~1 MB (excludes 59 GB of data/archives via .gitignore)
+   - **Submodules**:
+     - `projects/veritable-games/site/` → Veritable Games application code
+     - `btcpayserver-docker/` → BTCPayServer infrastructure
+
 ### Active Project
 
-**Veritable Games** - Production application
+**Veritable Games** - Production application (git submodule)
    - Repository: `/home/user/projects/veritable-games/site/`
+   - GitHub: https://github.com/Veritable-Games/veritable-games-site
    - Resources: `/home/user/projects/veritable-games/resources/`
    - URL: https://www.veritablegames.com
    - **For coding work**: Read `/home/user/projects/veritable-games/site/CLAUDE.md`
