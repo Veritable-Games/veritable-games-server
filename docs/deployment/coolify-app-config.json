@@ -1,0 +1,23 @@
+{
+  "uuid": "m4s0kwo4kc4oooocck4sswc4",
+  "name": "veritable-games",
+  "description": "",
+  "status": "running:healthy",
+  "git_branch": "main",
+  "fqdn": "www.veritablegames.com",
+  "repository": "git@github.com:Veritable-Games/veritable-games-site.git",
+  "build_pack": "nixpacks",
+  "dockerfile_location": null,
+  "docker_compose_location": null,
+  "base_directory": "/frontend",
+  "publish_directory": null,
+  "health_check_enabled": true,
+  "health_check_path": "/api/health",
+  "health_check_port": 3000,
+  "health_check_interval": 30,
+  "health_check_timeout": 5,
+  "health_check_retries": 3,
+  "health_check_start_period": 30,
+  "restart_policy": "unless-stopped",
+  "note": "Production deployment - see /home/user/CLAUDE.md for details"
+}

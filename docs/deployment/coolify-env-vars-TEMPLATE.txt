@@ -1,0 +1,117 @@
+# Coolify Environment Variables Template
+# Application: veritable-games (m4s0kwo4kc4oooocck4sswc4)
+# Last Updated: November 21, 2025
+#
+# ⚠️ SECURITY WARNING: This file contains ONLY environment variable KEYS.
+# Values are redacted because they contain secrets. NEVER commit actual values to git.
+#
+# To restore configuration in Coolify:
+# 1. Go to Coolify UI: http://192.168.1.15:8000
+# 2. Navigate to: Applications > veritable-games > Environment Variables
+# 3. Add each variable below with appropriate values
+# 4. Redeploy application
+
+# ============================================
+# Build Configuration (Build-time variables)
+# ============================================
+
+# Nixpacks configuration
+NIXPACKS_NODE_VERSION=20
+NIXPACKS_PKGS=[specify Node.js packages]
+NIXPACKS_APT_PKGS=python3 build-essential
+
+# ============================================
+# Database Configuration
+# ============================================
+
+# PostgreSQL connection
+POSTGRES_URL=postgresql://postgres:[PASSWORD]@veritable-games-postgres:5432/veritable_games
+DATABASE_MODE=postgres
+
+# Connection pool settings
+POSTGRES_POOL_MAX=20
+POSTGRES_POOL_MIN=2
+POSTGRES_IDLE_TIMEOUT=10000
+POSTGRES_CONNECTION_TIMEOUT=5000
+POSTGRES_SSL=false
+
+# ============================================
+# Application Security
+# ============================================
+
+# Session management
+SESSION_SECRET=[GENERATE: openssl rand -hex 32]
+ENCRYPTION_KEY=[GENERATE: openssl rand -hex 32]
+CSRF_SECRET=[GENERATE: openssl rand -hex 32]
+
+# Cookie configuration
+COOKIE_SECURE_FLAG=true
+COOKIE_USE_SECURE_PREFIX=true
+
+# ============================================
+# Application Configuration
+# ============================================
+
+# Environment
+NODE_ENV=production
+
+# Public URLs
+NEXT_PUBLIC_APP_URL=https://www.veritablegames.com
+NEXT_PUBLIC_SITE_URL=https://www.veritablegames.com
+
+# Admin
+ADMIN_EMAIL=admin@veritablegames.com
+
+# ============================================
+# Email Configuration (SMTP)
+# ============================================
+
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_SECURE=true
+SMTP_USER=[SMTP username]
+SMTP_PASSWORD=[SMTP password]
+SMTP_PASSOWRD=[TYPO: Same as SMTP_PASSWORD - should fix]
+SMTP_FROM=noreply@veritablegames.com
+
+# ============================================
+# BTCPayServer Integration
+# ============================================
+
+BTCPAY_SERVER_URL=[BTCPayServer instance URL]
+BTCPAY_STORE_ID=[BTCPay store ID]
+BTCPAY_API_KEY=[BTCPay API key]
+BTCPAY_WEBHOOK_SECRET=[BTCPay webhook secret]
+
+# ============================================
+# Notes
+# ============================================
+
+# - SMTP_PASSOWRD is a typo in the current config (should be SMTP_PASSWORD)
+# - BTCPAY_SERVER_URL appears twice in environment variable list (possible duplicate)
+# - All secrets should be generated using: openssl rand -hex 32
+# - POSTGRES_URL contains the database password - ensure it's secured
+# - Variables marked [GENERATE] must be generated freshly on new deployments
+# - BTCPay variables should match your BTCPayServer instance configuration
+# - SMTP variables should match your email provider settings
+
+# ============================================
+# Variable Count
+# ============================================
+
+# Production variables: 23
+# Preview/staging variables: 25 (includes duplicates)
+# Total unique variables: ~28
+
+# ============================================
+# Recovery Procedure
+# ============================================
+
+# If Coolify database is lost:
+# 1. Reinstall Coolify
+# 2. Create new application with same repository
+# 3. Add all environment variables from this template
+# 4. Generate new secrets for SESSION_SECRET, ENCRYPTION_KEY, CSRF_SECRET
+# 5. Update POSTGRES_URL with current database password
+# 6. Configure build settings (Nixpacks, health check, etc.)
+# 7. Deploy application

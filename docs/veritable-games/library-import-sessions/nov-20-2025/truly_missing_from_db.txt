@@ -1,0 +1,570 @@
+Documents truly missing from database: 142
+
+File: 02_Game_Design_Articles_sign_Analysis_Doom_Interactive_Storytelling_Tools_for_Writers_Chris_Crawford.md
+Title: sign Analysis Doom Interactive Storytelling Tools for Writers Chris Crawford
+Author: None
+
+File: 03_Research_Papers_Articles_When_talking_with_someone_it_is_helpful_to_know_what_type_of_conversation_you_ar.md
+Title: When talking with someone, it is helpful to know what type of conversation you are in. You can do so based on a conversation''s direction of communication a one-way or two-way street and its
+Author: None
+
+File: 03_Research_Papers_Articles_Extracted_Text_10.md
+Title: ### Extracted Text (10) **Source**: ./pub153_SaloveyMayerICP1990_OCR.pdf ## Content ``` -- ## Page 2 ### Figures and Images (1 found) #### Figure: img-000.png ![Figure from page 2](images/page_002_content/img-000.png) -- ### Complete Page View ![Page 2 Complete](images/page_002_full.png) ``` -- ## Page 4 ### Figures and Images (1 found) #### Figure: img-000.png ![Figure from page 4](images/page_004_content/img-000.png) -- ### Complete Page View ![Page 4 Complete](images/page_004_full.png) ``` -- ## Page 6 ### Figures and Images (1 found) #### Figure: img-000.png ![Figure from page 6](images/page_006_content/img-000.png) -- ### Complete Page View ![Page 6 Complete](images/page_006_full.png) ``` -- ## Page 8 ### Figures and Images (1 found) #### Figure: img-000.png ![Figure from page 8](images/page_008_content/img-000.png) -- ### Complete Page View ![Page 8 Complete](images/page_008_full.png) ``` -- ## Page 10 ### Figures and Images (1 found) #### Figure: img-000.png ![Figure
+Author: None
+
+File: 09_Environment_Sustainability_Books_Coppicing.md
+Title: Coppicing.pdf
+Author: None
+
+File: 07_Psychology_Emotion_Articles_e_Evolution_of_Flight.md
+Title: e Evolution of Flight **Source**: ./The Evolution of Flight.pdf ## Content
+Author: None
+
+File: 09_Environment_Sustainability_Articles_Sec_Emotion_Science.md
+Title: Sec. Emotion Science ## Content Feather, 2006 Koenig, 2009 Leach et al., 2014
+Author: J. Rivera
+
+File: 03_Research_Papers_Articles_In_this_chapter_you_will_learn_about_ways_to_make_communication_more_effective_Y.md
+Title: In this chapter, you will learn about ways to make communication more effective. You will learn about communication models that might influence how a message is sent andor received. You will also
+Author: None
+
+File: 12_Reference_Manuals_Books_TLC_36_Flyer_-_document_5_.md
+Title: TLC 36 Flyer - document(5).pdf
+Author: None
+
+File: 03_Research_Papers_Books_Me_canisme_de_la_physionomie_humaine__ou__Analyse_e_lectro-physiologique_de_l_expression_des_passions_-_mecanismedelaphy00duch.md
+Title: Mécanisme de la physionomie humaine, ou, Analyse électro-physiologique de l''expression des passions - mecanismedelaphy00duch.pdf
+Author: Mécanisme de la physionomie humaine
+
+File: 06_Technology_AI_Article_microsoft-word-moralbasis_vegetarianism-moralbasis_vegetarianism.md
+Title: Microsoft Word - moralbasis_vegetarianism - moralbasis_vegetarianism
+Author: Jitendra T Desai
+
+File: 01_Political_Theory_Books_proposed-bylaws-to-review-at-2-21-meeting.pdf.md
+Title: proposed-bylaws-to-review-at-2-21-meeting.pdf.pdf
+Author: General Meetings
+
+File: 07_Psychology_Emotion_Articles_aesthetic_emotions_affect_system_complex_systems_emotional_complexity_emotional_.md
+Title: aesthetic emotions; affect system; complex systems; emotional complexity; emotional features; meta-emotions; mixed emotions.
+Author: None
+
+File: 10_Historical_Documents_Articles_s_not_sexist_to_accept_that_biology_affects_behaviour_Simon_BaronCohen_Opinion_T.md
+Title: ''s not sexist to accept that biology affects behaviour Simon Baron-Cohen
+Author: None
+
+File: 07_Psychology_Emotion_Articles_Cognitive_dissonance_is_the_mental_discomfort_experienced_when_a_person_holds_tw.md
+Title: Cognitive dissonance is the mental discomfort experienced when a person holds two conflicting beliefs or when their actions don’t align with their beliefs.
+Author: None
+
+File: 10_Historical_Documents_Articles_Structure_of_the_State.md
+Title: Structure of the State **Source**: ./ChinaStateStructure.pdf ## Content Structure
+Author: None
+
+File: 11_Art_Culture_Articles_This_article_includes_a_list_of.md
+Title: This article includes a list of
+Author: None
+
+File: 11_Art_Culture_Article_large-print-2023-random-9780593793657-b974a7afa6bf7719b6b25d8059b10bef-annas-arc.md
+Title: Large print, 2023 -- Random -- 9780593793657 -- b974a7afa6bf7719b6b25d8059b10bef
+Author: David Brooks
+
+File: 04_Education_Pedagogy_Articles_2018_3rd_International_Social_Sciences_and_Education_Conference_ISSEC_2018.md
+Title: 2018 3rd International Social Sciences and Education Conference ISSEC 2018
+Author: Emotional Education
+
+File: 07_Psychology_Emotion_Articles_Sympathy_and_empathy_are_two_closely_related_but_distinct_emotions_Sympathy_invo.md
+Title: Sympathy and empathy are two closely related but distinct emotions. Sympathy involves feeling sorry or pity for someone, whereas empathy involves understanding and sharing someone’s feelings.
+Author: None
+
+File: 07_Psychology_Emotion_Articles_NIH_Public_Access.md
+Title: NIH Public Access **Source**: ./nihms-341672.pdf ## Content NIH Public Access
+Author: None
+
+File: 02_Game_Design_Articles_SA__Communicating_in_Space.md
+Title: SA - Communicating in Space **Source**: ./NASA - Communicating in Space.pdf
+Author: Communicating in Space
+
+File: 07_Psychology_Emotion_Articles_wwwnaturecomscientificreports_2.md
+Title: www.nature.comscientificreports (2) **Source**: ./Physiological dynamics of
+Author: Trier Social
+
+File: 11_Art_Culture_Article_pyramiddiscriminationviolence.md
+Title: PyramidDiscriminationViolence
+Author: None
+
+File: 12_Reference_Manuals_Books_QuickstartGuide_rope.md
+Title: QuickstartGuide_rope.pdf
+Author: Quickstart Guide
+
+File: 12_Reference_Manuals_Articles_Microsoft_Word_-_2019_EIP_Prospectus_6.11.19.docx_-_generated.md
+Title: Microsoft Word - 2019 EIP Prospectus 6.11.19.docx - generated.pdf
+Author: TABLE OF CONTENTS
+
+File: 10_Historical_Documents_Articles_CART_FREE_HEALTHBEAT_SIGNUP_SHOP__SIGN_IN.md
+Title:  CART FREE HEALTHBEAT SIGNUP SHOP ▼ SIGN IN **Source**: ./How to boost your
+Author: Harvard Medical
+
+File: 03_Research_Papers_Articles_The_regulation_of_emotions_is_defined_by_Gross_1998_as_processes_that_influence_.md
+Title: The regulation of emotions is defined by Gross 1998 as processes that influence
+Author: None
+
+File: 07_Psychology_Emotion_Articles_The_Window_of_Tolerance.md
+Title: The Window of Tolerance **Source**: ./ID The Window of Tolerance 20 06 16.pdf
+Author: None
+
+File: 07_Psychology_Emotion_Articles_Going_beyond_deep_and_surface_acting_a_bottom-.md
+Title: Going beyond deep and surface acting a bottom- **Source**: ./Going beyond
+Author: K. Christensen
+
+File: 07_Psychology_Emotion_Articles_Soliloquy_as_Cognitive_Discovery_Through_Vocalization.md
+Title: Soliloquy as Cognitive Discovery Through Vocalization.pdf
+Author: Cognitive Discovery
+
+File: 12_Reference_Manuals_Books_Cable_Internet_Set_up-Sprectrum_App..md
+Title: Cable_Internet Set_up-Sprectrum App..pdf
+Author: Up Sprectrum_App.
+
+File: 07_Psychology_Emotion_Articles_wwwnaturecomscientificreports.md
+Title: www.nature.comscientificreports **Source**: ./Physiological dynamics of stress
+Author: Trier Social
+
+File: 07_Psychology_Emotion_Articles_Patterns_of_emotion_regulation_and_psychopathology.md
+Title: nihms-341672 *Converted from: `./nihms-341672.pdf`* *Total pages: 17* *File
+Author: None
+
+File: 12_Reference_Manuals_Books_DNA_vs_RNA_-_version_Beta_1.md
+Title: DNA vs RNA - version Beta 1.pdf
+Author: Atomic Force Microscopy
+
+File: 07_Psychology_Emotion_Articles_HHS_Public_Access.md
+Title: HHS Public Access **Source**: ./Are rumination and neuroticism genetically
+Author: None
+
+File: 07_Psychology_Emotion_Books_Physiologie_des_mouvements_démontrée_à_l_aide_de_l_experimentation_électrique_et_de_l_observation_clinique_et_applicable_à_l_étude_des_paralysies_et_des_déformations_-_physiologiedesmo00duch.md
+Title: Physiologie des mouvements démontrée à l''aide de l''experimentation électrique et de l''observation clinique et applicable à l''étude des paralysies et des déformations - physiologiedesmo00duch.pdf
+Author: None
+
+File: 07_Psychology_Emotion_Article_environment-and-behavior-2006-vol-38-index-environment-and-behavior-2006-vol-38.md
+Title: Environment and Behavior 2006 Vol 38 Index - Environment and Behavior 2006
+Author: Environment and Behavior
+
+File: 01_Political_Theory_Articles_C__Users_ATU02_1_AppData_Local_Temp_mso1F90.tmp_-_ATU_Tactics_Zine_v1_Online_English.md
+Title: C__Users_ATU02~1_AppData_Local_Temp_mso1F90.tmp - ATU Tactics Zine v1 Online
+Author: FDOO-LQ FDPSDLJQ
+
+File: 07_Psychology_Emotion_Articles_Sec_Quantitative_Psychology_and_Measurement.md
+Title: Sec. Quantitative Psychology and Measurement ## Content Liddell and Kruschke,
+Author: Ordinal Difference
+
+File: 01_Political_Theory_Books_The_Conquest_of_Bread.md
+Title: The Conquest of Bread.pdf
+Author: Peter Kropotkin
+
+File: 12_Reference_Manuals_Article_2022_taxreturn.md
+Title: 2022_TaxReturn
+Author: None
+
+File: 03_Research_Papers_Articles_Pinkawa_and_Dörfel_BMC_Psychology_2024_1269_BMC_Psychology.md
+Title: Pinkawa and Dörfel \uFEFFBMC Psychology 2024 1269 BMC Psychology **Source**:\
+Author: Emotional Labor
+
+File: 03_Research_Papers_Articles_also_helps_increase_your.md
+Title: also helps increase your
+Author: None
+
+File: 03_Research_Papers_Articles_Medical_diagnostic_method.md
+Title: Medical diagnostic method
+Author: None
+
+File: 11_Art_Culture_Articles_While_most_people_tend_to_wonder_or_even_stress_about_future_events_or_situation.md
+Title: While most people tend to wonder or even stress about future events or situations to some extent, extreme levels of anticipatory anxiety can negatively impact a person’s everyday life and functioning.
+Author: None
+
+File: 12_Reference_Manuals_Articles_Jan_13_2025_Meeting_Notes.md
+Title: Jan 13 2025 Meeting Notes.pdf
+Author: Mackedon at MackedonG@reno.gov.
+
+File: 03_Research_Papers_Articles_MINI_REVIEW.md
+Title: MINI REVIEW **Source**: ./Emotional Contagion_ A Brief Overview and Future
+Author: M. Tamietto
+
+File: 01_Political_Theory_Article_beyond_the_affinity_group_afqxd-zabalaza_2008_beyond_affinity_group2.md
+Title: beyond_the_affinity_group_af.qxd - zabalaza_2008_beyond_affinity_group2
+Author: Affinity Group
+
+File: 02_Game_Design_Article_bafykbzacedzcaffl2lq2x6cnmdlpscj3rzwe5iwzzhofzpnnxgaqgz44rssta.md
+Title: bafykbzacedzcaffl2lq2x6cnmdlpscj3rzwe5iwzzhofzpnnxgaqgz44rssta
+Author: None
+
+File: 08_Economics_Social_Article_aa23_commons_heft.md
+Title: aa23_commons_heft
+Author: None
+
+File: 01_Political_Theory_Article_solo-specs-sep-11-2020-10-27-01-93-pm.md
+Title: Solo Specs -Sep-11-2020-10-27-01-93-PM
+Author: None
+
+File: 13_Fiction_Books_Article_molasses_flood_pitchbook0.md
+Title: Molasses_Flood_Pitchbook.0
+Author: None
+
+File: 06_Technology_AI_Article_monthly-board-report-october-2022-anemoi-intercargo-forum-may-2025-version-for-d.md
+Title: MONTHLY BOARD REPORT OCTOBER 2022 - Anemoi-Intercargo-Forum-May-2025-version-for-delegate-handout-11-May
+Author: Head Office
+
+File: 07_Psychology_Emotion_Articles_Concept_in_psychology.md
+Title: Concept in psychology
+Author: None
+
+File: 04_Education_Pedagogy_Articles_Page_1.md
+Title: Page 1 **Source**: ./Full page photo - eb7095a5ec817e4bf05e83ff3885efb35010.pdf
+Author: F. Chegini
+
+File: 02_Game_Design_Articles_It_is_made_available_under_a_CC-BY_40_International_license.md
+Title: It is made available under a CC-BY 4.0 International license . **Source**:
+Author: Epidemiological Modeling
+
+File: 05_Architecture_Urban_Articles_Sample_Letter_to_Neighbors_aboutreaderurl.md
+Title: Sample Letter to Neighbors aboutreaderurl= **Source**: ./Sample Letter to Neighbors.pdf ## Content Sample Letter to Neighbors rentstrike.noblogs.org Sample Letter to Neighbors ~3 minutes If you find yourself struggling to write your fellow tenants here’s a sample letter you may find useful: Hi Neighbor, I hope you’re doing well. I have two things to share: First, I’m doing a grocery store run tomorrow, and if you need anything you can let me know. If you are immunocompromised, sick, or nervous about leaving your apartment, please text or call me. I am happy to pick up what you need. It may be difficult to find paper products and hand sanitizer, but food and pharmacy should be OK. Second, I am organizing a building-wide rent strike, effective April 1. This means that I will not pay rent on April 1. Many of us have been laid off from our jobs. Everyone is supposed to stay home to self-quarantine. Not everyone has the ability to pay or work from home. Most of us are paycheck-t
+Author: None
+
+File: 03_Research_Papers_Articles_The_mediating_role_of_psychological_flexibility_in_the_association_of_autistic-l.md
+Title: Watanabe and Akechi \uFEFFBMC Psychiatry 2023 23302 BMC Psychiatry (2) **Source**:\
+Author: Tatsuo Akechi
+
+File: 07_Psychology_Emotion_Articles_Philos_Trans_R_Soc_Lond_B_Biol_Sci.md
+Title: Philos Trans R Soc Lond B Biol Sci **Authors**: and address for correspondence:
+Author: Blaise Pascal
+
+File: 03_Research_Papers_Articles_ORIGINAL_RESEARCH.md
+Title: ORIGINAL RESEARCH **Source**: ./How Speakers Orient to the Notable Absence
+Author: A. Watkins
+
+File: 13_Fiction_Books_Article_inside-story-2-1972.md
+Title: Inside Story #2 1972
+Author: None
+
+File: 01_Political_Theory_Article_harris2000a.md
+Title: Harris2000a
+Author: None
+
+File: 05_Architecture_Urban_Articles_KEEP_YOUR_RENT_ORGANZING_MATERIALS_-_Parkda_aboutreaderurl.md
+Title: KEEP YOUR RENT ORGANZING MATERIALS - Parkda... aboutreaderurl= **Source**:
+Author: None
+
+File: 01_Political_Theory_Books_AB121_EN.md
+Title: AB121_EN.pdf
+Author: Legislative Counsel’s Digest:
+
+File: 07_Psychology_Emotion_Articles_A .md
+Title: A  **Source**: ./Emotional Interaction Qualities_ Vocabulary, Modalities, Actions, And Mapping - 2301.11432v1.pdf ## Content i Ii ii: y, ii, i,  i A                                                                                                                    
+Author: None
+
+File: 01_Political_Theory_Books_DontJustDoNothing_CounterFascism-screen.md
+Title: DontJustDoNothing_CounterFascism-screen.pdf
+Author: DON’T JUST
+
+File: 03_Research_Papers_Articles_Contents_lists_available_at_ScienceDirect.md
+Title: Contents lists available at ScienceDirect **Source**: ./Disrupting the flow_
+Author: None
+
+File: 06_Technology_AI_Article_microsoft-word-portable-desal_est_si_3rd-revision_cleandocx-es1c08466_si_001.md
+Title: Microsoft Word - Portable Desal_ES&T_SI_3rd revision_clean.docx - es1c08466_si_001
+Author: Supporting Information
+
+File: 03_Research_Book_How_Language_Began_The_Story_of_Humanitys.md
+Title: How Language Began The Story of Humanity's - How Language Began The Story of
+Author: John Gurche
+
+File: 07_Psychology_Emotion_Articles_Environmental_Research_3.md
+Title: Environmental Research (3) **Source**: ./Self-Compassion Interventions to
+Author: Target Secondary
+
+File: 06_Technology_AI_Articles_Chatting_About_The_State_Of_Hacker-Friendly_AR_Gear_Hackaday.md
+Title: Chatting About The State Of Hacker-Friendly FAR Gear Hackaday.pdf
+Author: Friendly FAR Gear
+
+File: 03_Research_Papers_Articles_Extracted_Text_9.md
+Title: ### Extracted Text (9) **Source**: ./non-lexical conversation sounds.pdf ##
+Author: Non Lexical Conversation Sounds
+
+File: 07_Psychology_Emotion_Articles_Share_on_Pinterest.md
+Title: Share on Pinterest
+Author: None
+
+File: 01_Political_Theory_Article_anarchist-approaches-to-crime-dysophia-5-2015-ak-press-85bce32fbb5753a579ef46507.md
+Title: Anarchist approaches to crime & -- Dysophia 5 -- 2015 -- AK Press -- 85bce32fbb5753a579ef46507d430c82
+Author: Michel Foucault
+
+File: 03_Research_Papers_Books_Harris2000a.md
+Title: Harris2000a.pdf
+Author: None
+
+File: 03_Research_Papers_Articles_Various_kinds_of_rating_scales_have_been_developed_to.md
+Title: Various kinds of rating scales have been developed to
+Author: None
+
+File: 12_Reference_Manuals_Books_Quasar_Reference_Frame_Maps_and_Catalogs_Guide.md
+Title: Quasar Reference Frame Maps and Catalogs Guide.pdf
+Author: Executive Summary
+
+File: 03_Research_Papers_Articles_Extracted_Text_2.md
+Title: ### Extracted Text (2) **Source**: ./2001_BC_review.pdf ## Content ``` -- ## Page 2 ### Figures and Images (5 found) #### Figure: img-000.png ![Figure from page 2](images/page_002_content/img-000.png) #### Figure: img-001.png ![Figure from page 2](images/page_002_content/img-001.png) #### Figure: img-002.png ![Figure from page 2](images/page_002_content/img-002.png) #### Figure: img-003.png ![Figure from page 2](images/page_002_content/img-003.png) #### Figure: img-004.png ![Figure from page 2](images/page_002_content/img-004.png) -- ### Complete Page View ![Page 2 Complete](images/page_002_full.png) ``` -- ## Page 4 ### Figures and Images (3 found) #### Figure: img-000.png ![Figure from page 4](images/page_004_content/img-000.png) #### Figure: img-001.png ![Figure from page 4](images/page_004_content/img-001.png) #### Figure: img-002.png ![Figure from page 4](images/page_004_content/img-002.png) -- ### Complete Page View ![Page 4 Complete](images/page_004_full.png) ``` --
+Author: None
+
+File: 02_Game_Design_Books_Saints_Row__The_Fall_-_Saints-Row-GDD.md
+Title: Saints Row_ The Fall - Saints-Row-GDD.pdf
+Author: Lady Ranja
+
+File: 07_Psychology_Emotion_Articles_Marquette_University.md
+Title: Marquette University **Source**: ./Cognitive-Emotional Processing in Alexithymia_
+Author: W. Bucci
+
+File: 07_Psychology_Emotion_Articles_In_the_commonly_held_view_of_procrastination_I_failed_to.md
+Title: In the commonly held view of procrastination, I failed to
+Author: None
+
+File: 10_Historical_Documents_Articles_How_to_Expand_a_Clients_Window_of_Tolerance_-_NICABM_aboutreaderurl.md
+Title: How to Expand a Client''s Window of Tolerance - NICABM aboutreaderurl= **Source**:
+Author: How Trauma
+
+File: 07_Psychology_Emotion_Articles_Surface_Acting_Emotional_Exhaustion_and_Employee_Sabotage_to_Customers_Moderatin.md
+Title: ORIGINAL RESEARCH (3) **Source**: ./Surface Acting, Emotional Exhaustion,
+Author: R. Abraham
+
+File: 12_Reference_Manuals_Books_PDF.js_viewer.md
+Title: PDF.js viewer.pdf
+Author: None
+
+File: 12_Reference_Manuals_Books_MANUSCRIPT_PREPARATION_GUIDELINES_-_1_239.md
+Title: MANUSCRIPT PREPARATION GUIDELINES - 1_239.pdf
+Author: CONDUCTED IN KUROSHIO CURRENT
+
+File: 06_Technology_AI_Articles_Extracted_Text_8.md
+Title: ### Extracted Text (8) **Source**: ./behavior trees for ai how they work.pdf ## Content ``` -- ## Page 2 ### Figures and Images (14 found) #### Figure: img-000.jpg ![Figure from page 2](images/page_002_content/img-000.jpg) #### Figure: img-001.jpg ![Figure from page 2](images/page_002_content/img-001.jpg) #### Figure: img-002.jpg ![Figure from page 2](images/page_002_content/img-002.jpg) #### Figure: img-003.jpg ![Figure from page 2](images/page_002_content/img-003.jpg) #### Figure: img-004.jpg ![Figure from page 2](images/page_002_content/img-004.jpg) #### Figure: img-005.jpg ![Figure from page 2](images/page_002_content/img-005.jpg) #### Figure: img-006.jpg ![Figure from page 2](images/page_002_content/img-006.jpg) #### Figure: img-007.jpg ![Figure from page 2](images/page_002_content/img-007.jpg) #### Figure: img-008.jpg ![Figure from page 2](images/page_002_content/img-008.jpg) #### Figure: img-009.jpg ![Figure from page 2](images/page_002_content/img-009.jpg) #### Figu
+Author: None
+
+File: 01_Political_Theory_Article__short-call_-short-call-june-national.md
+Title: _Short Call_ - short-call-June-National
+Author: Trump Must Go NOW!
+
+File: 07_Psychology_Emotion_Articles_The_timeemotion_paradox.md
+Title: The time–emotion paradox
+Author: None
+
+File: 07_Psychology_Emotion_Articles_Taylor_A_FioRito.md
+Title: Taylor A FioRito ## Content ) but also positively impacts motivation-relevant
+Author: None
+
+File: 03_Research_Papers_Articles_Rumination_in_Children_with_Social_Anxiety_Disorder_Effects.md
+Title: Rumination in Children with Social Anxiety Disorder Effects **Source**: ./Rumination
+Author: Projekt DEAL
+
+File: 03_Research_Papers_Articles_NO_BANALITY_IN_THIS_EVIL.md
+Title: NO BANALITY IN THIS EVIL **Source**: ./The Lost Letters of Two Evil Nazis--No
+Author: Tablet Magazine.pdf ## Content 1/24/
+
+File: 03_Research_Papers_Articles_Watanabe_and_Akechi_BMC_Psychiatry_2023_23302_BMC_Psychiatry.md
+Title: Watanabe and Akechi \uFEFFBMC Psychiatry 2023 23302 BMC Psychiatry **Source**:\
+Author: Tatsuo Akechi
+
+File: 12_Reference_Manuals_Books_CustomizeableRocks_Instruction.md
+Title: CustomizeableRocks Instruction.pdf
+Author: Customizable Rocks instruction
+
+File: 01_Political_Theory_Article_images-from-1946-rochester-general-strike.md
+Title: Images from 1946 Rochester general strike
+Author: None
+
+File: 06_Technology_AI_Articles_Applications___NDB_-_Reader_Mode.md
+Title: Applications _ NDB - Reader Mode.pdf
+Author: Applications | NDB
+
+File: 06_Technology_AI_Books_AlphaCode2_Tech_Report.md
+Title: AlphaCode2_Tech_Report.pdf
+Author: Google DeepMind
+
+File: 08_Economics_Social_Article_bafykbzaceckz5xxizbs55dnbkadrjaprfpvf5sdv4uy4a7evzl3fshqmpiz7y.md
+Title: bafykbzaceckz5xxizbs55dnbkadrjaprfpvf5sdv4uy4a7evzl3fshqmpiz7y
+Author: None
+
+File: 07_Psychology_Emotion_Articles_In_this_blog_well_explore_the_psychology_behind_lying_and_provide_actionable_tip.md
+Title: In this blog, we’ll explore the psychology behind lying and provide actionable tips to help you spot deceit in everyday interactions.
+Author: None
+
+File: 07_Psychology_Emotion_Articles_How_to_Recognize_Your_Window_of_Tolerance__Mind_M_aboutreaderurl.md
+Title: How to Recognize Your Window of Tolerance -- Mind M... aboutreaderurl= **Source**:
+Author: Mind My Peelings
+
+File: 03_Research_Papers_Articles_!#$ %&'+.md
+Title: !#$ %&''+ **Source**: ./sig-notes.pdf ## Content !"#$ %&''(*)+ ,-''./(01)23.45)2( ,6879: ; <4=?>A@B<CEDFHGIDAJK@B< LMNMPOQ DRG MTSVU <4=XW4JI>Y= U >AZ >A[''\H>A[NGIDAJK@B<^]_@ Q5` a CcbPJdZeC M1fhgjiHk DRJdGmlXn5nol pqsrBtvuwyxBzN{}|vw~u^|vuw wsw Bw _^Y|htvvAw uwwY    N^¡  ¢ t££EBu¤w uuYq_uw v£w uq_vr2qs}q_¥§¦?BuY¨¤©Bu^yªAurBw«ªY}Yr¨A¥§wAvHqs¥3t£ªAqsB Y¦v¦£sqs« Aq_Bv¬mAu£-YuwYvY_rBBuq_|£¥§''« B¨q_htvw$2qs¥¦vueBwuY¦vq_v_®Y¯E-^|vq_«°|Hwv|Yv«w ±Btvu Y²vq_sq³´®§uw v£w u^uw Ysq_q_«mwuuYqsvN{}|vw$|vq³µ^qs uw« wh®Bw Yuqs«Bvt£¥§wu|vYu£-Yuw©uB¥ ¤¶4·²XBt£vHrYuY¦v|£qs« ^¦vq_¦Xwsq_vw 2|vqsrB|¦Xww ¦Xw« qsY5¦vtvu¦XYw$rBuY¦£|vqs«}¦vuc« wq_vrtvvq_ ¸d¹ ¶4·±º}|vY^vuYq_«»Y__®§«°|YvrBw|vwuYvw A¼½^qsrBwB¥wuqs«¢_wYw  YvwYqs ¸ º4w uuYq_
+Author: None
+
+File: 06_Technology_AI_Article_applications-_-ndb-reader-mode.md
+Title: Applications _ NDB - Reader Mode
+Author: Applications | NDB
+
+File: 01_Political_Theory_Books_DontJustDoNothing_CounterFascism.md
+Title: DontJustDoNothing_CounterFascism.pdf
+Author: DON’T JUST
+
+File: 03_Research_Papers_Articles_The_Role_of_Eye_Gaze_in_Regulating.md
+Title: The Role of Eye Gaze in Regulating **Source**: ./The Role of Eye Gaze in Regulating
+Author: C. Goodwin
+
+File: 01_Political_Theory_Article_beyond_the_affinity_group_afqxd-zabalaza_2008_beyond_affinity_group.md
+Title: beyond_the_affinity_group_af.qxd - zabalaza_2008_beyond_affinity_group
+Author: Affinity Group
+
+File: 01_Political_Theory_Article_bafykbzaced5jwkqjajolantscuy3x7sju5ygsykll64khoadlfiqvaujxpdxu.md
+Title: bafykbzaced5jwkqjajolantscuy3x7sju5ygsykll64khoadlfiqvaujxpdxu
+Author: None
+
+File: 11_Art_Culture_Articles_Curr_Opin_Psychol.md
+Title: Curr Opin Psychol **Authors**: manuscript; available in PMC: 2016 Jun 1. ##
+Author: Health Affective
+
+File: 10_Historical_Documents_Articles_Anxiety_appears_in_many_forms_It_could_feel_like_fretting_over_a_doctor_visit_dr.md
+Title: Anxiety appears in many forms. It could feel like fretting over a doctor visit, dreading a meeting with a new boss, or even worrying about the possibility of a natural disaster.
+Author: None
+
+File: 03_Research_Papers_Articles_2306.17843.md
+Title: 2306.17843.pdf
+Author: Object\n                                           Generation
+
+File: 12_Reference_Manuals_Books_0610_Pt21_Proverbs.md
+Title: 0610_Pt21_Proverbs.pdf
+Author: None
+
+File: 03_Research_Papers_Articles_Psychometric_measurement_scale.md
+Title: Psychometric measurement scale
+Author: None
+
+File: 01_Political_Theory_Books_beyond_the_affinity_group_af.qxd_-_beyond-affinity-group-organisational-challenge-anarchists-1.md
+Title: beyond_the_affinity_group_af.qxd - beyond-affinity-group-organisational-challenge-anarchists-1.pdf
+Author: Affinity Group
+
+File: 12_Reference_Manuals_Books_Boxophobic_.md
+Title: Boxophobic+.pdf
+Author: BOXOPHOBIC   DISCORD   CONTACT
+
+File: 10_Historical_Documents_Books_Molasses_Flood_Pitchbook.0.md
+Title: Molasses_Flood_Pitchbook.0.pdf
+Author: None
+
+File: 07_Psychology_Emotion_Articles_Mapping_Human_Emotional_Expression_for_Dialogue_Systems.md
+Title: Mapping Human Emotional Expression for Dialogue Systems.pdf
+Author: None
+
+File: 07_Psychology_Emotion_Articles_Is_a_Return_To_Office_a_Return_To_Creativity_Requiring_Fixed_Time_In_Office_To_Enable_Brainstorms_and_Watercooler_Talk_May_Not_Foster_Research_Creativity_-_chiwork2023-5.md
+Title: Is a Return To Office a Return To Creativity Requiring Fixed Time In Office
+Author: Not Foster Research Creativity
+
+File: 03_Research_Papers_Articles_2309.01660.md
+Title: 2309.01660.pdf
+Author: None
+
+File: 02_Game_Design_Articles_udy_Shows_Game_Design_Can_Reduce_Stereotypes_Social_Biases_HumanComputer_Interac.md
+Title: udy Shows Game Design Can Reduce Stereotypes, Social Biases Human-Computer
+Author: Shows Game
+
+File: 12_Reference_Manuals_Books_superTrack.md
+Title: superTrack.pdf
+Author: None
+
+File: 04_Education_Pedagogy_Articles_Claim_your_FREE_copy.md
+Title: Claim your FREE copy
+Author: None
+
+File: 02_Game_Design_Books_Solo_Specs_-Sep-11-2020-10-27-01-93-PM.md
+Title: Solo Specs -Sep-11-2020-10-27-01-93-PM.pdf
+Author: None
+
+File: 03_Research_Papers_Articles_Access_through_your_institution.md
+Title: Access through your institution
+Author: None
+
+File: 10_Historical_Documents_Articles_The_Flame_of_the_French_Resistance_-_Charles_de_Gaulle_1940.md
+Title: The Flame of the French Resistance - Charles de Gaulle 1940.pdf
+Author: Charles de Gaulle
+
+File: 03_Research_Papers_Articles_Environmental_Research_2.md
+Title: Environmental Research (2) **Source**: ./Secondary Traumatic Stress and Burnout
+Author: Public Health
+
+File: 03_Research_Papers_Articles_Extracted_Text.md
+Title: ### Extracted Text **Source**: ./071207-leo-kanner-autistic-affective-contact.pdf
+Author: Affective Contact
+
+File: 03_Research_Papers_Articles_Lies_can_have_major_consequences_if_undetected_Research_to_date_has_focused_prim.md
+Title: Lies can have major consequences if undetected. Research to date has focused primarily on the consequences of deception for receivers once lies are discovered. We advance deception research and
+Author: None
+
+File: 01_Political_Theory_Article_manuscript-preparation-guidelines-1_239.md
+Title: MANUSCRIPT PREPARATION GUIDELINES - 1_239
+Author: CONDUCTED IN KUROSHIO CURRENT
+
+File: 02_Game_Design_Article_saints-row_-the-fall-saints-row-gdd.md
+Title: Saints Row_ The Fall - Saints-Row-GDD
+Author: Lady Ranja
+
+File: 07_Psychology_Emotion_Articles_Feel_the_Difference_A_Comparative_Analysis_of_Emotional_Arcs_in_Real.md
+Title: Feel the Difference A Comparative Analysis of Emotional Arcs in Real **Source**:
+Author: Xiaoyi Wang
+
+File: 11_Art_Culture_Article_notes-on-the-moment-02-feb-2025.md
+Title: Notes on the Moment (02 Feb 2025)
+Author: None
+
+File: 01_Political_Theory_Article_bafykbzaceb3adblxwpe5okxtd44gvu2wxe4uwwkjdxrlzlawkubvnfmcxzksu.md
+Title: bafykbzaceb3adblxwpe5okxtd44gvu2wxe4uwwkjdxrlzlawkubvnfmcxzksu
+Author: None
+
+File: 07_Psychology_Emotion_Articles_Living_without_passion_positive_expectations_or_enthusiasm_can_become_painful_Bu.md
+Title: Living without passion, positive expectations, or enthusiasm can become painful.
+Author: None
+
+File: 04_Education_Article_crc_poster_final_en.md
+Title: CRC_POSTER_FINAL_EN
+Author: None
+
+File: 07_Psychology_Emotion_Articles_The_semiotics_of_the_message_and_the_messenger_How.md
+Title: The semiotics of the message and the messenger How **Source**: ./The semiotics
+Author: R. Rumiati
+
+File: 12_Reference_Manuals_Books_Microsoft_Word_-_Portable_Desal_ES_T_SI_3rd_revision_clean.docx_-_es1c08466_si_001.md
+Title: Microsoft Word - Portable Desal_ES&T_SI_3rd revision_clean.docx - es1c08466_si_001.pdf
+Author: Supporting Information
+
+File: 01_Political_Theory_Article_bengtson-valerie-2005_boards.md
+Title: Bengtson-Valerie 2005_Boards
+Author: None
+
+File: 01_Political_Theory_Articles_How_the_African_Diaspora_Resisted_Colonialism.md
+Title: How the African Diaspora Resisted Colonialism.pdf
+Author: None
+
+File: 03_Research_Papers_Articles_Environmental_Research.md
+Title: Environmental Research **Source**: ./Compassion Fatigue among Healthcare,
+Author: Public Health
+
+File: 03_Research_Papers_Articles_DirectX_11_Terrain.md
+Title: DirectX 11 Terrain **Source**: ./TerrainTessellation_WhitePaper.pdf ## Content
+Author: C. Cebenoyan
+
+File: 07_Psychology_Emotion_Articles_Going_beyond_deep_and_surface_acting_a_bottom-_3.md
+Title: Going beyond deep and surface acting a bottom- (3) **Source**: ./Going beyond
+Author: K. Christensen
+
+File: 04_Education_Pedagogy_Articles_NCBI_Bookshelf_A_service_of_the_National_Library_of_Medicine_National_Institutes.md
+Title: NCBI Bookshelf. A service of the National Library of Medicine, National Institutes
+Author: Posttraumatic Stress Disorder   Statpearls
+
+File: 07_Psychology_Emotion_Articles_Going_beyond_deep_and_surface_acting_a_bottom-_2.md
+Title: Going beyond deep and surface acting a bottom- (2) **Source**: ./Going beyond
+Author: K. Christensen
+
+File: 01_Political_Theory_Articles_2023-05-17_Veto_SB171.md
+Title: 2023-05-17_Veto_SB171.pdf
+Author: Nevada Legislature
+

@@ -1,0 +1,311 @@
+# ============================================
+# veritable-games-server .gitignore
+# Server: 192.168.1.15
+# Purpose: Production server configuration repository
+# Created: November 21, 2025
+# ============================================
+
+# ============================================
+# CRITICAL: SENSITIVE DATA - NEVER COMMIT
+# ============================================
+
+# SSH Keys and Authentication
+.ssh/
+.ssh/*
+.gnupg/
+.kube/
+authorized_keys
+
+# Environment Files
+.env
+.env.*
+!.env.example
+
+# Command History (may contain passwords/secrets)
+.bash_history
+.lesshst
+.wget-hsts
+.zsh_history
+.mysql_history
+.psql_history
+
+# Claude CLI Credentials
+.claude/.credentials.json
+.claude.json
+.claude.json.backup
+
+# CLI Tool Configurations (contain tokens)
+.config/coolify/
+.config/gh/
+.config/github-copilot/
+
+# WireGuard Configuration (contains private keys)
+wireguard-backups/*.conf.*
+wireguard-backups/wg0-status.*
+wireguard-backups/openvpn-backup/
+wireguard-backups/test-env-vars-decrypt.sh
+
+# Cloudflare Tunnel
+.cloudflared/
+
+# Database Backups (too large, potentially sensitive)
+backups/
+backup/
+*.sql
+*.sql.gz
+*.dump
+*.backup
+
+# ============================================
+# NESTED GIT REPOSITORIES (SUBMODULES)
+# ============================================
+
+# Veritable Games main site repository (git submodule)
+projects/veritable-games/site/
+
+# BTCPay Server repository (git submodule)
+btcpayserver-docker/
+
+# Any nested .git directories in repository archives
+repository/**/.git
+repository/**/.gitignore
+repository/**/.gitmodules
+
+# ============================================
+# LARGE DATA FILES & ARCHIVES (59 GB TOTAL)
+# ============================================
+
+# Project Data (47 GB)
+projects/veritable-games/resources/data/
+projects/veritable-games/resources/processing/
+projects/veritable-games/resources/backups/
+projects/veritable-games/resources/logs/
+
+# Development Tool Archives (5.9 GB)
+# Note: Gitignoring entire repository/ directory per user request
+repository/
+
+# Archives Directory (16 GB)
+# Gitignoring due to large size (reference materials)
+archives/
+
+# ============================================
+# SYSTEM CACHE & GENERATED DATA (1.4 GB)
+# ============================================
+
+# User data directories
+.local/
+.npm/
+.cache/
+.config/
+snap/
+
+# Specific cache directories
+.cache/
+.local/share/
+.local/lib/
+.local/bin/
+
+# NPM
+.npm/
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+
+# ============================================
+# TEMPORARY & USER-SPECIFIC FILES
+# ============================================
+
+# Directories that shouldn't exist on Ubuntu Server (now deleted)
+Documents/
+Desktop/
+session-reports/
+frontend/
+
+# ============================================
+# SYSTEM FILES
+# ============================================
+
+.bash_logout
+.lesshst
+.Xauthority
+.wget-hsts
+.sudo_as_admin_successful
+*.log
+*.pid
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+.Trash-*/
+
+# ============================================
+# IDE & EDITOR FILES
+# ============================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Vim
+*.swp
+*.swo
+*.swn
+.vim/
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ============================================
+# SHARED RESOURCES (SELECTIVE)
+# ============================================
+
+# Binary packages and archives
+shared/packages/*.deb
+shared/archives/*.tar.gz
+shared/archives/*.zip
+
+# Keep specific files
+!shared/archives/authorized_keys_fixed
+
+# ============================================
+# ARCHIVED/MOVED CONTENT (NOW DELETED)
+# ============================================
+
+# These directories were cleaned up before git init
+# Listed here to prevent recreation
+Documents/
+Desktop/
+session-reports/
+frontend/
+
+# Old development volumes (not used)
+user_pgadmin_data/
+user_postgres_data/
+
+# ============================================
+# DOCKER & CONTAINER DATA
+# ============================================
+
+# Docker volumes are managed by Docker
+# These would be in /var/lib/docker/ anyway, not in /home/user/
+
+# ============================================
+# WHAT TO TRACK (EXPLICITLY INCLUDED)
+# ============================================
+
+# These are INCLUDED in the repository:
+# - CLAUDE.md (server documentation)
+# - docs/ (all documentation)
+# - wireguard-backups/*.sh (health check scripts)
+# - wireguard-backups/README.md (documentation)
+# - shared/README.md (documentation)
+# - .bashrc, .profile, .gitconfig (shell configuration)
+# - .config/git/ignore (git global ignore - safe)
+# - projects/README.md (project organization guide)
+# - archives/ (16 GB reference materials - keeping for now)
+
+# Force include .config/git/ignore (safe utility config)
+!.config/git/
+!.config/git/ignore
+
+# Force include shell configs
+!.bashrc
+!.profile
+!.gitconfig
+
+# ============================================
+# FINAL SAFETY CHECKS
+# ============================================
+
+# Ensure sensitive patterns are always ignored
+*password*
+*secret*
+*token*
+*key.pem
+*key.key
+*.p12
+*.pfx
+*.keystore
+
+# Exceptions for non-sensitive files
+!docs/**/*
+!shared/README.md
+!projects/README.md
+!wireguard-backups/README.md
+!wireguard-backups/*.sh
+
+# ============================================
+# VERIFICATION
+# ============================================
+#
+# Before committing, verify these are NOT staged:
+# - .ssh/
+# - .env files
+# - backups/
+# - .bash_history
+# - .claude/.credentials.json
+# - .config/coolify/
+# - .config/gh/
+# - wireguard-backups/*.conf.*
+# - projects/veritable-games/resources/data/
+# - repository/ archives
+#
+# To verify: git status --ignored
+# ============================================
