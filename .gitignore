@@ -60,11 +60,10 @@ backup/
 # NESTED GIT REPOSITORIES (SUBMODULES)
 # ============================================
 
-# Veritable Games main site repository (git submodule)
-projects/veritable-games/site/
-
-# BTCPay Server repository (git submodule)
-btcpayserver-docker/
+# Submodules are managed by .gitmodules file, not .gitignore
+# The following are git submodules (do not gitignore):
+# - projects/veritable-games/site/ → veritable-games-site repo
+# - btcpayserver-docker/ → BTCPayServer infrastructure
 
 # Any nested .git directories in repository archives
 repository/**/.git
