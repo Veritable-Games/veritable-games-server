@@ -1,0 +1,193 @@
+{
+  "batch_num": 1,
+  "timestamp": "2025-11-20T07:25:57.084872",
+  "processed_ids": [
+    219,
+    223,
+    225,
+    226,
+    232,
+    234,
+    239,
+    242
+  ],
+  "results": [
+    {
+      "doc_id": 219,
+      "title": "A Great Plains Association for Anarchy ",
+      "metadata": {
+        "author": "James Herod",
+        "author_type": "individual",
+        "publication_date": "2002-11",
+        "publication_date_precision": "month",
+        "confidence_author": 95,
+        "confidence_date": 90,
+        "notes": "Author explicitly named in document header. Original publication date of November 2002, with a revision note of March 2007",
+        "special_circumstances": [
+          "revised document"
+        ]
+      },
+      "validation": {
+        "valid": true,
+        "reason": "Valid"
+      }
+    },
+    {
+      "doc_id": 223,
+      "title": "A letter to the libertarian left",
+      "metadata": {
+        "author": null,
+        "author_type": "collective",
+        "publication_date": "2024-08-08",
+        "publication_date_precision": "exact",
+        "confidence_author": 70,
+        "confidence_date": 90,
+        "notes": "Appears to be a collective document from the Libertarian Socialist Caucus (LSC) of the Democratic Socialists of America (DSA). First-person plural language suggests collective authorship. Explicit publication date of August 8, 2024 is provided in the document header.",
+        "special_circumstances": [
+          "collective",
+          "organizational document"
+        ]
+      },
+      "validation": {
+        "valid": true,
+        "reason": "Valid"
+      }
+    },
+    {
+      "doc_id": 225,
+      "title": "A Modern Anarchism (Part 1) Anarchist Analysis",
+      "metadata": {
+        "author": "Daniel Baryon",
+        "author_type": "individual",
+        "publication_date": null,
+        "publication_date_precision": "unknown",
+        "confidence_author": 70,
+        "confidence_date": 20,
+        "notes": "Author name appears in document tags, but no explicit publication date is provided. Document references being converted from a PDF and mentions being a script for a video on the 'Anark' channel.",
+        "special_circumstances": [
+          "video script",
+          "online publication"
+        ]
+      },
+      "validation": {
+        "valid": true,
+        "reason": "Valid"
+      }
+    },
+    {
+      "doc_id": 226,
+      "title": "A Modern Anarchism (Part 2) Anarchy",
+      "metadata": {
+        "author": "Daniel Baryon",
+        "author_type": "individual",
+        "publication_date": null,
+        "publication_date_precision": "unknown",
+        "confidence_author": 70,
+        "confidence_date": 20,
+        "notes": "Author name appears in document tags, but no explicit publication date is provided. The document references a future conversion date (2025), suggesting it was written before that.",
+        "special_circumstances": [
+          "video script converted to essay"
+        ]
+      },
+      "validation": {
+        "valid": true,
+        "reason": "Valid"
+      }
+    },
+    {
+      "doc_id": 232,
+      "title": "A Reply to Death of a Paper Tiger by Animal",
+      "metadata": {
+        "author": "Anonymous Class War member",
+        "author_type": "individual",
+        "publication_date": "1997",
+        "publication_date_precision": "year",
+        "confidence_author": 70,
+        "confidence_date": 90,
+        "notes": "Author identifies as a Class War member responding to an Aufheben article, but does not provide a specific name. Publication date is referenced in the text as Autumn 1997, Issue No. 6 of Aufheben.",
+        "special_circumstances": [
+          "response",
+          "collective context"
+        ]
+      },
+      "validation": {
+        "valid": true,
+        "reason": "Valid"
+      }
+    },
+    {
+      "doc_id": 234,
+      "title": "A Rose By Any Other Name",
+      "metadata": {
+        "author": "Class War Federation",
+        "author_type": "collective",
+        "publication_date": "1997",
+        "publication_date_precision": "approximate",
+        "confidence_author": 90,
+        "confidence_date": 70,
+        "notes": "Document is from Class War issue 73, with a reference to Spring 1997 in the text. Authored collectively by Class War Federation, writing in first-person plural.",
+        "special_circumstances": [
+          "collective"
+        ]
+      },
+      "validation": {
+        "valid": true,
+        "reason": "Valid"
+      }
+    },
+    {
+      "doc_id": 239,
+      "title": "A syndicalist strategy for the Swedish labour market",
+      "metadata": {
+        "author": "Jenny Stendahl, Erik Bonk, Rasmus H\u00e4stbacka",
+        "author_type": "collective",
+        "publication_date": "2021-05-19",
+        "publication_date_precision": "exact",
+        "confidence_author": 95,
+        "confidence_date": 90,
+        "notes": "Authors explicitly named in the document header as SAC representatives. Publication date stated as first published on CounterPunch website on May 19, 2021, and previously in Swedish union paper Arbeten",
+        "special_circumstances": [
+          "collective authorship",
+          "multi-author"
+        ]
+      },
+      "validation": {
+        "valid": true,
+        "reason": "Valid"
+      }
+    },
+    {
+      "doc_id": 242,
+      "title": "A view on Class War by a former member - Julian (1986)",
+      "metadata": {
+        "author": "Julian",
+        "author_type": "individual",
+        "publication_date": "1986",
+        "publication_date_precision": "exact",
+        "confidence_author": 90,
+        "confidence_date": 95,
+        "notes": "Author explicitly named in title and first paragraph as 'Julian', writing about his experience with Class War. Date of 1986 is directly stated in title and confirmed by contextual references to specific events in 1985-1986.",
+        "special_circumstances": [
+          "first-person account",
+          "former member perspective"
+        ]
+      },
+      "validation": {
+        "valid": true,
+        "reason": "Valid"
+      }
+    }
+  ],
+  "stats": {
+    "total": 50,
+    "processed": 8,
+    "updated": 8,
+    "high_confidence": 3,
+    "medium_confidence": 3,
+    "low_confidence": 2,
+    "skipped_low_confidence": 25,
+    "api_errors": 0,
+    "total_tokens": 75924,
+    "total_cost": 0.029036
+  }
+}

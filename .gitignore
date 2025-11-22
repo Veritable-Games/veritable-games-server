@@ -30,7 +30,7 @@ authorized_keys
 .psql_history
 
 # Claude CLI Credentials
-.claude/.credentials.json
+.claude/
 .claude.json
 .claude.json.backup
 
@@ -79,6 +79,13 @@ projects/veritable-games/resources/data/
 projects/veritable-games/resources/processing/
 projects/veritable-games/resources/backups/
 projects/veritable-games/resources/logs/
+
+# Generated data files
+projects/veritable-games/resources/*.csv
+
+# SQL import data (too large for git)
+projects/veritable-games/resources/sql/tag-imports/
+projects/veritable-games/resources/sql/wiki-imports/
 
 # Development Tool Archives (5.9 GB)
 # Note: Gitignoring entire repository/ directory per user request

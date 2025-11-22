@@ -315,21 +315,33 @@ git log -1 --oneline
 ### Directory Structure
 
 ```
-/home/user/                      # NOT A GIT REPOSITORY - Home directory
+/home/user/                      # Server home directory (git repository)
 ├── projects/                    # Project organization
 │   └── veritable-games/        # VG project
-│       ├── site/               # VG production repository
+│       ├── site/               # VG production repository (git submodule)
 │       │   ├── CLAUDE.md       # VG-specific development guide
 │       │   ├── frontend/       # Next.js application
 │       │   ├── docs/           # VG documentation
 │       │   └── .git/           # VG git repository
 │       └── resources/          # VG project resources
 │           ├── data/           # Literature archives (3.1GB)
-│           ├── scripts/        # Import scripts
+│           ├── scripts/        # Import scripts, utilities
 │           ├── sql/            # Migrations
 │           ├── logs/           # Script logs
 │           └── docker-compose.yml  # Local DB
-├── repository/                 # Development tool archives (5.6GB)
+├── docs/                       # Server documentation
+│   ├── veritable-games/        # VG-specific docs
+│   │   └── planning/           # Project planning documents
+│   ├── server/                 # Server operations docs
+│   └── reference/              # General reference
+├── backups/                    # Database backups & monitoring (2.5GB)
+│   ├── scripts/                # Backup & health check scripts
+│   ├── migration-scripts-archive/  # Archived one-time migrations
+│   ├── postgres-daily-*.sql.gz # Daily PostgreSQL backups
+│   ├── backup.log              # Backup results
+│   ├── disk-monitor.log        # Disk usage alerts
+│   └── health-check.log        # System health history
+├── repository/                 # Development tool archives (5.9GB)
 │   ├── AI-ML/                  # LLM/RAG tools, ML frameworks
 │   ├── Development-Tools/      # AI assistants, notebooks, testing
 │   ├── Web-Development/        # Next.js related tools
@@ -343,11 +355,12 @@ git log -1 --oneline
 ├── shared/                     # Cross-project resources
 │   ├── archives/               # SSH keys, backups
 │   └── packages/               # System packages
-├── docs/                       # Documentation
-│   ├── veritable-games/
-│   ├── server/
-│   └── reference/
-└── CLAUDE.md                   # THIS FILE - Server-level guidance
+├── wireguard-backups/          # WireGuard VPN configs & health scripts
+├── btcpayserver-docker/        # BTCPayServer infrastructure (git submodule)
+├── snap/                       # Snap package data (system-managed)
+├── .claude.json                # Claude Code configuration
+├── CLAUDE.md                   # THIS FILE - Server-level guidance
+└── README.md                   # Repository documentation
 ```
 
 See `/home/user/projects/README.md` for detailed structure documentation.

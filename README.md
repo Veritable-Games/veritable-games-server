@@ -53,17 +53,24 @@ This repository tracks the server-level configuration, infrastructure documentat
 │   │   ├── site/                   # VG application (git submodule)
 │   │   └── resources/              # Scripts, data, migrations (24.6GB)
 │   └── README.md                   # Project organization guide
+├── docs/                           # Infrastructure documentation
+│   ├── server/                     # Server management guides
+│   ├── veritable-games/           # VG-specific documentation
+│   │   └── planning/               # Project planning documents
+│   └── reference/                  # Technical references
+├── backups/                        # Database backups & monitoring (2.5GB)
+│   ├── scripts/                    # Backup & health check scripts
+│   ├── migration-scripts-archive/ # Archived one-time migrations
+│   ├── postgres-daily-*.sql.gz    # Daily PostgreSQL backups
+│   └── *.log                      # Monitoring logs
 ├── btcpayserver-docker/            # BTCPay Server (git submodule)
 ├── repository/                     # Development tools archive (5.9GB)
 │   └── [metadata tracked, binaries gitignored]
 ├── archives/                       # Reference materials (16GB gitignored)
-├── docs/                           # Infrastructure documentation
-│   ├── server/                     # Server management guides
-│   ├── deployment/                 # Deployment procedures
-│   ├── veritable-games/           # VG-specific documentation
-│   └── reference/                  # Technical references
 ├── wireguard-backups/             # VPN configuration and health scripts
 ├── shared/                         # Cross-project resources
+├── snap/                           # Snap package data (system-managed)
+├── .claude.json                   # Claude Code configuration
 ├── .gitignore                     # Excludes 54GB (sensitive data, archives)
 ├── CLAUDE.md                      # Server-level guidance for AI assistants
 └── README.md                      # This file
