@@ -421,6 +421,130 @@ class PDFArtifactCleaner:
         # Replace 3+ newlines with 2
         return re.sub(r'\n{3,}', '\n\n', content)
 
+    # ========================================================================
+    # MARKER-SPECIFIC CLEANUP METHODS (for marker_single PDF converter)
+    # ========================================================================
+
+    def remove_html_anchors(self, content: str) -> str:
+        """Remove HTML span anchors from marker output
+
+        Removes: <span id="page-X-X"></span>
+        These are PDF page reference anchors that don't work in markdown
+        """
+        return re.sub(r'<span\s+id="[^"]+"></span>\s*', '', content)
+
+    def fix_pdf_anchor_links(self, content: str) -> str:
+        """Fix broken markdown links with PDF page anchors
+
+        Converts: [Text](#page-X-X) → Text (plain text)
+        These PDF internal links don't work in markdown, so convert to plain text
+        """
+        return re.sub(r'\[([^\]]+)\]\(#page-\d+-\d+\)', r'\1', content)
+
+    def fix_page_break_line_splits(self, content: str) -> str:
+        """Join lines broken by PDF page breaks
+
+        Fixes cases where marker splits sentences mid-phrase:
+        - "banner of nihilist or rather of\n\nanarchist philosophy"
+        - "And unfortunately for us,\n\nmovements are produced"
+
+        Joins when line ends with continuation words or punctuation
+        """
+        # Pattern 1: Lines ending with comma before lowercase word
+        # "for us,\n\nmovements" → "for us, movements"
+        content = re.sub(r',\n\n+([a-z])', r', \1', content)
+
+        # Pattern 2: Lines ending with preposition + paragraph break
+        continuation_words = [
+            'of', 'or', 'and', 'the', 'a', 'an', 'to', 'for',
+            'in', 'on', 'at', 'by', 'with', 'from', 'as', 'into',
+            'toward', 'towards', 'upon', 'about'
+        ]
+
+        for word in continuation_words:
+            # "word <preposition>\n\n<lowercase>" → "word <preposition> <lowercase>"
+            pattern = rf'(\S+)\s+{word}\n\n+([a-z]\w*)'
+            replacement = rf'\1 {word} \2'
+            content = re.sub(pattern, replacement, content)
+
+        # Pattern 3: General case - any word + paragraph break + lowercase
+        # "entirely new\n\nform" → "entirely new form"
+        # Only join if line doesn't end with sentence-ending punctuation
+        content = re.sub(r'([a-z])\n\n+([a-z])', r'\1 \2', content)
+
+        return content
+
+    def fix_missing_spaces(self, content: str) -> str:
+        """Fix missing spaces in text
+
+        Common OCR/conversion errors:
+        - "sentence.Next" → "sentence. Next"
+        - "word,another" → "word, another"
+        - "wordAnother" → "word Another"
+        """
+        # Fix missing space after period
+        content = re.sub(r'\.([A-Z])', r'. \1', content)
+
+        # Fix missing space after comma (but not in numbers like "1,000")
+        content = re.sub(r',([a-z])', r', \1', content)
+
+        # Fix words run together (lowercase directly followed by uppercase)
+        # BUT preserve acronyms and intentional camelCase
+        # Only fix if preceded by lowercase letter
+        content = re.sub(r'([a-z])([A-Z][a-z])', r'\1 \2', content)
+
+        return content
+
+    def fix_broken_urls(self, content: str) -> str:
+        """Fix URLs broken by space insertion
+
+        Fixes: "https://example.com/some-pa ge" → "https://example.com/some-page"
+        """
+        # Find URLs with spaces and remove the spaces
+        def fix_url_spaces(match):
+            url = match.group(0)
+            # Remove spaces within the URL
+            fixed_url = url.replace(' ', '')
+            return fixed_url
+
+        # Pattern: URLs that may have spaces inserted
+        content = re.sub(
+            r'https?://[^\s<>"\)]+\s+[^\s<>"\)]+',
+            fix_url_spaces,
+            content
+        )
+
+        return content
+
+    def fix_hyphenation_errors(self, content: str) -> str:
+        """Fix missing hyphens in common compound words
+
+        Converts: selfabnegation → self-abnegation
+                  selflove → self-love
+
+        Common in older texts where OCR joins hyphenated compounds
+        """
+        # Dictionary of common compound word fixes
+        compounds = [
+            ('selfabnegation', 'self-abnegation'),
+            ('selflove', 'self-love'),
+            ('selfinterest', 'self-interest'),
+            ('selfdefense', 'self-defense'),
+            ('selfsacrifice', 'self-sacrifice'),
+            ('selfevident', 'self-evident'),
+            ('selfrespect', 'self-respect'),
+            ('wellbeing', 'well-being'),
+            ('wellknown', 'well-known'),
+        ]
+
+        for wrong, right in compounds:
+            # Case-insensitive replacement
+            content = re.sub(rf'\b{wrong}\b', right, content, flags=re.IGNORECASE)
+
+        return content
+
+    # ========================================================================
+
     def is_section_header(self, line: str, next_line: str) -> bool:
         """
         Detect if line is likely a section header (from original cleanup_markdown.py)
@@ -529,6 +653,14 @@ class PDFArtifactCleaner:
         content = self.apply_smart_formatting(content)
         content = self.apply_ocr_corrections(content)
 
+        # Marker-specific cleanup (for marker_single PDF converter)
+        content = self.remove_html_anchors(content)
+        content = self.fix_pdf_anchor_links(content)
+        content = self.fix_broken_urls(content)  # Before page break fixes
+        content = self.fix_page_break_line_splits(content)
+        content = self.fix_missing_spaces(content)
+        content = self.fix_hyphenation_errors(content)
+
         # Final cleanup
         content = content.strip() + '\n'
 
@@ -620,6 +752,134 @@ class PDFArtifactCleaner:
 
             self.stats.failed += 1
             return False
+
+    def process_file(self, input_path: str, output_path: str = None) -> int:
+        """
+        Process a single markdown file (file mode)
+
+        Args:
+            input_path: Path to input markdown file
+            output_path: Path to output file (None = overwrite input)
+
+        Returns:
+            0 on success, 1 on failure
+        """
+        try:
+            # Read input file
+            self.log(f"Reading file: {input_path}", "INFO")
+            with open(input_path, 'r', encoding='utf-8') as f:
+                original_content = f.read()
+
+            # Check if has any artifacts (pdftotext OR marker-specific)
+            has_pdftotext_artifacts = any(marker in original_content for marker in [
+                '### Complete Page View',
+                '### Figures and Images',
+                '### Figure:',
+                '### Extracted Text',
+                '*Converted from:'
+            ])
+
+            has_marker_artifacts = any([
+                '<span' in original_content,  # HTML span anchors
+                '#page-' in original_content,  # PDF page anchor links
+                re.search(r'\w+\s+(of|or|and|to|for|in|at|by|with)\n\n+\w', original_content),  # Preposition page breaks
+                re.search(r',\n\n+[a-z]', original_content),  # Comma + page break
+                re.search(r'\.\w', original_content),  # Missing space after period
+                re.search(r',[a-z]', original_content),  # Missing space after comma (but not in file, this will catch some)
+                re.search(r'[a-z][A-Z][a-z]', original_content),  # Words run together (camelCase)
+                re.search(r'https?://[^\s]+\s+[^\s]+', original_content)  # Broken URLs with spaces
+            ])
+
+            if not has_pdftotext_artifacts and not has_marker_artifacts:
+                self.log("File is already clean, no artifacts found", "INFO")
+                self.stats.already_clean = 1
+                self.stats.total = 1
+                return 0
+
+            # Clean content
+            artifact_types = []
+            if has_pdftotext_artifacts:
+                artifact_types.append("pdftotext artifacts")
+            if has_marker_artifacts:
+                artifact_types.append("marker artifacts")
+
+            self.log(f"Cleaning content ({', '.join(artifact_types)})...", "INFO")
+            cleaned_content, artifacts = self.clean_document_content(original_content)
+
+            # Update statistics
+            self.stats.total = 1
+            self.stats.cleaned = 1
+            self.stats.complete_page_view = artifacts['page_views']
+            self.stats.figures = artifacts['figures']
+            self.stats.page_markers = artifacts['page_markers']
+            self.stats.form_feeds = artifacts['form_feeds']
+            self.stats.metadata = artifacts['metadata']
+            self.stats.bytes_saved = artifacts['bytes_saved']
+
+            # Determine output path
+            if output_path is None:
+                output_path = input_path
+                self.log(f"Output path not specified, overwriting input file", "INFO")
+
+            # Write output file
+            self.log(f"Writing cleaned content to: {output_path}", "INFO")
+            with open(output_path, 'w', encoding='utf-8') as f:
+                f.write(cleaned_content)
+
+            self.log(
+                f"✓ Cleaned: {artifacts['reduction_pct']:.1f}% size reduction "
+                f"({len(original_content)}B → {len(cleaned_content)}B)",
+                "SUCCESS"
+            )
+
+            # Show statistics
+            self.show_file_statistics(artifacts)
+
+            return 0
+
+        except FileNotFoundError:
+            self.log(f"Input file not found: {input_path}", "ERROR")
+            self.stats.failed = 1
+            return 1
+        except Exception as e:
+            self.log(f"Error processing file: {str(e)}", "ERROR")
+            self.stats.failed = 1
+            return 1
+
+    def show_file_statistics(self, artifacts: Dict):
+        """Display statistics for file mode"""
+        total_artifacts = (
+            artifacts['page_views'] +
+            artifacts['figures'] +
+            artifacts['page_markers'] +
+            artifacts['form_feeds'] +
+            artifacts['metadata']
+        )
+
+        mb_saved = artifacts['bytes_saved'] / 1024 / 1024
+
+        print("\n" + "=" * 80)
+        print("CLEANUP SUMMARY")
+        print("=" * 80)
+        print("Artifacts removed:")
+        print(f"  - Complete Page View sections:  {artifacts['page_views']}")
+        print(f"  - Figures and Images sections:  {artifacts['figures']}")
+        print(f"  - Page markers:                 {artifacts['page_markers']}")
+        print(f"  - Form feeds:                   {artifacts['form_feeds']}")
+        print(f"  - Conversion metadata:          {artifacts['metadata']}")
+        print()
+        print(f"Total artifacts:      {total_artifacts}")
+        print()
+        print(f"Size reduction:       {artifacts['reduction_pct']:.1f}%")
+        print(f"Bytes saved:          {mb_saved:.2f} MB")
+        print()
+        print(f"✅ Cleanup complete")
+        print(f"📝 Detailed log: {self.log_file}")
+
+        if not self.skip_ocr and self.stats.ocr_fixed > 0:
+            print(f"📝 OCR corrections: {self.ocr_log_file}")
+
+        print("=" * 80 + "\n")
 
     def show_statistics(self):
         """Display final statistics"""
@@ -747,36 +1007,41 @@ class PDFArtifactCleaner:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Clean PDF-to-Markdown conversion artifacts from database documents'
+        description='Clean PDF-to-Markdown conversion artifacts from database documents or files'
     )
+
+    # File mode arguments
+    parser.add_argument(
+        '--file',
+        type=str,
+        metavar='PATH',
+        help='Process a single markdown file (file mode) instead of database'
+    )
+    parser.add_argument(
+        '--output',
+        type=str,
+        metavar='PATH',
+        help='Output path for file mode (defaults to overwriting input)'
+    )
+
+    # Database mode arguments
     parser.add_argument(
         '--dry-run',
         action='store_true',
-        help='Preview changes without updating database'
+        help='Preview changes without updating database (database mode only)'
     )
     parser.add_argument(
         '--limit',
         type=int,
         metavar='N',
-        help='Process only N documents (for testing)'
-    )
-    parser.add_argument(
-        '--skip-ocr',
-        action='store_true',
-        help='Skip OCR correction, structural cleanup only'
+        help='Process only N documents (database mode only)'
     )
     parser.add_argument(
         '--batch-size',
         type=int,
         default=100,
         metavar='N',
-        help='Process N documents per batch (default: 100)'
-    )
-    parser.add_argument(
-        '--log',
-        default=f'/tmp/cleanup_artifacts_{datetime.now().strftime("%Y%m%d_%H%M%S")}.log',
-        metavar='FILE',
-        help='Write detailed log to FILE'
+        help='Process N documents per batch (database mode only, default: 100)'
     )
     parser.add_argument(
         '--stats',
@@ -810,40 +1075,74 @@ def main():
         help='Database password (default: postgres)'
     )
 
+    # Common arguments
+    parser.add_argument(
+        '--skip-ocr',
+        action='store_true',
+        help='Skip OCR correction, structural cleanup only'
+    )
+    parser.add_argument(
+        '--log',
+        default=f'/tmp/cleanup_artifacts_{datetime.now().strftime("%Y%m%d_%H%M%S")}.log',
+        metavar='FILE',
+        help='Write detailed log to FILE'
+    )
+
     args = parser.parse_args()
+
+    # Detect mode
+    file_mode = args.file is not None
 
     # Build config
     config = {
-        'dry_run': args.dry_run,
-        'limit': args.limit,
         'skip_ocr': args.skip_ocr,
-        'batch_size': args.batch_size,
         'log_file': args.log,
-        'stats_only': args.stats,
-        'db_host': args.db_host,
-        'db_port': args.db_port,
-        'db_name': args.db_name,
-        'db_user': args.db_user,
-        'db_password': args.db_password
     }
+
+    # Add database-specific config if in database mode
+    if not file_mode:
+        config.update({
+            'dry_run': args.dry_run,
+            'limit': args.limit,
+            'batch_size': args.batch_size,
+            'stats_only': args.stats,
+            'db_host': args.db_host,
+            'db_port': args.db_port,
+            'db_name': args.db_name,
+            'db_user': args.db_user,
+            'db_password': args.db_password
+        })
 
     # Print header
     print("=" * 80)
     print("PDF Artifact Cleanup Script (Python)")
     print("=" * 80)
-    print(f"Mode: {'DRY-RUN' if config['dry_run'] else 'LIVE'}")
-    print(f"Target: library.library_documents (PostgreSQL)")
-    print(f"Database: {config['db_name']} @ {config['db_host']}:{config['db_port']}")
-    print(f"Batch size: {config['batch_size']}")
-    print(f"OCR correction: {'Disabled' if config['skip_ocr'] else 'Enabled'}")
-    if config['limit']:
-        print(f"Limit: {config['limit']} documents")
+
+    if file_mode:
+        print(f"Mode: FILE")
+        print(f"Input: {args.file}")
+        print(f"Output: {args.output if args.output else args.file + ' (overwrite)'}")
+        print(f"OCR correction: {'Disabled' if config['skip_ocr'] else 'Enabled'}")
+    else:
+        print(f"Mode: {'DRY-RUN' if config['dry_run'] else 'LIVE'}")
+        print(f"Target: library.library_documents (PostgreSQL)")
+        print(f"Database: {config['db_name']} @ {config['db_host']}:{config['db_port']}")
+        print(f"Batch size: {config['batch_size']}")
+        print(f"OCR correction: {'Disabled' if config['skip_ocr'] else 'Enabled'}")
+        if config['limit']:
+            print(f"Limit: {config['limit']} documents")
+
+    print(f"Log file: {config['log_file']}")
     print("=" * 80)
     print()
 
     # Run cleaner
     cleaner = PDFArtifactCleaner(config)
-    return cleaner.run()
+
+    if file_mode:
+        return cleaner.process_file(args.file, args.output)
+    else:
+        return cleaner.run()
 
 if __name__ == '__main__':
     sys.exit(main())

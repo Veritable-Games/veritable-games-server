@@ -85,16 +85,26 @@ cd /home/user/projects/veritable-games/resources/processing/unconverted-pdfs
 
 ## Scripts Directory
 
-Python import and extraction scripts:
-- `extract_and_import_anarchist_tags.py` - Tag extraction (4-tier hybrid strategy)
-- `import_anarchist_documents_postgres.py` - Document import to PostgreSQL
-- `simple_import.py` - Simplified import version
-- `import_docs.sh` - Shell wrapper
+**Active Production Scripts (3 total):**
+- `cleanup_pdf_artifacts.py` - **PDF cleanup** (marker_single output, page breaks, spacing)
+- `match_pdfs_to_database.py` - PDF-database matching utility
+- `tmate-quick-start.sh` - Server utility
+
+**Archived Scripts (63 scripts):**
+All one-time migrations, testing, and obsolete scripts moved to `scripts/archived/`:
+- `metadata-extraction/` - 23 scripts (extract_library_metadata_phase*.py)
+- `library-cleanup/` - 10 scripts (cleanup_library_content.py, etc.)
+- `one-time-migrations/` - 18 scripts (import_anarchist_documents_postgres.py, etc.)
+- `old-converters/` - 6 scripts (old batch_pdf_converter.sh, tests)
+- `database-utilities/` - 6 scripts (analyze_library_conflicts.py, etc.)
 
 **Usage:**
 ```bash
-cd /home/user/projects/veritable-games/scripts
-python3 import_anarchist_documents_postgres.py ../data/converted-markdown
+# Clean marker_single output
+python3 cleanup_pdf_artifacts.py --file "document.md" --skip-ocr
+
+# Database mode (batch cleanup)
+python3 cleanup_pdf_artifacts.py --database --limit 100
 ```
 
 ## SQL Directory
@@ -187,9 +197,48 @@ SELECT COUNT(*) FROM shared.tags;
 - **Marxist scraper:** 236MB
 - **Total:** 4.9GB
 
+## PDF Conversion Workflow ⭐ NEW (November 26, 2025)
+
+**Status:** ✅ Production Ready (75% artifact fix rate)
+
+### Overview
+AI-powered PDF→Markdown conversion with automated cleanup:
+- **Tool:** marker_single (VikParuchuri/marker)
+- **Cleanup:** cleanup_pdf_artifacts.py
+- **Performance:** ~3.5 minutes per PDF average
+- **Quality:** Clean, readable markdown
+
+### Quick Start
+```bash
+# Single PDF
+marker_single "document.pdf" \
+  --output_dir "output" \
+  --output_format markdown \
+  --disable_multiprocessing
+
+python3 scripts/cleanup_pdf_artifacts.py \
+  --file "output/document.md" \
+  --skip-ocr
+
+# Batch conversion
+cd processing/unconverted-pdfs
+bash batch_pdf_converter_marker.sh
+```
+
+### What Gets Fixed
+✅ Sentences broken across paragraphs (75% success rate)
+✅ Missing spaces after punctuation
+✅ CamelCase word splitting
+✅ Broken URLs
+✅ 13,061 Unicode character fixes
+
+### Documentation
+**Complete workflow guide:** `data/PDF_CONVERSION_WORKFLOW.md`
+
 ## See Also
 
 - **Main repo:** `/home/user/projects/veritable-games/site/`
+- **PDF Workflow:** `data/PDF_CONVERSION_WORKFLOW.md` ⭐ NEW
 - **Content Collections Guide:** `/home/user/docs/veritable-games/CONTENT_COLLECTIONS.md` ⭐ NEW
 - **Documentation:** `/home/user/docs/veritable-games/`
 - **Server docs:** `/home/user/docs/server/`

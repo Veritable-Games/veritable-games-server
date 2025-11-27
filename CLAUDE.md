@@ -630,6 +630,59 @@ ps aux | grep scrape_marxists_org
 tail -f data/scraping/marxists-org/scrape.log
 ```
 
+### PDF Conversion Workflow
+
+**Status:** ✅ Production Ready (November 26, 2025)
+
+**Overview:**
+AI-powered PDF→Markdown conversion using marker_single with automated cleanup.
+
+**Performance:**
+- Single PDF: ~3.5 minutes average
+- Quality: 75% automatic artifact cleanup
+- Success rate: 100% conversion, clean readable output
+
+**Quick Start:**
+```bash
+# Navigate to library PDFs
+cd /home/user/projects/veritable-games/resources/data/library-pdfs
+
+# Convert single PDF
+marker_single "document.pdf" \
+  --output_dir "output" \
+  --output_format markdown \
+  --disable_multiprocessing
+
+# Apply cleanup (fixes page breaks, spacing, punctuation)
+python3 ../../scripts/cleanup_pdf_artifacts.py \
+  --file "output/document.md" \
+  --skip-ocr \
+  --output "document-CLEANED.md"
+```
+
+**Batch Processing:**
+```bash
+cd /home/user/projects/veritable-games/resources/processing/unconverted-pdfs
+bash batch_pdf_converter_marker.sh
+```
+
+**What Gets Fixed:**
+- ✅ Sentences broken across paragraphs (page breaks)
+- ✅ Missing spaces after punctuation
+- ✅ CamelCase word splitting (theWord → the Word)
+- ✅ Broken URLs with spaces
+- ✅ 13,061 Unicode character fixes
+
+**Documentation:**
+- **Complete Guide:** `/home/user/projects/veritable-games/resources/data/PDF_CONVERSION_WORKFLOW.md`
+- **Scripts:** `/home/user/projects/veritable-games/resources/scripts/`
+  - `cleanup_pdf_artifacts.py` - Main cleanup script
+  - `archived/` - 63 archived scripts (migrations, old converters)
+
+**Tools:**
+- **marker_single:** Installed via pipx (`~/.local/bin/marker_single`)
+- **Installation:** `pipx install marker-pdf`
+
 ---
 
 ## Production Deployment Checklist
@@ -665,6 +718,14 @@ docker logs m4s0kwo4kc4oooocck4sswc4 --tail 50
   - Container: `m4s0kwo4kc4oooocck4sswc4` (commit 679fb6d)
   - Status: Operational
   - URL: https://www.veritablegames.com
+
+- **PDF Conversion Workflow** (Nov 26, 2025): ✅ PRODUCTION READY
+  - Tool: marker_single (AI-powered OCR + layout detection)
+  - Cleanup: cleanup_pdf_artifacts.py (75% artifact fix rate)
+  - Performance: ~3.5 min/PDF average, 100% success rate
+  - Quality: Clean, readable markdown with preserved structure
+  - Scripts: 3 active + 63 archived (organized Nov 26, 2025)
+  - Documentation: `/home/user/projects/veritable-games/resources/data/PDF_CONVERSION_WORKFLOW.md`
 
 - **Unified Tag Schema** (Nov 2025): MOSTLY COMPLETE
   - ✅ Database migration: 19,952 tags in `shared.tags`
