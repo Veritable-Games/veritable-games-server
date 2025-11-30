@@ -315,3 +315,4 @@ user_postgres_data/
 #
 # To verify: git status --ignored
 # ============================================
+.docker/

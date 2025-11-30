@@ -741,6 +741,45 @@ docker logs m4s0kwo4kc4oooocck4sswc4 --tail 50
 
 ---
 
+## 📋 Library Import Pipeline - Complete Workflow
+
+**Updated**: November 28, 2025
+
+**Master Document**: `/home/user/projects/veritable-games/MASTER_WORKFLOW_TIMELINE.md`
+
+This master document contains the **complete 5-stage pipeline** from content acquisition to production deployment:
+
+**Current Status**:
+- **Stage 1A: NSD Sourcing** - 378/1,890 documents (20.0%), target 400
+- **Stage 1B: PDF Conversion** - 900/2,535 completed (35.5%), 1,635 remaining
+- **Stages 2-5**: Ready to begin after Stage 1 completion
+
+**Timeline**: 1-2 weeks total to complete all stages
+
+**What's in the master document**:
+- Complete 5-stage workflow (Acquisition → Metadata → Import → Tags → Deployment)
+- Current metrics and progress tracking
+- Detailed timelines for each stage
+- Documentation structure and references
+- Decision points and success criteria
+- Emergency procedures and troubleshooting
+
+**Key Documentation References**:
+- Stage 1A (NSD Sourcing): Session reports in `/home/user/projects/veritable-games/resources/processing/reconversion-scripts/`
+- Stage 1B (PDF Conversion): `/home/user/projects/veritable-games/resources/data/PDF_CONVERSION_WORKFLOW.md`
+- Stage 2A (Metadata): `/home/user/docs/veritable-games/LIBRARY_METADATA_EXTRACTION_REPORT.md`
+- Stage 2B/4 (Tags): `/home/user/docs/veritable-games/UNIFIED_TAG_SCHEMA_STATUS.md`
+- Stage 3A (Import): `/home/user/projects/veritable-games/resources/processing/reconversion-scripts/README_COMPLETE_WORKFLOW.md`
+
+**When to Reference**:
+- ✅ Starting any library-related work (sourcing, conversion, import)
+- ✅ Planning next steps after completing a workflow stage
+- ✅ Understanding dependencies between workflow stages
+- ✅ Checking current progress metrics
+- ✅ Finding relevant documentation for a specific task
+
+---
+
 ## Quick Troubleshooting
 
 ### Container Crash-Looping (Veritable Games)

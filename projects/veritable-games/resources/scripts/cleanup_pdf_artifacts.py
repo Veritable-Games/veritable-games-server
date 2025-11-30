@@ -957,7 +957,7 @@ class PDFArtifactCleaner:
         cursor.execute(f"""
             SELECT id
             FROM library.library_documents
-            WHERE status = 'published'
+            WHERE reconversion_status IN ('ready_for_reconversion', 'needs_source', 'reconverted')
             AND (
                 content LIKE '%### Complete Page View%'
                 OR content LIKE '%### Figures and Images%'
