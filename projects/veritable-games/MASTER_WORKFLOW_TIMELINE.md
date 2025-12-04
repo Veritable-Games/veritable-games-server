@@ -16,21 +16,21 @@ Transform 4,449 scattered documents into a fully-tagged, searchable library with
 
 ---
 
-## 📊 Current State (November 30, 2025)
+## 📊 Current State (December 1, 2025)
 
 ### Content Inventory
 | Collection | Total Docs | Sourced PDFs | Converted | Metadata | Tags |
 |------------|-----------|--------------|-----------|----------|------|
 | **Anarchist Library** | 24,643 | ✅ Complete | ✅ Complete | ✅ High | ✅ 19,952 tags |
-| **User Library (RFR)** | 2,576 | ✅ Has PDFs | 🔄 900/2,576 | ✅ Backed up | ⏳ Pending |
-| **NSD (Archived)** | 0 | 📁 85 sourced → queue | ❌ Deleted | 📁 Archived | 📁 Archived |
-| **TOTAL** | **27,219** | **27,304** | **25,543** | **Varies** | **19,952** |
+| **User Library (RFR)** | 2,576 | ✅ Has PDFs | ✅ 2,539 converted | ✅ Backed up | ⏳ Pending |
+| **NSD High-Value** | 114 | 🔄 33 sourced | 🔄 In queue | 📁 Archived | 📁 Archived |
+| **TOTAL** | **27,333** | **~27,300** | **27,182** | **Varies** | **19,952** |
 
 ### Progress Metrics
 - **NSD Status**: ❌ REMOVED (Nov 30, 2025) - Low quality HTML scrapes deleted
 - **NSD Archive**: 1,873 docs + 14,225 tags archived to `nsd-final-archive/`
-- **Sourced PDFs**: 85 NSD PDFs moved to main conversion queue
-- **PDF Conversion**: 900/2,626 total documents (34.4%) - ACTIVE
+- **NSD Sourcing**: 33/114 high-value docs sourced (29%) - 295 PDFs in conversion queue
+- **PDF Conversion**: ✅ 2,539/2,834 converted (89.6%) - 295 remaining
 - **Metadata Extraction**: Ready (527/3,880 historical success = 13.6%)
 - **Tag Schema**: ✅ Implemented (194,664 - 14,225 = 180,439 associations remaining)
 - **Database**: ✅ Production ready (shared.tags, triggers installed)
