@@ -53,9 +53,31 @@ A: I just ran /init in /home/user
 
 ---
 
+## 📰 RECENT WORK: Storage Migration Complete (December 4, 2025)
+
+**🚨 READ THIS IF YOU'RE A NEW SESSION**: `/home/user/docs/server/RECENT_WORK_DEC_2025.md`
+
+**TL;DR**:
+- Samsung SSD (/dev/sda) failed for the SECOND TIME (first: Nov 27, second: Dec 4)
+- Completed hybrid SSD/HDD storage migration
+- **NEW ARCHITECTURE**: Performance data on SSD, Bitcoin blockchain on HDD
+- Docker relocated: `/var/lib/docker` → `/home/user/docker-ssd`
+- All services operational, zero data loss
+- Tag cleanup preserved (11,986 tags)
+- **Old /var drive retired** - DO NOT USE /dev/sda
+
+**Key Changes**:
+- Docker data-root: `/home/user/docker-ssd/` (SSD)
+- Bitcoin blockchain: `/data/docker-hdd-volumes/` (HDD, bind-mounted)
+- Emergency backup at `/data/var-migration-backup/` (keep 48h)
+
+**See full documentation**: `/home/user/docs/server/RECENT_WORK_DEC_2025.md`
+
+---
+
 ## ⚠️ CRITICAL: Production Server Environment
 
-**Updated**: November 21, 2025
+**Updated**: December 4, 2025 (Storage architecture updated)
 
 You're working on the Veritable Games production server (192.168.1.15).
 
