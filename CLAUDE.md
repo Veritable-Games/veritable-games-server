@@ -811,6 +811,14 @@ This master document contains the **complete 5-stage pipeline** from content acq
 - Stage 2B/4 (Tags): `/home/user/docs/veritable-games/UNIFIED_TAG_SCHEMA_STATUS.md`
 - Stage 3A (Import): `/home/user/projects/veritable-games/resources/processing/reconversion-scripts/README_COMPLETE_WORKFLOW.md`
 
+**Current Work - Laptop PDF Reconversion (December 2025)**:
+- **Document**: `/home/user/docs/veritable-games/LAPTOP_PDF_RECONVERSION_DECEMBER_2025.md`
+- **Status**: Phase 2b GPU conversion in progress (54 hours remaining)
+- **Scope**: 830 unique PDFs from laptop library → database import
+- **Innovation**: Phase 0 metadata linking + enhanced Phase 3 priority system + tag restoration
+- **Timeline**: ~56 hours total (mostly automated conversion)
+- **Expected Result**: 830 new documents in library, 7K-10K tag associations restored
+
 **When to Reference**:
 - ✅ Starting any library-related work (sourcing, conversion, import)
 - ✅ Planning next steps after completing a workflow stage
