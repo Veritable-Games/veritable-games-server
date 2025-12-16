@@ -18,6 +18,10 @@ export GRPC_VERBOSITY=ERROR
 export GLOG_minloglevel=2
 export PYTORCH_ENABLE_MPS_FALLBACK=1
 
+# PyTorch GPU memory management (Layer 1: Reduce fragmentation, improve allocation)
+export PYTORCH_CUDA_ALLOC_CONF="expandable_segments:True,max_split_size_mb:256,garbage_collection_threshold:0.7"
+export CUDA_LAUNCH_BLOCKING=1  # Safer GPU operations (serialize CUDA calls)
+
 # CPU limit as percentage (increased to 100% - GPU is the bottleneck)
 CPU_LIMIT="${MARKER_CPU_LIMIT:-100}"
 
