@@ -9,7 +9,6 @@
 ## 📖 Start Here
 
 - **[CLAUDE.md](/home/user/CLAUDE.md)** - Critical instructions for Claude Code models (READ THIS FIRST)
-- **[README_START_HERE.md](README_START_HERE.md)** - Original getting started guide
 
 ---
 
@@ -86,10 +85,8 @@
 ├── guides/                                  # User guides
 │   └── (user documentation)
 │
-├── operations/                              # Operational procedures
-│   └── (runbooks and procedures)
-│
-└── README_START_HERE.md                     # Getting started
+└── operations/                              # Operational procedures
+    └── (runbooks and procedures)
 ```
 
 ---
@@ -109,9 +106,7 @@
 │           ├── sql/            # Migrations
 │           ├── logs/           # Script logs
 │           └── docker-compose.yml  # Local DB
-├── shared/                     # Shared resources
-│   ├── archives/               # SSH keys, backups
-│   └── packages/               # System packages
+├── backups/                    # Database backups, configs, scripts
 ├── docs/                       # All documentation (you are here)
 │   ├── veritable-games/
 │   ├── server/

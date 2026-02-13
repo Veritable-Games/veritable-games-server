@@ -316,3 +316,7 @@ user_postgres_data/
 # To verify: git status --ignored
 # ============================================
 .docker/
+
+# Symlinks and temp files
+backups-hdd
+.claude.json.backup.*
