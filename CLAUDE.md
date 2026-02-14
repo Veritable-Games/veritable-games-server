@@ -64,30 +64,12 @@ A: I just ran /init in /home/user
 - Docker relocated: `/var/lib/docker` → `/home/user/docker-ssd`
 - All services operational, zero data loss
 - Tag cleanup preserved (11,986 tags)
-- **Old /var drive retired** - DO NOT USE /dev/sda
+- **Old /var drive retired** - Old Samsung SSD physically removed (February 2026)
 
 **Key Changes**:
 - Docker data-root: `/home/user/docker-ssd/` (SSD)
 - Bitcoin blockchain: `/data/docker-hdd-volumes/` (HDD, bind-mounted)
 - Emergency backup at `/data/var-migration-backup/` (keep 48h)
-
-**⏳ PENDING TASK: Wipe Old Samsung SSD After Next Reboot**
-- **When**: After next server reboot (when /dev/sda is no longer mounted)
-- **Why**: Old Samsung SSD (/dev/sda) is still mounted at /var with 78GB old data
-- **What**: `/etc/fstab` already updated to prevent auto-mount on reboot
-- **How to wipe after reboot**:
-  ```bash
-  # Verify drive is unmounted
-  df -h | grep sda  # Should show nothing
-
-  # Option 1: Wipe filesystem signatures (quick)
-  sudo wipefs -a /dev/sda
-
-  # Option 2: Zero out drive (thorough, takes longer)
-  sudo dd if=/dev/zero of=/dev/sda bs=1M status=progress
-
-  # Then optionally physically disconnect the drive
-  ```
 
 **See full documentation**: `/home/user/docs/server/RECENT_WORK_DEC_2025.md`
 
