@@ -1,8 +1,9 @@
-# Token Rotation Still Required - Security Notice
+# Token Rotation Status - Security Notice
 
 **Date**: November 21, 2025
-**Status**: ⚠️ ACTION REQUIRED
-**Priority**: High
+**Updated**: February 14, 2026
+**Status**: ✅ PARTIALLY RESOLVED
+**Priority**: Low (gh CLI token expired, using deploy key instead)
 
 ---
 
@@ -266,3 +267,60 @@ GitHub's push protection worked as intended and prevented a documentation issue 
 **Document Created**: November 21, 2025
 **Author**: Claude (Sonnet 4.5)
 **Next Action**: User to complete token rotation using instructions on laptop Desktop
+
+---
+
+## February 2026 Update
+
+### Current Authentication Status
+
+**GitHub CLI Token**: ❌ EXPIRED
+- Token `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` is no longer valid
+- `gh api` calls return HTTP 401
+
+**Git Push Authentication**: ✅ WORKING (Deploy Key)
+- SSH deploy key added February 14, 2026
+- Key: `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGuxVSTFJFIIEpVEx/IcuFlY7dHlqKqp/ZQ13q3m093S`
+- Fingerprint: `SHA256:vVAHBc6oSxZ2RxBPmMt+7mLJ2ipIIVqBZojYwCXFBNY`
+- Added to: `Veritable-Games/veritable-games-server` as deploy key with write access
+- Works for: `git push origin main`
+
+**Coolify Deployments**: ✅ WORKING (GitHub App)
+- GitHub App: `veritable-games-server`
+- App ID: 2235824
+- Client ID: Iv23liZCkXeiH3ov0OOY
+- Installation ID: 93092275
+- Private key stored in Coolify
+- Auto-deploys working correctly
+
+### What Still Needs Rotation
+
+**Optional** (Low Priority):
+- Coolify API token - only needed for `coolify` CLI commands
+- gh CLI token - only needed for `gh` commands (can use deploy key for git operations)
+
+### Current Recommended Workflow
+
+```bash
+# Git operations (use SSH deploy key)
+git push origin main  # Works via deploy key
+
+# Coolify deployments (automatic via GitHub App)
+# Just push to main, webhook triggers auto-deploy
+
+# Manual Coolify deploy (if needed)
+coolify deploy by-uuid m4s0kwo4kc4oooocck4sswc4
+# Note: May require re-authentication if token expired
+```
+
+### To Re-authenticate gh CLI (if needed)
+
+```bash
+gh auth login --web
+# Follow browser prompts
+gh auth status  # Verify
+```
+
+---
+
+**Last Updated**: February 14, 2026

@@ -239,19 +239,34 @@ git push origin main
 # Wait 2-5 minutes for Coolify to deploy
 ```
 
-#### 4. SSH Authentication
+#### 4. SSH & GitHub Authentication
 
-SSH key is already configured and auto-loads on login. If you need to manually load it:
+**Git Push**: Uses SSH deploy key (added February 2026)
+- Key: `~/.ssh/id_ed25519`
+- Fingerprint: `SHA256:vVAHBc6oSxZ2RxBPmMt+7mLJ2ipIIVqBZojYwCXFBNY`
+- Registered as deploy key on `Veritable-Games/veritable-games-server`
+
+**Coolify Auto-Deploy**: Uses GitHub App
+- App: `veritable-games-server` (App ID: 2235824)
+- Triggers on webhook from GitHub push
+- Private key stored in Coolify
 
 ```bash
+# Load SSH key if needed
 eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519  # Enter passphrase if prompted
+ssh-add ~/.ssh/id_ed25519
+
+# Test GitHub connection
+ssh -T git@github.com
 ```
+
+**Note**: `gh` CLI token is expired. Use `gh auth login --web` to re-authenticate if needed.
 
 #### 5. Available Tools
 
 **✅ Configured and Ready:**
-- **Git:** Direct push to GitHub enabled (SSH key auto-loads)
+- **Git:** Deploy key for push to `veritable-games-server` repo
+- **Coolify:** GitHub App for auto-deployments (webhook-triggered)
 - **Coolify CLI:** Manual deployment control (`coolify deploy by-uuid m4s0kwo4kc4oooocck4sswc4`)
 - **Docker:** Container inspection and log access
 - **PostgreSQL:** Database operations via docker exec
@@ -261,11 +276,13 @@ ssh-add ~/.ssh/id_ed25519  # Enter passphrase if prompted
 # Veritable Games repository
 cd ~/projects/veritable-games/site
 
-# Deploy immediately
+# Push triggers auto-deploy via GitHub App webhook
+git push origin main
+
+# Manual deploy (if webhook fails)
 coolify deploy by-uuid m4s0kwo4kc4oooocck4sswc4
 
-# Check status
-coolify resource list
+# Check deployed commit
 docker inspect m4s0kwo4kc4oooocck4sswc4 | grep SOURCE_COMMIT
 ```
 
@@ -953,4 +970,4 @@ See `/home/user/projects/README.md` for detailed organization guidelines.
 
 ---
 
-**Last Updated**: November 16, 2025
+**Last Updated**: February 14, 2026

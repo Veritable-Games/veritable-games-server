@@ -1,5 +1,6 @@
 # Server Monitoring and Backup System
 **Created**: November 22, 2025
+**Updated**: February 14, 2026
 **Server**: veritable-games-server (192.168.1.15)
 **Purpose**: Prevent future disk failures and ensure data safety
 
@@ -7,15 +8,16 @@
 
 ## 🎯 Overview
 
-After the disk failure incident on November 22, 2025, we implemented a comprehensive monitoring and backup system to detect future issues early and ensure data safety.
+After the disk failure incident on November 22, 2025, we implemented a comprehensive monitoring and backup system. **Updated February 2026** with GFS (Grandfather-Father-Son) backup strategy on HDD storage.
 
-### What Was Installed
+### What's Installed
 
 1. **SMART Monitoring** - Detects disk health issues before failure
-2. **Automated PostgreSQL Backups** - Daily database backups with 30-day retention
-3. **Disk Usage Monitoring** - Hourly checks with alerts at 90% usage
-4. **Temperature Monitoring** - CPU and disk temperature tracking
+2. **GFS PostgreSQL Backups** - Hourly/daily/weekly/monthly/yearly retention (50GB budget)
+3. **Docker Volume Backups** - Daily/weekly retention for gallery, uploads, libraries
+4. **Disk Usage Monitoring** - Every 6 hours with alerts at 80% usage
 5. **Comprehensive Health Checks** - Every 30 minutes, full system status
+6. **BTCPay Backups** - Daily at 3 AM
 
 ---
 
@@ -54,29 +56,45 @@ sudo smartctl -t long /dev/sda
 
 ---
 
-### 2. Automated PostgreSQL Backups
+### 2. GFS PostgreSQL Backups (February 2026)
 
-**Script**: `/home/user/backups/backup-postgres.sh`
-**Schedule**: Daily at 2:00 AM UTC
-**Retention**: 30 days (automatic cleanup)
-**Location**: `/home/user/backups/postgres-daily-YYYYMMDD-HHMMSS.sql.gz`
+**Location**: `/data/backups/` (HDD - 5.5TB drive)
+**Symlink**: `/home/user/backups` → `/data/backups/`
+**Strategy**: Grandfather-Father-Son (GFS)
+**Storage Budget**: 50GB max, 40GB alert threshold
 
-**What it backs up**:
-- All databases (pg_dumpall)
-- All schemas (public, anarchist, shared, library, auth, wiki, forums)
-- All users and permissions
-- All data
+#### Retention Tiers
+
+| Tier | Location | Retention | Schedule |
+|------|----------|-----------|----------|
+| Hourly | `hourly/` | 24 backups | Every hour |
+| Daily | `daily/` | 7 days | Midnight |
+| Weekly | `weekly/` | 4 weeks | Sunday midnight |
+| Monthly | `monthly/` | 12 months | 1st of month |
+| Yearly | `yearly/` | 3 years | January 1st |
+
+#### Scripts
+
+| Script | Purpose | Schedule |
+|--------|---------|----------|
+| `gfs-postgres-backup.sh` | PostgreSQL GFS backups | Hourly |
+| `gfs-volume-backup.sh` | Docker volume backups | Daily 4 AM |
+| `backup-monitor.sh` | Storage monitoring | Daily 6 AM |
+| `backup-btcpay.sh` | BTCPay Server backups | Daily 3 AM |
 
 **Manual backup**:
 ```bash
-# Run backup script manually
-/home/user/backups/backup-postgres.sh
+# Run GFS backup manually
+/data/backups/scripts/gfs-postgres-backup.sh
 
 # Check backup log
-cat /home/user/backups/backup.log
+tail -50 /data/backups/logs/gfs-backup.log
 
-# List recent backups
-ls -lh /home/user/backups/postgres-daily-*.gz
+# List recent hourly backups
+ls -lh /data/backups/hourly/ | tail -5
+
+# Check storage usage
+/data/backups/scripts/backup-monitor.sh
 ```
 
 **Restore from backup**:
@@ -84,47 +102,70 @@ ls -lh /home/user/backups/postgres-daily-*.gz
 # Stop application container first
 docker stop m4s0kwo4kc4oooocck4sswc4
 
-# Restore database
-gunzip < /home/user/backups/postgres-daily-20251122-194904.sql.gz | \
+# Restore from most recent hourly
+gunzip < /data/backups/hourly/postgres-hourly-YYYYMMDD-HHMM.sql.gz | \
+  docker exec -i veritable-games-postgres psql -U postgres
+
+# Or restore from daily/weekly/monthly as needed
+gunzip < /data/backups/daily/postgres-daily-YYYYMMDD.sql.gz | \
   docker exec -i veritable-games-postgres psql -U postgres
 
 # Restart application
 docker start m4s0kwo4kc4oooocck4sswc4
 ```
 
-**Current backup size**: ~171MB compressed
+**Current storage**: ~8.8GB / 50GB budget (18%)
 
 ---
 
-### 3. Disk Usage Monitoring
+### 3. Docker Volume Backups
 
-**Script**: `/home/user/backups/disk-usage-monitor.sh`
-**Schedule**: Every hour (top of the hour)
-**Alert threshold**: 90% usage
-**Monitors**: `/` and `/var` partitions
+**Script**: `/data/backups/scripts/gfs-volume-backup.sh`
+**Schedule**: Daily at 4 AM
+**Retention**: 7 days daily, 4 weeks weekly
+
+**Volumes backed up**:
+- `gallery` - Image uploads (~959MB)
+- `uploads` - User uploads (~724KB)
+- `anarchist-lib` - Anarchist library data (~421MB)
+
+**Location**: `/data/backups/volumes/`
+
+**Manual backup**:
+```bash
+/data/backups/scripts/gfs-volume-backup.sh
+tail -20 /data/backups/logs/volume-backup.log
+```
+
+---
+
+### 4. Disk Usage Monitoring
+
+**Script**: `/data/backups/scripts/disk-usage-monitor.sh`
+**Schedule**: Every 6 hours
+**Alert threshold**: 80% usage
+**Monitors**: `/`, `/var`, `/data` partitions
 
 **Manual check**:
 ```bash
 # Run monitor manually
-/home/user/backups/disk-usage-monitor.sh
+/data/backups/scripts/disk-usage-monitor.sh
 
 # Check logs
-cat /home/user/backups/disk-monitor.log
-tail -20 /home/user/backups/disk-monitor.log
+tail -20 /data/backups/logs/disk-monitor.log
 
 # View disk usage
 df -h
 ```
 
-**Current usage**:
-- `/` (sdb2): 28% used (320G free)
-- `/var` (sda): 82% used (164G free)
+**Current architecture** (December 2025):
+- `/` (sdb): SSD - User data, Docker
+- `/data` (sda): HDD 5.5TB - Backups, archives, large files
 
-**If /var reaches 90%**:
-1. Check Docker volumes: `docker system df`
-2. Clean unused images: `docker image prune -a`
-3. Clean build cache: `docker builder prune`
-4. Archive old backups: Move to `/home/user/archives/`
+**If backup storage exceeds budget**:
+1. GFS script auto-cleans oldest backups
+2. Emergency cleanup triggers at 50GB
+3. Check: `/data/backups/scripts/backup-monitor.sh`
 
 ---
 
@@ -219,14 +260,26 @@ DATABASE:
 All monitoring runs automatically via cron:
 
 ```crontab
-# Daily PostgreSQL backup (2:00 AM)
-0 2 * * * /bin/bash /home/user/backups/backup-postgres.sh
+# Auto-deploy (existing)
+* * * * * /home/user/scripts/auto-deploy.sh
 
-# Hourly disk usage check
-0 * * * * /bin/bash /home/user/backups/disk-usage-monitor.sh
+# GFS PostgreSQL backup (hourly - handles all retention tiers)
+0 * * * * /bin/bash /data/backups/scripts/gfs-postgres-backup.sh
 
-# Health check every 30 minutes
-*/30 * * * * /bin/bash /home/user/backups/system-health-check.sh
+# GFS Volume backup (daily at 4 AM)
+0 4 * * * /bin/bash /data/backups/scripts/gfs-volume-backup.sh
+
+# Backup storage monitor (daily at 6 AM)
+0 6 * * * /bin/bash /data/backups/scripts/backup-monitor.sh
+
+# BTCPay backup (daily at 3 AM)
+0 3 * * * /bin/bash /home/user/backups/scripts/backup-btcpay.sh >> /data/backups/logs/btcpay.log 2>&1
+
+# Disk usage monitor (every 6 hours)
+0 */6 * * * /bin/bash /home/user/backups/scripts/disk-usage-monitor.sh >> /data/backups/logs/disk-monitor.log 2>&1
+
+# System health check (every 30 minutes)
+*/30 * * * * /bin/bash /home/user/backups/scripts/system-health-check.sh >> /data/backups/logs/health-check.log 2>&1
 ```
 
 **View cron jobs**:
@@ -271,23 +324,41 @@ find /home/user/backups/ -name "*.log" -exec grep "$(date '+%Y-%m-%d %H:')" {} \
 
 ## 📁 File Locations
 
-### Scripts
+### Scripts (on HDD)
 ```
-/home/user/backups/backup-postgres.sh       - Daily database backup
-/home/user/backups/disk-usage-monitor.sh    - Hourly disk check
-/home/user/backups/system-health-check.sh   - Full health check
+/data/backups/scripts/gfs-postgres-backup.sh  - GFS PostgreSQL backup (all tiers)
+/data/backups/scripts/gfs-volume-backup.sh    - Docker volume backups
+/data/backups/scripts/backup-monitor.sh       - Storage monitoring
+/data/backups/scripts/backup-btcpay.sh        - BTCPay backups
+/data/backups/scripts/disk-usage-monitor.sh   - Disk usage check
+/data/backups/scripts/system-health-check.sh  - Full health check
 ```
 
 ### Logs
 ```
-/home/user/backups/backup.log               - Backup results
-/home/user/backups/disk-monitor.log         - Disk usage alerts
-/home/user/backups/health-check.log         - Health check history
+/data/backups/logs/gfs-backup.log      - GFS PostgreSQL backup log
+/data/backups/logs/volume-backup.log   - Volume backup log
+/data/backups/logs/monitor.log         - Storage monitor reports
+/data/backups/logs/btcpay.log          - BTCPay backup log
+/data/backups/logs/disk-monitor.log    - Disk usage alerts
+/data/backups/logs/health-check.log    - Health check history
 ```
 
-### Backups
+### Backups (GFS on HDD)
 ```
-/home/user/backups/postgres-daily-*.sql.gz  - Daily database backups
+/data/backups/hourly/   - Last 24 hourly backups
+/data/backups/daily/    - Last 7 daily backups
+/data/backups/weekly/   - Last 4 weekly backups
+/data/backups/monthly/  - Last 12 monthly backups
+/data/backups/yearly/   - Last 3 yearly backups
+/data/backups/volumes/  - Docker volume backups
+/data/backups/btcpay/   - BTCPay Server backups
+/data/backups/legacy/   - Pre-migration backups (DO NOT DELETE)
+```
+
+### Symlink
+```
+/home/user/backups → /data/backups/  (unified access)
 ```
 
 ---
@@ -500,13 +571,23 @@ docker start m4s0kwo4kc4oooocck4sswc4
 
 ### Check System Health
 ```bash
-/home/user/backups/system-health-check.sh
-tail -20 /home/user/backups/health-check.log
+/data/backups/scripts/system-health-check.sh
+tail -20 /data/backups/logs/health-check.log
 ```
 
 ### Manual Backup
 ```bash
-/home/user/backups/backup-postgres.sh
+# PostgreSQL (creates hourly backup, promotes to daily/weekly/etc as needed)
+/data/backups/scripts/gfs-postgres-backup.sh
+
+# Docker volumes
+/data/backups/scripts/gfs-volume-backup.sh
+```
+
+### Check Backup Storage
+```bash
+/data/backups/scripts/backup-monitor.sh
+du -sh /data/backups/
 ```
 
 ### Check Disk Health
@@ -522,19 +603,20 @@ sensors
 
 ### View Recent Logs
 ```bash
-tail -50 /home/user/backups/*.log
+tail -50 /data/backups/logs/*.log
 ```
 
 ### Test Backup Restoration
 ```bash
-# Create test DB and restore
+# Create test DB and restore from most recent hourly
 docker exec veritable-games-postgres createdb -U postgres test_restore
-gunzip < /home/user/backups/postgres-daily-*.sql.gz | \
+gunzip < /data/backups/hourly/postgres-hourly-*.sql.gz | head -1 | \
   docker exec -i veritable-games-postgres psql -U postgres test_restore
 ```
 
 ---
 
-**Last Updated**: November 22, 2025
+**Last Updated**: February 14, 2026
 **Next Review**: Weekly health log review recommended
 **Status**: All systems operational ✅
+**See Also**: `/data/README.md` for HDD structure and backup details
