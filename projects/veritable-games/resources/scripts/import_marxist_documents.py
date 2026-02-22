@@ -24,6 +24,7 @@ import sys
 import re
 import argparse
 import logging
+import hashlib
 from pathlib import Path
 from datetime import datetime
 import psycopg2
@@ -117,6 +118,22 @@ def sanitize_slug(text: str, max_length: int = 200) -> str:
 
     return text or 'untitled'
 
+def generate_unique_slug(author: str, title: str, source_url: str) -> str:
+    """Generate unique slug with hash suffix for collision prevention.
+
+    When author is unknown or slug would be generic, add hash suffix
+    derived from source URL to ensure uniqueness.
+    """
+    base_slug = f"{sanitize_slug(author)}-{sanitize_slug(title)}"
+
+    # If author is Unknown or slug is too generic, add hash suffix
+    if author == 'Unknown' or base_slug in ('unknown-untitled', 'unknown-source', 'archive-source'):
+        # Create hash from URL for uniqueness
+        url_hash = hashlib.md5(source_url.encode()).hexdigest()[:8]
+        base_slug = f"{base_slug}-{url_hash}"
+
+    return base_slug
+
 def extract_source_url(content: str) -> str:
     """Extract source URL from markdown metadata."""
     # Look for markdown link or raw URL
@@ -160,6 +177,39 @@ def extract_author_from_url(url: str) -> str:
                 'g': 'Gramsci', 'gramsci': 'Gramsci',
             }
             return author_map.get(author_code, author_code.title())
+
+    return 'Unknown'
+
+def extract_author_from_filepath(file_path: Path) -> str:
+    """Extract author from directory structure as fallback.
+
+    Example: marxists_org_texts/archive/lenin/1920/article.md -> Lenin
+    """
+    parts = file_path.parts
+
+    # Look for archive patterns in path
+    for i, part in enumerate(parts):
+        if part == 'archive' and i + 1 < len(parts):
+            # Next part should be author code or single letter
+            author_code = parts[i + 1].lower()
+            author_map = {
+                'l': 'Lenin', 'lenin': 'Lenin',
+                'm': 'Marx', 'marx': 'Marx',
+                'e': 'Engels', 'engels': 'Engels',
+                't': 'Trotsky', 'trotsky': 'Trotsky',
+                's': 'Stalin', 'stalin': 'Stalin',
+                'luxemburg': 'Luxemburg', 'r': 'Luxemburg',
+                'g': 'Gramsci', 'gramsci': 'Gramsci',
+                'a': 'Anonymous',
+                'b': 'Bebel', 'bebel': 'Bebel',
+                'h': 'Harman', 'harman': 'Harman',
+                'k': 'Kautsky', 'kautsky': 'Kautsky',
+                'p': 'Plekhanov', 'plekhanov': 'Plekhanov',
+            }
+            if author_code in author_map:
+                return author_map[author_code]
+            if len(author_code) > 2:
+                return author_code.title()
 
     return 'Unknown'
 
@@ -443,6 +493,13 @@ def import_marxist_documents(source_dir: str, database_url: str, batch_size: int
             # Extract metadata
             source_url = extract_source_url(content)
             author = extract_author_from_url(source_url)
+
+            # Fallback to filepath-based author extraction if URL extraction fails
+            if author == 'Unknown':
+                author = extract_author_from_filepath(file_path)
+                if author != 'Unknown':
+                    logging.debug(f"Using filepath-based author for {file_path.name}: {author}")
+
             category = extract_category_from_url(source_url)
             title = extract_title_from_content(content)
 
@@ -456,7 +513,8 @@ def import_marxist_documents(source_dir: str, database_url: str, batch_size: int
 
             tags = extract_tags_from_content(content, author, source_url)
 
-            slug = f"{sanitize_slug(author)}-{sanitize_slug(title)}"
+            # Generate unique slug with hash suffix for collision prevention
+            slug = generate_unique_slug(author, title, source_url)
 
             document = {
                 'slug': slug,
