@@ -363,11 +363,11 @@ def insert_documents_batch(conn, documents: list) -> int:
         cur = conn.cursor()
 
         # First, get all existing slugs to detect collisions
-        cur.execute(
-            "SELECT DISTINCT slug FROM marxist.documents WHERE slug LIKE %s || '%'",
-            (documents[0]['slug'][:100],)
-        )
-        existing_slugs = {row[0] for row in cur.fetchall()} if documents else set()
+        try:
+            cur.execute("SELECT slug FROM marxist.documents")
+            existing_slugs = {row[0] for row in cur.fetchall()}
+        except Exception:
+            existing_slugs = set()
 
         rows = []
         for d in documents:
