@@ -1,0 +1,99 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# IDE and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+.DS_Store
+Thumbs.db
+
+# Documentation
+README.md
+CHANGELOG.md
+
+# Keep docs/ but ignore other markdown files
+# Docs are useful for reference in container
+!/docs/
+*.md
+!docs/**/*.md
+
+# Testing
+coverage/
+test-results/
+playwright-report/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Anarchist Library Archive - EXCLUDE from Docker build
+# Files are mounted as Docker volume at runtime, not included in image
+anarchist-library/
+/anarchist-library/
+converted-markdown/
+/converted-markdown/
+processing/
+scraping/
+*.muse
+anarchist_library_texts_*/
+anarchist_library_urls_*.json
+marxists_org_*.json
+MARXISTS_ORG_URLS_PROGRESS.json
+
+# Development and temporary files
+.tmp/
+.temp/
+tmp/
+temp/
+local/
+.local/
+
+# Database dumps
+*.sql.backup
+*.db.backup
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+.circleci/
+
+# Docker (avoid recursive issues)
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# Scripts (keep only production relevant)
+frontend/scripts/migrations/
+frontend/scripts/seeds/

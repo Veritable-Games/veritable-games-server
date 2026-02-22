@@ -1,0 +1,32 @@
+# Global code owners
+* @maintainers
+
+# Frontend specific
+/frontend/ @frontend-team
+/frontend/src/components/ @ui-team
+/frontend/src/lib/security/ @security-team
+/frontend/src/lib/database/ @backend-team
+
+# Infrastructure and CI/CD
+/.github/ @devops-team
+/scripts/ @devops-team
+/Dockerfile @devops-team
+
+# Documentation
+/*.md @documentation-team
+/docs/ @documentation-team
+
+# Critical security files require security team approval
+/frontend/src/lib/security/ @security-team
+/frontend/middleware.ts @security-team
+/frontend/src/lib/auth/ @security-team
+
+# Database and API changes require backend review
+/frontend/src/lib/database/ @backend-team
+/frontend/src/app/api/ @backend-team
+/data/ @backend-team
+
+# Build configuration changes
+/frontend/next.config.js @frontend-team @devops-team
+/frontend/package.json @frontend-team
+/frontend/tsconfig.json @frontend-team

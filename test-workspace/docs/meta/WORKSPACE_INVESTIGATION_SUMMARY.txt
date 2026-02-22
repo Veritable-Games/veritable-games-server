@@ -1,0 +1,444 @@
+================================================================================
+WORKSPACE MULTI-SELECT & MULTI-DRAG INVESTIGATION - EXECUTIVE SUMMARY
+================================================================================
+
+PROJECT: Veritable Games - Next.js 15 Workspace Canvas
+INVESTIGATION DATE: 2025-10-17
+COMPONENT: Infinite Canvas / Workspace System
+REPOSITORY: /home/user/Projects/web/veritable-games-main/frontend
+
+================================================================================
+KEY FINDING: Multi-Select EXISTS, Multi-Drag DOES NOT
+================================================================================
+
+CAPABILITY STATUS:
+✓ Single node selection - WORKS
+✓ Multiple node selection (marquee) - WORKS
+✓ Multiple node selection (Shift+click) - WORKS
+✓ Multiple node selection (Ctrl+click) - WORKS
+✓ Single node drag & drop - WORKS
+✗ Multiple node drag & drop - BROKEN/NOT IMPLEMENTED
+
+CRITICAL BUG: When multiple nodes are selected and the user drags one,
+ONLY that single node moves. All other selected nodes stay in place.
+
+================================================================================
+FILES ANALYZED
+================================================================================
+
+PRIMARY FILES (3):
+1. /frontend/src/components/workspace/WorkspaceCanvas.tsx - Main canvas (1,278 lines)
+2. /frontend/src/lib/workspace/input-handler.ts - Input logic (620 lines)
+3. /frontend/src/components/workspace/TextNode.tsx - Individual node (565 lines)
+
+SUPPORTING FILES (3):
+4. /frontend/src/stores/workspace.ts - Zustand state store (485 lines)
+5. /frontend/src/lib/workspace/viewport-culling.ts - Viewport optimization (217 lines)
+6. /frontend/src/lib/workspace/transform-manager.ts - Pan/zoom handling
+
+================================================================================
+ROOT CAUSE ANALYSIS
+================================================================================
+
+CAUSE #1: Input Handler Only Tracks Single Node
+  File: input-handler.ts, Line 52
+  Issue: DragState interface only has single 'nodeId' property
+  
+  interface DragState {
+    nodeId?: string;  // ← ONLY ONE NODE
+    isDragging: boolean;
+    ...
+  }
+
+CAUSE #2: Canvas Drag Handler Only Updates Single Node
+  File: WorkspaceCanvas.tsx, Lines 744-756
+  Issue: onNodeDragMove callback only updates the dragged node
+  
+  onNodeDragMove: (nodeId, canvasPos, delta) => {
+    // Updates ONLY this one node:
+    useWorkspaceStore.getState().updateNode(unsafeToNodeId(nodeId), {
+      position: {...}
+    });
+    // ✗ MISSING: Loop through selectedNodeIds and update all
+  }
+
+CAUSE #3: Database Persistence Only Saves Single Node
+  File: WorkspaceCanvas.tsx, Lines 757-771
+  Issue: onNodeDragEnd only persists the dragged node to database
+  
+  // ✗ MISSING: Should save ALL selected nodes' positions
+
+CAUSE #4: Selection Handling May Be Overwritten
+  File: WorkspaceCanvas.tsx, Line 720-722
+  Issue: onNodeClick callback clears other selections
+  
+  onNodeClick: (nodeId, event) => {
+    setSelectedNodes([nodeId]);  // ← Clears other selections!
+  }
+
+================================================================================
+POSITIVE FINDINGS
+================================================================================
+
+SELECTION STATE MANAGEMENT:
+✓ Properly uses Set<string> for O(1) lookup
+✓ Stored in Zustand store with proper setSelectedNodes() action
+✓ Accessible via useWorkspaceStore() hook
+
+MARQUEE SELECTION:
+✓ Fully implemented with screen-to-canvas coordinate conversion
+✓ Supports modifier keys (Shift=add, Ctrl=toggle, no modifier=replace)
+✓ Visual feedback with dashed border box
+
+INDIVIDUAL NODE DRAG:
+✓ Smooth delta-based movement (preserves grab offset)
+✓ Proper zoom-aware coordinate scaling
+✓ Debounced database persistence with keepalive on page unload
+
+KEYBOARD SHORTCUTS:
+✓ Ctrl+A to select all
+✓ Delete/Backspace to delete selected nodes
+✓ ESC to cancel operations
+
+================================================================================
+SPECIFIC PROBLEMS IDENTIFIED
+================================================================================
+
+PROBLEM #1: Multi-Drag Not Implemented [SEVERITY: HIGH]
+  Location: WorkspaceCanvas.tsx, input-handler.ts
+  Impact: Users cannot move multiple nodes as a group
+  Fix Difficulty: LOW (2-3 hours)
+  
+  Required Changes:
+  - Track multi-drag state in onNodeDragStart
+  - Iterate selectedNodeIds in onNodeDragMove
+  - Save all positions in onNodeDragEnd
+  - Add state variable: multiDragNodeIds
+
+PROBLEM #2: No Visual Selection Bounding Box [SEVERITY: MEDIUM]
+  Location: WorkspaceCanvas.tsx
+  Impact: Users can't see extent of multi-selection
+  Fix Difficulty: LOW (1 hour)
+  
+  Required Changes:
+  - Calculate bounds of all selected nodes
+  - Render border/outline around them
+  - Update bounds during drag operations
+
+PROBLEM #3: Selection Preservation Bug [SEVERITY: MEDIUM]
+  Location: WorkspaceCanvas.tsx, Line 720-722
+  Impact: Clicking an already-selected node deselects siblings
+  Fix Difficulty: LOW (1 hour)
+  
+  Required Changes:
+  - Check if node is already selected
+  - Don't clear selection if so
+  - Only update selection if clicking unselected node
+
+PROBLEM #4: Empty Node Selection [SEVERITY: LOW]
+  Location: viewport-culling.ts, Line 102-124
+  Impact: Marquee may select empty nodes
+  Fix Difficulty: LOW (30 mins)
+  
+  Required Changes:
+  - Add filter to exclude empty nodes from selection
+  - Check if node has content: if (!node.content.text && !node.content.markdown)
+
+================================================================================
+CODE ARCHITECTURE
+================================================================================
+
+SELECTION FLOW:
+  TextNode component
+    └─ handleClick() calls onSelect(hasModifier)
+       └─ WorkspaceCanvas.handleNodeSelect()
+          └─ useWorkspaceStore.setSelectedNodes()
+             └─ Zustand store (selectedNodeIds: Set<string>)
+
+DRAG FLOW:
+  InputHandler (listens to mouse events)
+    └─ onMouseDown: Starts drag, sets dragState.nodeId
+    └─ onMouseMove: Sends onNodeDragMove callback
+       └─ WorkspaceCanvas.onNodeDragMove()
+          └─ Updates ONLY the dragged node ✗
+
+VISUAL FEEDBACK:
+  ✓ Individual nodes: blue ring when selected
+  ✓ Marquee: dashed blue box during drag
+  ✗ Multi-selection: NO bounding box shown
+
+STATE MANAGEMENT:
+  - Zustand store with Immer middleware
+  - selectedNodeIds stored as Set<string>
+  - Efficient O(1) lookup for selection checks
+
+================================================================================
+DATA FLOW: SINGLE NODE DRAG (WORKING)
+================================================================================
+
+1. User clicks node
+   └─ TextNode.handleClick()
+   └─ TextNode.onSelect(false) [single select]
+   └─ WorkspaceCanvas.handleNodeSelect() updates selectedNodeIds
+
+2. User drags mouse
+   └─ InputHandler.handleMouseDown() → dragState.nodeId = "node-123"
+   └─ InputHandler.handleMouseMove() detects movement > 10px threshold
+   └─ Calls: inputHandler.onNodeDragStart("node-123", canvasPos)
+   └─ WorkspaceCanvas sets: setDraggingNodeId("node-123")
+
+3. User continues dragging
+   └─ InputHandler.handleMouseMove() fires continuously
+   └─ Calculates delta: {x: deltaX, y: deltaY} accounting for zoom
+   └─ Calls: inputHandler.onNodeDragMove("node-123", canvasPos, delta)
+   └─ WorkspaceCanvas updates node in store:
+      ```
+      node.position.x += delta.x
+      node.position.y += delta.y
+      ```
+   └─ Re-render updates node position on canvas
+
+4. User releases mouse
+   └─ InputHandler.handleMouseUp()
+   └─ Calls: inputHandler.onNodeDragEnd("node-123", finalCanvasPos)
+   └─ WorkspaceCanvas POSTs node position to API:
+      ```
+      PUT /api/workspace/nodes/node-123
+      { position: {x: 100, y: 200} }
+      ```
+   └─ API saves to database
+
+================================================================================
+DATA FLOW: MULTI-NODE SELECTION (PARTIAL)
+================================================================================
+
+1. User performs marquee selection over 3 nodes
+   └─ InputHandler detects left-mouse drag over empty space
+   └─ Starts marquee mode: dragState.target = 'marquee'
+   └─ Continuously calls: onSelectionBoxUpdate(start, end) [for visual]
+   └─ On mouse-up calls: onSelectionBoxEnd(start, end, modifiers)
+   └─ WorkspaceCanvas.handleMarqueeSelectionEnd():
+      - Converts screen coords → canvas coords
+      - Calls viewportCuller.getNodesInSelection(bounds)
+      - Gets array of 3 nodes
+      - Updates selectedNodeIds with all 3: Set {node1, node2, node3}
+   ✓ Result: 3 nodes now have blue selection ring
+
+2. User clicks one of the selected nodes to drag
+   └─ InputHandler.handleMouseDown()
+   └─ Detects node click, sets: dragState.nodeId = "node-1"
+   └─ InputHandler.handleMouseMove() starts drag
+   └─ Calls: onNodeDragStart("node-1", canvasPos)
+   └─ WorkspaceCanvas: setDraggingNodeId("node-1")
+   
+3. ✗ BUG: User drags, but only node-1 moves!
+   └─ onNodeDragMove("node-1", ..., delta)
+   └─ ✗ Only updates node-1's position
+   └─ ✗ Ignores selectedNodeIds = {node1, node2, node3}
+   └─ ✗ node2 and node3 stay in place
+   
+4. User releases mouse
+   └─ onNodeDragEnd("node-1", finalCanvasPos)
+   └─ ✗ Only POSTs node-1 to API
+   └─ ✗ node2 and node3 unchanged
+
+================================================================================
+MARQUEE SELECTION CODE (WORKING CORRECTLY)
+================================================================================
+
+handleMarqueeSelectionEnd = useCallback((
+  start: { x: number; y: number },
+  end: { x: number; y: number },
+  modifiers: { shift: boolean; ctrl: boolean }
+) => {
+  // Convert screen → canvas coords
+  const canvasStart = transformManagerRef.current.screenToCanvas(start.x, start.y);
+  const canvasEnd = transformManagerRef.current.screenToCanvas(end.x, end.y);
+
+  // Calculate bounds
+  const bounds = {
+    minX: Math.min(canvasStart.x, canvasEnd.x),
+    minY: Math.min(canvasStart.y, canvasEnd.y),
+    maxX: Math.max(canvasStart.x, canvasEnd.x),
+    maxY: Math.max(canvasStart.y, canvasEnd.y),
+  };
+
+  // Get nodes in selection
+  const selectedNodes = viewportCullerRef.current.getNodesInSelection(nodes, bounds);
+  const newNodeIds = new Set(selectedNodes.map(node => node.id));
+
+  // Handle modifiers (Shift=add, Ctrl=toggle, none=replace)
+  if (modifiers.shift) {
+    const updatedSelection = new Set([...selectedNodeIds, ...newNodeIds]);
+    setSelectedNodes(Array.from(updatedSelection));
+  } else if (modifiers.ctrl) {
+    const updatedSelection = new Set(selectedNodeIds);
+    newNodeIds.forEach(id => {
+      if (updatedSelection.has(id)) {
+        updatedSelection.delete(id);
+      } else {
+        updatedSelection.add(id);
+      }
+    });
+    setSelectedNodes(Array.from(updatedSelection));
+  } else {
+    setSelectedNodes(Array.from(newNodeIds));
+  }
+}, ...);
+
+✓ This code is correct and well-implemented!
+✓ It properly handles the selection state.
+✗ But when dragging, it's completely ignored.
+
+================================================================================
+IMPLEMENTATION RECOMMENDATIONS
+================================================================================
+
+QUICK FIXES (4 hours total):
+
+1. Add multi-drag state tracking (30 mins)
+   - Add state: const [multiDragNodeIds, setMultiDragNodeIds] = useState(new Set())
+   - In onNodeDragStart: Check if dragged node is in selectedNodeIds
+   - If yes: setMultiDragNodeIds(new Set(selectedNodeIds))
+
+2. Update onNodeDragMove to handle multiple (1 hour)
+   - If multiDragNodeIds.size > 1:
+   - Loop through each ID and apply same delta
+   - Else: Use original single-node logic
+
+3. Update onNodeDragEnd to persist all (1 hour)
+   - If multiDragNodeIds.size > 1:
+   - Send PUT request for each node
+   - Else: Use original single-node logic
+
+4. Fix selection preservation (30 mins)
+   - In onNodeClick: Don't set selection if already selected
+   - Only clear if clicking unselected node
+
+ENHANCEMENTS (2 hours):
+
+5. Add visual selection bounding box
+   - Calculate bounds around all selected nodes
+   - Render semi-transparent border
+   - Update during drag
+
+6. Optimize network requests
+   - Create batch API endpoint: PUT /api/workspace/nodes/batch
+   - Send all node updates in one request
+
+7. Add empty node filtering
+   - Skip nodes with no content in marquee selection
+
+================================================================================
+TESTING SCENARIOS
+================================================================================
+
+Scenario 1: Single Node Drag
+  Setup: 5 nodes exist
+  Action: Click node-1, drag to new position
+  Expected: node-1 moves, others stay still
+  Status: ✓ WORKS
+
+Scenario 2: Marquee Select Then Drag
+  Setup: 5 nodes exist
+  Action: Marquee select nodes 1-3, drag node-2 to new position
+  Expected: All 3 nodes move together
+  Actual: Only node-2 moves ✗ BUG
+
+Scenario 3: Shift+Click Select Then Drag
+  Setup: 3 nodes exist
+  Action: Click node-1, Shift+click node-2, drag node-1
+  Expected: Both move together
+  Actual: Only node-1 moves ✗ BUG
+
+Scenario 4: Ctrl+Click to Toggle
+  Setup: 3 nodes selected
+  Action: Ctrl+click node-2 to deselect, drag node-1
+  Expected: nodes 1,3 move
+  Actual: Only node-1 moves ✗ BUG
+
+Scenario 5: Selection Preservation
+  Setup: 3 nodes selected (all have blue ring)
+  Action: Click one of them without dragging
+  Expected: All 3 still selected
+  Actual: Unclear (may clear selection) ✗ POSSIBLE BUG
+
+Scenario 6: Persistence After Refresh
+  Setup: Single node dragged and released
+  Action: Refresh page
+  Expected: Node position persisted
+  Status: ✓ WORKS
+
+================================================================================
+DUPLICATE FEATURES FOUND
+================================================================================
+
+Note: There appear to be multiple selection management paths:
+
+1. TextNode.handleNodeSelect (lines 863-874)
+   - Used when clicking individual nodes
+   - Properly handles multi-select with modifiers
+
+2. WorkspaceCanvas.onNodeClick (lines 720-722)
+   - Also used when clicking nodes
+   - Single selection only
+   - May conflict with TextNode's selection
+
+These should be consolidated. The InputHandler should NOT call onNodeClick
+since React's TextNode component already handles selection properly.
+
+================================================================================
+PERFORMANCE CONSIDERATIONS
+================================================================================
+
+Current Optimizations:
+✓ Viewport culling: Only render visible nodes
+✓ Z-index sorting: Correct rendering order
+✓ Delta-based movement: Smooth dragging with zoom support
+✓ Debounced saves: Don't hammer API during typing/editing
+
+Potential Issues:
+- Multi-drag with 100+ nodes: Updating each node could be slow
+- Multiple PUT requests: One per node on drag-end
+- No batching: API sends separate requests
+
+Recommendation: Batch updates for >10 selected nodes
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+1. Review this analysis with the team
+2. Prioritize: Quick fixes (high ROI/effort)
+3. Implement multi-drag (4 hours estimated)
+4. Test all scenarios thoroughly
+5. Consider batch API endpoint for scaling
+6. Add comprehensive error handling
+7. Update API documentation
+
+================================================================================
+ESTIMATED EFFORT
+================================================================================
+
+Bug Fixes:
+- Multi-drag implementation: 2-3 hours
+- Selection preservation fix: 1 hour
+- Visual bounding box: 1 hour
+- Empty node filtering: 30 minutes
+  Total: 4.5-5 hours
+
+Enhancements:
+- Batch API endpoint: 2-3 hours
+- Better error handling: 1 hour
+- Performance optimization: 1 hour
+  Total: 4-5 hours
+
+Quality Assurance:
+- Manual testing: 2 hours
+- Edge case testing: 2 hours
+- Performance testing: 1 hour
+  Total: 5 hours
+
+GRAND TOTAL: 13.5-15 hours to implement, test, and optimize
+
+================================================================================

@@ -1,0 +1,575 @@
+name: Advanced CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop, 'release/*']
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - '.vscode/**'
+  pull_request:
+    branches: [main, develop]
+    types: [opened, synchronize, reopened, ready_for_review]
+  schedule:
+    - cron: '0 4 * * 1' # Weekly security scan
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        required: true
+        type: choice
+        options:
+          - development
+          - staging
+          - production
+
+# Cancel in-progress runs for the same branch
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '20.18.2'
+  PNPM_VERSION: '9.15.0'
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+  FORCE_COLOR: 3
+
+jobs:
+  # ============================================
+  # Setup and Cache Management
+  # ============================================
+  setup:
+    name: Setup Environment
+    runs-on: ubuntu-latest
+    outputs:
+      cache-key: ${{ steps.cache-keys.outputs.cache-key }}
+      build-cache-key: ${{ steps.cache-keys.outputs.build-cache-key }}
+      should-deploy: ${{ steps.deployment-check.outputs.should-deploy }}
+      affected-packages: ${{ steps.nx-affected.outputs.affected }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+          cache-dependency-path: frontend/pnpm-lock.yaml
+
+      - name: Setup Turbo
+        run: |
+          npm install -g turbo@latest
+          turbo --version
+
+      - name: Generate cache keys
+        id: cache-keys
+        run: |
+          echo "cache-key=deps-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}" >> $GITHUB_OUTPUT
+          echo "build-cache-key=build-${{ runner.os }}-${{ github.sha }}" >> $GITHUB_OUTPUT
+
+      - name: Check deployment eligibility
+        id: deployment-check
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]] || \
+             [[ "${{ github.ref }}" == "refs/heads/develop" ]] || \
+             [[ "${{ github.ref }}" == refs/heads/release/* ]]; then
+            echo "should-deploy=true" >> $GITHUB_OUTPUT
+          else
+            echo "should-deploy=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Detect affected packages
+        id: nx-affected
+        working-directory: ./frontend
+        run: |
+          pnpm dlx nx affected:libs --base=HEAD~1 --head=HEAD --plain || echo "all" >> $GITHUB_OUTPUT
+
+  # ============================================
+  # Code Quality Matrix
+  # ============================================
+  quality:
+    name: Code Quality (${{ matrix.check }})
+    needs: setup
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        check:
+          - lint
+          - typecheck
+          - format
+          - security
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup environment
+        uses: ./.github/actions/setup-env
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          pnpm-version: ${{ env.PNPM_VERSION }}
+
+      - name: Restore dependencies cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pnpm-store
+            frontend/node_modules
+          key: ${{ needs.setup.outputs.cache-key }}
+          restore-keys: |
+            deps-${{ runner.os }}-
+
+      - name: Install dependencies
+        working-directory: ./frontend
+        run: pnpm install --frozen-lockfile
+
+      - name: Run ${{ matrix.check }}
+        working-directory: ./frontend
+        run: |
+          case "${{ matrix.check }}" in
+            lint)
+              pnpm run lint --cache --cache-location=.eslintcache
+              ;;
+            typecheck)
+              pnpm run type-check
+              ;;
+            format)
+              pnpm run format:check
+              ;;
+            security)
+              pnpm audit --audit-level=high
+              pnpm dlx snyk test --severity-threshold=high || true
+              ;;
+          esac
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-${{ matrix.check }}-results
+          path: |
+            frontend/.eslintcache
+            frontend/coverage/
+          retention-days: 7
+
+  # ============================================
+  # Testing Matrix
+  # ============================================
+  test:
+    name: Test (${{ matrix.test-type }}) - Node ${{ matrix.node }}
+    needs: setup
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        node: ['20.18.2', '22.11.0']
+        test-type: [unit, integration, e2e]
+        include:
+          - test-type: e2e
+            browser: chromium
+          - test-type: e2e
+            browser: firefox
+            os: ubuntu-latest
+            node: '20.18.2'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup environment
+        uses: ./.github/actions/setup-env
+        with:
+          node-version: ${{ matrix.node }}
+          pnpm-version: ${{ env.PNPM_VERSION }}
+
+      - name: Restore dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pnpm-store
+            frontend/node_modules
+          key: deps-${{ runner.os }}-${{ matrix.node }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+
+      - name: Install dependencies
+        working-directory: ./frontend
+        run: pnpm install --frozen-lockfile
+
+      - name: Setup test databases
+        if: matrix.test-type != 'unit'
+        working-directory: ./frontend
+        run: |
+          mkdir -p data
+          for db in forums wiki users system content library auth messaging; do
+            touch data/${db}-test.db
+            sqlite3 data/${db}-test.db "PRAGMA journal_mode=WAL;"
+          done
+
+      - name: Install Playwright browsers
+        if: matrix.test-type == 'e2e'
+        working-directory: ./frontend
+        run: pnpm exec playwright install --with-deps ${{ matrix.browser }}
+
+      - name: Run tests
+        working-directory: ./frontend
+        env:
+          NODE_ENV: test
+          DATABASE_PATH: ./data
+        run: |
+          case "${{ matrix.test-type }}" in
+            unit)
+              pnpm test -- --coverage --maxWorkers=4
+              ;;
+            integration)
+              pnpm test -- --testPathPattern="integration" --runInBand
+              ;;
+            e2e)
+              pnpm exec playwright test --project=${{ matrix.browser }} --shard=${{ matrix.shard || '1/1' }}
+              ;;
+          esac
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ matrix.test-type }}-${{ matrix.node }}-${{ matrix.browser || 'default' }}
+          path: |
+            frontend/coverage/
+            frontend/test-results/
+            frontend/playwright-report/
+          retention-days: 30
+
+  # ============================================
+  # Build Matrix
+  # ============================================
+  build:
+    name: Build (${{ matrix.target }})
+    needs: [quality, test]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        target:
+          - production
+          - staging
+          - preview
+    env:
+      TURBO_CACHE_DIR: .turbo
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup environment
+        uses: ./.github/actions/setup-env
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          pnpm-version: ${{ env.PNPM_VERSION }}
+
+      - name: Setup Turbo cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            frontend/.turbo
+            frontend/.next/cache
+          key: turbo-${{ runner.os }}-${{ github.sha }}-${{ matrix.target }}
+          restore-keys: |
+            turbo-${{ runner.os }}-${{ github.sha }}-
+            turbo-${{ runner.os }}-
+
+      - name: Install dependencies
+        working-directory: ./frontend
+        run: pnpm install --frozen-lockfile
+
+      - name: Build application
+        working-directory: ./frontend
+        env:
+          NODE_ENV: ${{ matrix.target }}
+          NEXT_PUBLIC_BUILD_ID: ${{ github.sha }}
+          NEXT_TELEMETRY_DISABLED: 1
+        run: |
+          if [[ "${{ matrix.target }}" == "production" ]]; then
+            pnpm build --filter=frontend -- --experimental-turbo
+          else
+            pnpm build --filter=frontend
+          fi
+
+      - name: Analyze bundle
+        if: matrix.target == 'production'
+        working-directory: ./frontend
+        run: |
+          pnpm run analyze -- --json > bundle-stats.json
+          echo "Bundle Analysis Complete"
+
+      - name: Check bundle size
+        if: matrix.target == 'production'
+        uses: preactjs/compressed-size-action@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          pattern: "frontend/.next/static/**/*.{js,css}"
+          build-script: "echo 'Already built'"
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ matrix.target }}
+          path: |
+            frontend/.next/
+            frontend/bundle-stats.json
+          retention-days: 7
+
+  # ============================================
+  # Security Scanning
+  # ============================================
+  security-scan:
+    name: Security Scan
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Trivy scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: './frontend'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+
+      - name: Upload Trivy results to GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: 'trivy-results.sarif'
+
+      - name: OWASP Dependency Check
+        uses: dependency-check/Dependency-Check_Action@main
+        with:
+          project: 'veritable-games'
+          path: './frontend'
+          format: 'ALL'
+          args: >
+            --enableRetired
+            --enableExperimental
+
+      - name: Upload dependency check results
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-check-report
+          path: reports/
+
+  # ============================================
+  # Performance Testing
+  # ============================================
+  performance:
+    name: Performance Testing
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-production
+          path: frontend/.next/
+
+      - name: Setup environment
+        uses: ./.github/actions/setup-env
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          pnpm-version: ${{ env.PNPM_VERSION }}
+
+      - name: Start application
+        working-directory: ./frontend
+        run: |
+          pnpm install --frozen-lockfile --prod
+          pnpm start &
+          npx wait-on http://localhost:3000 -t 60000
+
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            http://localhost:3000
+            http://localhost:3000/wiki
+            http://localhost:3000/forums
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          runs: 3
+          # Performance budgets
+          configPath: './frontend/.lighthouserc.json'
+
+      - name: Run WebPageTest
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          npx webpagetest test http://localhost:3000 \
+            --key ${{ secrets.WPT_API_KEY }} \
+            --location Dulles:Chrome \
+            --runs 3 \
+            --first \
+            --specs frontend/performance-budgets.json
+
+  # ============================================
+  # Docker Build and Push
+  # ============================================
+  docker:
+    name: Docker Build
+    needs: [security-scan, performance]
+    if: needs.setup.outputs.should-deploy == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          driver-opts: |
+            network=host
+            image=moby/buildkit:v0.13.0
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=sha,prefix={{branch}}-
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./frontend
+          file: ./frontend/Dockerfile.production
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: |
+            type=gha
+            type=registry,ref=ghcr.io/${{ github.repository }}:buildcache
+          cache-to: |
+            type=gha,mode=max
+            type=registry,ref=ghcr.io/${{ github.repository }}:buildcache,mode=max
+          platforms: linux/amd64,linux/arm64
+          build-args: |
+            BUILDKIT_INLINE_CACHE=1
+            NODE_VERSION=20.18.2
+            BUILD_DATE=${{ github.event.head_commit.timestamp }}
+            VCS_REF=${{ github.sha }}
+
+  # ============================================
+  # Deploy to Staging
+  # ============================================
+  deploy-staging:
+    name: Deploy to Staging
+    needs: docker
+    if: github.ref == 'refs/heads/develop'
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: https://staging.veritablegames.com
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Kubernetes
+        run: |
+          echo "Deploying to staging cluster..."
+          kubectl apply -f k8s/staging/
+          kubectl set image deployment/app app=ghcr.io/${{ github.repository }}:${{ github.sha }}
+          kubectl rollout status deployment/app
+
+      - name: Run smoke tests
+        run: |
+          npx wait-on https://staging.veritablegames.com -t 120000
+          curl -f https://staging.veritablegames.com/api/health
+
+  # ============================================
+  # Deploy to Production (Blue-Green)
+  # ============================================
+  deploy-production:
+    name: Deploy to Production
+    needs: [docker, deploy-staging]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://veritablegames.com
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Blue-Green Deployment
+        run: |
+          # Deploy to green environment
+          kubectl apply -f k8s/production/green/
+          kubectl set image deployment/app-green app=ghcr.io/${{ github.repository }}:${{ github.sha }}
+          kubectl rollout status deployment/app-green
+
+          # Run health checks
+          ./scripts/health-check-production.sh green
+
+          # Switch traffic to green
+          kubectl patch service app -p '{"spec":{"selector":{"version":"green"}}}'
+
+          # Wait and monitor
+          sleep 300
+          ./scripts/monitor-deployment.sh
+
+          # Update blue environment for next deployment
+          kubectl set image deployment/app-blue app=ghcr.io/${{ github.repository }}:${{ github.sha }}
+
+      - name: Notify deployment
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: 'Production deployment completed for ${{ github.sha }}'
+          webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+
+  # ============================================
+  # Post-Deployment Validation
+  # ============================================
+  validate-deployment:
+    name: Validate Deployment
+    needs: [deploy-staging, deploy-production]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      # DISABLED: Datadog package removed from project (October 2025)
+      # - name: Run synthetic monitoring
+      #   run: |
+      #     npx @datadog/datadog-ci synthetics run-tests \
+      #       --apiKey ${{ secrets.DD_API_KEY }} \
+      #       --appKey ${{ secrets.DD_APP_KEY }}
+
+      # DISABLED: Deployment metrics script not implemented
+      # - name: Check deployment metrics
+      #   run: |
+      #     ./scripts/check-deployment-metrics.sh \
+      #       --environment ${{ github.ref == 'refs/heads/main' && 'production' || 'staging' }} \
+      #       --threshold 95

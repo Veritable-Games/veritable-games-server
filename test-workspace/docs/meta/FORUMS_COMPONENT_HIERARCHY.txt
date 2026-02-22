@@ -1,0 +1,358 @@
+FORUMS COMPONENT HIERARCHY AND DEPENDENCY GRAPH
+================================================
+
+1. PAGE-LEVEL COMPONENTS (Server Components)
+=============================================
+
+/app/forums/page.tsx (Server)
+  └─> ForumsPageClient (Client)
+        ├─ ForumSearch
+        ├─ NewTopicButton
+        ├─ ForumHeaderActions
+        └─ ForumCategoryList
+             ├─ ForumCategoriesGrid (alternative layout)
+             ├─ [Category Management]
+             │   ├─ Edit form (inline)
+             │   ├─ Reorder controls (keyboard driven)
+             │   └─ Visibility toggles
+             └─ [Section Management]
+                 ├─ Section edit
+                 ├─ Section delete
+                 └─ Section reorder
+
+/app/forums/browse/page.tsx (Server)
+  └─> Browse interface with TopicList
+
+/app/forums/category/[slug]/page.tsx (Server)
+  └─> Category page with topic list
+
+/app/forums/topic/[id]/page.tsx (Server)
+  ├─> TopicView (Client)
+  │    └─ OptimisticTopicWrapper
+  │         ├─ OptimisticStatusBadges
+  │         ├─ OptimisticModerationDropdown
+  │         ├─ TopicEditForm (when editing)
+  │         └─ TopicFooter
+  └─> ReplyList (Client)
+       ├─ ReplyView (recursive, memo'd)
+       │   ├─ Avatar / UserLink
+       │   ├─ Reply content (optimistic)
+       │   ├─ Solution badge (optimistic)
+       │   ├─ Edit form (inline, optimistic)
+       │   ├─ Reply actions
+       │   │   ├─ Mark as solution
+       │   │   ├─ Edit
+       │   │   └─ Delete (soft/hard)
+       │   └─ Nested replies (children)
+       │       └─ ReplyView (recursive)
+       └─ New reply form
+
+
+2. OPTIMISTIC UI LAYER (React 19)
+==================================
+
+Core Optimistic Wrapper
+  OptimisticTopicWrapper
+    uses: useOptimisticModeration hook
+    exposes: topic, actions, isPending
+    
+    children receive:
+      ├─ topic: OptimisticTopic (with status flags)
+      ├─ actions: {
+      │    toggleLock(),
+      │    togglePin(),
+      │    toggleSolved()
+      │ }
+      └─ isPending: boolean
+
+Status Display
+  OptimisticStatusBadges
+    receives: topic, isPending, size, showIcons
+    variants:
+      ├─ OptimisticStatusBadges (full display)
+      └─ CompactStatusBadges (icon only)
+
+Moderation Controls
+  OptimisticModerationDropdown
+    receives: topic, actions, isPending
+    actions: lock, pin, mark solved
+
+
+3. REPLY STATE MANAGEMENT
+==========================
+
+ReplyList (Container)
+  State:
+    ├─ replies: ForumReply[] (from server)
+    └─ optimisticReplies: ForumReply[] (from useOptimistic)
+  
+  Uses:
+    └─ useOptimistic(replies, addOptimisticReply)
+  
+  ReplyView (Item) - memo'd with custom comparison
+    State:
+      ├─ optimisticContent (from useOptimistic)
+      ├─ optimisticIsSolution (local useState)
+      ├─ isEditing: boolean
+      ├─ showReplyForm: boolean
+      └─ loading: boolean
+    
+    Handles:
+      ├─ Edit reply (optimistic content update)
+      ├─ Delete reply (soft/hard delete)
+      ├─ Mark as solution (optimistic toggle)
+      └─ Nested reply creation
+
+
+4. FORM COMPONENTS
+===================
+
+Topic Creation/Editing
+  TopicEditForm (props-controlled)
+    receives: title, content, loading, error
+    provides: onTitleChange, onContentChange, onSave, onCancel
+
+Reply Editor
+  HybridMarkdownEditor (external)
+    used in: ReplyView, ReplyList, TopicEditForm
+
+Category Editor
+  Inline form in ForumCategoryList
+    two-step: name -> description
+
+
+5. UTILITY & DISPLAY COMPONENTS
+================================
+
+TagDisplay Family
+  ├─ TagDisplay (main display)
+  ├─ PopularTags (fetch & display)
+  └─ TrendingTags (fetch & display)
+
+UserLink Family
+  ├─ UserLink (text or avatar link)
+  └─ UserAvatar (standalone avatar)
+       features:
+         ├─ Gradient fallback based on user ID
+         ├─ Upload avatar with position/scale
+         └─ Avatar update event listener
+
+ForumSearch
+  uses: useTransition for non-blocking nav
+
+NewTopicButton
+  category-aware linking
+  auth check with alert
+
+
+6. HOOKS & STATE MANAGEMENT
+=============================
+
+useOptimisticModeration (custom hook)
+  ├─ State:
+  │   ├─ serverTopic (source of truth)
+  │   └─ optimisticTopic (via useOptimistic)
+  ├─ Features:
+  │   ├─ toggleLock()
+  │   ├─ togglePin()
+  │   └─ toggleSolved()
+  ├─ Side effects:
+  │   ├─ Sync with server on mount
+  │   └─ Listen to SSE events via useForumEvents
+  └─ Returns: { topic, isPending, toggleLock, togglePin, toggleSolved }
+
+useForumEvents (custom hook)
+  ├─ State:
+  │   ├─ connected: boolean
+  │   ├─ error: string | null
+  │   └─ reconnecting: boolean
+  ├─ Features:
+  │   ├─ Auto-reconnect on disconnect
+  │   ├─ Event filtering (categoryId, topicId)
+  │   └─ Type-safe callbacks
+  ├─ Events:
+  │   ├─ topic:locked / topic:unlocked
+  │   ├─ topic:pinned / topic:unpinned
+  │   ├─ topic:solved / topic:unsolved
+  │   ├─ topic:archived / topic:unarchived
+  │   ├─ topic:created / topic:deleted
+  │   ├─ reply:created / reply:deleted
+  │   └─ reply:solution
+  └─ Returns: { connected, error, reconnecting, disconnect, reconnect }
+
+
+7. DATA FLOW DIAGRAM
+====================
+
+USER ACTION (e.g., "Lock Topic")
+    ↓
+OptimisticModerationDropdown.handleAction()
+    ↓
+useOptimisticModeration.toggleLock()
+    ↓
+startTransition(() => updateOptimisticTopic({ type: 'lock' }))
+    ↓
+[IMMEDIATE UI UPDATE]
+OptimisticStatusBadges shows "Locked" badge
+    ↓
+[ASYNC API CALL]
+fetch(/api/forums/topics/{id}/lock, { locked: true })
+    ↓
+[RESPONSE HANDLER]
+if (success) {
+  setServerTopic(result.data.topic)  // Confirm state
+  router.refresh()                     // Update page data
+  useForumEvents receives SSE event   // Sync other users
+} else {
+  // Rollback happens automatically via useOptimistic
+}
+
+
+8. KEYBOARD-DRIVEN ADMIN INTERFACE
+===================================
+
+ForumCategoryList provides advanced shortcuts:
+
+Ctrl+Click        → Select category
+Shift+Click       → Edit category (name -> description)
+Alt+Click         → Enter reorder mode
+Tab (multi-select)→ Toggle visibility
+Delete (multi-sel)→ Batch delete
+Escape            → Cancel any mode
+Enter (edit)      → Confirm name
+Ctrl+Enter (edit) → Save description
+Arrow Up/Down     → Reorder in reorder mode
+Enter (reorder)   → Save reorder
+
+
+9. COMPONENT STATS
+===================
+
+Component                              Lines    Type        Purpose
+─────────────────────────────────────────────────────────────────────
+ForumCategoryList                      1,280    Client      Category CRUD + reordering
+ReplyList                                748    Client      Nested replies + editing
+TopicRow                                 354    Client      Topic display
+TopicView                                336    Client      Topic detail + moderation
+useOptimisticModeration                  354    Hook        Optimistic moderation
+UserLink                                 251    Client      User profile link
+TagDisplay                               202    Client      Tag display
+OptimisticModerationDropdown             179    Client      Moderation dropdown
+OptimisticStatusBadges                   168    Client      Status badges
+OptimisticTopicWrapper                   164    Client      Optimistic wrapper
+useForumEvents                           279    Hook        SSE real-time events
+TopicEditForm                            102    Client      Topic edit form
+ForumSearch                               69    Client      Search input
+NewTopicButton                            52    Client      Create button
+Other (LoginWidget, etc)              ~1,200    Client      Various utilities
+─────────────────────────────────────────────────────────────────────
+TOTAL                                ~5,000    15 files    Forum system
+
+
+10. PERFORMANCE OPTIMIZATION LAYERS
+====================================
+
+Level 1: Component Memoization
+  └─ ReplyView: memo with custom comparison
+     Compares: id, updated_at, is_deleted, is_solution, level, isTopicLocked
+
+Level 2: Computation Memoization
+  └─ ForumCategoryList: useMemo for groupedCategories
+     Prevents expensive reduce on every render
+
+Level 3: Callback Memoization
+  └─ Multiple useCallback hooks for event handlers
+     Prevents child re-renders from parent state changes
+
+Level 4: Lazy Loading
+  └─ TagDisplay: fetch on-demand
+  └─ UserLink: fetch user data on-demand (optional)
+
+
+11. ERROR HANDLING PATTERNS
+===========================
+
+Pattern A: Optimistic Rollback (automatic)
+  ├─ Update optimisticState immediately
+  ├─ Make API call
+  └─ If error: useOptimistic auto-reverts to serverState
+
+Pattern B: Explicit Rollback
+  ├─ Save previousState
+  ├─ Update optimisticState
+  ├─ Make API call
+  └─ If error: restoreState(previousState)
+
+Pattern C: Error Callbacks
+  └─ useOptimisticModeration({
+       onError: (error) => toast.error(error.message)
+     })
+
+
+12. ACCESSIBILITY FEATURES
+===========================
+
+ARIA Labels
+  └─ All buttons and interactive elements have aria-label
+  └─ aria-expanded for dropdowns
+  └─ aria-hidden for decorative elements
+
+Keyboard Navigation
+  └─ Moderation dropdown: keyboard shortcuts
+  └─ Category list: Ctrl/Shift/Alt+Click combinations
+  └─ Form inputs: Tab navigation
+
+Semantic HTML
+  └─ <button> for actions
+  └─ <input> for forms
+  └─ <a> for navigation (UserLink, TagDisplay)
+  └─ <time> elements with datetime attribute
+
+Color + Icons
+  └─ Status badges use color + text + icons
+  └─ Not relying on color alone
+
+
+13. TESTING STRATEGY
+====================
+
+Unit Tests (for each component)
+  ├─ Props rendering
+  ├─ Event handler calls
+  └─ State updates
+
+Integration Tests
+  ├─ OptimisticTopicWrapper + TopicView
+  ├─ ReplyList + ReplyView
+  └─ useOptimisticModeration + useForumEvents
+
+E2E Tests
+  ├─ Create topic flow
+  ├─ Reply to topic with nested replies
+  ├─ Moderation actions (lock, pin, solve)
+  ├─ Real-time updates via SSE
+  └─ Category management (admin)
+
+
+14. DEPLOYMENT & MAINTENANCE
+==============================
+
+Code Splitting
+  └─ All forum components are lazy-loadable via dynamic()
+
+Bundle Size
+  └─ Estimated: 150-200KB gzipped
+  └─ Optimizable with lazy boundaries
+
+Monitoring
+  └─ SSE connection status
+  └─ API error rates
+  └─ Component render counts
+
+Future Improvements
+  └─ Virtualization for large reply lists
+  └─ Image upload in replies
+  └─ @mention support
+  └─ Emoji picker
+  └─ Code syntax highlighting
+

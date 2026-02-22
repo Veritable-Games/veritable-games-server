@@ -1,0 +1,667 @@
+name: Advanced CI/CD Pipeline
+
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  checks: write
+  packages: write
+
+on:
+  push:
+    branches: [main, develop, 'feature/**', 'hotfix/**']
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/**'
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/**'
+  workflow_dispatch:
+    inputs:
+      deployment_type:
+        description: 'Deployment strategy'
+        required: true
+        default: 'blue-green'
+        type: choice
+        options:
+        - blue-green
+        - canary
+        - rolling
+      skip_tests:
+        description: 'Skip tests (emergency deployments only)'
+        required: false
+        default: false
+        type: boolean
+
+env:
+  NODE_VERSION: '20.18.2'
+  FRONTEND_DIR: './frontend'
+  CACHE_VERSION: 'v1'
+  REGISTRY_URL: 'ghcr.io'
+  IMAGE_NAME: 'veritable-games'
+
+jobs:
+  # ============================================================================
+  # CHANGE DETECTION & MATRIX SETUP
+  # ============================================================================
+  setup:
+    name: Setup & Change Detection
+    runs-on: ubuntu-latest
+    outputs:
+      frontend-changed: ${{ steps.changes.outputs.frontend }}
+      test-matrix: ${{ steps.setup-matrix.outputs.matrix }}
+      deployment-needed: ${{ steps.deployment.outputs.needed }}
+      cache-hit: ${{ steps.cache-check.outputs.hit }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect changes
+        id: changes
+        uses: dorny/paths-filter@v2
+        with:
+          filters: |
+            frontend:
+              - 'frontend/src/**'
+              - 'frontend/public/**'
+              - 'frontend/package*.json'
+              - 'frontend/next.config.js'
+              - 'frontend/tailwind.config.js'
+              - 'frontend/tsconfig.json'
+              - 'frontend/Dockerfile'
+
+      - name: Setup test matrix
+        id: setup-matrix
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            matrix='["unit", "integration", "e2e", "security", "accessibility"]'
+          else
+            matrix='["unit", "integration", "security"]'
+          fi
+          echo "matrix=$matrix" >> $GITHUB_OUTPUT
+
+      - name: Check deployment need
+        id: deployment
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/main" || "${{ github.ref }}" == "refs/heads/develop" ]]; then
+            echo "needed=true" >> $GITHUB_OUTPUT
+          else
+            echo "needed=false" >> $GITHUB_OUTPUT
+          fi
+
+  # ============================================================================
+  # SECURITY SCANNING (SAST/DAST/DEPENDENCY)
+  # ============================================================================
+  security-scan:
+    name: Security Scanning
+    runs-on: ubuntu-latest
+    needs: setup
+    if: needs.setup.outputs.frontend-changed == 'true' || github.event_name == 'workflow_dispatch'
+    defaults:
+      run:
+        working-directory: ${{ env.FRONTEND_DIR }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js with caching
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        id: npm-cache
+        with:
+          path: frontend/node_modules
+          key: ${{ runner.os }}-node-${{ env.CACHE_VERSION }}-${{ hashFiles('frontend/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ env.CACHE_VERSION }}-
+
+      - name: Install dependencies
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        run: npm ci --prefer-offline --no-audit
+
+      - name: SAST - CodeQL Analysis
+        uses: github/codeql-action/init@v3
+        with:
+          languages: javascript
+          queries: security-extended,security-and-quality
+
+      # DISABLED: ESLint removed from project (October 2025)
+      # - name: SAST - ESLint Security
+      #   run: |
+      #     npx eslint . --ext .js,.jsx,.ts,.tsx --format json --output-file eslint-security.json || true
+      #     cat eslint-security.json
+
+      - name: Dependency Vulnerability Scan
+        run: |
+          npm audit --audit-level=moderate --json > dependency-audit.json || true
+          npx audit-ci --config .auditci.json --report-type json || true
+
+      - name: OWASP ZAP Baseline Scan
+        uses: zaproxy/action-baseline@v0.7.0
+        with:
+          target: 'http://localhost:3000'
+          rules_file_name: '.zap/rules.tsv'
+          cmd_options: '-a'
+        continue-on-error: true
+
+      - name: Secrets Detection with TruffleHog
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+          head: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+          extra_args: --debug --only-verified
+
+      - name: Upload Security Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-reports-${{ github.sha }}
+          path: |
+            frontend/eslint-security.json
+            frontend/dependency-audit.json
+            frontend/.zap/
+
+  # ============================================================================
+  # PARALLEL TESTING SUITE
+  # ============================================================================
+  test-suite:
+    name: Test Suite (${{ matrix.test-type }})
+    runs-on: ubuntu-latest
+    needs: [setup, security-scan]
+    if: needs.setup.outputs.frontend-changed == 'true' && github.event.inputs.skip_tests != 'true'
+
+    # PostgreSQL service for tests
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: test
+          POSTGRES_PASSWORD: test
+          POSTGRES_DB: test_db
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    strategy:
+      fail-fast: false
+      matrix:
+        test-type: ${{ fromJson(needs.setup.outputs.test-matrix) }}
+    defaults:
+      run:
+        working-directory: ${{ env.FRONTEND_DIR }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js with caching
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Restore node_modules cache
+        uses: actions/cache@v3
+        with:
+          path: frontend/node_modules
+          key: ${{ runner.os }}-node-${{ env.CACHE_VERSION }}-${{ hashFiles('frontend/package-lock.json') }}
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit
+
+      - name: Initialize test databases
+        run: |
+          mkdir -p data
+          # Note: PostgreSQL service is running on localhost:5432
+          # Database 'test_db' is automatically created by the service
+
+      - name: Install Playwright browsers
+        if: matrix.test-type == 'e2e'
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Unit Tests
+        if: matrix.test-type == 'unit'
+        run: |
+          npm test -- --watchAll=false \
+            --testPathPattern="^((?!integration|e2e|security|accessibility).)*$" \
+            --maxWorkers=4
+        env:
+          NODE_ENV: test
+          DATABASE_PATH: ./data
+          # PostgreSQL configuration - service running on localhost:5432
+          DATABASE_URL: postgresql://test:test@localhost:5432/test_db
+          POSTGRES_URL: postgresql://test:test@localhost:5432/test_db
+          DATABASE_MODE: postgres
+          SESSION_SECRET: test-session-secret-for-ci-minimum-32-chars-required
+          CSRF_SECRET: test-csrf-secret-for-ci-minimum-32-chars-required!!
+          ENCRYPTION_KEY: test-encryption-key-for-ci-minimum-32-chars-required
+
+      - name: Run Integration Tests
+        if: matrix.test-type == 'integration'
+        run: |
+          npm test -- --testPathPattern="integration" \
+            --watchAll=false --maxWorkers=2 --passWithNoTests
+        env:
+          NODE_ENV: test
+          DATABASE_PATH: ./data
+          # PostgreSQL configuration - service running on localhost:5432
+          DATABASE_URL: postgresql://test:test@localhost:5432/test_db
+          POSTGRES_URL: postgresql://test:test@localhost:5432/test_db
+          DATABASE_MODE: postgres
+          SESSION_SECRET: test-session-secret-for-ci-minimum-32-chars-required
+          CSRF_SECRET: test-csrf-secret-for-ci-minimum-32-chars-required!!
+          ENCRYPTION_KEY: test-encryption-key-for-ci-minimum-32-chars-required
+
+      - name: Run E2E Tests
+        if: matrix.test-type == 'e2e'
+        run: |
+          npm run build
+          npm start &
+          sleep 15
+          npx playwright test --reporter=html,json
+          kill %1
+        env:
+          NODE_ENV: production
+
+      - name: Run Security Tests
+        if: matrix.test-type == 'security'
+        run: |
+          npm test -- --testPathPattern="security" \
+            --watchAll=false --maxWorkers=2 --passWithNoTests
+        env:
+          NODE_ENV: test
+          # PostgreSQL configuration for adapter (mocked in tests)
+          DATABASE_URL: postgresql://test:test@localhost:5432/test_db
+          POSTGRES_URL: postgresql://test:test@localhost:5432/test_db
+          DATABASE_MODE: postgres
+          SESSION_SECRET: test-session-secret-for-ci-minimum-32-chars-required
+          CSRF_SECRET: test-csrf-secret-for-ci-minimum-32-chars-required!!
+          ENCRYPTION_KEY: test-encryption-key-for-ci-minimum-32-chars-required
+
+      - name: Run Accessibility Tests
+        if: matrix.test-type == 'accessibility'
+        run: |
+          npm run build
+          npm start &
+          sleep 15
+          npx axe-cli http://localhost:3000 --exit
+          kill %1
+        env:
+          NODE_ENV: production
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results-${{ matrix.test-type }}-${{ github.sha }}
+          path: |
+            frontend/coverage/
+            frontend/test-results/
+            frontend/playwright-report/
+
+      - name: Upload coverage to Codecov
+        if: matrix.test-type == 'unit'
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./frontend/coverage/lcov.info
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: false
+
+  # ============================================================================
+  # BUILD & OPTIMIZATION
+  # ============================================================================
+  build-optimize:
+    name: Build & Optimization
+    runs-on: ubuntu-latest
+    needs: [setup, test-suite]
+    if: needs.setup.outputs.frontend-changed == 'true'
+    defaults:
+      run:
+        working-directory: ${{ env.FRONTEND_DIR }}
+    outputs:
+      build-hash: ${{ steps.build-hash.outputs.hash }}
+      bundle-size: ${{ steps.bundle-analysis.outputs.size }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js with caching
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Restore node_modules cache
+        uses: actions/cache@v3
+        with:
+          path: frontend/node_modules
+          key: ${{ runner.os }}-node-${{ env.CACHE_VERSION }}-${{ hashFiles('frontend/package-lock.json') }}
+
+      - name: Cache Next.js build
+        uses: actions/cache@v3
+        with:
+          path: |
+            frontend/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ env.CACHE_VERSION }}-${{ hashFiles('frontend/package-lock.json') }}-${{ hashFiles('frontend/**/*.js', 'frontend/**/*.jsx', 'frontend/**/*.ts', 'frontend/**/*.tsx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ env.CACHE_VERSION }}-${{ hashFiles('frontend/package-lock.json') }}-
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit
+
+      - name: Build application
+        run: npm run build
+        env:
+          NODE_ENV: production
+          NEXT_TELEMETRY_DISABLED: 1
+          # Enable optimizations
+          ANALYZE: false
+
+      - name: Generate build hash
+        id: build-hash
+        run: |
+          build_hash=$(find .next -name "*.js" -o -name "*.css" | sort | xargs cat | sha256sum | cut -d' ' -f1)
+          echo "hash=$build_hash" >> $GITHUB_OUTPUT
+
+      - name: Bundle Analysis
+        id: bundle-analysis
+        run: |
+          npm run optimize:bundle
+          bundle_size=$(stat -c%s bundle-analysis.json 2>/dev/null || echo "0")
+          echo "size=$bundle_size" >> $GITHUB_OUTPUT
+
+      - name: Performance Budget Check
+        run: |
+          node -e "
+            const fs = require('fs');
+            const analysis = JSON.parse(fs.readFileSync('bundle-analysis.json', 'utf8'));
+
+            const budgets = {
+              totalSize: 5 * 1024 * 1024,    // 5MB (increased from 2MB for realistic Next.js 15 + React 19)
+              jsSize: 4.5 * 1024 * 1024,     // 4.5MB (increased from 1.5MB for modern React apps)
+              cssSize: 512 * 1024,            // 512KB (increased from 256KB for Tailwind CSS)
+              chunkCount: 100                  // Max 100 chunks (increased from 50 for code splitting)
+            };
+
+            let violations = [];
+            if (analysis.totalSize > budgets.totalSize) {
+              violations.push(\`Total size \${(analysis.totalSize/1024/1024).toFixed(2)}MB exceeds 5MB budget\`);
+            }
+            if (analysis.jsSize > budgets.jsSize) {
+              violations.push(\`JS size \${(analysis.jsSize/1024/1024).toFixed(2)}MB exceeds 4.5MB budget\`);
+            }
+            if (analysis.cssSize > budgets.cssSize) {
+              violations.push(\`CSS size \${(analysis.cssSize/1024).toFixed(2)}KB exceeds 512KB budget\`);
+            }
+            if (analysis.chunks?.length > budgets.chunkCount) {
+              violations.push(\`\${analysis.chunks.length} chunks exceed 100 chunk budget\`);
+            }
+
+            if (violations.length > 0) {
+              console.error('Performance budget violations:');
+              violations.forEach(v => console.error(\`- \${v}\`));
+              process.exit(1);
+            } else {
+              console.log('✅ All performance budgets met');
+            }
+          "
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts-${{ github.sha }}
+          path: |
+            frontend/.next/
+            frontend/bundle-analysis.json
+          retention-days: 30
+
+  # ============================================================================
+  # DOCKER BUILD & SECURITY SCANNING
+  # ============================================================================
+  docker-build:
+    name: Docker Build & Scan
+    runs-on: ubuntu-latest
+    needs: [build-optimize]
+    if: needs.setup.outputs.deployment-needed == 'true'
+    outputs:
+      image-digest: ${{ steps.build.outputs.digest }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          driver-opts: |
+            network=host
+
+      - name: Login to Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY_URL }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY_URL }}/${{ github.repository }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Build and push Docker image
+        id: build
+        uses: docker/build-push-action@v5
+        with:
+          context: ./frontend
+          file: ./frontend/Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          build-args: |
+            NEXT_PUBLIC_APP_VERSION=${{ github.sha }}
+            NODE_ENV=production
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: ${{ env.REGISTRY_URL }}/${{ github.repository }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+
+      - name: Upload Trivy scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: 'trivy-results.sarif'
+
+  # ============================================================================
+  # PERFORMANCE & QUALITY VALIDATION
+  # ============================================================================
+  performance-validation:
+    name: Performance Validation
+    runs-on: ubuntu-latest
+    needs: [docker-build]
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts-${{ github.sha }}
+          path: frontend/
+
+      - name: Install dependencies
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: npm ci --prefer-offline --no-audit
+
+      - name: Start application
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: |
+          npm start &
+          sleep 20
+          curl -f http://localhost:3000 || exit 1
+
+      - name: Run Lighthouse CI
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: |
+          npm install -g @lhci/cli@0.12.x
+          lhci autorun --upload.target=temporary-public-storage
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+      - name: Performance regression check
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: node scripts/performance-ci.js
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+          CI: true
+
+  # ============================================================================
+  # DEPLOYMENT STRATEGIES
+  # ============================================================================
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    needs: [docker-build, performance-validation]
+    if: github.ref == 'refs/heads/develop' && success()
+    environment: 
+      name: staging
+      url: https://staging.veritablegames.com
+    steps:
+      - name: Deploy to staging
+        run: |
+          echo "🚀 Deploying to staging environment..."
+          echo "Image: ${{ needs.docker-build.outputs.image-digest }}"
+          echo "Strategy: Blue-Green deployment"
+          # Add your staging deployment logic here
+
+  deploy-production:
+    name: Deploy to Production (${{ github.event.inputs.deployment_type || 'blue-green' }})
+    runs-on: ubuntu-latest
+    needs: [docker-build, performance-validation]
+    if: github.ref == 'refs/heads/main' && success()
+    environment: 
+      name: production
+      url: https://veritablegames.com
+    steps:
+      - name: Blue-Green Deployment
+        if: github.event.inputs.deployment_type == 'blue-green' || github.event.inputs.deployment_type == ''
+        run: |
+          echo "🔵 Starting Blue-Green deployment..."
+          echo "1. Preparing green environment"
+          echo "2. Deploying to green: ${{ needs.docker-build.outputs.image-digest }}"
+          echo "3. Health checks on green environment"
+          echo "4. Traffic switch from blue to green"
+          echo "5. Blue environment standby for rollback"
+
+      - name: Canary Deployment
+        if: github.event.inputs.deployment_type == 'canary'
+        run: |
+          echo "🐦 Starting Canary deployment..."
+          echo "1. Deploy to 5% of traffic"
+          echo "2. Monitor metrics for 15 minutes"
+          echo "3. Gradual traffic increase: 5% -> 25% -> 50% -> 100%"
+          echo "4. Automated rollback on error threshold"
+
+      - name: Rolling Deployment
+        if: github.event.inputs.deployment_type == 'rolling'
+        run: |
+          echo "🔄 Starting Rolling deployment..."
+          echo "1. Update instances one by one"
+          echo "2. Health check each instance before proceeding"
+          echo "3. Maintain service availability throughout"
+
+  # ============================================================================
+  # POST-DEPLOYMENT MONITORING
+  # ============================================================================
+  post-deployment-monitoring:
+    name: Post-Deployment Monitoring
+    runs-on: ubuntu-latest
+    needs: [deploy-production]
+    if: success() && github.ref == 'refs/heads/main'
+    steps:
+      - name: Health check validation
+        run: |
+          echo "🏥 Running post-deployment health checks..."
+          for i in {1..10}; do
+            if curl -f https://veritablegames.com/api/health; then
+              echo "✅ Health check $i passed"
+            else
+              echo "❌ Health check $i failed"
+              exit 1
+            fi
+            sleep 30
+          done
+
+      - name: Performance monitoring
+        run: |
+          echo "📊 Monitoring performance metrics..."
+          echo "- Response times"
+          echo "- Error rates" 
+          echo "- Database connections"
+          echo "- Memory usage"
+
+      - name: Send deployment notification
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          channel: '#deployments'
+          webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow
+
+  # ============================================================================
+  # CLEANUP & REPORTING
+  # ============================================================================
+  cleanup:
+    name: Cleanup & Reporting
+    runs-on: ubuntu-latest
+    needs: [security-scan, test-suite, build-optimize, docker-build, performance-validation]
+    if: always()
+    steps:
+      - name: Generate pipeline report
+        run: |
+          echo "# Pipeline Report" > pipeline-report.md
+          echo "## Summary" >> pipeline-report.md
+          echo "- Security Scan: ${{ needs.security-scan.result }}" >> pipeline-report.md
+          echo "- Test Suite: ${{ needs.test-suite.result }}" >> pipeline-report.md
+          echo "- Build & Optimize: ${{ needs.build-optimize.result }}" >> pipeline-report.md
+          echo "- Docker Build: ${{ needs.docker-build.result }}" >> pipeline-report.md
+          echo "- Performance Validation: ${{ needs.performance-validation.result }}" >> pipeline-report.md
+
+      - name: Upload pipeline report
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-report-${{ github.sha }}
+          path: pipeline-report.md

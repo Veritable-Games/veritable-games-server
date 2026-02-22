@@ -1,0 +1,244 @@
+# Root directory - these should ONLY exist in frontend/
+/node_modules/
+/package-lock.json
+
+# Environment variables
+.env
+# .env.local  # INTENTIONALLY TRACKED - Private repo, secrets safe in git
+.env.production
+.env.development
+.env.test
+# .env*.local  # INTENTIONALLY TRACKED - Private repo, secrets safe in git
+
+# SQLite databases (all environments)
+# Databases are now initialized from seed scripts (frontend/scripts/seeds/)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Database backups
+*.db.backup*
+*.db-backup-*
+*.db.cleanup-backup-*
+*.db.fts5-backup-*
+**/data/*.db
+**/data/**/*.db
+backup/
+backups/
+CRITICAL_BACKUPS/
+frontend/data/*.backup*
+frontend/data/*-backup-*
+database-backup.sql
+
+# Keep seed scripts and schemas (NOT ignored)
+!frontend/scripts/seeds/**/*.sql
+!frontend/scripts/schemas/**/*.sql
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Local development tools
+.tools/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Process files
+*.pid
+*.seed
+*.pid.lock
+
+# Dependencies
+node_modules/
+bower_components/
+jspm_packages/
+web_modules/
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+next-env.d.ts
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+.coverage
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+.temp/
+*.tmp
+*.temp
+
+# Upload directories (user content)
+# Changed November 17, 2025: Exclude uploads to reduce git repository size
+# Files exist on production server (979MB in Docker container)
+# 1,492 files totaling 1.1GB were causing slow deployments (365MB git clone)
+frontend/public/uploads/
+public/uploads/
+uploads/
+
+# Cache
+.cache/
+.parcel-cache/
+.turbo/
+.vercel/
+.netlify/
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python cache (for scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+
+# Secrets and credentials
+*.key
+*.pem
+*.cert
+*.crt
+*.p12
+*.pfx
+private/
+secrets/
+credentials/
+
+# Bundle analysis
+.next/analyze/
+stats.json
+
+# Sentry
+.sentryclirc
+
+# Local development
+local/
+.local/
+
+# Documentation - Keep important docs in git
+# Only exclude generated/dynamic docs
+frontend/docs/demos/
+frontend/docs/generated/
+
+# Testing artifacts (but keep test files)
+playwright-report/
+test-results/
+coverage/
+.nyc_output/
+
+# Playwright development artifacts (November 2025)
+playwright-videos/
+screenshot-*.png
+dev-browser.log
+
+# Test scripts (temporary/development scripts)
+frontend/scripts/test-*.js
+frontend/scripts/check-*.js
+frontend/scripts/disable-*.js
+frontend/scripts/fix-*.js
+frontend/scripts/testing/
+frontend/scripts/forum-admin/create-test-topics.js
+frontend/scripts/*-test*.js
+frontend/scripts/debug-*.js
+frontend/scripts/temp-*.js
+
+# Claude Code agent configurations
+.claude/agents/
+
+# Demo and development files
+frontend/docs/demos/
+frontend/docs/security/
+frontend/public/debug-*.html
+frontend/public/direct-*.html
+frontend/public/simple-*.html
+
+# Miscellaneous
+*.orig
+*.rej
+package-lock.json.backup
+yarn.lock.backup
+pnpm-lock.yaml.backup
+# Additional test output
+test-reports/
+.env
+
+# Anarchist Library Archive
+# Files managed by Docker volume, not tracked in git
+anarchist-library/
+/anarchist-library/
+*.md.bak
+converted-markdown/
+/converted-markdown/
+*.muse
+/processing/
+/anarchist_library_texts_*/
+anarchist_library_urls_*.json
+marxists_org_*.json
+MARXISTS_ORG_URLS_PROGRESS.json
+
+# User Library Documents Archive
+# Files managed by Docker volume/filesystem, not tracked in git
+# ~3GB of markdown files with YAML frontmatter (3,849+ documents)
+frontend/data/library/documents/
+frontend/public/library/*.md
+/library-documents/
+
+# Godot Projects Archive
+# Files managed by Docker volumes, not tracked in git
+# Server paths: /data/projects/ (mounted to /app/godot-projects in container)
+# Development: SSHFS mount to ~/mnt/godot-projects
+frontend/godot-projects/*/
+!frontend/godot-projects/.gitkeep
+
+# Godot Build Artifacts
+# Generated HTML5 exports stored on server at /data/builds/
+# Development: Symlink or local builds
+frontend/public/godot-builds/
+
+# Archive operations
+processing/
+scraping/
+extraction/
+archives/
+
+.gemini/
+gha-creds-*.json
+.aider*
+.claude-credentials

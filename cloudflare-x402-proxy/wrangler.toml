@@ -1,0 +1,68 @@
+name = "veritable-x402-proxy"
+main = "src/index.ts"
+compatibility_date = "2025-12-16"
+compatibility_flags = ["nodejs_compat"]
+
+# Routes - intercept API traffic on the main domain
+routes = [
+  { pattern = "www.veritablegames.com/api/*", zone_name = "veritablegames.com" }
+]
+
+# Default environment variables
+[vars]
+ORIGIN_URL = "https://www.veritablegames.com"
+PAYMENT_NETWORK = "base"
+BLOCK_MODE = "true"
+DEBUG = "true"
+
+# KV namespace for payment caching
+[[kv_namespaces]]
+binding = "PAYMENT_CACHE"
+id = "e21fead031304e2abe9dc1f2a454ab22"
+
+# D1 database for payment tracking
+[[d1_databases]]
+binding = "PAYMENTS_DB"
+database_name = "x402-payments"
+database_id = "6eb222c9-ac92-418f-86cb-cd9b55887c46"
+
+# Staging environment (Base Sepolia testnet)
+[env.staging]
+name = "veritable-x402-proxy-staging"
+
+[env.staging.vars]
+ORIGIN_URL = "https://www.veritablegames.com"
+PAYMENT_NETWORK = "base-sepolia"
+BLOCK_MODE = "false"
+DEBUG = "true"
+
+[[env.staging.kv_namespaces]]
+binding = "PAYMENT_CACHE"
+id = "e21fead031304e2abe9dc1f2a454ab22"
+
+[[env.staging.d1_databases]]
+binding = "PAYMENTS_DB"
+database_name = "x402-payments"
+database_id = "6eb222c9-ac92-418f-86cb-cd9b55887c46"
+
+# Production environment (Base mainnet)
+[env.production]
+name = "veritable-x402-proxy"
+
+[env.production.vars]
+ORIGIN_URL = "https://www.veritablegames.com"
+PAYMENT_NETWORK = "base"
+BLOCK_MODE = "true"
+DEBUG = "false"
+
+[[env.production.kv_namespaces]]
+binding = "PAYMENT_CACHE"
+id = "e21fead031304e2abe9dc1f2a454ab22"
+
+[[env.production.d1_databases]]
+binding = "PAYMENTS_DB"
+database_name = "x402-payments"
+database_id = "6eb222c9-ac92-418f-86cb-cd9b55887c46"
+
+# Secrets (set with: wrangler secret put PAYMENT_RECIPIENT)
+# - PAYMENT_RECIPIENT: Your Base wallet address for receiving USDC (required)

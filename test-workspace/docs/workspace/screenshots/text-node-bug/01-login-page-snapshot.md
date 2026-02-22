@@ -1,0 +1,63 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - navigation "Main navigation" [ref=e4]:
+        - navigation [ref=e5]:
+          - generic [ref=e7]:
+            - link "Veritable Games home page" [ref=e9] [cursor=pointer]:
+              - /url: /
+              - img [ref=e10]
+              - img "Veritable Games" [ref=e11]
+            - button "Open main menu" [ref=e13] [cursor=pointer]:
+              - img [ref=e14]
+    - main "Main content" [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - heading "Veritable Games" [level=1] [ref=e39]
+          - paragraph [ref=e40]: Developer Testing Phase - Authentication Required
+        - generic [ref=e42]:
+          - button "Sign In" [ref=e43] [cursor=pointer]
+          - button "Create Account" [ref=e44] [cursor=pointer]
+        - generic [ref=e45]:
+          - heading "Sign In" [level=2] [ref=e46]
+          - generic [ref=e47]:
+            - generic [ref=e48]:
+              - generic [ref=e50]: Username or Email
+              - textbox "Username or Email" [ref=e52]:
+                - /placeholder: Enter your username or email
+            - generic [ref=e54]:
+              - generic [ref=e55]:
+                - generic [ref=e56]: Password
+                - button "Forgot password?" [ref=e57] [cursor=pointer]
+              - generic [ref=e59]:
+                - textbox "Enter your password" [ref=e60]
+                - button "Show password" [ref=e61] [cursor=pointer]:
+                  - img [ref=e62]
+            - button "Login" [ref=e65] [cursor=pointer]
+          - paragraph [ref=e67]:
+            - text: Don't have an account?
+            - button "Sign up here" [ref=e68] [cursor=pointer]
+        - generic [ref=e69]:
+          - paragraph [ref=e70]: 🔒 This site is currently in closed testing.
+          - paragraph [ref=e71]: Registration requires an invitation token.
+    - contentinfo "Site footer" [ref=e21]:
+      - generic [ref=e23]:
+        - paragraph [ref=e24]: © 2025 Veritable Games. All rights reserved.
+        - navigation "Footer navigation" [ref=e25]:
+          - list [ref=e26]:
+            - listitem [ref=e27]:
+              - link "Contact Us" [ref=e28] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e29]: •
+            - listitem [ref=e30]:
+              - link "Terms" [ref=e31] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=e32]: •
+            - listitem [ref=e33]:
+              - link "Privacy" [ref=e34] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e35]: •
+            - listitem [ref=e36]:
+              - link "Cookies" [ref=e37] [cursor=pointer]:
+                - /url: /cookies
+  - alert [ref=e38]

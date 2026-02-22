@@ -1,0 +1,656 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+---
+
+## 🚨 READ THIS FIRST: Veritable Games Production Server 🚨
+
+**CRITICAL: This is `/home/user/CLAUDE.md` - SERVER-LEVEL guidance for the Veritable Games production server**
+
+### ⚠️ THIS DIRECTORY (`/home/user`) IS NOT A GIT REPOSITORY ⚠️
+
+If you just invoked `/init` and are reading this, you need to understand:
+
+- **You are on the PRODUCTION SERVER** (192.168.1.15)
+- **This directory (`/home/user`) is NOT a git repository** - it's the home directory hosting the Veritable Games project
+- **The project has its OWN git repository** with its own CLAUDE.md file
+- **This file** covers server-wide operations, infrastructure, and deployment workflows
+- **Repository CLAUDE.md file** covers project-specific development, architecture, and coding patterns
+
+### 📍 Which CLAUDE.md Should You Read?
+
+**Use this decision tree:**
+
+```
+Q: What are you trying to do?
+
+A: Work on Veritable Games codebase (Next.js, React, TypeScript)
+   → Navigate to: /home/user/projects/veritable-games/site/
+   → Read: /home/user/projects/veritable-games/site/CLAUDE.md
+   → That file covers: Architecture, coding patterns, database, development
+
+A: Server operations (git workflows, deployments, Docker, PostgreSQL)
+   → You are in the right place!
+   → Keep reading THIS file
+
+A: I just ran /init in /home/user
+   → You invoked /init in the wrong location
+   → /home/user is NOT a git repository
+   → Navigate to the actual repository first
+   → Then run /init there if needed
+```
+
+### 📂 File Locations Reference
+
+| File Location | Purpose | Scope |
+|---------------|---------|-------|
+| `/home/user/CLAUDE.md` | **THIS FILE** - Server operations | Server-level guidance |
+| `/home/user/projects/veritable-games/site/CLAUDE.md` | Veritable Games development | VG coding, architecture, patterns |
+
+---
+
+## ⚠️ CRITICAL: Production Server Environment
+
+**Updated**: November 14, 2025
+
+You're working on the Veritable Games production server (192.168.1.15).
+
+### Active Project
+
+**Veritable Games** - Production application
+   - Repository: `/home/user/projects/veritable-games/site/`
+   - Resources: `/home/user/projects/veritable-games/resources/`
+   - URL: https://www.veritablegames.com
+   - **For coding work**: Read `/home/user/projects/veritable-games/site/CLAUDE.md`
+
+---
+
+## 🚨 CRITICAL: CONTAINER PROTECTION (READ BEFORE ANY DOCKER OPERATIONS) 🚨
+
+**INCIDENT RECOVERY**: November 15, 2025 - Previous model broke production by creating unauthorized PostgreSQL container
+
+### ❌ ABSOLUTELY PROHIBITED - DO NOT DO THESE:
+
+1. **❌ NEVER create new PostgreSQL containers**
+   - We have ONE production database: `veritable-games-postgres`
+   - It contains all production data (13 schemas, 170 tables)
+   - Creating a new one WILL BREAK THE SITE
+
+2. **❌ NEVER modify `veritable-games-postgres` container**
+   - Do not stop it
+   - Do not remove it
+   - Do not change its configuration
+   - Do not modify its networks
+
+3. **❌ NEVER change database connection strings without user approval**
+   - DATABASE_URL must point to `veritable-games-postgres`
+   - POSTGRES_URL must point to `veritable-games-postgres`
+   - Changing these breaks the application
+
+### ✅ PROTECTED CONTAINERS (READ-ONLY FOR CLAUDE)
+
+**Production Database** (DO NOT TOUCH):
+- Name: `veritable-games-postgres`
+- Image: `postgres:15-alpine`
+- Networks: `veritable-games-network` + `coolify`
+- Data: All production data since deployment
+- **Ask user before ANY modifications**
+
+**Application Container** (Managed by Coolify):
+- Name: `m4s0kwo4kc4oooocck4sswc4`
+- Managed by: Coolify auto-deployment
+- **Only modify via git push → Coolify deployment**
+
+### 📋 Container Change Protocol
+
+**BEFORE any container operation, you MUST**:
+1. ✅ Ask user for explicit approval
+2. ✅ Document current state
+3. ✅ Create database backup: `docker exec veritable-games-postgres pg_dumpall -U postgres > backup.sql`
+4. ✅ Plan rollback procedure
+5. ✅ Show user the plan and wait for confirmation
+
+### 📖 Recovery Documentation
+
+If something goes wrong, see: `/home/user/CONTAINER_PROTECTION_AND_RECOVERY.md`
+
+This document contains:
+- Full incident report (what went wrong)
+- Emergency recovery procedures
+- Container inventory and purposes
+- Verification checklists
+- Quick command reference
+
+---
+
+## ⚠️ CRITICAL: Git Workflow for Claude Models (READ THIS FIRST)
+
+### For the Next Claude Model Working on This Server
+
+**You are on the production server (192.168.1.15)**. Here's what you MUST know:
+
+#### 1. Repository Location
+
+**✅ VERITABLE GAMES:**
+```bash
+/home/user/projects/veritable-games/site/
+```
+
+**❌ ARCHIVED Repository (DO NOT USE):**
+```bash
+/home/user/veritable-games-migration-ARCHIVED-2025-11-13/
+```
+
+**❌ NOT A REPOSITORY:**
+```bash
+/home/user/  # This is the HOME DIRECTORY, not a git repo!
+```
+
+#### 2. Workflow: Edit in Repository, NEVER in Container
+
+```
+✅ CORRECT:
+Repository (/home/user/projects/veritable-games/site/)
+  → Edit files with Read/Write/Edit tools
+  → Commit to git
+  → Push to GitHub
+  → Auto-deploy via Coolify
+
+❌ WRONG:
+Container (m4s0kwo4kc4oooocck4sswc4)
+  → docker exec to edit files
+  → Changes are LOST on next deploy
+```
+
+#### 3. Standard Workflow Commands
+
+```bash
+# Navigate to repository
+cd /home/user/projects/veritable-games/site
+
+# Pull latest changes (ALWAYS do this first)
+git pull origin main
+
+# Make your changes using Read/Write/Edit tools
+# ... edit files ...
+
+# Stage and commit
+git add [files]
+git commit -m "your message"
+
+# Push to GitHub (triggers auto-deploy)
+git push origin main
+
+# Wait 2-5 minutes for Coolify to deploy
+```
+
+#### 4. SSH Authentication
+
+SSH key is already configured and auto-loads on login. If you need to manually load it:
+
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519  # Enter passphrase if prompted
+```
+
+#### 5. Available Tools
+
+**✅ Configured and Ready:**
+- **Git:** Direct push to GitHub enabled (SSH key auto-loads)
+- **Coolify CLI:** Manual deployment control (`coolify deploy by-uuid m4s0kwo4kc4oooocck4sswc4`)
+- **Docker:** Container inspection and log access
+- **PostgreSQL:** Database operations via docker exec
+
+**Quick Access:**
+```bash
+# Veritable Games repository
+cd ~/projects/veritable-games/site
+
+# Deploy immediately
+coolify deploy by-uuid m4s0kwo4kc4oooocck4sswc4
+
+# Check status
+coolify resource list
+docker inspect m4s0kwo4kc4oooocck4sswc4 | grep SOURCE_COMMIT
+```
+
+#### 6. Critical Rules
+
+- ✅ **DO**: Edit files in the repository
+- ✅ **DO**: Use Read, Write, Edit tools
+- ✅ **DO**: Commit and push to GitHub
+- ✅ **DO**: Use Coolify CLI for immediate deployments
+- ✅ **DO**: Let deployment systems handle container updates
+- ✅ **DO**: Navigate to the repository BEFORE running /init
+- ❌ **DON'T**: Edit files inside containers with `docker exec`
+- ❌ **DON'T**: Copy files into containers with `docker cp`
+- ❌ **DON'T**: Use the archived repository
+- ❌ **DON'T**: Run /init from /home/user (it's not a git repo!)
+
+#### 7. Verification
+
+```bash
+# Check you're in the right repository
+pwd
+# Should show /home/user/projects/veritable-games/site
+# For server ops: /home/user is fine (but not a git repo)
+
+# Check remote is GitHub (when in a repository)
+git remote -v
+# Should show: git@github.com:Veritable-Games/veritable-games-site.git
+
+# Check you can push (when in a repository)
+git push origin main --dry-run
+```
+
+#### 8. Deployment Verification
+
+```bash
+# Check deployed commit (wait 2-5 minutes after push)
+docker inspect m4s0kwo4kc4oooocck4sswc4 --format='{{range .Config.Env}}{{println .}}{{end}}' | grep SOURCE_COMMIT
+
+# Compare with latest commit
+cd /home/user/projects/veritable-games/site
+git log -1 --oneline
+
+# They should match after deployment completes
+```
+
+---
+
+## Server & Deployment Setup
+
+### Remote Server Configuration
+
+**Server:** `veritable-games-server`
+- **Hostname:** veritable-games-server
+- **IP:** 192.168.1.15
+- **User:** `user`
+- **Working Directory:** `/home/user/`
+- **Primary URL:** https://www.veritablegames.com
+- **Local Access:** http://192.168.1.15:3000
+- **Access:** SSH with key authentication
+
+### Dual-Drive Architecture
+
+**The server uses TWO physical drives with intentional separation:**
+
+**Drive 1 (sdb, 477GB):** User data & application code
+- Mounted at: `/` (root filesystem)
+- Contains: `/home/user/`, all projects, git repositories
+- Usage: 108GB / 468GB (25% used, 336GB free)
+
+**Drive 2 (sda, 954GB):** System services & Docker
+- Mounted at: `/var`
+- Contains: Docker images/containers/volumes, logs, system services
+- Usage: 32GB / 938GB (4% used, 859GB free)
+
+**Why this matters:**
+- ✅ Docker growth won't fill `/home/user/`
+- ✅ User data isolated from service data
+- ✅ Larger drive for Docker's unpredictable growth
+- ✅ Better backup strategy (separate concerns)
+
+**File placement rules:**
+- User projects, code, archives → `/home/user/` (on sdb)
+- Docker volumes, databases, logs → `/var/` (on sda, automatic)
+
+📝 **Complete documentation:** [docs/server/DRIVE_ARCHITECTURE.md](./docs/server/DRIVE_ARCHITECTURE.md)
+
+### Directory Structure
+
+```
+/home/user/                      # NOT A GIT REPOSITORY - Home directory
+├── projects/                    # Project organization
+│   └── veritable-games/        # VG project
+│       ├── site/               # VG production repository
+│       │   ├── CLAUDE.md       # VG-specific development guide
+│       │   ├── frontend/       # Next.js application
+│       │   ├── docs/           # VG documentation
+│       │   └── .git/           # VG git repository
+│       └── resources/          # VG project resources
+│           ├── data/           # Literature archives (3.1GB)
+│           ├── scripts/        # Import scripts
+│           ├── sql/            # Migrations
+│           ├── logs/           # Script logs
+│           └── docker-compose.yml  # Local DB
+├── repository/                 # Development tool archives (5.6GB)
+│   ├── AI-ML/                  # LLM/RAG tools, ML frameworks
+│   ├── Development-Tools/      # AI assistants, notebooks, testing
+│   ├── Web-Development/        # Next.js related tools
+│   └── [see REPOSITORY_ARCHITECTURE.md for details]
+├── archives/                   # Reference materials (16GB)
+│   ├── ai-ml-data/            # Embeddings, training data
+│   ├── learning/              # Tutorials and courses
+│   ├── game-development/      # Godot, graphics, physics
+│   ├── entertainment/         # Media tools, astronomy
+│   └── hardware/              # Device drivers
+├── shared/                     # Cross-project resources
+│   ├── archives/               # SSH keys, backups
+│   └── packages/               # System packages
+├── docs/                       # Documentation
+│   ├── veritable-games/
+│   ├── server/
+│   └── reference/
+└── CLAUDE.md                   # THIS FILE - Server-level guidance
+```
+
+See `/home/user/projects/README.md` for detailed structure documentation.
+
+### Deployment Infrastructure
+
+**Coolify** - Self-hosted deployment platform
+- Web interface: http://192.168.1.15:8000
+- Manages containers and automatic deployments
+- CLI installed: `coolify deploy by-uuid m4s0kwo4kc4oooocck4sswc4`
+
+**Application Container:**
+- **ID:** `m4s0kwo4kc4oooocck4sswc4`
+- **Type:** Next.js app in Node container (Nixpacks build)
+- **Current commit:** 679fb6d (November 14, 2025)
+
+**Database:**
+- **Container:** `veritable-games-postgres` (postgres:15-alpine)
+- **Database:** `veritable_games`
+- **Schemas:** public, anarchist, shared, library, auth, wiki, forums
+
+### ⚠️ CRITICAL: Container Ephemeral Changes
+
+**WARNING: Changes made inside running containers are EPHEMERAL and will be LOST on redeployment!**
+
+**✅ CORRECT WORKFLOW: Edit files in git repository directly**
+
+```bash
+# 1. Navigate to repository
+cd /home/user/projects/veritable-games/site
+
+# 2. Edit files directly in the repository
+# Use Read, Write, Edit tools - NOT docker exec
+
+# 3. Commit changes
+git add [files]
+git commit -m "your message"
+
+# 4. Push to GitHub
+git push origin main
+
+# 5. Wait for Coolify to deploy (2-5 minutes)
+```
+
+**❌ NEVER edit files in containers** - Use git repository as source of truth
+
+See `docs/server/CONTAINER_TO_GIT_AUTOMATION.md` for detailed workflow documentation.
+
+---
+
+## Project Overview
+
+### Veritable Games Platform
+
+Multi-purpose radical literature archival and community platform:
+
+**Application:** Full-stack web application with wiki, forums, user management, library system
+
+**Political Literature Archive:** Large-scale scraping and archival system:
+- **Anarchist Library:** 24,643 texts across 27 languages (COMPLETED)
+- **Marxists.org:** Targeting 50K-150K texts (IN PROGRESS - currently ~6,584 downloaded)
+
+**Technology Stack:**
+- **Frontend:** Next.js/React
+- **Database:** PostgreSQL 15 (Alpine) in production
+- **Runtime:** Node.js with pg/postgres drivers
+- **Python:** requests, BeautifulSoup4, html2text, PyYAML, psycopg2
+- **Infrastructure:** Docker, Coolify, Traefik, Nixpacks
+
+**Key Directories:**
+- **Repository:** `/home/user/projects/veritable-games/site/`
+- **Resources:** `/home/user/projects/veritable-games/resources/`
+  - `data/` - Literature archives (3.1GB)
+  - `scripts/` - Python import scripts
+  - `sql/` - Database migrations
+  - `logs/` - Script execution logs
+  - `docker-compose.yml` - Local PostgreSQL environment
+- **Documentation:** `/home/user/docs/veritable-games/`
+
+**🔗 For development work:** See `/home/user/projects/veritable-games/site/CLAUDE.md`
+
+---
+
+## Common Operations
+
+### Database Operations (Veritable Games)
+
+```bash
+# Access PostgreSQL CLI
+docker exec -it veritable-games-postgres psql -U postgres -d veritable_games
+
+# Backup database
+docker exec veritable-games-postgres pg_dump -U postgres veritable_games > backup.sql
+
+# Check database health
+docker exec veritable-games-postgres psql -U postgres -d veritable_games -c "SELECT 1;"
+```
+
+### Application Container (Veritable Games)
+
+```bash
+# Check container status
+docker ps --filter "name=m4s0kwo4kc4oooocck4sswc4"
+
+# View logs
+docker logs m4s0kwo4kc4oooocck4sswc4 --tail 100
+
+# Check environment variables
+docker inspect m4s0kwo4kc4oooocck4sswc4 --format='{{range .Config.Env}}{{println .}}{{end}}'
+
+# Check deployed commit
+docker inspect m4s0kwo4kc4oooocck4sswc4 --format='{{range .Config.Env}}{{println .}}{{end}}' | grep SOURCE_COMMIT
+```
+
+### Deployment
+
+Option 1: Automatic (Default)
+```bash
+cd /home/user/projects/veritable-games/site
+git push origin main
+# Wait 2-5 minutes for Coolify auto-deploy
+```
+
+Option 2: Manual (Immediate)
+```bash
+cd /home/user/projects/veritable-games/site
+git push origin main
+coolify deploy by-uuid m4s0kwo4kc4oooocck4sswc4
+```
+
+### Data Processing
+
+```bash
+# Navigate to project resources
+cd /home/user/projects/veritable-games/resources
+
+# Import anarchist documents
+python3 scripts/import_anarchist_documents_postgres.py data/converted-markdown
+
+# Check scraper status
+ps aux | grep scrape_marxists_org
+tail -f data/scraping/marxists-org/scrape.log
+```
+
+---
+
+## Production Deployment Checklist
+
+**Critical requirements before deploying to production:**
+
+1. ✅ **DATABASE_URL** or **POSTGRES_URL** set in Coolify (REQUIRED - app will crash without it)
+   - Format: `postgresql://postgres:postgres@veritable-games-postgres:5432/veritable_games`
+   - Must be set in Coolify UI under Environment Variables
+2. ✅ **DATABASE_MODE=postgres** (NOT sqlite)
+3. ✅ **Generate secrets:**
+   - `SESSION_SECRET` (openssl rand -hex 32)
+   - `ENCRYPTION_KEY` (openssl rand -hex 32)
+4. ✅ **NODE_ENV=production**
+5. ✅ **NEXT_PUBLIC_SITE_URL=https://www.veritablegames.com**
+
+**⚠️ CRITICAL: The app container will crash-loop if DATABASE_URL/POSTGRES_URL is not set!**
+
+**Verification:**
+```bash
+# Check environment variables in container
+docker inspect m4s0kwo4kc4oooocck4sswc4 --format='{{range .Config.Env}}{{println .}}{{end}}' | grep -E "DATABASE|NODE_ENV"
+
+# Check application logs
+docker logs m4s0kwo4kc4oooocck4sswc4 --tail 50
+```
+
+---
+
+## Current Project Status
+
+- **Platform:** Active development, PostgreSQL in production
+  - Container: `m4s0kwo4kc4oooocck4sswc4` (commit 679fb6d)
+  - Status: Operational
+  - URL: https://www.veritablegames.com
+
+- **Unified Tag Schema** (Nov 2025): MOSTLY COMPLETE
+  - ✅ Database migration: 19,952 tags in `shared.tags`
+  - ✅ Tag extraction: 194,664 associations for anarchist documents
+  - ✅ Frontend routing: Deployed
+  - ❌ Anarchist tags API endpoint: Missing from container
+  - See `docs/veritable-games/UNIFIED_TAG_SCHEMA_STATUS.md` for details
+
+- **Anarchist Library:** COMPLETE - 24,643 texts imported across 27 languages
+- **Marxists.org Archive:** IN PROGRESS - ~6,584 texts downloaded (scraper running)
+  - Location: `/home/user/projects/veritable-games/resources/data/scraping/marxists-org/`
+  - Target: 12,735 total texts
+
+---
+
+## Quick Troubleshooting
+
+### Container Crash-Looping (Veritable Games)
+
+```bash
+# Check logs for DATABASE_URL error
+docker logs m4s0kwo4kc4oooocck4sswc4 --tail 30
+
+# Fix: Add DATABASE_URL in Coolify, then redeploy
+```
+
+### Database Connection Failed
+
+```bash
+# Verify PostgreSQL is running
+docker exec veritable-games-postgres psql -U postgres -c "SELECT 1;"
+```
+
+### Deployment Not Triggering
+
+```bash
+# Manual deployment
+coolify deploy by-uuid m4s0kwo4kc4oooocck4sswc4
+```
+
+### Invoked /init in /home/user
+
+If you just ran `/init` in `/home/user`:
+- **Problem:** `/home/user` is NOT a git repository
+- **Solution:** Navigate to the repository first:
+  ```bash
+  cd /home/user/projects/veritable-games/site
+  ```
+- Then run `/init` again if needed (though CLAUDE.md file already exists)
+
+---
+
+## Documentation
+
+**All detailed documentation is in `/home/user/docs/`**
+
+### Quick Links
+
+- **docs/README.md** - Complete documentation index
+- **docs/server/DRIVE_ARCHITECTURE.md** - Dual-drive setup & file placement rules
+- **docs/server/REPOSITORY_ARCHITECTURE.md** - Repository & archives organization (5.6GB tools, 16GB reference)
+- **docs/reference/troubleshooting.md** - Detailed troubleshooting guide
+- **docs/reference/architecture.md** - System architecture details
+- **docs/reference/security-configuration.md** - Security setup
+- **docs/reference/docker-build.md** - Build process details
+- **docs/reference/scripts-guide.md** - Scripts documentation
+- **docs/reference/dual-machine-workflow.md** - Server/laptop workflow
+
+### Project-Specific Documentation
+
+- **📍 /home/user/projects/veritable-games/site/CLAUDE.md** - Main VG development guide
+- **docs/veritable-games/UNIFIED_TAG_SCHEMA_STATUS.md** - Tag system implementation
+- **docs/veritable-games/FORENSIC_ANALYSIS_REPORT.md** - Previous issue analysis
+- **docs/veritable-games/SCHEMA_OVERRIDE_DIAGNOSIS.md** - Schema diagnosis
+- **projects/veritable-games/resources/README.md** - Project resources guide
+
+**Server Management:**
+- **docs/server/DRIVE_ARCHITECTURE.md** - Dual-drive architecture strategy
+- **docs/server/REPOSITORY_ARCHITECTURE.md** - Tool archives & reference materials
+- **docs/server/CONTAINER_TO_GIT_AUTOMATION.md** - Container workflow automation
+- **docs/server/tmate-setup-guide.md** - Remote access setup
+
+**General:**
+- **docs/guides/** - User guides
+- **docs/operations/** - Operational procedures
+- **projects/README.md** - Multi-project organization guide
+- **shared/README.md** - Shared resources guide
+
+---
+
+## Server Responsibilities
+
+**What Claude can do on this server:**
+- ✅ Code changes (Next.js, React, TypeScript) for both projects
+- ✅ Git operations (commit, push to GitHub) for both projects
+- ✅ Database operations (migrations, backups, queries) for VG
+- ✅ Python script execution (imports, scraping) for VG
+- ✅ Container operations (inspection, logs) for VG
+- ✅ Trigger deployments (via git push or Coolify CLI)
+
+**What to avoid:**
+- ❌ Editing files inside containers
+- ❌ Using the archived repository
+- ❌ Forgetting to git pull before starting work
+- ❌ Running /init in /home/user (not a git repo!)
+
+See `docs/reference/dual-machine-workflow.md` for complete workflow documentation.
+
+---
+
+## Adding New Projects
+
+When adding new projects to this server:
+
+1. Clone/create repository in `/home/user/projects/new-project/`
+2. Add project section to this CLAUDE.md file
+3. Create `/home/user/docs/new-project/` for project-specific docs
+4. Update `/home/user/projects/README.md` with project info
+5. Update `/home/user/docs/README.md` documentation index
+6. **Consider creating** `/home/user/projects/new-project/CLAUDE.md` for project-specific development guidance
+
+See `/home/user/projects/README.md` for detailed organization guidelines.
+
+---
+
+## 📍 Navigation Summary for Claude Models
+
+**If you want to:**
+
+1. **Code on Veritable Games** → `cd /home/user/projects/veritable-games/site && read CLAUDE.md`
+2. **Deploy/manage infrastructure** → You're in the right place (this file)
+3. **Run /init** → Navigate to the repository FIRST, then run /init
+4. **Understand this server** → Keep reading this file
+
+**Remember:**
+- `/home/user/` = Server home directory (NOT a git repo)
+- `/home/user/projects/veritable-games/site/` = VG git repository
+
+---
+
+**Last Updated**: November 14, 2025

@@ -1,0 +1,52 @@
+{
+  "version": 2,
+  "framework": "nextjs",
+  "buildCommand": "cd frontend && npm run build",
+  "devCommand": "cd frontend && npm run dev",
+  "installCommand": "cd frontend && npm install",
+  "outputDirectory": "frontend/.next",
+  "env": {
+    "NODE_ENV": "production",
+    "DATABASE_MODE": "postgres"
+  },
+  "build": {
+    "env": {
+      "POSTGRES_URL": "@postgres_url",
+      "POSTGRES_PRISMA_URL": "@postgres_prisma_url",
+      "POSTGRES_URL_NON_POOLING": "@postgres_url_non_pooling"
+    }
+  },
+  "functions": {
+    "frontend/src/app/api/**/*.ts": {
+      "maxDuration": 30,
+      "memory": 1024
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        }
+      ]
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/cleanup-sessions",
+      "schedule": "0 2 * * *"
+    },
+    {
+      "path": "/api/cron/backup-database",
+      "schedule": "0 3 * * *"
+    }
+  ]
+}

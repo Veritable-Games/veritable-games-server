@@ -1,0 +1,131 @@
+#!/bin/bash
+#
+# WireGuard Auto-Switch Dispatcher v2
+# Location: /etc/NetworkManager/dispatcher.d/99-wireguard-auto-switch
+#
+# Automatically switches between wg0-home and wg0-away configs
+# based on current network gateway.
+#
+# v2 Changes (Feb 2026):
+# - Uses wg-quick instead of nmcli for reliability
+# - Explicitly tears down ALL wg0 interfaces before starting new one
+# - Adds verification that interfaces are actually down
+# - Better error handling and logging
+#
+# Usage: Automatically called by NetworkManager on connection changes
+# Manual test: sudo /etc/NetworkManager/dispatcher.d/99-wireguard-auto-switch wlp0s20f3 up
+#
+
+INTERFACE=$1
+ACTION=$2
+LOGFILE="/var/log/wireguard-switch.log"
+
+log_msg() {
+  local msg="[$(date '+%Y-%m-%d %H:%M:%S')] $1"
+  logger -t wireguard-switch "$msg"
+  echo "$msg" >> "$LOGFILE" 2>/dev/null || true
+}
+
+# Only process on connection up/down
+if [ "$ACTION" != "up" ] && [ "$ACTION" != "down" ]; then
+  exit 0
+fi
+
+# Skip if not a network connection
+if [ -z "$INTERFACE" ]; then
+  exit 0
+fi
+
+# Only process for WiFi connections (skip loopback, ethernet, etc.)
+DEVICE_TYPE=$(nmcli device show "$INTERFACE" 2>/dev/null | grep "GENERAL.TYPE" | awk '{print $2}')
+if [ "$DEVICE_TYPE" != "wifi" ]; then
+  exit 0
+fi
+
+# Get current gateway
+CURRENT_GATEWAY=$(ip route show | grep "^default via" | awk '{print $3}' | head -1)
+
+# Determine target config based on network
+if echo "$CURRENT_GATEWAY" | grep -qE "^192\.168\.1\."; then
+  TARGET="wg0-home"
+  LOG_MSG="Home network detected (gateway: $CURRENT_GATEWAY)"
+else
+  TARGET="wg0-away"
+  LOG_MSG="Away network detected (gateway: $CURRENT_GATEWAY)"
+fi
+
+log_msg "$LOG_MSG - Action: $ACTION on $INTERFACE"
+
+# Only switch on connection up event
+if [ "$ACTION" != "up" ]; then
+  exit 0
+fi
+
+# Check if target is already the only active interface
+ACTIVE_WG=$(ip link show 2>/dev/null | grep -oE "wg0-(home|away)" | sort -u)
+if [ "$ACTIVE_WG" = "$TARGET" ]; then
+  log_msg "Already using $TARGET exclusively, no switch needed"
+  exit 0
+fi
+
+# === CRITICAL FIX: Tear down ALL WireGuard interfaces first ===
+# This prevents IP binding conflicts since both configs use 10.100.0.2/24
+
+log_msg "Stopping all WireGuard interfaces..."
+
+# Bring down wg0-away if it exists
+if ip link show wg0-away &>/dev/null; then
+  log_msg "Stopping wg0-away..."
+  wg-quick down wg0-away 2>&1 | while read line; do log_msg "  $line"; done
+fi
+
+# Bring down wg0-home if it exists
+if ip link show wg0-home &>/dev/null; then
+  log_msg "Stopping wg0-home..."
+  wg-quick down wg0-home 2>&1 | while read line; do log_msg "  $line"; done
+fi
+
+# Wait and verify all interfaces are down
+sleep 1
+REMAINING=$(ip link show 2>/dev/null | grep -oE "wg0-(home|away)" || true)
+if [ -n "$REMAINING" ]; then
+  log_msg "WARNING: Interfaces still up after teardown: $REMAINING"
+  # Force removal
+  for iface in $REMAINING; do
+    log_msg "Force removing $iface..."
+    ip link delete "$iface" 2>/dev/null || true
+  done
+  sleep 1
+fi
+
+# Verify clean state
+REMAINING=$(ip link show 2>/dev/null | grep -oE "wg0-(home|away)" || true)
+if [ -n "$REMAINING" ]; then
+  log_msg "ERROR: Failed to clean up interfaces: $REMAINING"
+  exit 1
+fi
+
+log_msg "All WireGuard interfaces stopped"
+
+# === Now start the target interface ===
+log_msg "Starting $TARGET..."
+if wg-quick up "$TARGET" 2>&1 | while read line; do log_msg "  $line"; done; then
+  # Verify it came up
+  sleep 1
+  if ip link show "$TARGET" &>/dev/null; then
+    # Test connectivity
+    if ping -c 1 -W 3 10.100.0.1 &>/dev/null; then
+      log_msg "Successfully switched to $TARGET (tunnel verified)"
+    else
+      log_msg "WARNING: Switched to $TARGET but tunnel not responding (server may be down)"
+    fi
+  else
+    log_msg "ERROR: $TARGET failed to come up"
+    exit 1
+  fi
+else
+  log_msg "ERROR: wg-quick up $TARGET failed"
+  exit 1
+fi
+
+exit 0

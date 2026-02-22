@@ -1,0 +1,4683 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-02-14T13:09:34.027Z",
+  "metadata": {
+    "nodeCount": 231,
+    "connectionCount": 2,
+    "boundingBox": {
+      "x": -1934.6872241061715,
+      "y": -116.56607124072406,
+      "width": 3935.291936266781,
+      "height": 1736.4973722904442
+    }
+  },
+  "nodes": [
+    {
+      "id": "node_f1f883cc-15b2-439e-9bc8-32c35dab8f78",
+      "position": {
+        "x": -306.95218099432265,
+        "y": -94.66248529777687
+      },
+      "size": {
+        "width": 114.77571277509732,
+        "height": 37.56296054457731
+      },
+      "content": {
+        "text": "<p><em>'Autumn'</em></p>",
+        "markdown": "<p><em>'Autumn'</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_c9a5c04d-1f64-4f50-bde4-12e4cd88aacb",
+      "position": {
+        "x": -240.7587434235299,
+        "y": -81.5584144815065
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>or</p>",
+        "markdown": "<p>or</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_cf76c5c0-b4c2-4e14-9f34-588bec6c1a73",
+      "position": {
+        "x": -218.7145412303426,
+        "y": -83.85075661355322
+      },
+      "size": {
+        "width": 192.3651263278453,
+        "height": 62.95585952547665
+      },
+      "content": {
+        "text": "<p>NOW IS THE SEASON</p>",
+        "markdown": "<p>NOW IS THE SEASON</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_40c0e933-817b-4c72-8a98-9264b77d6226",
+      "position": {
+        "x": -122.48524216205686,
+        "y": -45.47049066610775
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p><em>\"A, One-of-a-kind, Social Metroidvania\"</em></p>",
+        "markdown": "<p><em>\"A, One-of-a-kind, Social Metroidvania\"</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_fdf865b2-1b06-4dc4-9e1c-479bcc7756ab",
+      "position": {
+        "x": -177.3378769904242,
+        "y": -10.272524241784465
+      },
+      "size": {
+        "width": 200.49784153214404,
+        "height": 65.61747541051987
+      },
+      "content": {
+        "text": "<p>Alt. \"Now is the Season is a unique, character-driven, narrative-adventure game impeded (very deliberately) by the game's own cast of characters.\"</p>",
+        "markdown": "<p>Alt. \"Now is the Season is a unique, character-driven, narrative-adventure game impeded (very deliberately) by the game's own cast of characters.\"</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_52e716df-4fd5-4035-a4ad-d92e021dd015",
+      "position": {
+        "x": -142.8971977478344,
+        "y": -92.70700690050361
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>(purple) diff font</p>",
+        "markdown": "<p>(purple) diff font</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_4a732278-5934-483e-9fa4-8aad50f13d2a",
+      "position": {
+        "x": -289.7212394295002,
+        "y": -108.56607124072406
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>(stylized/fancy)</p>",
+        "markdown": "<p>(stylized/fancy)</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_3d401f99-2c45-4778-a76f-2efaf435d116",
+      "position": {
+        "x": -898.4956112525441,
+        "y": -26.70218909978153
+      },
+      "size": {
+        "width": 174.2283835865196,
+        "height": 57.02019826467915
+      },
+      "content": {
+        "text": "<p>Systems &amp; Gameplay</p>",
+        "markdown": "<p>Systems &amp; Gameplay</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_ae52cf13-86e1-4c87-8549-5fc2aae3c4e9",
+      "position": {
+        "x": -960.9766760720978,
+        "y": 19.46911541602432
+      },
+      "size": {
+        "width": 143.5280410934019,
+        "height": 46.97281344874972
+      },
+      "content": {
+        "text": "<p>Mechanics let the player 'affect' the directionality of conversation.</p>",
+        "markdown": "<p>Mechanics let the player 'affect' the directionality of conversation.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_a79beaaa-cf43-4914-a383-17965d0d7efb",
+      "position": {
+        "x": -995.8398694397348,
+        "y": 53.78058658481669
+      },
+      "size": {
+        "width": 197.13380726859145,
+        "height": 64.51651874244811
+      },
+      "content": {
+        "text": "<p>The words someone uses (<em>what they actually say</em>) [...] <em>'<s>matter-less</s>'</em> than what is being expressed <strong>(<em>what they actually mean</em>)</strong></p>",
+        "markdown": "<p>The words someone uses (<em>what they actually say</em>) [...] <em>'<s>matter-less</s>'</em> than what is being expressed <strong>(<em>what they actually mean</em>)</strong></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_47eb9e3a-6f2f-438e-be35-e6f9f542acd6",
+      "position": {
+        "x": -783.4714205514654,
+        "y": 25.440424695914377
+      },
+      "size": {
+        "width": 125.94751659359358,
+        "height": 41.21918724881244
+      },
+      "content": {
+        "text": "<p>Spend time reading real-world books - <em>Not too Heavy</em></p>",
+        "markdown": "<p>Spend time reading real-world books - <em>Not too Heavy</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_76cdfcd0-1c28-4c38-acab-3b20eb66a0e1",
+      "position": {
+        "x": -761.8030257573679,
+        "y": 62.99326458700762
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Mechanical incentives to staying home and resting</p>",
+        "markdown": "<p>Mechanical incentives to staying home and resting</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_e638fb34-215e-4119-8021-69105e672251",
+      "position": {
+        "x": -821.038646402745,
+        "y": 100.61855450523986
+      },
+      "size": {
+        "width": 220.13636546339546,
+        "height": 72.04462869711125
+      },
+      "content": {
+        "text": "<p><strong>Social meter&nbsp;</strong>- When talking to an npc can decline Autumn's social meter, which in-turn, reduces the opportunities for positive outcomes. (this is a dietetic system) <em>The way Autumn ends conversations gives the player a feel for her state of mind.</em></p>",
+        "markdown": "<p><strong>Social meter&nbsp;</strong>- When talking to an npc can decline Autumn's social meter, which in-turn, reduces the opportunities for positive outcomes. (this is a dietetic system) <em>The way Autumn ends conversations gives the player a feel for her state of mind.</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_76e7b02b-2008-45fe-a7ca-e8de8bd4b64c",
+      "position": {
+        "x": -833.0980151893156,
+        "y": 171.7849603577888
+      },
+      "size": {
+        "width": 173.60087991044801,
+        "height": 56.814833425237524
+      },
+      "content": {
+        "text": "<p>The social meter- refills at home doing small house activities &amp; tasks. Like reading, cleaning, dressing up, and decorating.&nbsp;</p>",
+        "markdown": "<p>The social meter- refills at home doing small house activities &amp; tasks. Like reading, cleaning, dressing up, and decorating.&nbsp;</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_bebe43cd-3f7a-444c-969c-fd6a6499205a",
+      "position": {
+        "x": -765.8167148517043,
+        "y": 254.39674722092596
+      },
+      "size": {
+        "width": 125.96505608608511,
+        "height": 41.22492744635513
+      },
+      "content": {
+        "text": "<p><strong>Little</strong></p>",
+        "markdown": "<p><strong>Little</strong></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_6ec1845a-e473-4132-9404-459a429e4a82",
+      "position": {
+        "x": -800.5836344917053,
+        "y": 288.52200412254183
+      },
+      "size": {
+        "width": 121.9561011382906,
+        "height": 39.912905827076926
+      },
+      "content": {
+        "text": "<p><em>Adjusts his tie (ostensibly to draw attention)</em></p>",
+        "markdown": "<p><em>Adjusts his tie (ostensibly to draw attention)</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_74910fad-9923-4ef6-8c0c-5c8da1b65da6",
+      "position": {
+        "x": -841.5963100865323,
+        "y": 314.8259941758274
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p><em>On malignment</em></p>",
+        "markdown": "<p><em>On malignment</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_b551fa4b-434e-486d-8d38-e3b228825a66",
+      "position": {
+        "x": -778.1535849789752,
+        "y": 334.9428580755753
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p><em>Interrupts</em></p>",
+        "markdown": "<p><em>Interrupts</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_40feaee9-9c32-4566-bcd2-7fceb7ce2ea8",
+      "position": {
+        "x": -767.09258859091,
+        "y": 345.53643130539723
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Interjects</p>",
+        "markdown": "<p>Interjects</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_74418c92-8b56-4d2c-8fc1-2f2eca60adc0",
+      "position": {
+        "x": -731.0608295775835,
+        "y": 310.92697856891186
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Can be listless/bored</p>",
+        "markdown": "<p>Can be listless/bored</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_7abeceba-54df-4b75-b9e6-4cd2dd9dd6d9",
+      "position": {
+        "x": -905.5303995368499,
+        "y": 344.5882271208353
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Wrong motivation</p>",
+        "markdown": "<p>Wrong motivation</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_438c7227-de63-4e97-94b8-d7076bb4196b",
+      "position": {
+        "x": -888.4627242147479,
+        "y": 358.3371877969733
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Wrong intent</p>",
+        "markdown": "<p>Wrong intent</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_d893d29e-ce27-49c8-a4f3-9242328c90a2",
+      "position": {
+        "x": -810.7099810807267,
+        "y": 378.2494756727594
+      },
+      "size": {
+        "width": 152.0107131770878,
+        "height": 49.74896067613783
+      },
+      "content": {
+        "text": "<p><em>Beseech them with demands, offer nothing but reproach, and the whole will soon be rid of you.</em></p>",
+        "markdown": "<p><em>Beseech them with demands, offer nothing but reproach, and the whole will soon be rid of you.</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_80185f4d-14a9-42bb-80ea-8a2168ff7038",
+      "position": {
+        "x": -943.7594682502435,
+        "y": 455.60213207945367
+      },
+      "size": {
+        "width": 143.0111085855925,
+        "height": 46.803635537103
+      },
+      "content": {
+        "text": "<p><strong>Spring</strong></p>",
+        "markdown": "<p><strong>Spring</strong></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_36e2af5e-ff11-4162-9a0b-9ded7623bb98",
+      "position": {
+        "x": -1002.538516252857,
+        "y": 492.6367310136535
+      },
+      "size": {
+        "width": 92.55632485807078,
+        "height": 30.291160862641348
+      },
+      "content": {
+        "text": "<p>Compassionate <em>Generous to a fault</em></p>",
+        "markdown": "<p>Compassionate <em>Generous to a fault</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_eea3edb4-4d26-45bf-b484-08039f73b18f",
+      "position": {
+        "x": -977.925459868429,
+        "y": 518.0467840806728
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Highly empathic</p>",
+        "markdown": "<p>Highly empathic</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_473e8eb3-aec5-4171-b0fd-f86c739a4206",
+      "position": {
+        "x": -879.798474799646,
+        "y": 489.2114275312386
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Can be at a loss of spirit</p>",
+        "markdown": "<p>Can be at a loss of spirit</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_3378701d-1189-40af-9d1b-617be053671d",
+      "position": {
+        "x": -891.0466869310106,
+        "y": 525.007647953245
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>\"Who is more generous in strength, courage, and heart than Spring?!\"</em></p>",
+        "markdown": "<p><em>\"Who is more generous in strength, courage, and heart than Spring?!\"</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_bc759318-2f1c-4d53-a05e-c02b35facd1b",
+      "position": {
+        "x": -996.7172032448783,
+        "y": 551.0863447450066
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p><em>Caretaker</em></p>",
+        "markdown": "<p><em>Caretaker</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_bcd28755-2d1f-4918-b1f5-26109f872397",
+      "position": {
+        "x": -1100.179558007569,
+        "y": 572.2667606352143
+      },
+      "size": {
+        "width": 91.66666666666667,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>(red text) <em>Invisible</em></p>",
+        "markdown": "<p>(red text) <em>Invisible</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_a00b74ed-8a35-475e-aaf5-1ee1af201ccb",
+      "position": {
+        "x": -1065.2883052444206,
+        "y": 584.5878058491139
+      },
+      "size": {
+        "width": 126.56140000251922,
+        "height": 41.42009454627902
+      },
+      "content": {
+        "text": "<p>To be the '<em>good daughter</em>'</p>",
+        "markdown": "<p>To be the '<em>good daughter</em>'</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_0575535c-94b5-4789-ad5a-da6b9ba413ac",
+      "position": {
+        "x": -936.3159822594968,
+        "y": 569.7060593679946
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>What about a smile is reassurance?</p>",
+        "markdown": "<p>What about a smile is reassurance?</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_2246ab38-6a3d-4aad-93ed-6976a7a11656",
+      "position": {
+        "x": -955.9579869535465,
+        "y": 614.523948539156
+      },
+      "size": {
+        "width": 134.42114519870088,
+        "height": 43.99237479230211
+      },
+      "content": {
+        "text": "<p><em>(red text) Growing up, guardians commend her for being 'pure', well-tempered, and obedient.&nbsp;</em></p>",
+        "markdown": "<p><em>(red text) Growing up, guardians commend her for being 'pure', well-tempered, and obedient.&nbsp;</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_cce795e8-ebde-4764-ba11-e3026bbc77b9",
+      "position": {
+        "x": -1139.88339776648,
+        "y": 692.1711777493982
+      },
+      "size": {
+        "width": 127.74266470619212,
+        "height": 41.80669026748106
+      },
+      "content": {
+        "text": "<p>Seasonal Attributes</p>",
+        "markdown": "<p>Seasonal Attributes</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_bd4eaad1-c5a3-4b49-9d73-cfb96cc98511",
+      "position": {
+        "x": -1175.4664829072728,
+        "y": 724.674957445315
+      },
+      "size": {
+        "width": 142.25939037489474,
+        "height": 46.55761866814737
+      },
+      "content": {
+        "text": "<p>(list) High water levels, Flooding events, Heavy rainfall, Lightning storms, Muted, but colorful</p>",
+        "markdown": "<p>(list) High water levels, Flooding events, Heavy rainfall, Lightning storms, Muted, but colorful</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_1e164a5e-8005-40b4-a44d-389fc24eec12",
+      "position": {
+        "x": -712.5841571932201,
+        "y": 555.0262563952609
+      },
+      "size": {
+        "width": 138.82254513139193,
+        "height": 45.43283295209191
+      },
+      "content": {
+        "text": "<p><strong>Summer</strong></p>",
+        "markdown": "<p><strong>Summer</strong></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_f06e606f-bf7e-48c8-b8f7-6e6baf8e78d8",
+      "position": {
+        "x": -704.5749882002708,
+        "y": 605.6555797064765
+      },
+      "size": {
+        "width": 102.9592220985017,
+        "height": 33.695745414055104
+      },
+      "content": {
+        "text": "<p><em>Volatile?</em></p>",
+        "markdown": "<p><em>Volatile?</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_2460c69c-add9-4f29-85f2-42c9b834cdc0",
+      "position": {
+        "x": -747.0791539079728,
+        "y": 620.6205080650348
+      },
+      "size": {
+        "width": 101.63907624197077,
+        "height": 33.263697679190436
+      },
+      "content": {
+        "text": "<p><em>Testing boundaries</em></p>",
+        "markdown": "<p><em>Testing boundaries</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_2c06f583-a50a-49b2-b229-464fac1b944c",
+      "position": {
+        "x": -753.3075354797297,
+        "y": 637.8781764173453
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>Indignified for herself</em></p>",
+        "markdown": "<p><em>Indignified for herself</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_136e5eb6-7020-4f2e-9511-5ab95c3d7608",
+      "position": {
+        "x": -720.6525698625105,
+        "y": 647.4351204178666
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p><em>never for others</em></p>",
+        "markdown": "<p><em>never for others</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_0f19c2d2-8af1-41c0-bd39-815d953bcefb",
+      "position": {
+        "x": -739.2983120383053,
+        "y": 668.5384907926945
+      },
+      "size": {
+        "width": 130.82896795859915,
+        "height": 42.816753150086996
+      },
+      "content": {
+        "text": "<p><em>Unable to suppress </em><strong><em>REACTION</em></strong></p><p></p>",
+        "markdown": "<p><em>Unable to suppress </em><strong><em>REACTION</em></strong></p><p></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_f98d9596-227b-47ee-b45e-efb722fb2a6c",
+      "position": {
+        "x": -730.3506567884842,
+        "y": 680.8598521203163
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p><em>Given to fits of rage</em></p>",
+        "markdown": "<p><em>Given to fits of rage</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_db566496-8fbc-4d60-870d-273ee9c30bc7",
+      "position": {
+        "x": -765.1144976771329,
+        "y": 697.1416510175314
+      },
+      "size": {
+        "width": 126.28179889721481,
+        "height": 41.32858872999758
+      },
+      "content": {
+        "text": "<p><em>Ambivalence to thrown injuries</em></p>",
+        "markdown": "<p><em>Ambivalence to thrown injuries</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_29bc51ff-04f1-4c4f-8b1c-de1846aebef8",
+      "position": {
+        "x": -744.458596338498,
+        "y": 731.8527468597492
+      },
+      "size": {
+        "width": 127.74266470619212,
+        "height": 41.80669026748106
+      },
+      "content": {
+        "text": "<p>Seasonal Attributes</p>",
+        "markdown": "<p>Seasonal Attributes</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_0c237e8f-677f-4e4b-a219-f94c8bb44cbf",
+      "position": {
+        "x": -771.8213531924297,
+        "y": 765.222211853943
+      },
+      "size": {
+        "width": 141.5924772860765,
+        "height": 46.33935620271595
+      },
+      "content": {
+        "text": "<p>(list) Heat waves/drought, Falling/fallen trees, Lower water levels, Spontaneous fires</p>",
+        "markdown": "<p>(list) Heat waves/drought, Falling/fallen trees, Lower water levels, Spontaneous fires</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_d3f9942b-e004-43c4-80d7-4e388c1bf6fb",
+      "position": {
+        "x": -483.04676580701255,
+        "y": 262.30042233207763
+      },
+      "size": {
+        "width": 216.77838848671126,
+        "height": 70.94565441383278
+      },
+      "content": {
+        "text": "<p><strong>Fortune (Father Fortune)</strong></p>",
+        "markdown": "<p><strong>Fortune (Father Fortune)</strong></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_a5c57393-8ae8-4705-9ae9-3cbf73017ec5",
+      "position": {
+        "x": -472.78802833827837,
+        "y": 323.5364412876714
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p><em>A small man</em></p>",
+        "markdown": "<p><em>A small man</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_7b12d2dc-4ac3-4d65-b6d7-fb08975d8f49",
+      "position": {
+        "x": -498.4528826411945,
+        "y": 341.5567401888612
+      },
+      "size": {
+        "width": 92.27867705881064,
+        "height": 30.200294310156213
+      },
+      "content": {
+        "text": "<p>Miserable in his role</p>",
+        "markdown": "<p>Miserable in his role</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_7a519e03-a858-4b80-8e42-5beebed808fd",
+      "position": {
+        "x": -507.84800427638254,
+        "y": 363.76334798283943
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>No one may do it better than him</p>",
+        "markdown": "<p>No one may do it better than him</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_ef476026-f844-491c-a3c5-0a2d2bcd7b0f",
+      "position": {
+        "x": -519.4772548233897,
+        "y": 392.3627966776786
+      },
+      "size": {
+        "width": 125.39248488300521,
+        "height": 41.037540507165346
+      },
+      "content": {
+        "text": "<p>Owes [them] nothing if it's not to himself or his reputation</p>",
+        "markdown": "<p>Owes [them] nothing if it's not to himself or his reputation</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_102a2072-2875-4a33-b0c4-5e973f47863d",
+      "position": {
+        "x": -506.1670173042044,
+        "y": 436.68273864979534
+      },
+      "size": {
+        "width": 133.6807459738542,
+        "height": 43.75006231871592
+      },
+      "content": {
+        "text": "<p>(red text) What does society tell him he is owed? <em>Is he irate for it?</em></p>",
+        "markdown": "<p>(red text) What does society tell him he is owed? <em>Is he irate for it?</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_76280b68-faa4-464b-b6fd-96ee35fcb164",
+      "position": {
+        "x": -364.8432489508924,
+        "y": 329.9370615854878
+      },
+      "size": {
+        "width": 130.9973093465489,
+        "height": 42.87184669523418
+      },
+      "content": {
+        "text": "<p><em>Believes himself <u>righted</u> to higher stature</em></p>",
+        "markdown": "<p><em>Believes himself <u>righted</u> to higher stature</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_12f9cbcd-50e3-4aed-a104-652b583e41ac",
+      "position": {
+        "x": -380.2066846747354,
+        "y": 362.306234893824
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Often arrogant</p>",
+        "markdown": "<p>Often arrogant</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_f8bf00b4-865d-4dc5-bd5c-107f84c49dc0",
+      "position": {
+        "x": -370.4284268496291,
+        "y": 374.9817542967392
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Often proud</p>",
+        "markdown": "<p>Often proud</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_57fbf7d1-81bc-4edc-b9c8-17f648a8a52b",
+      "position": {
+        "x": -302.70493746833887,
+        "y": 347.81992700477775
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p><em>fearful fearmonger</em></p>",
+        "markdown": "<p><em>fearful fearmonger</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_39482527-4a12-44fd-a37a-b2972793bb60",
+      "position": {
+        "x": -341.81796876876336,
+        "y": 410.4732086249021
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>the notion of live</em>; is not the thing he has an awareness of</p>",
+        "markdown": "<p><em>the notion of live</em>; is not the thing he has an awareness of</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_41866c13-2f9f-4efa-932e-8be045f0b247",
+      "position": {
+        "x": -533.5637097538659,
+        "y": 74.82254457032745
+      },
+      "size": {
+        "width": 146.49266870413,
+        "height": 47.94305521226074
+      },
+      "content": {
+        "text": "<p>Navigation</p>",
+        "markdown": "<p>Navigation</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_68bdaa4f-49ef-4bb3-89d1-998ce3996b55",
+      "position": {
+        "x": -566.2080606673786,
+        "y": 109.05930284547493
+      },
+      "size": {
+        "width": 221.9108506926654,
+        "height": 72.62536931759959
+      },
+      "content": {
+        "text": "<p>Leaves strewn around the game world are deliberate resource to help Autumn navigate her environment. The game will 'hint-at-her' to move using the blowing of leaves; the sound that the wind makes, the [physical effect] of twigs being pulled by the Unseen force.</p>",
+        "markdown": "<p>Leaves strewn around the game world are deliberate resource to help Autumn navigate her environment. The game will 'hint-at-her' to move using the blowing of leaves; the sound that the wind makes, the [physical effect] of twigs being pulled by the Unseen force.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_e09357db-a329-48f7-884b-d2e1b32240e5",
+      "position": {
+        "x": -597.676126843044,
+        "y": 191.59566557393495
+      },
+      "size": {
+        "width": 117.7629892689556,
+        "height": 38.54061466984002
+      },
+      "content": {
+        "text": "<p>When Autumn enters or exits doors, the game saves; <em>players can return to a previous save intuitively</em></p>",
+        "markdown": "<p>When Autumn enters or exits doors, the game saves; <em>players can return to a previous save intuitively</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_fed3071e-b5ed-4818-8a62-1700214cb489",
+      "position": {
+        "x": -138.46222119745863,
+        "y": 244.42080620187355
+      },
+      "size": {
+        "width": 204.86016794436782,
+        "height": 67.0451458727022
+      },
+      "content": {
+        "text": "<p><strong>Mother (Mother Nature)</strong></p>",
+        "markdown": "<p><strong>Mother (Mother Nature)</strong></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_5a3380b2-826e-4d1a-afb5-4da8dcfc0c0d",
+      "position": {
+        "x": -165.0994029131089,
+        "y": 290.33783128932095
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Dear mother,</p>",
+        "markdown": "<p>Dear mother,</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_daa12522-56b3-409f-8888-151c75f52ec2",
+      "position": {
+        "x": -154.41938544692354,
+        "y": 309.9441188401324
+      },
+      "size": {
+        "width": 91.66666666666664,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Prayer to her as if to the saints</p>",
+        "markdown": "<p>Prayer to her as if to the saints</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_6665e243-1185-4642-9e84-f3351375e94f",
+      "position": {
+        "x": 39.86298918294415,
+        "y": 315.5978215039228
+      },
+      "size": {
+        "width": 130.23822633105308,
+        "height": 42.62341952652647
+      },
+      "content": {
+        "text": "<p>Given safety, warmth, freedom;</p>",
+        "markdown": "<p>Given safety, warmth, freedom;</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_fd07fab4-13a1-4880-a126-fccea2dcffd6",
+      "position": {
+        "x": 51.10449678316787,
+        "y": 334.91518235975263
+      },
+      "size": {
+        "width": 107.12131222856175,
+        "height": 35.05788400207476
+      },
+      "content": {
+        "text": "<p><em>To desire [for] great virtue in your children</em></p>",
+        "markdown": "<p><em>To desire [for] great virtue in your children</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_c2d97e51-8864-412d-b8ef-b1f848c147bc",
+      "position": {
+        "x": 75.7583361319053,
+        "y": 355.05974417224877
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>[...]</p>",
+        "markdown": "<p>[...]</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_f6554a84-837d-4ae0-823d-3d48cfe0c234",
+      "position": {
+        "x": 58.46385181264173,
+        "y": 376.76984150919685
+      },
+      "size": {
+        "width": 123.98277455600032,
+        "height": 40.57618076378193
+      },
+      "content": {
+        "text": "<p>At expense [of] their sense of identity and worth</p>",
+        "markdown": "<p>At expense [of] their sense of identity and worth</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_46e1d787-a415-48d1-89c6-65ff8e363f53",
+      "position": {
+        "x": 52.02921135202906,
+        "y": 404.3154329130679
+      },
+      "size": {
+        "width": 119.567161538316,
+        "height": 39.13107104890342
+      },
+      "content": {
+        "text": "<p>Demanding, exasperated; expressionless,</p>",
+        "markdown": "<p>Demanding, exasperated; expressionless,</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_1cdc850b-bb5f-4776-aac8-bf6c2f50c482",
+      "position": {
+        "x": 67.22138334634347,
+        "y": 299.067570368099
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>(red text)</p>",
+        "markdown": "<p>(red text)</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_8157602c-2a66-4d99-aa11-a93478d7743a",
+      "position": {
+        "x": 40.97402658827491,
+        "y": 430.3043541584419
+      },
+      "size": {
+        "width": 126.15221954342682,
+        "height": 41.28618094148514
+      },
+      "content": {
+        "text": "<p>What worth is it [of a parent] to pity a child?</p>",
+        "markdown": "<p>What worth is it [of a parent] to pity a child?</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_9ebf6715-6272-4567-a45c-2f6524c517ae",
+      "position": {
+        "x": 47.03110891705993,
+        "y": 457.0564677772427
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Cause of shame, resentment, guilt;&nbsp;</p>",
+        "markdown": "<p>Cause of shame, resentment, guilt;&nbsp;</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_2cfa81c1-82e6-46e7-a3da-b3e3bb4982a9",
+      "position": {
+        "x": 40.97402658827488,
+        "y": 483.3038245353113
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Self-loathing, animosity, and hate.</p>",
+        "markdown": "<p>Self-loathing, animosity, and hate.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_868b27a2-fd41-4cc5-a05b-0ca5a45a40fc",
+      "position": {
+        "x": -167.99531375480962,
+        "y": 374.2763426171802
+      },
+      "size": {
+        "width": 117.76764724571048,
+        "height": 38.54213909859616
+      },
+      "content": {
+        "text": "<p><em>(red text) No real presence in Autumn's life.</em></p>",
+        "markdown": "<p><em>(red text) No real presence in Autumn's life.</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_b7b9afe5-056d-4ca7-b818-1d94ede5e1cb",
+      "position": {
+        "x": -159.41444712236412,
+        "y": 409.60932286842643
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>(red text) \"To give yourself away for free.\"</em></p>",
+        "markdown": "<p><em>(red text) \"To give yourself away for free.\"</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_b8faef34-b465-4435-adeb-4f5031e27e19",
+      "position": {
+        "x": -188.69034504482536,
+        "y": 338.4386055052019
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Statues of her Symbolism</p>",
+        "markdown": "<p>Statues of her Symbolism</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_41b64681-4fe1-4562-b8cd-9c640ea9c6df",
+      "position": {
+        "x": -83.70091801255096,
+        "y": 336.41957806227356
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>(red text?) \"you are meant (made) to care for your village\"</p>",
+        "markdown": "<p>(red text?) \"you are meant (made) to care for your village\"</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_d7f2cb52-c91b-433c-92d1-137c396861c6",
+      "position": {
+        "x": -145.2812550218658,
+        "y": 525.7034008368066
+      },
+      "size": {
+        "width": 262.68895037145677,
+        "height": 85.97092921247676
+      },
+      "content": {
+        "text": "<p>Characteristically good-willed: Instilled in her are the beliefs of her parents, grandparents, aunts, uncles, cousins, sisters, and brothers. Beliefs about herself <em>and the role she is meant to play. </em>Beliefs about her body and identity and what social obligations they entail society.</p>",
+        "markdown": "<p>Characteristically good-willed: Instilled in her are the beliefs of her parents, grandparents, aunts, uncles, cousins, sisters, and brothers. Beliefs about herself <em>and the role she is meant to play. </em>Beliefs about her body and identity and what social obligations they entail society.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_cba03fda-84d7-4c59-996b-5310d499b189",
+      "position": {
+        "x": -46.69609177952112,
+        "y": 375.0005462662908
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>(red text) Regarded religiously by the townspeople</em></p>",
+        "markdown": "<p><em>(red text) Regarded religiously by the townspeople</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_acdf3baf-6d83-4b7e-9040-f23f60503f71",
+      "position": {
+        "x": -54.966104502418794,
+        "y": 463.57847644315865
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>Knowing</em> this role is not hers to choose</p>",
+        "markdown": "<p><em>Knowing</em> this role is not hers to choose</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_401777ca-6c7d-458f-bf45-83326f5783d4",
+      "position": {
+        "x": -69.064350570552,
+        "y": 427.5201984932253
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>A deep love of all living things</p>",
+        "markdown": "<p>A deep love of all living things</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_e4bbf726-5699-44dd-8d69-5d14efd3b554",
+      "position": {
+        "x": -57.56572690986181,
+        "y": 301.784110472544
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>Is she even the ideal?</em></p>",
+        "markdown": "<p><em>Is she even the ideal?</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_b3df992b-b9b8-4827-85d2-c25f7de7daeb",
+      "position": {
+        "x": -64.01135680960475,
+        "y": 495.93517939987646
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>BENEFICENT</em></p>",
+        "markdown": "<p><em>BENEFICENT</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_0e8d2c9f-12d8-4761-b8a2-89fd8f9b7584",
+      "position": {
+        "x": -179.2980087655499,
+        "y": 451.1438434281942
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Accepting of the cycles of life and death</p>",
+        "markdown": "<p>Accepting of the cycles of life and death</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_0d2e64b1-d0d3-4a82-8b8f-d9f8c0137ef9",
+      "position": {
+        "x": -153.99936860582875,
+        "y": 490.1815284317903
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p><em>A guiding force</em></p>",
+        "markdown": "<p><em>A guiding force</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_0bc2c43a-3802-411d-805e-df0604fb046c",
+      "position": {
+        "x": -498.5665598133378,
+        "y": 535.5992502259718
+      },
+      "size": {
+        "width": 137.16395999454286,
+        "height": 44.890023270941306
+      },
+      "content": {
+        "text": "<p><strong>Autumn</strong></p>",
+        "markdown": "<p><strong>Autumn</strong></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_afa9beae-74fb-456e-8e3b-ac1351e6ffc4",
+      "position": {
+        "x": -466.5524851430697,
+        "y": 567.0187710673904
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Unassuming</p>",
+        "markdown": "<p>Unassuming</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_abeac15a-5ab8-40c4-969c-5f6a06957efe",
+      "position": {
+        "x": -452.59183130949236,
+        "y": 580.8126061661434
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Undisturbed</p>",
+        "markdown": "<p>Undisturbed</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_151316b9-b8ad-42d5-aa66-2964f18f247d",
+      "position": {
+        "x": -509.13819441070314,
+        "y": 611.7614709310468
+      },
+      "size": {
+        "width": 99.22180533890533,
+        "height": 32.4725908381872
+      },
+      "content": {
+        "text": "<p>Comfortable in her own company</p>",
+        "markdown": "<p>Comfortable in her own company</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_3a7dd0eb-83b3-494b-aa6f-0d6717146fda",
+      "position": {
+        "x": -524.2879994561259,
+        "y": 645.5280977883054
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Comfortable in the company of others</p>",
+        "markdown": "<p>Comfortable in the company of others</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_c44bbcf7-3bdc-485c-85fb-f1363f3dda28",
+      "position": {
+        "x": -406.2554621185436,
+        "y": 614.7763256083991
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>Autumn is the player neutrally inhabited</em></p>",
+        "markdown": "<p><em>Autumn is the player neutrally inhabited</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_e04182ce-b2fe-4dd5-a409-0081e354fa37",
+      "position": {
+        "x": -540.1161174899014,
+        "y": 683.9678130131886
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Our image for the generous,&nbsp;<em>sincere</em> person</p>",
+        "markdown": "<p>Our image for the generous,&nbsp;<em>sincere</em> person</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_a8ab4306-819b-4611-a4b9-0f24b6349983",
+      "position": {
+        "x": -438.398387975357,
+        "y": 641.4903589588718
+      },
+      "size": {
+        "width": 99.6583476066505,
+        "height": 32.61545921672198
+      },
+      "content": {
+        "text": "<p><em>Outgoing, Adventerous</em></p>",
+        "markdown": "<p><em>Outgoing, Adventerous</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_cfe9227e-ae54-4229-abd2-ff3e2891561f",
+      "position": {
+        "x": -434.70228722650575,
+        "y": 679.7289331730561
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>(red text?) Autumn is to balance her life among others</em></p>",
+        "markdown": "<p><em>(red text?) Autumn is to balance her life among others</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_30532732-3036-4843-ac50-a3afabf89ad6",
+      "position": {
+        "x": -571.1579960306228,
+        "y": 726.0570807104239
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>(red text) Never depressed, Never lonely</p>",
+        "markdown": "<p>(red text) Never depressed, Never lonely</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_a85c9b7c-0627-41d9-9edc-8b0bbba1ed45",
+      "position": {
+        "x": -469.8324595160516,
+        "y": 729.4452469370748
+      },
+      "size": {
+        "width": 145.5702453474189,
+        "height": 47.641171204609826
+      },
+      "content": {
+        "text": "<p><em>Has the potential to express either a deep sense of responsibility or a deep disdain for her role</em></p>",
+        "markdown": "<p><em>Has the potential to express either a deep sense of responsibility or a deep disdain for her role</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_0578a1ce-bc4e-4192-862d-721704d689d3",
+      "position": {
+        "x": -489.8101823857225,
+        "y": 856.4912406707999
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>(list) Serene/Calm, Falling leaves, Leaf piles!</p>",
+        "markdown": "<p>(list) Serene/Calm, Falling leaves, Leaf piles!</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_44c7241f-e72b-4254-9ea0-bfdc9dd60d45",
+      "position": {
+        "x": -499.16639436283,
+        "y": 829.332392255108
+      },
+      "size": {
+        "width": 127.74266470619212,
+        "height": 41.80669026748106
+      },
+      "content": {
+        "text": "<p>Seasonal Attributes</p>",
+        "markdown": "<p>Seasonal Attributes</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_d0b11814-d041-4de4-9061-20292858e153",
+      "position": {
+        "x": -640.5862024193857,
+        "y": 936.2110461295167
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>Leaf-piles!!</em></p>",
+        "markdown": "<p><em>Leaf-piles!!</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_f513e30f-f2ba-4036-a938-762a45ed9b10",
+      "position": {
+        "x": -625.8122701603199,
+        "y": 961.0913518314683
+      },
+      "size": {
+        "width": 258.30335992961517,
+        "height": 84.53564506787406
+      },
+      "content": {
+        "text": "<p><em>Run at full speed into a leaf pie to leap into it&nbsp;or walk up to the edge of a leaf pile</em> (gently step towards it) to 'fall, arms outstretched' into the pile. Both actions yield collectibles. <em>(Falling lightly does not toss leafs everywhere as throwing yourself into it does)</em></p>",
+        "markdown": "<p><em>Run at full speed into a leaf pie to leap into it&nbsp;or walk up to the edge of a leaf pile</em> (gently step towards it) to 'fall, arms outstretched' into the pile. Both actions yield collectibles. <em>(Falling lightly does not toss leafs everywhere as throwing yourself into it does)</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_d70d9219-6530-47bc-9484-1c07b3d9bfb4",
+      "position": {
+        "x": -218.14102162413036,
+        "y": 628.8154930515437
+      },
+      "size": {
+        "width": 133.643020969779,
+        "height": 43.737715953745855
+      },
+      "content": {
+        "text": "<p><strong>Winter</strong></p>",
+        "markdown": "<p><strong>Winter</strong></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_ff062ece-b960-4756-b170-b8605770efdb",
+      "position": {
+        "x": -252.92369515665166,
+        "y": 661.4177551029637
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Strong-willed in good company</p>",
+        "markdown": "<p>Strong-willed in good company</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_f50242ba-07ec-4da0-b12c-7a0b894004b0",
+      "position": {
+        "x": -263.8481567996453,
+        "y": 686.1362118998347
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Reserved</p>",
+        "markdown": "<p>Reserved</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_b3e771c5-f82b-4ecd-89dd-d75023d546a5",
+      "position": {
+        "x": -202.57522844195077,
+        "y": 686.1362118998347
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Protects her independence</p>",
+        "markdown": "<p>Protects her independence</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_55204ffb-393c-4352-bc94-bd89363528fd",
+      "position": {
+        "x": -275.04665492627623,
+        "y": 708.4863580364229
+      },
+      "size": {
+        "width": 98.44433823012511,
+        "height": 32.21814705713186
+      },
+      "content": {
+        "text": "<p>Cynical, Misanthropic</p>",
+        "markdown": "<p>Cynical, Misanthropic</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_63c057af-7345-4bc2-afd9-63e43b0c6301",
+      "position": {
+        "x": -272.63295826621396,
+        "y": 736.1865938618093
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Given fits of <em>middling</em> righteous-indignity</p>",
+        "markdown": "<p>Given fits of <em>middling</em> righteous-indignity</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_a49e4780-ccdf-48de-8590-75392b787cdd",
+      "position": {
+        "x": -177.99363283638564,
+        "y": 714.5097309680218
+      },
+      "size": {
+        "width": 71.00076709582376,
+        "height": 23.23661468590596
+      },
+      "content": {
+        "text": "<p>Can be uneasy</p>",
+        "markdown": "<p>Can be uneasy</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_f7e063a9-1203-4cce-9b06-f031eab5694b",
+      "position": {
+        "x": -164.8568649744876,
+        "y": 727.8118990278145
+      },
+      "size": {
+        "width": 81.55356687667971,
+        "height": 26.690258250549725
+      },
+      "content": {
+        "text": "<p>Can be depressed</p>",
+        "markdown": "<p>Can be depressed</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_f9e2b39c-ac96-427a-ab43-1c99f9c8e105",
+      "position": {
+        "x": -188.6833101114658,
+        "y": 753.884404350679
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Haunted by fears &amp; doubts</p>",
+        "markdown": "<p>Haunted by fears &amp; doubts</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_54405731-b7e3-416d-b824-7d843b88a3a1",
+      "position": {
+        "x": -323.74346355232166,
+        "y": 803.3054274102662
+      },
+      "size": {
+        "width": 127.74266470619212,
+        "height": 41.80669026748106
+      },
+      "content": {
+        "text": "<p>Seasonal Attributes</p>",
+        "markdown": "<p>Seasonal Attributes</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_38f1f8e0-d6e0-4a1f-b29c-19b87e2f87ae",
+      "position": {
+        "x": -328.7465339720958,
+        "y": 837.8794250260993
+      },
+      "size": {
+        "width": 140.48526028322274,
+        "height": 45.976994274509266
+      },
+      "content": {
+        "text": "<p>(list) Frozen lakes, Snow &amp; snow storms, Icicles &amp; Icy rivers, Elevation change, Hibernating creatures, Stillness Quietude</p>",
+        "markdown": "<p>(list) Frozen lakes, Snow &amp; snow storms, Icicles &amp; Icy rivers, Elevation change, Hibernating creatures, Stillness Quietude</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_daae8d71-e1a0-480e-a95b-c8985a4c34f3",
+      "position": {
+        "x": -166.85886669782693,
+        "y": 789.2253888926334
+      },
+      "size": {
+        "width": 109.91382254355659,
+        "height": 35.97179646880034
+      },
+      "content": {
+        "text": "<p>Iceskating!</p>",
+        "markdown": "<p>Iceskating!</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_4bb3dbc3-f739-450d-b4b6-293723464c33",
+      "position": {
+        "x": -192.7987516279943,
+        "y": 834.995684188497
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Quickly travel across frozen lakes and rivers.</p>",
+        "markdown": "<p>Quickly travel across frozen lakes and rivers.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_37640043-b977-4d6c-8590-a432bd672a74",
+      "position": {
+        "x": -181.26378827758572,
+        "y": 867.128796378921
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Take your skates!</p>",
+        "markdown": "<p>Take your skates!</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_39fff47c-72f7-4a8b-83d7-36bc983c15b6",
+      "position": {
+        "x": -198.97819627999888,
+        "y": 889.3747971261379
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Snow angels!</p>",
+        "markdown": "<p>Snow angels!</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_080eb8c4-ba3b-4495-9bd4-527d4405b146",
+      "position": {
+        "x": -221.76957662089458,
+        "y": 916.8885708722476
+      },
+      "size": {
+        "width": 139.8250897698744,
+        "height": 45.760938470140715
+      },
+      "content": {
+        "text": "<p>Jump into sparkling snow. Proximity activation of interaction like the leaf-piles.&nbsp;</p>",
+        "markdown": "<p>Jump into sparkling snow. Proximity activation of interaction like the leaf-piles.&nbsp;</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_8c4bb8a0-5219-45e4-83f9-25f73eea885d",
+      "position": {
+        "x": -280.92708022952405,
+        "y": 83.85957413028466
+      },
+      "size": {
+        "width": 215.64244846253322,
+        "height": 70.57389222410178
+      },
+      "content": {
+        "text": "<p><strong>The Player &amp; Characters</strong></p>",
+        "markdown": "<p><strong>The Player &amp; Characters</strong></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_464ec566-4f9f-4507-ae6b-69cc47e71528",
+      "position": {
+        "x": -310.80499679211465,
+        "y": 135.76913912252704
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Seasons as companion characters with a \"sense of autonomy. &amp; agency.\"</p>",
+        "markdown": "<p>Seasons as companion characters with a \"sense of autonomy. &amp; agency.\"</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_582c4638-03d0-439f-92a6-7c5c2db8a9da",
+      "position": {
+        "x": -307.37478671942387,
+        "y": 174.57265896718184
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Personal objectives. Needs and desires.&nbsp;</p>",
+        "markdown": "<p>Personal objectives. Needs and desires.&nbsp;</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_5347ad02-d27b-4186-8fab-307345fa133d",
+      "position": {
+        "x": -188.03433340556086,
+        "y": 137.45720697961687
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Social tension as the core mechanic. \"Like a game of tug-of-rope.\"</p>",
+        "markdown": "<p>Social tension as the core mechanic. \"Like a game of tug-of-rope.\"</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_99e7bb1a-3f07-4b9c-b55e-853992a963d9",
+      "position": {
+        "x": -198.21107843193383,
+        "y": 176.25170326397188
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>\"All four seasons are playable\"</p>",
+        "markdown": "<p>\"All four seasons are playable\"</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_7e392ce6-2b60-4b37-a7a8-2c27ebb412f0",
+      "position": {
+        "x": -63.601940801556616,
+        "y": 124.65503047406291
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><s>People as images. Projections.</s></p>",
+        "markdown": "<p><s>People as images. Projections.</s></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_877dfa30-0fcf-4718-8ab7-c91681519f9b",
+      "position": {
+        "x": -78.13850692026975,
+        "y": 158.69186821543994
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>Anachronistic</em> technology</p>",
+        "markdown": "<p><em>Anachronistic</em> technology</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_151b60b3-da68-46c1-99c6-6bbfe5797142",
+      "position": {
+        "x": -1396.644221852769,
+        "y": 1090.453687180383
+      },
+      "size": {
+        "width": 839.28198177253,
+        "height": 274.6741031255553
+      },
+      "content": {
+        "text": "<p><em>An Old Father plants trees in the sunlight; bearing nature, sustaining them, nurturing them until they are fully firm;</em></p>",
+        "markdown": "<p><em>An Old Father plants trees in the sunlight; bearing nature, sustaining them, nurturing them until they are fully firm;</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_04523fb8-d5a2-4159-bf48-74169742f9d1",
+      "position": {
+        "x": -1381.0812328669563,
+        "y": 1121.6812968111758
+      },
+      "size": {
+        "width": 795.8705341903701,
+        "height": 260.46672028048476
+      },
+      "content": {
+        "text": "<p> Generous, <em>plain</em>, 'at ability to work';<em> a Daughter; bearing witness to \"the gift\" of The Mother Herself.</em></p>",
+        "markdown": "<p> Generous, <em>plain</em>, 'at ability to work';<em> a Daughter; bearing witness to \"the gift\" of The Mother Herself.</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_62015075-c63c-433a-84b3-a88b2ccb9c95",
+      "position": {
+        "x": -1426.5773614739978,
+        "y": 1181.6524469489445
+      },
+      "size": {
+        "width": 947.6747565656132,
+        "height": 310.14810214874615
+      },
+      "content": {
+        "text": "<p> \"Mother's guidance.\" Dear; (he unfurls a child wrapped in a silken blanket) (there is an 'aura' to the child, and the room is filled with an apparent glow) Autumn. [glances; 'handing her the child'] Given to us [as] mortal parents [in her] upbringing and care. <em>\"We are foretold to great things, dear Bea!\" She RETREATS! \"Dear, Beatrice!\" [stammers] HER NAME IS AUTUMN.. AND THE GODS BEAR US AS HER GUARDIANS; [WE ARE TO ADOPT HER; EDUCATE HER; </em><strong><em>SHE WILL BE MET WITH SISTERS</em></strong><em>, BEATRICE!] Bea. Beatrice.. [one hand outstretched for the woman; the other cradling the (almost glowing) child wrapped in a soft-silk blanket. The good mother [Mother Nature] has graced us. [he hands her the child] [she embraces it] [looks] [searches]</em></p>",
+        "markdown": "<p> \"Mother's guidance.\" Dear; (he unfurls a child wrapped in a silken blanket) (there is an 'aura' to the child, and the room is filled with an apparent glow) Autumn. [glances; 'handing her the child'] Given to us [as] mortal parents [in her] upbringing and care. <em>\"We are foretold to great things, dear Bea!\" She RETREATS! \"Dear, Beatrice!\" [stammers] HER NAME IS AUTUMN.. AND THE GODS BEAR US AS HER GUARDIANS; [WE ARE TO ADOPT HER; EDUCATE HER; </em><strong><em>SHE WILL BE MET WITH SISTERS</em></strong><em>, BEATRICE!] Bea. Beatrice.. [one hand outstretched for the woman; the other cradling the (almost glowing) child wrapped in a soft-silk blanket. The good mother [Mother Nature] has graced us. [he hands her the child] [she embraces it] [looks] [searches]</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_d700eaa1-02a2-409e-8ff2-fe21c10576b5",
+      "position": {
+        "x": -1384.6794912851324,
+        "y": 1399.5623365109413
+      },
+      "size": {
+        "width": 251.51190415353847,
+        "height": 82.31298681388532
+      },
+      "content": {
+        "text": "<p> \"We are to be her parents?\"</p>",
+        "markdown": "<p> \"We are to be her parents?\"</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_18242b3b-df22-47c4-b1ad-d2f2c85dc610",
+      "position": {
+        "x": -1318.9112538629543,
+        "y": 1440.2760072960982
+      },
+      "size": {
+        "width": 143.4060888493599,
+        "height": 46.93290180524506
+      },
+      "content": {
+        "text": "<p>Yes.</p>",
+        "markdown": "<p>Yes.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_3d763edd-124f-409b-977a-fbe6d208dfc6",
+      "position": {
+        "x": -1347.0976413296019,
+        "y": 1460.110872550406
+      },
+      "size": {
+        "width": 183.36580276812552,
+        "height": 60.010626360477445
+      },
+      "content": {
+        "text": "<p>\"Keep watch of her?\"</p>",
+        "markdown": "<p>\"Keep watch of her?\"</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_ca7b1129-79b8-4079-869d-0af2cbf0763a",
+      "position": {
+        "x": -1323.0870149691236,
+        "y": 1492.4730211232227
+      },
+      "size": {
+        "width": 149.66973050861492,
+        "height": 48.98282089372852
+      },
+      "content": {
+        "text": "<p>Mm.</p>",
+        "markdown": "<p>Mm.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_5d515958-d80b-41b4-9b65-1b99c8ceed7d",
+      "position": {
+        "x": -1351.2734024357726,
+        "y": 1479.945737804714
+      },
+      "size": {
+        "width": 371.5650359559258,
+        "height": 121.60310267648481
+      },
+      "content": {
+        "text": "<p>\"Care for her; (nods) keep her warm. (searches)\"</p>",
+        "markdown": "<p>\"Care for her; (nods) keep her warm. (searches)\"</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_0d2c4f64-928a-44dc-9283-3198788a7abd",
+      "position": {
+        "x": -1342.921880223432,
+        "y": 1516.4836474837
+      },
+      "size": {
+        "width": 291.6456081183946,
+        "height": 95.44765356602005
+      },
+      "content": {
+        "text": "<p> Great things, Gertrund?</p>",
+        "markdown": "<p> Great things, Gertrund?</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_b69eed25-ebe4-4253-89e4-80fb038fc5a3",
+      "position": {
+        "x": -1789.3489808361537,
+        "y": 678.0494012108462
+      },
+      "size": {
+        "width": 141.6441856079927,
+        "height": 141.6441856079927
+      },
+      "content": {
+        "title": "New Note",
+        "text": "<p>35. Whenever you do something you have decided ought to be done, never try to avoid being seen doing it, even if people in general may disapprove of it. If, of course, your action is wrong, just don’t do it at all; but if it’s right, why be afraid of people whose criticism is off the mark?</p>",
+        "markdown": "<p>35. Whenever you do something you have decided ought to be done, never try to avoid being seen doing it, even if people in general may disapprove of it. If, of course, your action is wrong, just don’t do it at all; but if it’s right, why be afraid of people whose criticism is off the mark?</p>"
+      },
+      "metadata": {
+        "nodeType": "note"
+      },
+      "style": {
+        "backgroundColor": "#404040"
+      },
+      "zIndex": 0
+    },
+    {
+      "id": "node_4de2a977-378b-4175-9c03-e15d1941c3b2",
+      "position": {
+        "x": -1631.9126423134026,
+        "y": 724.5886116559793
+      },
+      "size": {
+        "width": 146.19889394407326,
+        "height": 146.19889394407326
+      },
+      "content": {
+        "title": "New Note",
+        "text": "<p>38. You are careful in walking not to step on a nail or twist your ankle, and you should be just as careful to do no harm to your commanding-faculty. If we stick to this rule in every action, we shall perform what we are doing more securely.</p>",
+        "markdown": "<p>38. You are careful in walking not to step on a nail or twist your ankle, and you should be just as careful to do no harm to your commanding-faculty. If we stick to this rule in every action, we shall perform what we are doing more securely.</p>"
+      },
+      "metadata": {
+        "nodeType": "note"
+      },
+      "style": {
+        "backgroundColor": "#404040"
+      },
+      "zIndex": 0
+    },
+    {
+      "id": "node_5e19ade6-926d-4d75-8b2d-f5b4561de2aa",
+      "position": {
+        "x": -1926.6872241061715,
+        "y": 826.6849485351289
+      },
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "content": {
+        "title": "New Note",
+        "text": "<p>37. If you have taken on a *role beyond your capacity, you have demeaned yourself in it, and you have also passed up the role you could have filled creditably.</p>",
+        "markdown": "<p>37. If you have taken on a *role beyond your capacity, you have demeaned yourself in it, and you have also passed up the role you could have filled creditably.</p>"
+      },
+      "metadata": {
+        "nodeType": "note"
+      },
+      "style": {
+        "backgroundColor": "#404040"
+      },
+      "zIndex": 0
+    },
+    {
+      "id": "node_b1499a3b-ad9d-4db6-8f4f-d597f797247f",
+      "position": {
+        "x": -1781.5782760352424,
+        "y": 883.7553750296811
+      },
+      "size": {
+        "width": 189.4470550685218,
+        "height": 189.4470550685218
+      },
+      "content": {
+        "title": "New Note",
+        "text": "<p>42. Whenever people treat you badly or criticize you, remember that they are only doing and saying what they think is appropriate for them. They cannot take their lead from your opinion but only from their own. So if their opinion is incorrect, they are the people who suffer harm because they are the ones who got it wrong. When someone takes a true *conjunctive statement to be false, no harm is done to the statement but only to the person making the mistake. If you start out from this position, you will be indulgent to your critics, and tell yourself<br>each time, “That’s what they thought.”</p>",
+        "markdown": "<p>42. Whenever people treat you badly or criticize you, remember that they are only doing and saying what they think is appropriate for them. They cannot take their lead from your opinion but only from their own. So if their opinion is incorrect, they are the people who suffer harm because they are the ones who got it wrong. When someone takes a true *conjunctive statement to be false, no harm is done to the statement but only to the person making the mistake. If you start out from this position, you will be indulgent to your critics, and tell yourself<br>each time, “That’s what they thought.”</p>"
+      },
+      "metadata": {
+        "nodeType": "note"
+      },
+      "style": {
+        "backgroundColor": "#404040"
+      },
+      "zIndex": 0
+    },
+    {
+      "id": "node_da72876f-e926-4c81-930c-7f6e506ba7ad",
+      "position": {
+        "x": -1561.9318289233802,
+        "y": 900.8684924691652
+      },
+      "size": {
+        "width": 255.40719227780738,
+        "height": 255.40719227780738
+      },
+      "content": {
+        "title": "New Note",
+        "text": "<p>48. The stance and hallmark of ordinary persons is never looking for help or harm from themselves, but only from things that are on the outside. The stance and hallmark of philosophers is only looking for help and harm from themselves. The signs of a person making progress are these: criticizing nobody, praising nobody, blaming nobody, accusing nobody, and saying nothing about oneself to indicate being someone or knowing something. Whenever such a person is frustrated or impeded, he accuses himself. If he’s complimented, he laughs to himself at the one paying the compliment, and if he’s criticized, he doesn’t defend himself. He goes around like a patient, taking care not to injure any of his recovering limbs before they are fully firm. He has banished all desire, and he has transferred his aversion to the naturally disagreeable things that are up to us. He is relaxed in all his motivations. He doesn’t care if he appears simple-minded or ignorant. In a word, he keeps watch on himself as though he were his own enemy plotting an attack.</p>",
+        "markdown": "<p>48. The stance and hallmark of ordinary persons is never looking for help or harm from themselves, but only from things that are on the outside. The stance and hallmark of philosophers is only looking for help and harm from themselves. The signs of a person making progress are these: criticizing nobody, praising nobody, blaming nobody, accusing nobody, and saying nothing about oneself to indicate being someone or knowing something. Whenever such a person is frustrated or impeded, he accuses himself. If he’s complimented, he laughs to himself at the one paying the compliment, and if he’s criticized, he doesn’t defend himself. He goes around like a patient, taking care not to injure any of his recovering limbs before they are fully firm. He has banished all desire, and he has transferred his aversion to the naturally disagreeable things that are up to us. He is relaxed in all his motivations. He doesn’t care if he appears simple-minded or ignorant. In a word, he keeps watch on himself as though he were his own enemy plotting an attack.</p>"
+      },
+      "metadata": {
+        "nodeType": "note"
+      },
+      "style": {
+        "backgroundColor": "#404040"
+      },
+      "zIndex": 0
+    },
+    {
+      "id": "node_dfd085f0-5db6-4c3c-8d15-629231bf48dd",
+      "position": {
+        "x": -1250.4204083416892,
+        "y": 881.8253476309392
+      },
+      "size": {
+        "width": 275.74898832814586,
+        "height": 90.24512345284774
+      },
+      "content": {
+        "text": "<p>The player can collect clothing items for customization and expression. Bracelets, hair ties, belts, shoestrings; multiple sashes/backpacks, and various buttons and pins to decorate the containers with. Autumn can swap out her boots, tie back her hair, dye it, add or change her piercings, and choose whether she wants to wear makeup/eyeliner.</p>",
+        "markdown": "<p>The player can collect clothing items for customization and expression. Bracelets, hair ties, belts, shoestrings; multiple sashes/backpacks, and various buttons and pins to decorate the containers with. Autumn can swap out her boots, tie back her hair, dye it, add or change her piercings, and choose whether she wants to wear makeup/eyeliner.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_32a15e88-d1dd-4637-b300-ab13825eda8e",
+      "position": {
+        "x": -1228.4154576019469,
+        "y": 860.4402790951605
+      },
+      "size": {
+        "width": 123.40616817360004,
+        "height": 40.38747322045092
+      },
+      "content": {
+        "text": "<p><strong>Collections</strong></p>",
+        "markdown": "<p><strong>Collections</strong></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_3af12a7e-4b3e-491a-b0a7-5f05cf61d5ff",
+      "position": {
+        "x": -1206.867790078887,
+        "y": 960.217295869957
+      },
+      "size": {
+        "width": 131.1790373974853,
+        "height": 42.9313213300861
+      },
+      "content": {
+        "text": "<p>— <em>How punk is she; How 'complaint' is she?</em></p>",
+        "markdown": "<p>— <em>How punk is she; How 'complaint' is she?</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_7bb23e97-bfb6-4139-ac3c-b86687a20371",
+      "position": {
+        "x": -1247.0325282376284,
+        "y": 998.1752464463603
+      },
+      "size": {
+        "width": 154.20177857502935,
+        "height": 50.46603662455506
+      },
+      "content": {
+        "text": "<p><strong>Clothing as a <em>characterization</em> of the player's wants and expectations.</strong></p>",
+        "markdown": "<p><strong>Clothing as a <em>characterization</em> of the player's wants and expectations.</strong></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_7e3fb238-85c5-495c-8a79-2b20726910a8",
+      "position": {
+        "x": 310.3729327813356,
+        "y": -49.93943661888825
+      },
+      "size": {
+        "width": 255.83158226597132,
+        "height": 83.72669965068152
+      },
+      "content": {
+        "text": "<p><strong>Narrative Theming &amp; Purpose</strong></p>",
+        "markdown": "<p><strong>Narrative Theming &amp; Purpose</strong></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_24a6c5dc-bcc9-405a-b60f-a91eb2c780a8",
+      "position": {
+        "x": 55.17823382752888,
+        "y": 55.04465121562441
+      },
+      "size": {
+        "width": 135.50780318493594,
+        "height": 44.34800831506995
+      },
+      "content": {
+        "text": "<p>(<strong>worse</strong>: a bothersome thing)</p>",
+        "markdown": "<p>(<strong>worse</strong>: a bothersome thing)</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_ac65d5b9-7615-4f6c-b175-1a84b6c8d204",
+      "position": {
+        "x": 62.37925599747703,
+        "y": 84.00189919609967
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<ul><li><p><em>[-] Only ever did everything right</em></p></li></ul><p></p>",
+        "markdown": "<ul><li><p><em>[-] Only ever did everything right</em></p></li></ul><p></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_74eed84c-8895-4b94-bc4d-8992445f19c6",
+      "position": {
+        "x": 64.67544239603887,
+        "y": 110.9438450776007
+      },
+      "size": {
+        "width": 104.79136206190475,
+        "height": 34.295354856623376
+      },
+      "content": {
+        "text": "<p><em>(Why would she resent her lot?!)</em></p>",
+        "markdown": "<p><em>(Why would she resent her lot?!)</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_44fca4f8-7812-4a7a-b84d-05a9873f054f",
+      "position": {
+        "x": 80.54627648954535,
+        "y": 136.80742656331498
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>(What would ever matter more??)</em></p>",
+        "markdown": "<p><em>(What would ever matter more??)</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_5b6621d3-a79c-420e-ab6f-5337b59b028d",
+      "position": {
+        "x": 67.32058141162328,
+        "y": 169.43080775552275
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>ALL MAY REQUEST OF YOU, <em>THIS IS IMPLICIT</em></p>",
+        "markdown": "<p>ALL MAY REQUEST OF YOU, <em>THIS IS IMPLICIT</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_9cab90ed-54cc-4437-9226-5cb815347803",
+      "position": {
+        "x": 287.02134819515214,
+        "y": 7.687983701681123
+      },
+      "size": {
+        "width": 129.40842770589686,
+        "height": 42.35184906738443
+      },
+      "content": {
+        "text": "<p>(red text) Men are monsters.</p>",
+        "markdown": "<p>(red text) Men are monsters.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_92ccba0b-dcbf-4a6b-8f69-16976a076a6c",
+      "position": {
+        "x": 291.1059866259004,
+        "y": 31.086739330155677
+      },
+      "size": {
+        "width": 111.78371972642466,
+        "height": 36.583762819557165
+      },
+      "content": {
+        "text": "<p>(purple text) Love is not <em>possession</em>.</p>",
+        "markdown": "<p>(purple text) Love is not <em>possession</em>.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_599134f5-27f9-4029-96ff-a395d8b910cf",
+      "position": {
+        "x": 266.88682318303955,
+        "y": 74.70521375471827
+      },
+      "size": {
+        "width": 128.73035784675392,
+        "height": 42.12993529530129
+      },
+      "content": {
+        "text": "<p>(blue text)<strong> No patriarchal advice is \"good\" advice,&nbsp;</strong></p>",
+        "markdown": "<p>(blue text)<strong> No patriarchal advice is \"good\" advice,&nbsp;</strong></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_b5580848-7bc4-42e0-9fbf-bc0329c68f63",
+      "position": {
+        "x": 290.42158807676105,
+        "y": 104.02446138256411
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><span style=\"color: rgb(101, 157, 242);\">Love is feeling-transposed-to-action.</span></p>",
+        "markdown": "<p><span style=\"color: rgb(101, 157, 242);\">Love is feeling-transposed-to-action.</span></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_86139830-7c12-498e-bb70-9824173c3445",
+      "position": {
+        "x": 282.13722525007057,
+        "y": 124.43068185088111
+      },
+      "size": {
+        "width": 98.12120559447051,
+        "height": 32.11239455819035
+      },
+      "content": {
+        "text": "<p><span style=\"color: rgb(101, 157, 242);\">Calculation is not love.</span></p>",
+        "markdown": "<p><span style=\"color: rgb(101, 157, 242);\">Calculation is not love.</span></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_ba01ad34-62fe-4fd4-b330-af0602ed1fc9",
+      "position": {
+        "x": 406.08179993080705,
+        "y": 13.9326601131588
+      },
+      "size": {
+        "width": 137.66413480387394,
+        "height": 45.05371684490421
+      },
+      "content": {
+        "text": "<p>What amount of giving is <em>good?</em> <em>What amounts to an empty heart?</em></p>",
+        "markdown": "<p>What amount of giving is <em>good?</em> <em>What amounts to an empty heart?</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_f007bdd6-89ec-4ce9-9ff1-c5323ac26905",
+      "position": {
+        "x": 387.27854643846666,
+        "y": 41.13275451624091
+      },
+      "size": {
+        "width": 154.8731162666012,
+        "height": 50.68574714179675
+      },
+      "content": {
+        "text": "<p>Autumn is <em>giving</em> connection.<em>&nbsp;(purple text) People will also take in this way.</em></p>",
+        "markdown": "<p>Autumn is <em>giving</em> connection.<em>&nbsp;(purple text) People will also take in this way.</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_3af107e6-615b-43e9-87b4-4ba536f03696",
+      "position": {
+        "x": 405.93659635583697,
+        "y": 76.76444079674242
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>IN THE <u>IDEALS</u> OF INTERDEPENDENCE</em></p>",
+        "markdown": "<p><em>IN THE <u>IDEALS</u> OF INTERDEPENDENCE</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_e63ddebc-ab08-424c-8eef-23510cfd2f72",
+      "position": {
+        "x": 547.0745518254897,
+        "y": 16.237889079894412
+      },
+      "size": {
+        "width": 123.11675706254496,
+        "height": 40.2927568568329
+      },
+      "content": {
+        "text": "<p><em>A role you have no choice but to endure in.</em></p>",
+        "markdown": "<p><em>A role you have no choice but to endure in.</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_e083d42a-a31d-4b88-bc8c-4f0f0245a784",
+      "position": {
+        "x": 652.1796608395277,
+        "y": 61.636369038204904
+      },
+      "size": {
+        "width": 123.23538525407722,
+        "height": 40.33158062860709
+      },
+      "content": {
+        "text": "<p><em>There is no 'protecting us' from what we are.</em></p>",
+        "markdown": "<p><em>There is no 'protecting us' from what we are.</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_dce890f2-74d4-4e5d-b878-3f2118aecd24",
+      "position": {
+        "x": 652.4253106846263,
+        "y": 86.9158062570925
+      },
+      "size": {
+        "width": 124.15229051485115,
+        "height": 40.63165871395129
+      },
+      "content": {
+        "text": "<p>We just have to turn to ourselves and <u>face it</u>.</p>",
+        "markdown": "<p>We just have to turn to ourselves and <u>face it</u>.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_e8a05e22-fd93-4ffa-8499-b4303be040f2",
+      "position": {
+        "x": 638.7486213132976,
+        "y": 116.87609300251029
+      },
+      "size": {
+        "width": 131.055846863559,
+        "height": 42.891004428073856
+      },
+      "content": {
+        "text": "<p>(blue text) How do [our parent's expectations] shape us?</p>",
+        "markdown": "<p>(blue text) How do [our parent's expectations] shape us?</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_56ca840b-2fb5-4c9b-8d7f-9078afd9bfe7",
+      "position": {
+        "x": 272.9818488585141,
+        "y": 157.40007810357955
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>(red text) People will <em>expect</em>&nbsp;of you, <em><u>demand</u></em> of you.&nbsp;</p>",
+        "markdown": "<p>(red text) People will <em>expect</em>&nbsp;of you, <em><u>demand</u></em> of you.&nbsp;</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_3e907182-6a62-4b4c-a7da-5029856fb817",
+      "position": {
+        "x": 384.94076685374586,
+        "y": 116.23879350905557
+      },
+      "size": {
+        "width": 173.67335344208607,
+        "height": 56.83855203559181
+      },
+      "content": {
+        "text": "<p><em>(red text) \"What amount of connection is needed, what amount of connection is necessary,\"&nbsp;—how could anyone ever choose to give less?</em></p>",
+        "markdown": "<p><em>(red text) \"What amount of connection is needed, what amount of connection is necessary,\"&nbsp;—how could anyone ever choose to give less?</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_605f93da-4bca-4467-90a8-4baf095e9525",
+      "position": {
+        "x": 404.2005267664687,
+        "y": 169.86528335906152
+      },
+      "size": {
+        "width": 90.66291568749669,
+        "height": 29.671499679544375
+      },
+      "content": {
+        "text": "<p>\"There cannot be deep disappointment without deep love.\"</p>",
+        "markdown": "\"There cannot be deep disappointment without deep love.\"",
+        "_html_backup": "<p>\"There cannot be deep disappointment without deep love.\"</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_85459ce9-9ed0-4d91-bbf9-c297d80892f5",
+      "position": {
+        "x": 403.72548700048617,
+        "y": 213.61837667315203
+      },
+      "size": {
+        "width": 136.41470994322347,
+        "height": 44.644814163236774
+      },
+      "content": {
+        "text": "<p>[...] the illusion to [any change in the world] is the illusion that man is but one person.</p>",
+        "markdown": "\\[...\\] the illusion to \\[any change in the world\\] is the illusion that man is but one person.",
+        "_html_backup": "<p>[...] the illusion to [any change in the world] is the illusion that man is but one person.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_ec5bdcf1-d38c-4597-b49e-2e23d62b5012",
+      "position": {
+        "x": 229.99080536247746,
+        "y": 193.89535999891018
+      },
+      "size": {
+        "width": 158.88617132075996,
+        "height": 51.9991106140669
+      },
+      "content": {
+        "text": "<p>What is the 'just' measure of time spent? (<em>in idle worship of the self</em>)&nbsp;<em>(what amount</em> is spent on others?)</p>",
+        "markdown": "What is the 'just' measure of time spent? (*in idle worship of the self*) *(what amount* is spent on others?)",
+        "_html_backup": "<p>What is the 'just' measure of time spent? (<em>in idle worship of the self</em>)&nbsp;<em>(what amount</em> is spent on others?)</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_6a8224eb-1edf-4130-b0e9-a8fe888e75c1",
+      "position": {
+        "x": 419.29077982204745,
+        "y": 261.3183174017241
+      },
+      "size": {
+        "width": 147.5366930772123,
+        "height": 48.284735916178576
+      },
+      "content": {
+        "text": "<p>Is the idea that [time spent] with people [time not spent] making money something supportable by [centrist] <em>parliamentarian</em> goals?</p>",
+        "markdown": "<p>Is the idea that [time spent] with people [time not spent] making money something supportable by [centrist] <em>parliamentarian</em> goals?</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_fe7123bd-1ba4-4651-93f3-a4d7094a7ea0",
+      "position": {
+        "x": 273.37082959736114,
+        "y": 278.22734660096336
+      },
+      "size": {
+        "width": 157.2684283194525,
+        "height": 51.469667450002646
+      },
+      "content": {
+        "text": "<p>To: \"mold the intolerance and monstrosity of [unreconstructed] wayward men into a human-shape.\"</p>",
+        "markdown": "To: \"mold the intolerance and monstrosity of \\[unreconstructed\\] wayward men into a human-shape.\"",
+        "_html_backup": "<p>To: \"mold the intolerance and monstrosity of [unreconstructed] wayward men into a human-shape.\"</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_083ff96e-1014-494b-8943-b4165da19874",
+      "position": {
+        "x": 317.36618366254146,
+        "y": 239.78470721935008
+      },
+      "size": {
+        "width": 76.19699921666401,
+        "height": 24.937199743635496
+      },
+      "content": {
+        "text": "<p>'to win the heart'</p>",
+        "markdown": "'to win the heart'",
+        "_html_backup": "<p>'to win the heart'</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_dba59d6b-7bae-4684-8f9e-b24a913f1062",
+      "position": {
+        "x": 436.54603306656975,
+        "y": 316.8302614941468
+      },
+      "size": {
+        "width": 126.14720692062039,
+        "height": 41.284540446748494
+      },
+      "content": {
+        "text": "<p>There is feeling comfortable — And then there is feeling complacent. Indignity ought only ever be righteous.</p>",
+        "markdown": "<p>There is feeling comfortable — And then there is feeling complacent. Indignity ought only ever be righteous.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_9d22445d-9da4-4c76-9b05-b467337c0854",
+      "position": {
+        "x": 649.2307029107639,
+        "y": 153.32466327990292
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>The whole are not an impediment to the body, to the mind, to the soul,</p>",
+        "markdown": "<p>The whole are not an impediment to the body, to the mind, to the soul,</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_5f7a59b2-d73c-4ea5-beba-1ac4bf5db401",
+      "position": {
+        "x": 534.2530570561911,
+        "y": 72.51476590428737
+      },
+      "size": {
+        "width": 105.6128401436302,
+        "height": 34.56420222882443
+      },
+      "content": {
+        "text": "<p><em>Personal expectations weighed against societal/familial expectations</em></p>",
+        "markdown": "<p><em>Personal expectations weighed against societal/familial expectations</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_9499c5a1-0c2c-4cf4-9690-70b01f8c2c05",
+      "position": {
+        "x": 540.7859369150395,
+        "y": 120.04445812276938
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>(list) Interdependence, &amp; Independence, &amp; <em>Dependence.</em></p>",
+        "markdown": "<p>(list) Interdependence, &amp; Independence, &amp; <em>Dependence.</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_f20250e3-0f09-4f29-9f5e-3fc1f4d7effb",
+      "position": {
+        "x": 526.4279592032835,
+        "y": 155.46080314510024
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p><em>Societas; </em>or<em>, \"the social impulse\"</em></p>",
+        "markdown": "<p><em>Societas; </em>or<em>, \"the social impulse\"</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_09a742fd-827d-4ec7-87b3-f624b8362a8c",
+      "position": {
+        "x": 523.5563636609326,
+        "y": 186.0911555968457
+      },
+      "size": {
+        "width": 101.22568028726039,
+        "height": 33.128404457648855
+      },
+      "content": {
+        "text": "<p>Without the whole we could not live as we do.</p>",
+        "markdown": "<p>Without the whole we could not live as we do.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_b6332fa0-27a1-42f9-b05f-690c7a5a891b",
+      "position": {
+        "x": 553.0048674577514,
+        "y": 227.77394054195528
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>\"The only obstacle to change is the illusion we are an individual.</em></p>",
+        "markdown": "<p><em>\"The only obstacle to change is the illusion we are an individual.</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_534209d7-e0b6-4792-b15f-ae968de90d44",
+      "position": {
+        "x": 651.3618979458507,
+        "y": 186.19565527192577
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Personal exchange, or <em>gift-giving </em>by what we do.</p>",
+        "markdown": "<p>Personal exchange, or <em>gift-giving </em>by what we do.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_369c7b21-e450-4f1f-819e-c28972b6f36d",
+      "position": {
+        "x": 663.1719957432477,
+        "y": 226.24729128048816
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>How tall do you feel around people?<span style=\"color: rgb(101, 157, 242);\">&nbsp;<em>This person</em>, in particular?</span></p>",
+        "markdown": "<p>How tall do you feel around people?<span style=\"color: rgb(101, 157, 242);\">&nbsp;<em>This person</em>, in particular?</span></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_81b0065b-0a24-47a4-bbcc-2d5b082a0928",
+      "position": {
+        "x": 558.9574377804572,
+        "y": 275.54410053980223
+      },
+      "size": {
+        "width": 100.75731476725483,
+        "height": 32.975121196556124
+      },
+      "content": {
+        "text": "<p>Connect the narrative to a <em>-fictional-, </em>real-world-history</p>",
+        "markdown": "<p>Connect the narrative to a <em>-fictional-, </em>real-world-history</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_e58f3e22-afd3-444c-95a4-ced899d37a04",
+      "position": {
+        "x": 667.6942351314275,
+        "y": 269.2200912194969
+      },
+      "size": {
+        "width": 134.47095859023955,
+        "height": 44.00867735680567
+      },
+      "content": {
+        "text": "<p>In '<em>not measuring up'</em>, we might pity ourselves; resent our lot.&nbsp;<em>No progress is being made here.</em></p>",
+        "markdown": "<p>In '<em>not measuring up'</em>, we might pity ourselves; resent our lot.&nbsp;<em>No progress is being made here.</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_b18f0a71-ebd9-4162-8506-2cb7afb53a14",
+      "position": {
+        "x": 357.0038546056274,
+        "y": 428.3174923435529
+      },
+      "size": {
+        "width": 205.4600157613741,
+        "height": 67.24145970372244
+      },
+      "content": {
+        "text": "<p>To answer about people...</p>",
+        "markdown": "<p>To answer about people...</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_0b359149-a283-4a3d-a464-63b1cdbd202b",
+      "position": {
+        "x": 314.4738758865042,
+        "y": 471.6329409332657
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>What makes us feel powerless?</em></p>",
+        "markdown": "<p><em>What makes us feel powerless?</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_50365f55-350b-4e14-a8be-d99e050d3fba",
+      "position": {
+        "x": 476.69982461018856,
+        "y": 480.4297409153139
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>(purple text) Why do we [look up]?&nbsp;<em>What are man's highest ideals?</em></p>",
+        "markdown": "<p>(purple text) Why do we [look up]?&nbsp;<em>What are man's highest ideals?</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_49ec012b-8a97-456a-b006-357f754694e8",
+      "position": {
+        "x": 207.21985725861262,
+        "y": 524.7587005434567
+      },
+      "size": {
+        "width": 236.39251331423898,
+        "height": 77.36482253920549
+      },
+      "content": {
+        "text": "<p>(list)&nbsp;<span style=\"color: rgb(255, 100, 100);\">What discontents us?,&nbsp;</span><span style=\"color: rgb(101, 157, 242);\">What discomforts us?,&nbsp;</span><span style=\"color: rgb(255, 100, 100);\">What disaffects&nbsp;us?,&nbsp;</span><span style=\"color: rgb(101, 157, 242);\">What makes us feel alone?, What makes us feel a stranger?, </span><span style=\"color: rgb(254, 159, 77);\">What makes us feel regret?,&nbsp;</span><span style=\"color: rgb(255, 100, 100);\">What makes us feel shame?,&nbsp;</span><span style=\"color: rgb(254, 159, 77);\">What makes us feel frustration?,&nbsp;</span><span style=\"color: rgb(101, 157, 242);\">What&nbsp;makes us feel love?,&nbsp;</span><span style=\"color: rgb(255, 100, 100);\">What makes us feel hate?</span></p><p></p>",
+        "markdown": "<p>(list)&nbsp;<span style=\"color: rgb(255, 100, 100);\">What discontents us?,&nbsp;</span><span style=\"color: rgb(101, 157, 242);\">What discomforts us?,&nbsp;</span><span style=\"color: rgb(255, 100, 100);\">What disaffects&nbsp;us?,&nbsp;</span><span style=\"color: rgb(101, 157, 242);\">What makes us feel alone?, What makes us feel a stranger?, </span><span style=\"color: rgb(254, 159, 77);\">What makes us feel regret?,&nbsp;</span><span style=\"color: rgb(255, 100, 100);\">What makes us feel shame?,&nbsp;</span><span style=\"color: rgb(254, 159, 77);\">What makes us feel frustration?,&nbsp;</span><span style=\"color: rgb(101, 157, 242);\">What&nbsp;makes us feel love?,&nbsp;</span><span style=\"color: rgb(255, 100, 100);\">What makes us feel hate?</span></p><p></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_5cb56d85-89f1-4d18-9424-199d4478544f",
+      "position": {
+        "x": 462.6217754543863,
+        "y": 522.7974181441928
+      },
+      "size": {
+        "width": 144.93812042130074,
+        "height": 47.434293956062064
+      },
+      "content": {
+        "text": "<p><span style=\"color: rgb(101, 157, 242);\">What is of our nature and what is of something else? Is there anything of the divine in us?</span></p>",
+        "markdown": "<p><span style=\"color: rgb(101, 157, 242);\">What is of our nature and what is of something else? Is there anything of the divine in us?</span></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_dc0ecbc0-1c1f-4b05-9288-2450cbaf52a1",
+      "position": {
+        "x": 464.3808976014727,
+        "y": 565.016349674268
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>(red text) What of our behavior is taught implicitly?</p>",
+        "markdown": "<p>(red text) What of our behavior is taught implicitly?</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_435d36cd-c24a-4dd3-9a89-3a78abbf3751",
+      "position": {
+        "x": 463.5013365279294,
+        "y": 608.1148422778862
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>What fuels any and all social tension? How can this tension be dispersed?</p>",
+        "markdown": "<p>What fuels any and all social tension? How can this tension be dispersed?</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_2c218aa6-6e11-42a3-af95-3f3d51ee2d50",
+      "position": {
+        "x": 325.5514121045558,
+        "y": 638.6050862964202
+      },
+      "size": {
+        "width": 165.29933589949465,
+        "height": 54.09796447619826
+      },
+      "content": {
+        "text": "<p><em>Project goals</em></p>",
+        "markdown": "<p><em>Project goals</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_30366ac0-6e55-4df9-b2b2-87d59be4e538",
+      "position": {
+        "x": 247.6410894133878,
+        "y": 684.1230641149069
+      },
+      "size": {
+        "width": 275.89800769848404,
+        "height": 90.29389342859479
+      },
+      "content": {
+        "text": "<ul><li><p><em>To address bad systemic rhetoric, To reveal, \"the hidden tension that is already alive\".,&nbsp;</em>Restore the player's faith in humanity., Soften the hardest of hearts., To answer: <s>What is freedom, What is fascism. What is 'the bourgeois voice'.</s>.. (<em>?</em>) (to say and say again; then a third time)</p></li></ul><p></p>",
+        "markdown": "<ul><li><p><em>To address bad systemic rhetoric, To reveal, \"the hidden tension that is already alive\".,&nbsp;</em>Restore the player's faith in humanity., Soften the hardest of hearts., To answer: <s>What is freedom, What is fascism. What is 'the bourgeois voice'.</s>.. (<em>?</em>) (to say and say again; then a third time)</p></li></ul><p></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_c620d91f-ad3a-4fe1-8027-66c7078b9d08",
+      "position": {
+        "x": 40.12868326210327,
+        "y": -60.584688155317764
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>adventure</p>",
+        "markdown": "<p>adventure</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_a262096f-a350-445e-b324-e5bd286b1a32",
+      "position": {
+        "x": 721.176538727469,
+        "y": 409.50614825019596
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>The Amber Earth</p>",
+        "markdown": "<p>The Amber Earth</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_fe1c7288-87d2-449f-8d5e-ad2775dc6f78",
+      "position": {
+        "x": 684.2243634199418,
+        "y": 448.1358740485356
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>The Divine Force</p>",
+        "markdown": "<p>The Divine Force</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_4907ae45-ecea-4faf-8228-fab13697cae3",
+      "position": {
+        "x": 870.7363973149083,
+        "y": 370.87291736297453
+      },
+      "size": {
+        "width": 195.72478391904238,
+        "height": 64.05538382805024
+      },
+      "content": {
+        "text": "<p>Worldbuilding &amp; Lore</p>",
+        "markdown": "<p>Worldbuilding &amp; Lore</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_7b79c73e-6181-4210-9ec5-760dd2e53513",
+      "position": {
+        "x": 823.0628333588917,
+        "y": 427.8549862388215
+      },
+      "size": {
+        "width": 102.93450586761084,
+        "height": 33.68765646576355
+      },
+      "content": {
+        "text": "<p>Locations should have presence in the world.</p>",
+        "markdown": "<p>Locations should have presence in the world.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_5f8e1e8d-5a2c-45fe-97d1-c64f77f2425d",
+      "position": {
+        "x": 933.2738010954993,
+        "y": 414.3182472459596
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><strong>LORE</strong> Things to figure out</p>",
+        "markdown": "<p><strong>LORE</strong> Things to figure out</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_0abe066c-bbf4-4a93-95ad-7c07b7abf853",
+      "position": {
+        "x": 955.9695495961703,
+        "y": 463.7709557240753
+      },
+      "size": {
+        "width": 278.29420548807866,
+        "height": 91.07810361428031
+      },
+      "content": {
+        "text": "<ul><li><p>(list) How does Autumn have her powers?, How does the player travel? (<em>Magic doors!?</em>), What is the initiating incident?,&nbsp;<em>Is there-</em> an initiating incident?, What are the expectations set by Autumn's parents?, How and why does the player transition between seasons?, How are the conditions of a season conveyed to the player?, What sort of reverence does the town have for Mother Nature?, What is expected of her in the inheritance?, How much of Autumn's expression is defined?</p></li></ul><p></p>",
+        "markdown": "<ul><li><p>(list) How does Autumn have her powers?, How does the player travel? (<em>Magic doors!?</em>), What is the initiating incident?,&nbsp;<em>Is there-</em> an initiating incident?, What are the expectations set by Autumn's parents?, How and why does the player transition between seasons?, How are the conditions of a season conveyed to the player?, What sort of reverence does the town have for Mother Nature?, What is expected of her in the inheritance?, How much of Autumn's expression is defined?</p></li></ul><p></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_1641fc4b-752f-4b3b-85ca-14e32c7ca1d9",
+      "position": {
+        "x": 893.7819643750189,
+        "y": 572.0573586242454
+      },
+      "size": {
+        "width": 97.7584682732383,
+        "height": 31.99368052578708
+      },
+      "content": {
+        "text": "<p><em>mostly pretentious</em></p>",
+        "markdown": "<p><em>mostly pretentious</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_6a2c04ad-8782-4962-afea-913569e1f6a9",
+      "position": {
+        "x": 235.19149375510125,
+        "y": 421.73264736393725
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": ""
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_cc11be03-9abb-4232-b1b4-fdfd3ca4a7f1",
+      "position": {
+        "x": 716.8053332714059,
+        "y": 811.2269464003847
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p><em>Community renewal</em></p>",
+        "markdown": "<p><em>Community renewal</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_1c9a3894-db7d-480e-a95a-7211375bd7db",
+      "position": {
+        "x": 632.9810714657297,
+        "y": 833.2167397418532
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>'Shared-life'</em> as inherent to our nature</p>",
+        "markdown": "<p><em>'Shared-life'</em> as inherent to our nature</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_6459cf1b-2fe1-41e1-a579-7ac03215e93a",
+      "position": {
+        "x": 630.7689560931565,
+        "y": 885.5022173539875
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>What of our nature is born to us?&nbsp;<em>And how much of us is learned?</em></p>",
+        "markdown": "<p>What of our nature is born to us?&nbsp;<em>And how much of us is learned?</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_bdc81fd3-85fe-4126-bd63-e02b3be9ab42",
+      "position": {
+        "x": 607.7669664364867,
+        "y": 929.2448714002477
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>The commitment to 'any man' is no burden</em></p>",
+        "markdown": "<p><em>The commitment to 'any man' is no burden</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_5feee880-ca95-420a-817c-ca0749857fbe",
+      "position": {
+        "x": 602.1187719450453,
+        "y": 965.958135594616
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>For why do we act if not for the whole?</em></p>",
+        "markdown": "<p><em>For why do we act if not for the whole?</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_1c66742f-86ca-4510-825a-8ffcde6f6e8b",
+      "position": {
+        "x": 598.5886503878946,
+        "y": 1005.4954970347048
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>there are no perfections in us, at all</em></p>",
+        "markdown": "<p><em>there are no perfections in us, at all</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_61ef410f-48ae-40b0-be6c-27bc2a35d807",
+      "position": {
+        "x": 604.5312637965851,
+        "y": 1080.7301837079956
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>HUB IS A SKYTREE</em></p><p><em>SURROUNDED BY CLOUDS</em></p>",
+        "markdown": "<p><em>HUB IS A SKYTREE</em></p><p><em>SURROUNDED BY CLOUDS</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_ccf73a25-f7fe-4268-a284-375a92e072e4",
+      "position": {
+        "x": 615.9690314336615,
+        "y": 1107.2714580556797
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>(so immense, it has its own atmosphere)</em></p>",
+        "markdown": "<p><em>(so immense, it has its own atmosphere)</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_ded4191c-ff80-4129-b8a1-172816f76bc9",
+      "position": {
+        "x": 768.5288571373618,
+        "y": 826.7755239875722
+      },
+      "size": {
+        "width": 80.4581227058732,
+        "height": 26.331749249194864
+      },
+      "content": {
+        "text": "<p>(?) of life</p>",
+        "markdown": "<p>(?) of life</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_35275c73-1f6d-4add-94df-a06149d8b77d",
+      "position": {
+        "x": 770.0134136549144,
+        "y": 847.4206658402885
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Social (shared) life</p>",
+        "markdown": "<p>Social (shared) life</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_042316ad-0325-487c-8089-bbbfdd601561",
+      "position": {
+        "x": 771.6300337732816,
+        "y": 874.4009662112662
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>People as inherent.</p>",
+        "markdown": "<p>People as inherent.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_bec479d8-6ab3-4eaa-bffe-d61f46e81d0b",
+      "position": {
+        "x": 763.3237489531218,
+        "y": 918.4881702567312
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Light fantasy.</p>",
+        "markdown": "<p>Light fantasy.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_522e6105-af0e-4a3c-b3b0-04e12884a280",
+      "position": {
+        "x": 760.7679690084572,
+        "y": 937.6565198417157
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Workshops, gardens</p>",
+        "markdown": "<p>Workshops, gardens</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_9c6e4bba-43dd-4622-8663-d93050d393dd",
+      "position": {
+        "x": 773.3507974662953,
+        "y": 969.8532642745282
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Libraries of things</p>",
+        "markdown": "<p>Libraries of things</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_6c1200a0-c93a-4f09-9831-3f49934073e7",
+      "position": {
+        "x": 784.0886303513325,
+        "y": 997.5079674233275
+      },
+      "size": {
+        "width": 93.06878851878604,
+        "height": 30.458876242511796
+      },
+      "content": {
+        "text": "<p>Use what we have</p>",
+        "markdown": "<p>Use what we have</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_efce54ec-804d-4c14-99a7-4699477220c7",
+      "position": {
+        "x": 777.3805386487772,
+        "y": 1022.6362030018147
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>Greenhouses, Villages</p>",
+        "markdown": "<p>Greenhouses, Villages</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_a0017c55-cb03-4d11-92e0-1618996ccbb1",
+      "position": {
+        "x": 778.674727399839,
+        "y": 1075.999252083238
+      },
+      "size": {
+        "width": 93.37113158095056,
+        "height": 30.557824881038368
+      },
+      "content": {
+        "text": "<p>Repair</p>",
+        "markdown": "<p>Repair</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_9dab8bfc-8c18-4e6f-9fc2-aa8f59233f38",
+      "position": {
+        "x": 781.1894316094742,
+        "y": 1093.4094586374563
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Built to last</p>",
+        "markdown": "<p>Built to last</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_e8ebc180-bdb6-4aaa-9e44-336822c591aa",
+      "position": {
+        "x": 805.9369917607692,
+        "y": 1131.506345774566
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Forested, Diverse</p>",
+        "markdown": "<p>Forested, Diverse</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_eddd7f51-c99a-4a2d-8ddb-b1da1bb97b97",
+      "position": {
+        "x": 796.9009587576701,
+        "y": 1148.3021831128103
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p>Multi-family homes</p>",
+        "markdown": "<p>Multi-family homes</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_52454db8-8bc6-4a57-bd84-1670ac88723a",
+      "position": {
+        "x": 1213.466454988607,
+        "y": 267.44199958709135
+      },
+      "size": {
+        "width": 216.30850929593845,
+        "height": 70.79187576957986
+      },
+      "content": {
+        "text": "<p>Narrative &amp; Storyboarding</p>",
+        "markdown": "<p>Narrative &amp; Storyboarding</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_463b0e66-fb02-4454-9a04-82680ba5bfe9",
+      "position": {
+        "x": 1220.315801954572,
+        "y": 322.9643348345819
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>Autumn has done something foolhardy &amp; reckless.</em></p>",
+        "markdown": "<p><em>Autumn has done something foolhardy &amp; reckless.</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_a17e0634-aa84-4abe-b240-5ebcec0adee3",
+      "position": {
+        "x": 1225.773351094898,
+        "y": 359.1205978892433
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>\"What, </em><strong><em><u>have</u> <u>you</u> <u>DONE</u></em></strong><em>, Child!?\"</em></p>",
+        "markdown": "<p><em>\"What, </em><strong><em><u>have</u> <u>you</u> <u>DONE</u></em></strong><em>, Child!?\"</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_49b1ac28-e29a-487c-93b9-f3f7065348df",
+      "position": {
+        "x": 1346.5216258246166,
+        "y": 334.5616267577751
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>the goddess had told Old Father, in some sense (about Autumn)</p>",
+        "markdown": "<p>the goddess had told Old Father, in some sense (about Autumn)</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_7a846b3d-7d7a-477a-b6d2-352459f80265",
+      "position": {
+        "x": 1329.4667847610972,
+        "y": 377.5398262378444
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>\"teach her to love her self; to love other people; \"</em></p>",
+        "markdown": "<p><em>\"teach her to love her self; to love other people; \"</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_4bc4abc6-45a3-472f-aae5-b5755ce59a24",
+      "position": {
+        "x": 1338.3353021141274,
+        "y": 412.33170200742416
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>He has forgotten this ask, greatly.</p>",
+        "markdown": "<p>He has forgotten this ask, greatly.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_3e6335d4-4fae-4cf4-a471-c66b1b3df0ab",
+      "position": {
+        "x": 1448.8506722057339,
+        "y": 384.36176266325225
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>The townsfolk are building a statue of Mother Nature;</p>",
+        "markdown": "<p>The townsfolk are building a statue of Mother Nature;</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_697afeb5-d003-443f-93fc-4e63c094194b",
+      "position": {
+        "x": 1449.5328658482747,
+        "y": 421.20021936045447
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>What do you have left if you've already given away yourself!</em></p>",
+        "markdown": "<p><em>What do you have left if you've already given away yourself!</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_ac7f5c58-9ae9-40cf-80bb-a8672913218d",
+      "position": {
+        "x": 1706.065012818359,
+        "y": 277.67873607712767
+      },
+      "size": {
+        "width": 168.3654560840446,
+        "height": 55.101421991141876
+      },
+      "content": {
+        "text": "<p>Design Questions &amp;</p>",
+        "markdown": "<p>Design Questions &amp;</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_a0eb2242-66b4-487e-8609-d9e561fcbdfc",
+      "position": {
+        "x": 1734.717145805072,
+        "y": 301.5555135660549
+      },
+      "size": {
+        "width": 168.3654560840446,
+        "height": 55.101421991141876
+      },
+      "content": {
+        "text": "<p>Development Notes</p>",
+        "markdown": "<p>Development Notes</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_0626e3d1-250c-4905-b748-0059bcb9c2d1",
+      "position": {
+        "x": 1707.9386183913425,
+        "y": 352.7843254831637
+      },
+      "size": {
+        "width": 150.2494249099061,
+        "height": 49.17253906142382
+      },
+      "content": {
+        "text": "<p>How does the player keep attention between objectives; before going home, how are they [reminded] [incentivized to] talk to people?</p>",
+        "markdown": "<p>How does the player keep attention between objectives; before going home, how are they [reminded] [incentivized to] talk to people?</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_2a4f453c-df07-4e6f-9447-e9b0ca9381e2",
+      "position": {
+        "x": 1793.571027956481,
+        "y": 417.147791963186
+      },
+      "size": {
+        "width": 148.58184045036194,
+        "height": 48.626784147391184
+      },
+      "content": {
+        "text": "<p>Be aware of how you ask for the player's attention. Respect the player's time and intelligence.</p>",
+        "markdown": "<p>Be aware of how you ask for the player's attention. Respect the player's time and intelligence.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_5202953d-2441-428e-b52d-7ca57ceb7528",
+      "position": {
+        "x": 1812.8420264512465,
+        "y": 476.6636894661851
+      },
+      "size": {
+        "width": 179.76268570936278,
+        "height": 58.83142441397328
+      },
+      "content": {
+        "text": "<p>Why do people feel a certain way about anything? Why do they <em><s>'feel'</s></em> at all? <s>If the expressions are ever retaliation</s>. Lived rightly, a person's affects always tend towards love.</p>",
+        "markdown": "<p>Why do people feel a certain way about anything? Why do they <em><s>'feel'</s></em> at all? <s>If the expressions are ever retaliation</s>. Lived rightly, a person's affects always tend towards love.</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_63a60067-c356-49df-a252-44b2e9b9f4b6",
+      "position": {
+        "x": 1815.1199741192115,
+        "y": 534.7411546264806
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>What are a person's passions for love and life?</p>",
+        "markdown": "<p>What are a person's passions for love and life?</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_f10893bf-7a17-406d-837e-a453ad30eb1f",
+      "position": {
+        "x": 1629.1217945980613,
+        "y": 413.64509148717985
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p><em>Not all that happens is 'for the player'</em></p>",
+        "markdown": "<p><em>Not all that happens is 'for the player'</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_28c41344-7cb5-414c-9e9f-70cfc28fabd0",
+      "position": {
+        "x": 1624.6178033731644,
+        "y": 457.9343385319993
+      },
+      "size": {
+        "width": 91.66666666666666,
+        "height": 30
+      },
+      "content": {
+        "text": "<p><em>Why go home?</em></p>",
+        "markdown": "<p><em>Why go home?</em></p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    },
+    {
+      "id": "node_90c8504e-ca8f-4d1b-a7bf-1b9ebf195157",
+      "position": {
+        "x": 1617.3712187372164,
+        "y": 495.5706170525674
+      },
+      "size": {
+        "width": 110,
+        "height": 36
+      },
+      "content": {
+        "text": "<p>various ways to navigate a level</p>",
+        "markdown": "<p>various ways to navigate a level</p>"
+      },
+      "metadata": {
+        "nodeType": "text"
+      },
+      "style": {},
+      "zIndex": 0
+    }
+  ],
+  "connections": [
+    {
+      "id": "conn_d38cc9dc-2215-4fa2-9a00-ca637fa5ae9f",
+      "sourceNodeId": "node_0578a1ce-bc4e-4192-862d-721704d689d3",
+      "targetNodeId": "node_f513e30f-f2ba-4036-a938-762a45ed9b10",
+      "sourceAnchor": {
+        "side": "left",
+        "offset": 0.5
+      },
+      "targetAnchor": {
+        "side": "top",
+        "offset": 0.5
+      }
+    },
+    {
+      "id": "conn_4cefba67-059f-4c75-97dc-4de4d9475f32",
+      "sourceNodeId": "node_30366ac0-6e55-4df9-b2b2-87d59be4e538",
+      "targetNodeId": "node_1641fc4b-752f-4b3b-85ca-14e32c7ca1d9",
+      "sourceAnchor": {
+        "side": "right",
+        "offset": 0.5
+      },
+      "targetAnchor": {
+        "side": "left",
+        "offset": 0.5
+      }
+    }
+  ]
+}

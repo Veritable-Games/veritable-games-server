@@ -1,0 +1,80 @@
+#!/bin/bash
+#
+# WireGuard Auto-Switch Dispatcher
+# Location: /etc/NetworkManager/dispatcher.d/99-wireguard-auto-switch
+# 
+# Automatically switches between wg0_home and wg0_away configs
+# based on current network gateway
+#
+# Usage: Automatically called by NetworkManager on connection changes
+# Manual test: nmcli -f NAME,STATE con show
+#
+
+INTERFACE=$1
+ACTION=$2
+
+# Only process on connection up/down
+if [ "$ACTION" != "up" ] && [ "$ACTION" != "down" ]; then
+  exit 0
+fi
+
+# Skip if not a network connection
+if [ -z "$INTERFACE" ]; then
+  exit 0
+fi
+
+# Only process for WiFi connections
+if ! nmcli device show "$INTERFACE" 2>/dev/null | grep -q "TYPE.*wifi"; then
+  exit 0
+fi
+
+# Get current gateway
+CURRENT_GATEWAY=$(ip route show | grep "^default via" | awk '{print $3}' | head -1)
+
+# Determine if we're on home network (gateway is 192.168.1.x)
+if echo "$CURRENT_GATEWAY" | grep -qE "^192\.168\.1\."; then
+  # Home network - use wg0_home
+  TARGET_CONFIG="wg0-home"
+  TARGET_UP="wg0_home"
+  LOG_MSG="Home network detected (gateway: $CURRENT_GATEWAY)"
+else
+  # Away network - use wg0_away
+  TARGET_CONFIG="wg0-away"
+  TARGET_UP="wg0_away"
+  LOG_MSG="Away network detected (gateway: $CURRENT_GATEWAY)"
+fi
+
+# Log the action
+logger -t wireguard-switch "[$(date '+%Y-%m-%d %H:%M:%S')] $LOG_MSG - Action: $ACTION on $INTERFACE"
+
+# Only switch on connection up event
+if [ "$ACTION" = "up" ]; then
+  # Check which WireGuard config is currently active
+  CURRENT=$(nmcli -t -f NAME,DEVICE con show --active 2>/dev/null | grep "wg0" | cut -d: -f1)
+
+  # If already on correct config, do nothing
+  if [ "$CURRENT" = "$TARGET_CONFIG" ]; then
+    logger -t wireguard-switch "Already using $TARGET_CONFIG, no switch needed"
+    exit 0
+  fi
+
+  # If different config is active, switch to the target
+  if [ -n "$CURRENT" ]; then
+    logger -t wireguard-switch "Switching WireGuard: $CURRENT → $TARGET_CONFIG"
+    nmcli connection down "$CURRENT" 2>/dev/null || true
+    sleep 1
+  fi
+
+  # Activate target config
+  logger -t wireguard-switch "Activating $TARGET_CONFIG"
+  nmcli connection up "$TARGET_CONFIG" 2>/dev/null
+
+  if [ $? -eq 0 ]; then
+    logger -t wireguard-switch "✓ Successfully switched to $TARGET_CONFIG"
+  else
+    logger -t wireguard-switch "✗ Failed to activate $TARGET_CONFIG"
+    exit 1
+  fi
+fi
+
+exit 0

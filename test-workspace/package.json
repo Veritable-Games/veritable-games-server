@@ -1,0 +1,25 @@
+{
+  "name": "veritable-games-platform",
+  "version": "1.0.0",
+  "description": "Veritable Games web platform with Next.js frontend and CSP security",
+  "scripts": {
+    "start": "cd frontend && npm run dev",
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "production": "cd frontend && npm run start",
+    "install-all": "cd frontend && npm install",
+    "clean": "cd frontend && rm -rf .next node_modules/.cache",
+    "setup": "cd frontend && npm install && npm run build"
+  },
+  "keywords": [
+    "veritable-games",
+    "nextjs",
+    "game-development",
+    "csp-security",
+    "stellar-visualization"
+  ],
+  "engines": {
+    "node": ">=20.18.2",
+    "npm": ">=10.0.0"
+  }
+}

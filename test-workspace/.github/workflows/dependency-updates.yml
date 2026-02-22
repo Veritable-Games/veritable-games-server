@@ -1,0 +1,485 @@
+name: Automated Dependency Updates
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      update_strategy:
+        description: 'Update strategy to use'
+        required: true
+        default: 'security-first'
+        type: choice
+        options:
+        - security-first
+        - conservative
+        - aggressive
+      security_only:
+        description: 'Only apply security updates'
+        required: false
+        default: false
+        type: boolean
+      create_pr:
+        description: 'Create pull request for updates'
+        required: false
+        default: true
+        type: boolean
+
+env:
+  NODE_VERSION: '20.18.2'
+  FRONTEND_DIR: './frontend'
+
+jobs:
+  # ============================================================================
+  # SECURITY VULNERABILITY SCAN
+  # ============================================================================
+  security-scan:
+    name: Security Vulnerability Scan
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ env.FRONTEND_DIR }}
+    outputs:
+      has-vulnerabilities: ${{ steps.audit.outputs.has-vulnerabilities }}
+      vulnerability-count: ${{ steps.audit.outputs.vulnerability-count }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --audit=false
+
+      - name: Run npm audit
+        id: audit
+        run: |
+          audit_output=$(npm audit --json 2>/dev/null || echo '{}')
+          echo "$audit_output" > audit-results.json
+          
+          # Count vulnerabilities by severity
+          vulnerabilities=$(echo "$audit_output" | jq -r '.metadata.vulnerabilities.total // 0')
+          critical=$(echo "$audit_output" | jq -r '.metadata.vulnerabilities.critical // 0')
+          high=$(echo "$audit_output" | jq -r '.metadata.vulnerabilities.high // 0')
+          moderate=$(echo "$audit_output" | jq -r '.metadata.vulnerabilities.moderate // 0')
+          
+          echo "vulnerability-count=$vulnerabilities" >> $GITHUB_OUTPUT
+          echo "critical-count=$critical" >> $GITHUB_OUTPUT
+          echo "high-count=$high" >> $GITHUB_OUTPUT
+          echo "moderate-count=$moderate" >> $GITHUB_OUTPUT
+          
+          if [ "$vulnerabilities" -gt 0 ]; then
+            echo "has-vulnerabilities=true" >> $GITHUB_OUTPUT
+          else
+            echo "has-vulnerabilities=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run Snyk security scan
+        uses: snyk/actions/node@master
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=medium --json-file-output=snyk-results.json
+
+      - name: Upload security scan results
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-scan-results
+          path: |
+            frontend/audit-results.json
+            frontend/snyk-results.json
+
+  # ============================================================================
+  # DEPENDENCY UPDATE ANALYSIS
+  # ============================================================================
+  dependency-analysis:
+    name: Dependency Update Analysis
+    runs-on: ubuntu-latest
+    needs: security-scan
+    defaults:
+      run:
+        working-directory: ${{ env.FRONTEND_DIR }}
+    outputs:
+      has-updates: ${{ steps.analysis.outputs.has-updates }}
+      update-summary: ${{ steps.analysis.outputs.update-summary }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --audit=false
+
+      - name: Check for outdated packages
+        id: analysis
+        run: |
+          # Get outdated packages
+          outdated_output=$(npm outdated --json 2>/dev/null || echo '{}')
+          echo "$outdated_output" > outdated-packages.json
+          
+          # Count different types of updates
+          security_updates=0
+          patch_updates=0
+          minor_updates=0
+          major_updates=0
+          
+          # Process outdated packages
+          echo "$outdated_output" | jq -r 'keys[]' | while read package; do
+            current=$(echo "$outdated_output" | jq -r ".\"$package\".current")
+            wanted=$(echo "$outdated_output" | jq -r ".\"$package\".wanted") 
+            latest=$(echo "$outdated_output" | jq -r ".\"$package\".latest")
+            
+            if [ "$current" != "$wanted" ]; then
+              patch_updates=$((patch_updates + 1))
+            fi
+            
+            if [ "$wanted" != "$latest" ]; then
+              # Determine if it's minor or major update
+              # This is a simplified version - in practice you'd use semver
+              minor_updates=$((minor_updates + 1))
+            fi
+          done
+          
+          total_updates=$(echo "$outdated_output" | jq 'keys | length')
+          
+          echo "has-updates=$([ "$total_updates" -gt 0 ] && echo true || echo false)" >> $GITHUB_OUTPUT
+          echo "total-updates=$total_updates" >> $GITHUB_OUTPUT
+          echo "patch-updates=$patch_updates" >> $GITHUB_OUTPUT
+          echo "minor-updates=$minor_updates" >> $GITHUB_OUTPUT
+          echo "major-updates=$major_updates" >> $GITHUB_OUTPUT
+          
+          # Create update summary
+          summary="Total: $total_updates, Patch: $patch_updates, Minor: $minor_updates, Major: $major_updates"
+          echo "update-summary=$summary" >> $GITHUB_OUTPUT
+
+      - name: Upload dependency analysis
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-analysis
+          path: |
+            frontend/outdated-packages.json
+
+  # ============================================================================
+  # AUTOMATED DEPENDENCY UPDATES
+  # ============================================================================
+  dependency-updates:
+    name: Execute Dependency Updates
+    runs-on: ubuntu-latest
+    needs: [security-scan, dependency-analysis]
+    if: needs.security-scan.outputs.has-vulnerabilities == 'true' || needs.dependency-analysis.outputs.has-updates == 'true'
+    defaults:
+      run:
+        working-directory: ${{ env.FRONTEND_DIR }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --audit=false
+
+      - name: Download security scan results
+        uses: actions/download-artifact@v4
+        with:
+          name: security-scan-results
+          path: frontend/
+
+      - name: Download dependency analysis
+        uses: actions/download-artifact@v4
+        with:
+          name: dependency-analysis
+          path: frontend/
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Run automated dependency updates
+        id: updates
+        run: |
+          node scripts/automated-dependency-updates.js \
+            --updateStrategy "${{ github.event.inputs.update_strategy || 'security-first' }}" \
+            --securityOnly "${{ github.event.inputs.security_only || 'false' }}" \
+            --createPullRequests "${{ github.event.inputs.create_pr || 'true' }}" \
+            --runTestsAfterUpdate true \
+            --rollbackOnTestFailure true \
+            --slackWebhook "${{ secrets.SLACK_WEBHOOK_URL }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run tests after updates
+        if: steps.updates.outcome == 'success'
+        run: |
+          # Run comprehensive test suite
+          echo "Running unit tests..."
+          npm test -- --testPathPattern="^((?!integration|e2e|security).)*$" --watchAll=false --coverage
+          
+          echo "Running integration tests..."
+          npm test -- --testPathPattern="integration" --watchAll=false
+          
+          echo "Running security tests..."
+          npm test -- --testPathPattern="security" --watchAll=false
+
+      - name: Build application
+        if: steps.updates.outcome == 'success'
+        run: |
+          npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Upload test coverage
+        if: steps.updates.outcome == 'success'
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./frontend/coverage/lcov.info
+          flags: dependency-updates
+          name: dependency-updates-coverage
+
+      - name: Create/Update Pull Request
+        if: steps.updates.outcome == 'success' && (github.event.inputs.create_pr == 'true' || github.event.inputs.create_pr == '')
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: |
+            chore: automated dependency updates
+            
+            - Security vulnerabilities: ${{ needs.security-scan.outputs.vulnerability-count }}
+            - Available updates: ${{ needs.dependency-analysis.outputs.update-summary }}
+            - Strategy: ${{ github.event.inputs.update_strategy || 'security-first' }}
+          title: '🔄 Automated Dependency Updates'
+          body: |
+            ## 🔄 Automated Dependency Updates
+            
+            This PR contains automated dependency updates to address security vulnerabilities and keep dependencies current.
+            
+            ### 🔒 Security Status
+            - **Vulnerabilities Found**: ${{ needs.security-scan.outputs.vulnerability-count }}
+            - **Critical**: ${{ needs.security-scan.outputs.critical-count }}
+            - **High**: ${{ needs.security-scan.outputs.high-count }}
+            - **Moderate**: ${{ needs.security-scan.outputs.moderate-count }}
+            
+            ### 📦 Updates Available
+            ${{ needs.dependency-analysis.outputs.update-summary }}
+            
+            ### ⚙️ Configuration
+            - **Update Strategy**: ${{ github.event.inputs.update_strategy || 'security-first' }}
+            - **Security Only**: ${{ github.event.inputs.security_only || 'false' }}
+            
+            ### 🧪 Testing
+            - ✅ Unit tests passed
+            - ✅ Integration tests passed  
+            - ✅ Security tests passed
+            - ✅ Build successful
+            
+            ### 🚀 Deployment
+            This PR is ready for review and can be safely merged.
+            
+            ---
+            *Generated by automated dependency updater*
+            *Workflow: `${{ github.workflow }}` | Run: `${{ github.run_number }}`*
+          branch: automated-dependency-updates
+          delete-branch: true
+          labels: |
+            dependencies
+            security
+            automated
+
+  # ============================================================================
+  # EMERGENCY SECURITY UPDATES
+  # ============================================================================
+  emergency-security-updates:
+    name: Emergency Security Updates
+    runs-on: ubuntu-latest
+    needs: security-scan
+    if: needs.security-scan.outputs.critical-count > 0 || needs.security-scan.outputs.high-count > 0
+    defaults:
+      run:
+        working-directory: ${{ env.FRONTEND_DIR }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --audit=false
+
+      - name: Apply emergency security fixes
+        run: |
+          echo "🚨 CRITICAL/HIGH severity vulnerabilities detected!"
+          echo "Applying emergency security fixes..."
+          
+          # Apply security fixes automatically
+          npm audit fix --audit-level=high --force
+          
+          # Run basic tests
+          npm test -- --testPathPattern="security" --watchAll=false
+
+      - name: Create emergency security PR
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: |
+            🚨 EMERGENCY: Critical security vulnerability fixes
+            
+            Critical: ${{ needs.security-scan.outputs.critical-count }}
+            High: ${{ needs.security-scan.outputs.high-count }}
+          title: '🚨 EMERGENCY: Critical Security Vulnerability Fixes'
+          body: |
+            ## 🚨 EMERGENCY SECURITY UPDATE
+            
+            **⚠️ This PR contains fixes for CRITICAL and HIGH severity security vulnerabilities.**
+            
+            ### 🔴 Critical Vulnerabilities
+            **Count**: ${{ needs.security-scan.outputs.critical-count }}
+            
+            ### 🟠 High Severity Vulnerabilities  
+            **Count**: ${{ needs.security-scan.outputs.high-count }}
+            
+            ### ⚡ Actions Taken
+            - Applied `npm audit fix --force` for high+ severity issues
+            - Ran security tests to verify fixes
+            - **This PR should be reviewed and merged IMMEDIATELY**
+            
+            ### 🧪 Testing Status
+            - ✅ Security tests passed
+            - ⚠️  Full test suite should be run after merge
+            
+            ### 🚀 Deployment Recommendation
+            **IMMEDIATE DEPLOYMENT RECOMMENDED**
+            
+            ---
+            *🤖 Generated by emergency security updater*
+            *Critical security issues require immediate attention*
+          branch: emergency-security-fixes
+          delete-branch: true
+          labels: |
+            security
+            critical
+            emergency
+            priority-high
+
+      - name: Send critical alert
+        if: needs.security-scan.outputs.critical-count > 0
+        uses: 8398a7/action-slack@v3
+        with:
+          status: 'warning'
+          channel: '#security-alerts'
+          webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow
+          custom_payload: |
+            {
+              text: "🚨 CRITICAL SECURITY ALERT",
+              attachments: [{
+                color: "danger",
+                title: "Critical Security Vulnerabilities Detected",
+                fields: [
+                  { title: "Critical", value: "${{ needs.security-scan.outputs.critical-count }}", short: true },
+                  { title: "High", value: "${{ needs.security-scan.outputs.high-count }}", short: true },
+                  { title: "Repository", value: "${{ github.repository }}", short: true },
+                  { title: "Branch", value: "${{ github.ref }}", short: true }
+                ],
+                footer: "Emergency security fixes have been automatically applied.",
+                ts: ${{ github.event.head_commit.timestamp }}
+              }]
+            }
+
+  # ============================================================================
+  # MONITORING AND REPORTING
+  # ============================================================================
+  monitoring:
+    name: Dependency Monitoring & Reporting
+    runs-on: ubuntu-latest
+    needs: [security-scan, dependency-analysis, dependency-updates]
+    if: always()
+    steps:
+      - name: Generate dependency report
+        run: |
+          cat << 'EOF' > dependency-report.md
+          # Dependency Update Report
+          
+          ## Summary
+          - **Workflow Run**: ${{ github.run_number }}
+          - **Trigger**: ${{ github.event_name }}
+          - **Date**: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          
+          ## Security Status
+          - **Vulnerabilities Found**: ${{ needs.security-scan.outputs.vulnerability-count || '0' }}
+          - **Critical**: ${{ needs.security-scan.outputs.critical-count || '0' }}
+          - **High**: ${{ needs.security-scan.outputs.high-count || '0' }}
+          - **Moderate**: ${{ needs.security-scan.outputs.moderate-count || '0' }}
+          
+          ## Updates Available
+          ${{ needs.dependency-analysis.outputs.update-summary || 'No updates available' }}
+          
+          ## Actions Taken
+          - Security Scan: ${{ needs.security-scan.result }}
+          - Dependency Analysis: ${{ needs.dependency-analysis.result }}
+          - Dependency Updates: ${{ needs.dependency-updates.result }}
+          
+          ## Next Steps
+          ${{ needs.security-scan.outputs.has-vulnerabilities == 'true' && '⚠️ Review and merge security updates' || '✅ No immediate action required' }}
+          
+          ---
+          *Generated by: ${{ github.workflow }}*
+          EOF
+
+      - name: Upload dependency report
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-report-${{ github.run_number }}
+          path: dependency-report.md
+
+      - name: Send summary notification
+        if: needs.security-scan.outputs.has-vulnerabilities == 'true' || needs.dependency-analysis.outputs.has-updates == 'true'
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          channel: '#dependency-updates'
+          webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow
+          custom_payload: |
+            {
+              text: "📊 Dependency Update Summary",
+              attachments: [{
+                color: "${{ needs.security-scan.outputs.has-vulnerabilities == 'true' && 'warning' || 'good' }}",
+                title: "Dependency Update Report",
+                fields: [
+                  { title: "Vulnerabilities", value: "${{ needs.security-scan.outputs.vulnerability-count || '0' }}", short: true },
+                  { title: "Updates Available", value: "${{ needs.dependency-analysis.outputs.has-updates == 'true' && 'Yes' || 'No' }}", short: true },
+                  { title: "Updates Applied", value: "${{ needs.dependency-updates.result == 'success' && 'Yes' || 'No' }}", short: true },
+                  { title: "Repository", value: "${{ github.repository }}", short: true }
+                ],
+                footer: "Automated Dependency Management",
+                ts: ${{ github.event.head_commit.timestamp }}
+              }]
+            }
