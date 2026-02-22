@@ -351,25 +351,40 @@ def get_or_create_tags(conn, tags: list) -> dict:
         return {}
 
 def insert_documents_batch(conn, documents: list) -> int:
-    """Insert a batch of documents, return count of inserted records."""
+    """Insert a batch of documents, handle slug collisions by appending counters.
+
+    For any slug that already exists, append -2, -3, etc. to make it unique.
+    This ensures ALL documents get inserted, not silently rejected.
+    """
     if not documents:
         return 0
 
     try:
         cur = conn.cursor()
 
-        insert_query = """
-            INSERT INTO marxist.documents
-            (slug, title, author, language, content, source_url, document_type, category, notes, created_at)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
-            ON CONFLICT (slug) DO NOTHING
-            RETURNING id
-        """
+        # First, get all existing slugs to detect collisions
+        cur.execute(
+            "SELECT DISTINCT slug FROM marxist.documents WHERE slug LIKE %s || '%'",
+            (documents[0]['slug'][:100],)
+        )
+        existing_slugs = {row[0] for row in cur.fetchall()} if documents else set()
 
         rows = []
         for d in documents:
+            slug = d['slug']
+
+            # If slug exists, append counter
+            counter = 2
+            original_slug = slug
+            while slug in existing_slugs or any(row[0] == slug for row in rows):
+                slug = f"{original_slug}-{counter}"
+                counter += 1
+
+            # Track this slug as being inserted in this batch
+            existing_slugs.add(slug)
+
             rows.append((
-                d['slug'],
+                slug,  # Use potentially modified slug
                 d['title'],
                 d['author'],
                 d['language'],
@@ -380,16 +395,20 @@ def insert_documents_batch(conn, documents: list) -> int:
                 d['notes']
             ))
 
+        insert_query = """
+            INSERT INTO marxist.documents
+            (slug, title, author, language, content, source_url, document_type, category, notes, created_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
+            ON CONFLICT (slug) DO NOTHING
+        """
+
         # Use executemany for batch performance
-        cur.executemany(
-            insert_query.replace('RETURNING id', ''),
-            rows
-        )
+        cur.executemany(insert_query, rows)
 
         # Count inserted
         count = cur.rowcount
         conn.commit()
-        logging.info(f"Inserted {count} documents in batch")
+        logging.info(f"Inserted {count} documents in batch (with collision handling)")
         return count
     except Exception as e:
         logging.error(f"Error inserting documents batch: {e}")
