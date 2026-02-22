@@ -766,17 +766,23 @@ docker logs m4s0kwo4kc4oooocck4sswc4 --tail 50
   - Scripts: 3 active + 63 archived (organized Nov 26, 2025)
   - Documentation: `/home/user/projects/veritable-games/resources/data/PDF_CONVERSION_WORKFLOW.md`
 
-- **Unified Tag Schema** (Nov 2025): MOSTLY COMPLETE
+- **Unified Tag Schema** (Nov 2025 - Feb 2026): ✅ COMPLETE
   - ✅ Database migration: 19,952 tags in `shared.tags`
   - ✅ Tag extraction: 194,664 associations for anarchist documents
   - ✅ Frontend routing: Deployed
-  - ❌ Anarchist tags API endpoint: Missing from container
+  - ✅ Anarchist tags API endpoint: Deployed
+  - ✅ YouTube integration: 60,816 transcripts + 215,702 tag associations
+  - ✅ Marxist integration: 342 documents + 3,262 tag associations
+  - **Total across all 4 sources**: ~93,000 documents, ~414,000 tag associations
   - See `docs/veritable-games/UNIFIED_TAG_SCHEMA_STATUS.md` for details
 
-- **Anarchist Library:** COMPLETE - 24,643 texts imported across 27 languages
-- **Marxists.org Archive:** IN PROGRESS - ~6,584 texts downloaded (scraper running)
+- **Library Collections**: COMPLETE
+  - ✅ Anarchist Library: 24,643 texts across 27 languages
+  - ✅ YouTube Transcripts: 60,816 transcripts from 499 channels (imported Feb 20, 2026)
+  - ✅ Marxist Library: 342 documents with rich metadata (imported Feb 20, 2026)
+  - ✅ User Library: ~7,500 documents
+  - **Note on Marxist**: Only 2.7% of 12,728 documents had extractable metadata (author+category). Requires investigation of metadata enrichment strategy.
   - Location: `/home/user/projects/veritable-games/resources/data/scraping/marxists-org/`
-  - Target: 12,735 total texts
 
 ---
 

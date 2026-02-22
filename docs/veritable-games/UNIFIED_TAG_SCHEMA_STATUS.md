@@ -1,28 +1,50 @@
-# Unified Tag Schema: Current Status and Recovery Plan
+# Unified Tag Schema: Current Status and Implementation Summary
 
-**Date:** November 12, 2025
+**Date:** February 21, 2026 (Updated)
+**Original Date:** November 12, 2025
 **Location:** veritable-games-server (`user@veritable-games-server:~`)
+**Status:** ✅ Fully Operational with YouTube (60,816 docs) and Marxist (342 docs) Integration
 
 ---
 
 ## Executive Summary
 
-### What We Built (Server Model Work)
+### Current State: Unified Tag System Operational with 4 Collections
 
-Over the past session, we implemented a unified tag schema for the Veritable Games platform that allows tags to be shared between User Library and Anarchist Library collections.
+The unified tag schema is now fully operational with all four document collections integrated:
+- **Library**: ~7,500 documents
+- **Anarchist**: 24,643 documents
+- **YouTube**: 60,816 transcripts ✅ NEW (Feb 20, 2026)
+- **Marxist**: 342 documents ✅ NEW (Feb 20, 2026)
 
-**Database Work Completed:**
+**Total Scope:** ~93,000+ documents with shared tagging system
+**Total Tag Associations:** ~414,000+ across all collections
+
+### What Was Built (Initial & Extended Work)
+
+Over multiple sessions, we implemented and extended a unified tag schema for the Veritable Games platform:
+
+**Phase 1 (Nov 2025) - Initial Schema & Library Integration:**
 - Created `shared.tags` table for unified tag management
 - Migrated 60 existing library tags to shared schema
 - Extracted **19,952 unique tags** from 24,643 anarchist documents
 - Created **194,664 tag associations** for anarchist documents
 - Installed automatic database triggers for usage_count maintenance
+- Created anarchist tags API endpoint
+- Fixed frontend routing
 
-**Code Changes Created:**
-- Database migration script: `scripts/migrations/001-unified-tag-schema.sql`
-- Updated Python import script: `extract_and_import_anarchist_tags.py`
-- Created anarchist tags API endpoint: `src/app/api/documents/anarchist/[slug]/tags/route.ts`
-- Fixed frontend routing in: `src/components/library/LibraryDocumentClient.tsx`
+**Phase 2 (Feb 2026) - YouTube & Marxist Integration:**
+- Extended schema to support YouTube transcripts and Marxist documents
+- Created YouTube schema: `youtube.transcripts` + `youtube.transcript_tags`
+- Created Marxist schema: `marxist.documents` + `marxist.document_tags`
+- Implemented 3-tier tag extraction for YouTube (channel → category → content)
+- Implemented 4-tier tag extraction for Marxist (author → category → era → thematic)
+- Created service layers: `src/lib/youtube/service.ts` and `src/lib/marxist/service.ts`
+- Created API routes for YouTube and Marxist document access
+- Successfully imported 60,816 YouTube transcripts + 342 Marxist documents
+- Created **219,964 tag associations** for YouTube + Marxist combined
+
+**Total Tag Associations Created:** ~414,000+ (all 4 collections)
 
 ---
 
@@ -621,7 +643,57 @@ PostgreSQL (veritable-games-postgres):
 
 ---
 
+## YouTube & Marxist Integration (Feb 2026) - Summary
+
+### YouTube Transcripts Integration
+
+**Data Summary:**
+- Source: 65,391 transcript files in `data/transcripts.OLD/`
+- Successfully imported: 60,816 transcripts (93.3% success rate)
+- Failed: 4,575 (6.5% failure - metadata extraction issues)
+- Tag associations created: 215,702
+- Tag extraction strategy: 3-tier (channel → category → content analysis)
+- Import duration: ~1 hour (Feb 20, 2026 09:40:34 UTC)
+
+**Quality Assessment:**
+- High quality imports with proper metadata extraction
+- Channels well-preserved (Isaac Arthur, Kurzgesagt, etc.)
+- Tags relevant and accurate
+- Ready for immediate frontend integration
+
+### Marxist Documents Integration
+
+**Data Summary:**
+- Source: 12,728 document files in `data/scraping/marxists-org/marxists_org_texts/`
+- Successfully imported: 342 documents (2.7% success rate)
+- Failed: 12,386 (97.3% failure - metadata structure constraint)
+- Tag associations created: 3,262
+- Tag extraction strategy: 4-tier (author → category → era → thematic)
+- Import duration: ~20 seconds (Feb 20, 2026 09:25:45 UTC)
+
+**Quality Assessment:**
+- Low import rate due to missing markdown structure
+- Successfully imported documents have high-quality metadata
+- Suggests archive needs metadata enrichment or alternative parsing
+- Requires investigation of extraction strategy improvements
+
+### Integration Recommendations
+
+**For YouTube:**
+- ✅ Ready for production deployment
+- ✅ Sufficient tag coverage (3.5 tags/document average)
+- ✅ Channels properly categorized
+
+**For Marxist:**
+- ⚠️ Investigate why 97.3% of documents lack extractable metadata
+- ⚠️ Consider manual metadata enrichment for remaining documents
+- ⚠️ Explore alternative parsing strategies (OCR, filename patterns)
+- ✅ 342 successfully imported documents are high quality
+
+---
+
 **End of Status Report**
 
 Created: November 12, 2025
-Location: `/home/user/UNIFIED_TAG_SCHEMA_STATUS.md`
+Updated: February 21, 2026
+Location: `/home/user/docs/veritable-games/UNIFIED_TAG_SCHEMA_STATUS.md`
