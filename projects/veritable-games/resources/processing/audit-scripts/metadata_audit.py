@@ -428,7 +428,11 @@ def main():
                 print(f"  Quality Score: {doc['quality_score']}")
                 print(f"  Issues: {doc['issues_count']}")
                 if doc['issues_detected']:
-                    issues = json.loads(doc['issues_detected'])
+                    # Handle both string (from JSON) and list (from JSONB) formats
+                    if isinstance(doc['issues_detected'], str):
+                        issues = json.loads(doc['issues_detected'])
+                    else:
+                        issues = doc['issues_detected']
                     for issue in issues:
                         print(f"    - [{issue['severity']}] {issue['type']}: {issue['message']}")
         elif args.command == 'mark-fixed':
