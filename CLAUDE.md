@@ -53,9 +53,98 @@ A: I just ran /init in /home/user
 
 ---
 
-## 📰 RECENT WORK: Storage Migration Complete (December 4, 2025)
+## 🚨 ACTIVE: Library Audit in Progress (February 23, 2026)
 
-**🚨 READ THIS IF YOU'RE A NEW SESSION**: `/home/user/docs/server/RECENT_WORK_DEC_2025.md`
+**📖 READ THIS NEXT**: How to Resume Library Audit Work
+
+**Status**: ✅ INITIALIZED & ACTIVE (2,561 documents to review)
+**Location**: `/home/user/projects/veritable-games/resources/processing/audit-scripts/`
+**Documents Completed**: 1/2,561
+
+### Quick Resume Commands
+
+```bash
+# Set up environment
+cd /home/user/projects/veritable-games/resources/processing/audit-scripts
+export DATABASE_URL="postgresql://postgres:postgres@localhost:5432/veritable_games"
+
+# Check progress
+python3 metadata_audit.py status
+
+# Get next batch to review (10 documents)
+python3 metadata_audit.py next --count 10 --max-score 39
+
+# Mark a document as fixed
+python3 metadata_audit.py mark-fixed AUDIT_ID --notes "What was fixed"
+
+# Finalize a batch (create checkpoint)
+python3 metadata_audit.py finalize-round --name "Library_Batch_X"
+```
+
+### Current Progress
+
+```
+Total: 2,561 documents
+├─ Fixed: 1 ✅
+├─ In Review: 19
+├─ Pending: 2,541
+├─ Average Quality: 44.6/100 (target: 85+)
+└─ Estimated Work: 80-120 hours @ 10-15 docs/hour
+```
+
+### What This Audit Does
+
+**Goal**: Improve metadata for Library collection (PDF reconversions)
+
+**Metrics**:
+- Authors: 53.4% → target 95%+
+- Publication Dates: 0.1% → target 80%+
+- Quality Score: 44.6 → target 85+
+
+**Critical Issues Found**: 1,198 documents (score 0-39)
+- Missing authors
+- Missing publication dates
+- Poor content quality (too short)
+- Formatting issues
+
+### How to Resume
+
+See: `/home/user/projects/veritable-games/resources/processing/audit-scripts/LIBRARY_AUDIT_WORKFLOW.md`
+
+**TL;DR**:
+1. Get next batch: `python3 metadata_audit.py next --count 10`
+2. For each document:
+   - Look up in database
+   - Research missing author/date
+   - Update database
+   - Mark as fixed in audit
+3. Repeat until complete
+4. Save progress: `python3 metadata_audit.py finalize-round --name "Round_X"`
+
+### Infrastructure Notes
+
+**Database**:
+- Audit tables: `library.metadata_audit_log`, `library.audit_checkpoints`
+- Data table: `library.library_documents`
+- Connection: `postgresql://localhost:5432/veritable_games`
+
+**Tools**:
+- CLI: `metadata_audit.py` (7 commands)
+- Detectors: `issue_detectors.py` (16+ issue types)
+- Collection-specific: `collection_specific_detectors.py` (YouTube, Marxist, Anarchist)
+
+**Logs**: `/home/user/projects/veritable-games/resources/logs/metadata_audit.log`
+
+### Future Work
+
+**Phase 2**: Content cleanup (YouTube, Marxist enrichment) - Planned after Library audit
+**Phase 3**: Cross-source deduplication - Find duplicates across all 4 collections
+
+---
+
+## 📰 PRIOR WORK: Storage Migration Complete (December 4, 2025)
+
+**See**: `/home/user/docs/server/RECENT_WORK_DEC_2025.md`
 
 **TL;DR**:
 - Samsung SSD (/dev/sda) failed for the SECOND TIME (first: Nov 27, second: Dec 4)
@@ -70,8 +159,6 @@ A: I just ran /init in /home/user
 - Docker data-root: `/home/user/docker-ssd/` (SSD)
 - Bitcoin blockchain: `/data/docker-hdd-volumes/` (HDD, bind-mounted)
 - Emergency backup at `/data/var-migration-backup/` (keep 48h)
-
-**See full documentation**: `/home/user/docs/server/RECENT_WORK_DEC_2025.md`
 
 ---
 
