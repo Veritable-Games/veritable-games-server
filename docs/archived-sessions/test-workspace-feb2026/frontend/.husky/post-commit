@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Detect parser changes and trigger re-indexing
+PARSER_FILE="frontend/src/lib/godot/parser-service.ts"
+
+if git diff --name-only HEAD~1 HEAD | grep -q "$PARSER_FILE"; then
+  echo ""
+  echo "🔍 Parser changes detected in last commit!"
+  echo "📊 Triggering Godot script re-indexing..."
+  echo ""
+
+  cd frontend && npm run godot:reindex-all || true
+
+  echo ""
+  echo "✅ Re-index complete"
+else
+  echo "✓ No parser changes, skipping re-index"
+fi

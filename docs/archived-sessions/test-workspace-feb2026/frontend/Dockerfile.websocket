@@ -1,0 +1,31 @@
+# Dockerfile for WebSocket Server (Yjs Real-Time Collaboration)
+# Phase 5: WebSocket Server Deployment
+# November 29, 2025
+
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY package.json package-lock.json ./
+
+# Install dependencies (include tsx for TypeScript execution)
+RUN npm ci
+
+# Copy necessary source code
+COPY server/ ./server/
+COPY src/lib/database/ ./src/lib/database/
+COPY src/lib/utils/logger.ts ./src/lib/utils/logger.ts
+COPY tsconfig.json ./
+
+# Expose WebSocket port (3002) and health check port (3003)
+EXPOSE 3002
+EXPOSE 3003
+
+# Set environment variables (defaults)
+ENV WS_PORT=3002
+ENV WS_HEALTH_PORT=3003
+ENV NODE_ENV=production
+
+# Start WebSocket server using tsx (TypeScript execution)
+CMD ["npx", "tsx", "server/websocket-server.ts"]

@@ -1,0 +1,66 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["src/components/*"],
+      "@/lib/*": ["src/lib/*"],
+      "@/types/*": ["src/types/*"],
+      "@/*": ["src/*"]
+    },
+    "target": "ES2024",
+    "lib": ["dom", "dom.iterable", "esnext", "ES2024"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "incremental": true,
+    "tsBuildInfoFile": "./tsconfig.tsbuildinfo",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "isolatedDeclarations": false,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": false,
+    "noImplicitReturns": false,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "useUnknownInCatchVariables": true,
+    "allowImportingTsExtensions": false,
+    "allowArbitraryExtensions": false
+  },
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": [
+    "node_modules",
+    "**/*.disabled/**",
+    ".next",
+    "out",
+    "playwright.config.ts",
+    "e2e/**/*",
+    "**/__tests__/**",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "src/app/api/projects/**/videos/**",
+    "src/app/test-video-players/**",
+    "src/components/references/VideoCardHTML5.tsx",
+    "src/components/references/VideoCardPlyr.tsx",
+    "src/lib/video/**",
+    "scripts/migrations/add-video-support.js",
+    "src/scripts/**/*",
+    "scripts/**/*",
+    "mcp-servers/**/*"
+  ]
+}

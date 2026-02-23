@@ -1,0 +1,26 @@
+{
+  "name": "@veritable/godot-mcp-server",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "bash start.sh",
+    "start:localhost": "bash start.sh postgresql://postgres:postgres@localhost:5432/veritable_games http://localhost:3002",
+    "start:production": "bash start.sh",
+    "server": "node dist/index.js",
+    "test": "vitest",
+    "test:phase2": "node test-phase2.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "pg": "^8.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/pg": "^8.11.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  }
+}

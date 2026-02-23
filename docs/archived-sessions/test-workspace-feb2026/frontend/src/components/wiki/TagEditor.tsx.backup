@@ -1,0 +1,304 @@
+'use client';
+
+import { useState, useRef, useEffect } from 'react';
+import { XMarkIcon, PlusIcon } from '@heroicons/react/24/outline';
+
+interface Tag {
+  id: number;
+  name: string;
+  color?: string;
+}
+
+interface TagEditorProps {
+  pageSlug: string;
+  currentTags: Tag[];
+  allTags: Tag[];
+  canEdit: boolean;
+  onTagsChange: (tags: Tag[]) => void;
+  namespace?: string;
+}
+
+export default function TagEditor({
+  pageSlug,
+  currentTags = [],
+  allTags,
+  canEdit,
+  onTagsChange,
+  namespace,
+}: TagEditorProps) {
+  const [isEditing, setIsEditing] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [newTagInput, setNewTagInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [hoveredTag, setHoveredTag] = useState<number | null>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Filter available tags (exclude already selected ones)
+  // Ensure currentTags is always an array
+  const safeCurrentTags = currentTags || [];
+  const availableTags = allTags.filter(
+    (tag) =>
+      !safeCurrentTags.some((currentTag) => currentTag.id === tag.id) &&
+      tag.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // Focus input when editing starts
+  useEffect(() => {
+    if (isEditing && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isEditing]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsEditing(false);
+        setSearchTerm('');
+        setNewTagInput('');
+      }
+    }
+
+    if (isEditing) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [isEditing]);
+
+  const removeTag = async (tagId: number) => {
+    if (!canEdit) return;
+
+    setIsLoading(true);
+    try {
+      const response = await fetch(`/api/wiki/pages/${pageSlug}/tags`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include', // Important for cookies to be sent
+        body: JSON.stringify({ tagId }),
+      });
+
+      if (response.ok) {
+        const updatedTags = safeCurrentTags.filter((tag) => tag.id !== tagId);
+        onTagsChange(updatedTags);
+      } else {
+        console.error('Failed to remove tag');
+      }
+    } catch (error) {
+      console.error('Error removing tag:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const addExistingTag = async (tag: Tag) => {
+    if (!canEdit) return;
+
+    setIsLoading(true);
+    try {
+      const response = await fetch(`/api/wiki/pages/${pageSlug}/tags`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include', // Important for cookies to be sent
+        body: JSON.stringify({ tagId: tag.id }),
+      });
+
+      if (response.ok) {
+        const updatedTags = [...safeCurrentTags, tag];
+        onTagsChange(updatedTags);
+        setSearchTerm('');
+      } else {
+        console.error('Failed to add tag');
+      }
+    } catch (error) {
+      console.error('Error adding tag:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const createAndAddTags = async () => {
+    if (!canEdit || !newTagInput.trim()) return;
+
+    setIsLoading(true);
+    try {
+      // Split by commas and clean up tag names
+      const tagNames = newTagInput
+        .split(',')
+        .map((name) => name.trim().toLowerCase().replace(/\s+/g, '-'))
+        .filter((name) => name.length > 0);
+
+      const response = await fetch(`/api/wiki/pages/${pageSlug}/tags`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include', // Important for cookies to be sent
+        body: JSON.stringify({ tagNames }),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        const updatedTags = [...safeCurrentTags, ...result.addedTags];
+        onTagsChange(updatedTags);
+        setNewTagInput('');
+        setIsEditing(false);
+      } else {
+        console.error('Failed to create tags');
+      }
+    } catch (error) {
+      console.error('Error creating tags:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      if (newTagInput.trim()) {
+        createAndAddTags();
+      } else if (availableTags.length === 1 && availableTags[0]) {
+        addExistingTag(availableTags[0]);
+      }
+    } else if (e.key === 'Escape') {
+      setIsEditing(false);
+      setSearchTerm('');
+      setNewTagInput('');
+    }
+  };
+
+  return (
+    <div className="border-t border-gray-200 pt-4 mt-6">
+      <div className="flex items-center justify-between mb-3">
+        <h3 className="text-sm font-medium text-gray-700">Tags</h3>
+        {canEdit && !isEditing && (
+          <button
+            onClick={() => setIsEditing(true)}
+            className="inline-flex items-center gap-1 px-2 py-1 text-xs font-medium rounded-md transition-colors text-blue-600 hover:text-blue-700 hover:bg-blue-50"
+            disabled={isLoading}
+          >
+            <PlusIcon className="h-3 w-3" />
+            Add Tags
+          </button>
+        )}
+      </div>
+
+      {/* Current Tags Display */}
+      <div className="flex flex-wrap gap-2 mb-3">
+        {safeCurrentTags.length === 0 ? (
+          <span className="text-sm text-gray-400 italic">No tags</span>
+        ) : (
+          safeCurrentTags.map((tag, index) => (
+            <div
+              key={tag.id || `tag-${index}-${tag.name}`}
+              className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium transition-all ${
+                canEdit
+                  ? 'bg-blue-100 text-blue-800 hover:bg-blue-200 cursor-pointer'
+                  : 'bg-gray-100 text-gray-700'
+              }`}
+              onMouseEnter={() => canEdit && setHoveredTag(tag.id)}
+              onMouseLeave={() => setHoveredTag(null)}
+            >
+              <span>{tag.name}</span>
+              {canEdit && hoveredTag === tag.id && (
+                <button
+                  onClick={() => removeTag(tag.id)}
+                  className="ml-1 hover:bg-red-200 hover:text-red-800 rounded-full p-0.5 transition-colors"
+                  disabled={isLoading}
+                  title="Remove tag"
+                >
+                  <XMarkIcon className="h-3 w-3" />
+                </button>
+              )}
+            </div>
+          ))
+        )}
+      </div>
+
+      {/* Tag Editor Interface */}
+      {canEdit && isEditing && (
+        <div ref={dropdownRef} className="relative">
+          <div className="space-y-3 p-3 border border-gray-200 rounded-lg bg-gray-50">
+            {/* Search Existing Tags */}
+            <div>
+              <label className="block text-xs font-medium text-gray-700 mb-1">
+                Search existing tags:
+              </label>
+              <input
+                ref={inputRef}
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyDown={handleKeyPress}
+                placeholder="Type to search tags..."
+                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                disabled={isLoading}
+              />
+
+              {/* Search Results Dropdown */}
+              {searchTerm && availableTags.length > 0 && (
+                <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-md shadow-lg max-h-40 overflow-y-auto">
+                  {availableTags.slice(0, 10).map((tag) => (
+                    <button
+                      key={tag.id}
+                      onClick={() => addExistingTag(tag)}
+                      className="w-full px-3 py-2 text-left text-sm transition-colors hover:bg-blue-50 hover:text-blue-700"
+                      disabled={isLoading}
+                    >
+                      {tag.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Create New Tags */}
+            <div>
+              <label className="block text-xs font-medium text-gray-700 mb-1">
+                Create new tags (separate with commas):
+              </label>
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={newTagInput}
+                  onChange={(e) => setNewTagInput(e.target.value)}
+                  onKeyDown={handleKeyPress}
+                  placeholder="tag-name, another-tag, third-tag"
+                  className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  disabled={isLoading}
+                />
+                <button
+                  onClick={createAndAddTags}
+                  disabled={!newTagInput.trim() || isLoading}
+                  className="px-3 py-2 text-xs font-medium text-white rounded-md transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed bg-blue-600 hover:bg-blue-700"
+                >
+                  Add
+                </button>
+              </div>
+              <p className="text-xs text-gray-500 mt-1">
+                Tips: Use lowercase with hyphens (e.g., "cosmic-knights"), press Enter to confirm
+              </p>
+            </div>
+
+            {/* Cancel Button */}
+            <div className="flex justify-end">
+              <button
+                onClick={() => {
+                  setIsEditing(false);
+                  setSearchTerm('');
+                  setNewTagInput('');
+                }}
+                className="px-3 py-1 text-xs font-medium text-gray-600 hover:text-gray-800 transition-colors"
+                disabled={isLoading}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Loading Indicator */}
+      {isLoading && <div className="text-xs text-gray-500 mt-2">Updating tags...</div>}
+    </div>
+  );
+}

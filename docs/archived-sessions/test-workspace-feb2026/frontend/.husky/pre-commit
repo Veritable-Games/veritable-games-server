@@ -1,0 +1,67 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Change to frontend directory for all commands
+cd "$(dirname -- "$0")/.." || exit 1
+
+# Check for console statements in staged files
+echo "🔍 Checking for console statements..."
+FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(ts|tsx|js|jsx)$')
+
+if [ -n "$FILES" ]; then
+  VIOLATIONS=0
+  for FILE in $FILES; do
+    # Skip test files and logger utilities (using POSIX-compliant syntax)
+    SKIP=0
+    echo "$FILE" | grep -q "__tests__/" && SKIP=1
+    echo "$FILE" | grep -q "\.test\." && SKIP=1
+    echo "$FILE" | grep -q "\.spec\." && SKIP=1
+    echo "$FILE" | grep -q "logger\.ts$" && SKIP=1
+    echo "$FILE" | grep -q "upload-logger\.ts$" && SKIP=1
+
+    if [ $SKIP -eq 0 ]; then
+      # Check for console statements
+      if grep -n "^\s*console\.\(log\|warn\|error\)(" "$FILE" > /dev/null 2>&1; then
+        if [ $VIOLATIONS -eq 0 ]; then
+          echo ""
+          echo "❌ ERROR: Console statements found in staged files:"
+          echo ""
+        fi
+        echo "  $FILE:"
+        grep -n "^\s*console\.\(log\|warn\|error\)(" "$FILE" | sed 's/^/    Line /'
+        echo ""
+        VIOLATIONS=$((VIOLATIONS + 1))
+      fi
+    fi
+  done
+
+  if [ $VIOLATIONS -gt 0 ]; then
+    echo "Please use the logger utility instead:"
+    echo "  import { logger } from '@/lib/utils/logger';"
+    echo "  logger.info('message', { data });"
+    echo ""
+    echo "To bypass this check (not recommended):"
+    echo "  git commit --no-verify"
+    echo ""
+    exit 1
+  fi
+fi
+
+echo "✅ No console statements found"
+
+# Run lint-staged for staged files (explicit config to avoid node_modules scanning)
+npx lint-staged --config .lint-stagedrc.js
+
+# Run type checking
+npm run type-check
+
+# Check for security vulnerabilities in dependencies
+npm audit --audit-level=moderate || true
+
+# Run tests if any test files are staged (exclude e2e/ directory - those are Playwright tests)
+if git diff --cached --name-only | grep -E '\.(test|spec)\.(js|jsx|ts|tsx)$' | grep -v 'e2e/' > /dev/null; then
+  echo "🧪 Test files detected in staging area, running tests..."
+  npm test -- --bail --findRelatedTests $(git diff --cached --name-only | grep -E '\.(test|spec)\.(js|jsx|ts|tsx)$' | grep -v 'e2e/' | tr '\n' ' ')
+fi
+
+echo "✅ Pre-commit checks passed!"

@@ -1,0 +1,12 @@
+{
+  "allowlist": [],
+  "low": true,
+  "moderate": false,
+  "high": false,
+  "critical": false,
+  "report-type": "summary",
+  "output-format": "json",
+  "pass-enoaudit": true,
+  "show-found": true,
+  "show-not-found": false
+}

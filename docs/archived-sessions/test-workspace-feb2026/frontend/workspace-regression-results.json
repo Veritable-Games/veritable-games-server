@@ -1,0 +1,2561 @@
+{
+  "timestamp": "2025-11-28T09:21:48.122Z",
+  "summary": {
+    "total": 7,
+    "passed": 4,
+    "failed": 3
+  },
+  "results": [
+    {
+      "phase": 2,
+      "name": "Delete with network failure keeps node",
+      "passed": false,
+      "message": "Error: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-node-id=\"node_bf9390e2-40c8-42a2-97ac-298d5f5756ef\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <div tabindex=\"0\" role=\"article\" aria-label=\"Text box: \" data-node-id=\"node_bf9390e2-40c8-42a2-97ac-298d5f5756ef\" class=\"pointer-events-auto absolute flex  focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-neutral-900 cursor-grab\">…</div>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"h-full w-full rounded-lg shadow-lg\">…</div> from <div>…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"h-full w-full rounded-lg shadow-lg\">…</div> from <div>…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"h-full w-full rounded-lg shadow-lg\">…</div> from <div>…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "duration": 38609
+    },
+    {
+      "phase": 2,
+      "name": "Delete with network success removes node",
+      "passed": false,
+      "message": "Error: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-node-id=\"node_bf9390e2-40c8-42a2-97ac-298d5f5756ef\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <div tabindex=\"0\" role=\"article\" aria-label=\"Text box: \" data-node-id=\"node_bf9390e2-40c8-42a2-97ac-298d5f5756ef\" class=\"pointer-events-auto absolute flex  focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-neutral-900 cursor-grab\">…</div>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"h-full w-full rounded-lg shadow-lg\">…</div> from <div>…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"h-full w-full rounded-lg shadow-lg\">…</div> from <div>…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"h-full w-full rounded-lg shadow-lg\">…</div> from <div>…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "duration": 39527
+    },
+    {
+      "phase": 2,
+      "name": "Deleted nodes do NOT return on refresh",
+      "passed": false,
+      "message": "Error: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-node-id=\"node_bf9390e2-40c8-42a2-97ac-298d5f5756ef\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <div tabindex=\"0\" role=\"article\" aria-label=\"Text box: \" data-node-id=\"node_bf9390e2-40c8-42a2-97ac-298d5f5756ef\" class=\"pointer-events-auto absolute flex  focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-neutral-900 cursor-grab\">…</div>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"h-full w-full rounded-lg shadow-lg\">…</div> from <div>…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"h-full w-full rounded-lg shadow-lg\">…</div> from <div>…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"h-full w-full rounded-lg shadow-lg\">…</div> from <div>…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "duration": 39393
+    },
+    {
+      "phase": 3,
+      "name": "IndexedDB data persists across reloads",
+      "passed": true,
+      "message": "All 5 nodes persisted across reload",
+      "duration": 14783
+    },
+    {
+      "phase": 3,
+      "name": "Server does not overwrite IndexedDB",
+      "passed": true,
+      "message": "5 nodes preserved - no overwrite occurred",
+      "duration": 12575
+    },
+    {
+      "phase": 4,
+      "name": "Nodes render from Yjs",
+      "passed": true,
+      "message": "5 nodes successfully rendered via Yjs-first selectors",
+      "duration": 9402
+    },
+    {
+      "phase": 4,
+      "name": "Connections render from Yjs",
+      "passed": true,
+      "message": "0 connections rendered via Yjs-first selectors",
+      "duration": 9524
+    }
+  ],
+  "logs": [
+    {
+      "timestamp": "2025-11-28T09:19:07.651Z",
+      "type": "log",
+      "message": "Login successful: admin"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:08.092Z",
+      "type": "log",
+      "message": "Session validated, redirecting..."
+    },
+    {
+      "timestamp": "2025-11-28T09:19:08.505Z",
+      "type": "warning",
+      "message": "THREE.Material: 'emissive' is not a property of THREE.MeshBasicMaterial."
+    },
+    {
+      "timestamp": "2025-11-28T09:19:08.508Z",
+      "type": "warning",
+      "message": "Tutorial panel controls-info or button expand-controls not found - skipping"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:08.508Z",
+      "type": "log",
+      "message": "📚 Tutorial system initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:09.407Z",
+      "type": "warning",
+      "message": "[GroupMarkerNotSet(crbug.com/242999)!:A0202A00F40B0000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content."
+    },
+    {
+      "timestamp": "2025-11-28T09:19:09.407Z",
+      "type": "warning",
+      "message": "[.WebGL-0x32fc00137000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:09.530Z",
+      "type": "warning",
+      "message": "[.WebGL-0x32fc00137000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:09.636Z",
+      "type": "warning",
+      "message": "[.WebGL-0x32fc00137000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:09.734Z",
+      "type": "warning",
+      "message": "[.WebGL-0x32fc00137000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.772Z",
+      "type": "info",
+      "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.797Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] No schema provided, using raw SQL: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   SELECT\n        u.id,\n        u.username,\n        u.email,\n        u.display_name"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.797Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.798Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (users): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: UPDATE users SET last_active = NOW() WHERE id = $1, final: UPDATE users.users SET last_active = NOW() WHERE id = $1}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.799Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.802Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: \n      SELECT * FROM project_metadata\n      WHERE project_slug = $1\n    , final: \n      SELECT * FROM content.project_metadata\n      WHERE project_slug = $1\n    }"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.803Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.805Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM workspaces WHERE id = $1, final: SELECT * FROM content.workspaces WHERE id = $1}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.805Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.807Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM canvas_nodes\n         WHERE workspace_id = $1 AND is_deleted = fal, final: SELECT * FROM content.canvas_nodes\n         WHERE workspace_id = $1 AND is_delet}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.807Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.807Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM node_connections\n         WHERE workspace_id = $1 AND is_deleted =, final: SELECT * FROM content.node_connections\n         WHERE workspace_id = $1 AND is_d}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.807Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.808Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM viewport_states WHERE workspace_id = $1 AND user_id = $2, final: SELECT * FROM content.viewport_states WHERE workspace_id = $1 AND user_id = $2}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.808Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.916Z",
+      "type": "log",
+      "message": "[DEBUG] Initializing Yjs with workspace ID: noxii"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.931Z",
+      "type": "info",
+      "message": "[INFO] [Workspace] Yjs initialized for workspace: noxii"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.932Z",
+      "type": "log",
+      "message": "[DEBUG] Workspace loading check: {initialWorkspace: true, projectSlug: noxii, workspaceId: null, isIndexedDBSynced: false}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.936Z",
+      "type": "log",
+      "message": "[DEBUG] Waiting for IndexedDB sync before loading server data..."
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.962Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.963Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.963Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.963Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.981Z",
+      "type": "info",
+      "message": "[INFO] 💾 Workspace synced with IndexedDB "
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.981Z",
+      "type": "log",
+      "message": "[Yjs] IndexedDB synced - offline data ready"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.983Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:10.988Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.001Z",
+      "type": "log",
+      "message": "[DEBUG] Workspace loading check: {initialWorkspace: true, projectSlug: noxii, workspaceId: null, isIndexedDBSynced: true}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.002Z",
+      "type": "log",
+      "message": "[DEBUG] IndexedDB synced, loading workspace data"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.002Z",
+      "type": "log",
+      "message": "[DEBUG] Loading workspace from server prop"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.003Z",
+      "type": "log",
+      "message": "[loadWorkspace] Seeding empty Yjs from server data: {serverNodes: 5, serverConnections: 0}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.010Z",
+      "type": "log",
+      "message": "[Yjs Observer] Nodes changed, processing event: {keysChanged: Array(5), actions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.014Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_bf9390e2-40c8-42a2-97ac-298d5f5756ef {id: node_bf9390e2-40c8-42a2-97ac-298d5f5756ef, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.017Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_00c2ff93-3436-4a8f-a3f2-41b64ecd7863 {id: node_00c2ff93-3436-4a8f-a3f2-41b64ecd7863, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.024Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_7061041e-2868-4e8f-b801-b2017f5d24da {id: node_7061041e-2868-4e8f-b801-b2017f5d24da, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.024Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_07de815f-8d64-4399-88de-cc5a525d306c {id: node_07de815f-8d64-4399-88de-cc5a525d306c, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.027Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_1c97429d-9feb-4893-b813-6f82cf2f2139 {id: node_1c97429d-9feb-4893-b813-6f82cf2f2139, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.037Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.042Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.053Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.054Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.062Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.062Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.066Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.066Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.069Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.070Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.074Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.075Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:11.652Z",
+      "type": "log",
+      "message": "✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:43.486Z",
+      "type": "info",
+      "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:43.819Z",
+      "type": "log",
+      "message": "[Login Page] Initializing CSRF token..."
+    },
+    {
+      "timestamp": "2025-11-28T09:19:44.340Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:44.351Z",
+      "type": "log",
+      "message": "✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:44.867Z",
+      "type": "log",
+      "message": "[Login Page] ✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:44.879Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:45.241Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:46.177Z",
+      "type": "log",
+      "message": "[fetchJSON] Sending request: {url: /api/auth/login, method: POST, body: Object, bodyStringified: {\"username\":\"admin\",\"password\":\"euZe3CTvcDqqsVz\",\"rememberMe\":false}, bodyType: object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:46.177Z",
+      "type": "log",
+      "message": "[fetchWithCSRF] Adding CSRF token to headers: 9cd40ab227..."
+    },
+    {
+      "timestamp": "2025-11-28T09:19:47.222Z",
+      "type": "log",
+      "message": "Login successful: admin"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:47.708Z",
+      "type": "log",
+      "message": "Session validated, redirecting..."
+    },
+    {
+      "timestamp": "2025-11-28T09:19:48.335Z",
+      "type": "warning",
+      "message": "THREE.Material: 'emissive' is not a property of THREE.MeshBasicMaterial."
+    },
+    {
+      "timestamp": "2025-11-28T09:19:48.341Z",
+      "type": "warning",
+      "message": "Tutorial panel controls-info or button expand-controls not found - skipping"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:48.341Z",
+      "type": "log",
+      "message": "📚 Tutorial system initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:49.167Z",
+      "type": "warning",
+      "message": "[GroupMarkerNotSet(crbug.com/242999)!:A0502A00F40B0000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content."
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.444Z",
+      "type": "info",
+      "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.580Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] No schema provided, using raw SQL: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   SELECT\n        u.id,\n        u.username,\n        u.email,\n        u.display_name"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.580Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.582Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (users): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: UPDATE users SET last_active = NOW() WHERE id = $1, final: UPDATE users.users SET last_active = NOW() WHERE id = $1}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.583Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.584Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: \n      SELECT * FROM project_metadata\n      WHERE project_slug = $1\n    , final: \n      SELECT * FROM content.project_metadata\n      WHERE project_slug = $1\n    }"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.584Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.595Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM workspaces WHERE id = $1, final: SELECT * FROM content.workspaces WHERE id = $1}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.596Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.598Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM canvas_nodes\n         WHERE workspace_id = $1 AND is_deleted = fal, final: SELECT * FROM content.canvas_nodes\n         WHERE workspace_id = $1 AND is_delet}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.599Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.603Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM node_connections\n         WHERE workspace_id = $1 AND is_deleted =, final: SELECT * FROM content.node_connections\n         WHERE workspace_id = $1 AND is_d}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.603Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.605Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM viewport_states WHERE workspace_id = $1 AND user_id = $2, final: SELECT * FROM content.viewport_states WHERE workspace_id = $1 AND user_id = $2}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.605Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.773Z",
+      "type": "log",
+      "message": "[DEBUG] Initializing Yjs with workspace ID: noxii"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.802Z",
+      "type": "info",
+      "message": "[INFO] [Workspace] Yjs initialized for workspace: noxii"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.804Z",
+      "type": "log",
+      "message": "[DEBUG] Workspace loading check: {initialWorkspace: true, projectSlug: noxii, workspaceId: null, isIndexedDBSynced: false}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.805Z",
+      "type": "log",
+      "message": "[DEBUG] Waiting for IndexedDB sync before loading server data..."
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.827Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.828Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.840Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.843Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.873Z",
+      "type": "info",
+      "message": "[INFO] 💾 Workspace synced with IndexedDB "
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.873Z",
+      "type": "log",
+      "message": "[Yjs] IndexedDB synced - offline data ready"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.877Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.881Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.894Z",
+      "type": "log",
+      "message": "[DEBUG] Workspace loading check: {initialWorkspace: true, projectSlug: noxii, workspaceId: null, isIndexedDBSynced: true}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.896Z",
+      "type": "log",
+      "message": "[DEBUG] IndexedDB synced, loading workspace data"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.899Z",
+      "type": "log",
+      "message": "[DEBUG] Loading workspace from server prop"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.903Z",
+      "type": "log",
+      "message": "[loadWorkspace] Seeding empty Yjs from server data: {serverNodes: 5, serverConnections: 0}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.912Z",
+      "type": "log",
+      "message": "[Yjs Observer] Nodes changed, processing event: {keysChanged: Array(5), actions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.914Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_bf9390e2-40c8-42a2-97ac-298d5f5756ef {id: node_bf9390e2-40c8-42a2-97ac-298d5f5756ef, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.916Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_00c2ff93-3436-4a8f-a3f2-41b64ecd7863 {id: node_00c2ff93-3436-4a8f-a3f2-41b64ecd7863, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.918Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_7061041e-2868-4e8f-b801-b2017f5d24da {id: node_7061041e-2868-4e8f-b801-b2017f5d24da, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.920Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_07de815f-8d64-4399-88de-cc5a525d306c {id: node_07de815f-8d64-4399-88de-cc5a525d306c, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.921Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_1c97429d-9feb-4893-b813-6f82cf2f2139 {id: node_1c97429d-9feb-4893-b813-6f82cf2f2139, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.926Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.931Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.950Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.952Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.958Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.960Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.965Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.966Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.971Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.972Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.977Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:50.978Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:19:51.351Z",
+      "type": "log",
+      "message": "✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:22.978Z",
+      "type": "info",
+      "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:23.289Z",
+      "type": "log",
+      "message": "[Login Page] Initializing CSRF token..."
+    },
+    {
+      "timestamp": "2025-11-28T09:20:23.960Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:23.975Z",
+      "type": "log",
+      "message": "✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:24.492Z",
+      "type": "log",
+      "message": "[Login Page] ✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:24.505Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:24.894Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:25.794Z",
+      "type": "log",
+      "message": "[fetchJSON] Sending request: {url: /api/auth/login, method: POST, body: Object, bodyStringified: {\"username\":\"admin\",\"password\":\"euZe3CTvcDqqsVz\",\"rememberMe\":false}, bodyType: object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:25.794Z",
+      "type": "log",
+      "message": "[fetchWithCSRF] Adding CSRF token to headers: 5503ff73f9..."
+    },
+    {
+      "timestamp": "2025-11-28T09:20:26.855Z",
+      "type": "log",
+      "message": "Login successful: admin"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:27.351Z",
+      "type": "log",
+      "message": "Session validated, redirecting..."
+    },
+    {
+      "timestamp": "2025-11-28T09:20:28.012Z",
+      "type": "warning",
+      "message": "THREE.Material: 'emissive' is not a property of THREE.MeshBasicMaterial."
+    },
+    {
+      "timestamp": "2025-11-28T09:20:28.018Z",
+      "type": "warning",
+      "message": "Tutorial panel controls-info or button expand-controls not found - skipping"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:28.018Z",
+      "type": "log",
+      "message": "📚 Tutorial system initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:28.852Z",
+      "type": "warning",
+      "message": "[GroupMarkerNotSet(crbug.com/242999)!:A0F02900F40B0000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content."
+    },
+    {
+      "timestamp": "2025-11-28T09:20:29.811Z",
+      "type": "info",
+      "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:29.850Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] No schema provided, using raw SQL: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   SELECT\n        u.id,\n        u.username,\n        u.email,\n        u.display_name"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:29.850Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:20:29.851Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (users): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: UPDATE users SET last_active = NOW() WHERE id = $1, final: UPDATE users.users SET last_active = NOW() WHERE id = $1}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:29.853Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:20:29.853Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: \n      SELECT * FROM project_metadata\n      WHERE project_slug = $1\n    , final: \n      SELECT * FROM content.project_metadata\n      WHERE project_slug = $1\n    }"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:29.853Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:20:29.855Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM workspaces WHERE id = $1, final: SELECT * FROM content.workspaces WHERE id = $1}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:29.856Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:20:29.856Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM canvas_nodes\n         WHERE workspace_id = $1 AND is_deleted = fal, final: SELECT * FROM content.canvas_nodes\n         WHERE workspace_id = $1 AND is_delet}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:29.856Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:20:29.856Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM node_connections\n         WHERE workspace_id = $1 AND is_deleted =, final: SELECT * FROM content.node_connections\n         WHERE workspace_id = $1 AND is_d}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:29.857Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:20:29.857Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM viewport_states WHERE workspace_id = $1 AND user_id = $2, final: SELECT * FROM content.viewport_states WHERE workspace_id = $1 AND user_id = $2}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:29.857Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.060Z",
+      "type": "log",
+      "message": "[DEBUG] Initializing Yjs with workspace ID: noxii"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.084Z",
+      "type": "info",
+      "message": "[INFO] [Workspace] Yjs initialized for workspace: noxii"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.085Z",
+      "type": "log",
+      "message": "[DEBUG] Workspace loading check: {initialWorkspace: true, projectSlug: noxii, workspaceId: null, isIndexedDBSynced: false}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.089Z",
+      "type": "log",
+      "message": "[DEBUG] Waiting for IndexedDB sync before loading server data..."
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.104Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.105Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.113Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.116Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.142Z",
+      "type": "info",
+      "message": "[INFO] 💾 Workspace synced with IndexedDB "
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.142Z",
+      "type": "log",
+      "message": "[Yjs] IndexedDB synced - offline data ready"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.148Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.148Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.177Z",
+      "type": "log",
+      "message": "[DEBUG] Workspace loading check: {initialWorkspace: true, projectSlug: noxii, workspaceId: null, isIndexedDBSynced: true}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.177Z",
+      "type": "log",
+      "message": "[DEBUG] IndexedDB synced, loading workspace data"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.177Z",
+      "type": "log",
+      "message": "[DEBUG] Loading workspace from server prop"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.179Z",
+      "type": "log",
+      "message": "[loadWorkspace] Seeding empty Yjs from server data: {serverNodes: 5, serverConnections: 0}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.187Z",
+      "type": "log",
+      "message": "[Yjs Observer] Nodes changed, processing event: {keysChanged: Array(5), actions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.187Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_bf9390e2-40c8-42a2-97ac-298d5f5756ef {id: node_bf9390e2-40c8-42a2-97ac-298d5f5756ef, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.191Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_00c2ff93-3436-4a8f-a3f2-41b64ecd7863 {id: node_00c2ff93-3436-4a8f-a3f2-41b64ecd7863, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.191Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_7061041e-2868-4e8f-b801-b2017f5d24da {id: node_7061041e-2868-4e8f-b801-b2017f5d24da, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.191Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_07de815f-8d64-4399-88de-cc5a525d306c {id: node_07de815f-8d64-4399-88de-cc5a525d306c, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.191Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_1c97429d-9feb-4893-b813-6f82cf2f2139 {id: node_1c97429d-9feb-4893-b813-6f82cf2f2139, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.195Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.195Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.197Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.197Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.198Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.198Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.200Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.200Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.200Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.200Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.201Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.201Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:20:30.572Z",
+      "type": "log",
+      "message": "✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:02.325Z",
+      "type": "info",
+      "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:02.693Z",
+      "type": "log",
+      "message": "[Login Page] Initializing CSRF token..."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:03.318Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:03.330Z",
+      "type": "log",
+      "message": "✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:03.850Z",
+      "type": "log",
+      "message": "[Login Page] ✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:03.860Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:04.255Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:05.152Z",
+      "type": "log",
+      "message": "[fetchJSON] Sending request: {url: /api/auth/login, method: POST, body: Object, bodyStringified: {\"username\":\"admin\",\"password\":\"euZe3CTvcDqqsVz\",\"rememberMe\":false}, bodyType: object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:05.154Z",
+      "type": "log",
+      "message": "[fetchWithCSRF] Adding CSRF token to headers: f6edc11c72..."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:06.275Z",
+      "type": "log",
+      "message": "Login successful: admin"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:06.753Z",
+      "type": "log",
+      "message": "Session validated, redirecting..."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:07.369Z",
+      "type": "warning",
+      "message": "THREE.Material: 'emissive' is not a property of THREE.MeshBasicMaterial."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:07.376Z",
+      "type": "warning",
+      "message": "Tutorial panel controls-info or button expand-controls not found - skipping"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:07.376Z",
+      "type": "log",
+      "message": "📚 Tutorial system initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:08.246Z",
+      "type": "warning",
+      "message": "[GroupMarkerNotSet(crbug.com/242999)!:A0502A00F40B0000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.264Z",
+      "type": "info",
+      "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.323Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] No schema provided, using raw SQL: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   SELECT\n        u.id,\n        u.username,\n        u.email,\n        u.display_name"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.325Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.326Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (users): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: UPDATE users SET last_active = NOW() WHERE id = $1, final: UPDATE users.users SET last_active = NOW() WHERE id = $1}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.327Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.330Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: \n      SELECT * FROM project_metadata\n      WHERE project_slug = $1\n    , final: \n      SELECT * FROM content.project_metadata\n      WHERE project_slug = $1\n    }"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.330Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.330Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM workspaces WHERE id = $1, final: SELECT * FROM content.workspaces WHERE id = $1}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.331Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.333Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM canvas_nodes\n         WHERE workspace_id = $1 AND is_deleted = fal, final: SELECT * FROM content.canvas_nodes\n         WHERE workspace_id = $1 AND is_delet}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.334Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.334Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM node_connections\n         WHERE workspace_id = $1 AND is_deleted =, final: SELECT * FROM content.node_connections\n         WHERE workspace_id = $1 AND is_d}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.334Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.343Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM viewport_states WHERE workspace_id = $1 AND user_id = $2, final: SELECT * FROM content.viewport_states WHERE workspace_id = $1 AND user_id = $2}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.344Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.489Z",
+      "type": "log",
+      "message": "[DEBUG] Initializing Yjs with workspace ID: noxii"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.515Z",
+      "type": "info",
+      "message": "[INFO] [Workspace] Yjs initialized for workspace: noxii"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.519Z",
+      "type": "log",
+      "message": "[DEBUG] Workspace loading check: {initialWorkspace: true, projectSlug: noxii, workspaceId: null, isIndexedDBSynced: false}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.524Z",
+      "type": "log",
+      "message": "[DEBUG] Waiting for IndexedDB sync before loading server data..."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.541Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.543Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.560Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.562Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.602Z",
+      "type": "info",
+      "message": "[INFO] 💾 Workspace synced with IndexedDB "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.602Z",
+      "type": "log",
+      "message": "[Yjs] IndexedDB synced - offline data ready"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.606Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.614Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.642Z",
+      "type": "log",
+      "message": "[DEBUG] Workspace loading check: {initialWorkspace: true, projectSlug: noxii, workspaceId: null, isIndexedDBSynced: true}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.643Z",
+      "type": "log",
+      "message": "[DEBUG] IndexedDB synced, loading workspace data"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.644Z",
+      "type": "log",
+      "message": "[DEBUG] Loading workspace from server prop"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.652Z",
+      "type": "log",
+      "message": "[loadWorkspace] Seeding empty Yjs from server data: {serverNodes: 5, serverConnections: 0}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.661Z",
+      "type": "log",
+      "message": "[Yjs Observer] Nodes changed, processing event: {keysChanged: Array(5), actions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.665Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_bf9390e2-40c8-42a2-97ac-298d5f5756ef {id: node_bf9390e2-40c8-42a2-97ac-298d5f5756ef, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.667Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_00c2ff93-3436-4a8f-a3f2-41b64ecd7863 {id: node_00c2ff93-3436-4a8f-a3f2-41b64ecd7863, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.669Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_7061041e-2868-4e8f-b801-b2017f5d24da {id: node_7061041e-2868-4e8f-b801-b2017f5d24da, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.671Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_07de815f-8d64-4399-88de-cc5a525d306c {id: node_07de815f-8d64-4399-88de-cc5a525d306c, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.673Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_1c97429d-9feb-4893-b813-6f82cf2f2139 {id: node_1c97429d-9feb-4893-b813-6f82cf2f2139, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.684Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.692Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.710Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.711Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.719Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.720Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.726Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.727Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.734Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.734Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.742Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:09.743Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:10.338Z",
+      "type": "log",
+      "message": "✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.755Z",
+      "type": "info",
+      "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.833Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] No schema provided, using raw SQL: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   SELECT\n        u.id,\n        u.username,\n        u.email,\n        u.display_name"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.834Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.836Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (users): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: UPDATE users SET last_active = NOW() WHERE id = $1, final: UPDATE users.users SET last_active = NOW() WHERE id = $1}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.836Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.837Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: \n      SELECT * FROM project_metadata\n      WHERE project_slug = $1\n    , final: \n      SELECT * FROM content.project_metadata\n      WHERE project_slug = $1\n    }"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.840Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.841Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM workspaces WHERE id = $1, final: SELECT * FROM content.workspaces WHERE id = $1}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.841Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.843Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM canvas_nodes\n         WHERE workspace_id = $1 AND is_deleted = fal, final: SELECT * FROM content.canvas_nodes\n         WHERE workspace_id = $1 AND is_delet}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.843Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.852Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM node_connections\n         WHERE workspace_id = $1 AND is_deleted =, final: SELECT * FROM content.node_connections\n         WHERE workspace_id = $1 AND is_d}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.852Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.854Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM viewport_states WHERE workspace_id = $1 AND user_id = $2, final: SELECT * FROM content.viewport_states WHERE workspace_id = $1 AND user_id = $2}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.854Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.947Z",
+      "type": "log",
+      "message": "[DEBUG] Initializing Yjs with workspace ID: noxii"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.961Z",
+      "type": "info",
+      "message": "[INFO] [Workspace] Yjs initialized for workspace: noxii"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.963Z",
+      "type": "log",
+      "message": "[DEBUG] Workspace loading check: {initialWorkspace: true, projectSlug: noxii, workspaceId: null, isIndexedDBSynced: false}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.964Z",
+      "type": "log",
+      "message": "[DEBUG] Waiting for IndexedDB sync before loading server data..."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.977Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.981Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:14.996Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.000Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.036Z",
+      "type": "log",
+      "message": "[Yjs Observer] Nodes changed, processing event: {keysChanged: Array(5), actions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.037Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_bf9390e2-40c8-42a2-97ac-298d5f5756ef {id: node_bf9390e2-40c8-42a2-97ac-298d5f5756ef, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.037Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_00c2ff93-3436-4a8f-a3f2-41b64ecd7863 {id: node_00c2ff93-3436-4a8f-a3f2-41b64ecd7863, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.037Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_7061041e-2868-4e8f-b801-b2017f5d24da {id: node_7061041e-2868-4e8f-b801-b2017f5d24da, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.037Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_07de815f-8d64-4399-88de-cc5a525d306c {id: node_07de815f-8d64-4399-88de-cc5a525d306c, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.038Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_1c97429d-9feb-4893-b813-6f82cf2f2139 {id: node_1c97429d-9feb-4893-b813-6f82cf2f2139, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.042Z",
+      "type": "info",
+      "message": "[INFO] 💾 Workspace synced with IndexedDB "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.042Z",
+      "type": "log",
+      "message": "[Yjs] IndexedDB synced - offline data ready"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.044Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.051Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.062Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.063Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.071Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.072Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.076Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.078Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.083Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.083Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.087Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.087Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.095Z",
+      "type": "log",
+      "message": "[DEBUG] Workspace loading check: {initialWorkspace: true, projectSlug: noxii, workspaceId: null, isIndexedDBSynced: true}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.096Z",
+      "type": "log",
+      "message": "[DEBUG] IndexedDB synced, loading workspace data"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.099Z",
+      "type": "log",
+      "message": "[DEBUG] Loading workspace from server prop"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.103Z",
+      "type": "log",
+      "message": "[loadWorkspace] Preserving existing Yjs data (IndexedDB sync): {yjsNodes: 5, yjsConnections: 0, serverNodes: 5, serverConnections: 0}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.109Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.119Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:15.564Z",
+      "type": "log",
+      "message": "✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:17.247Z",
+      "type": "info",
+      "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:17.752Z",
+      "type": "log",
+      "message": "[Login Page] Initializing CSRF token..."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:18.309Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:18.319Z",
+      "type": "log",
+      "message": "✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:18.865Z",
+      "type": "log",
+      "message": "[Login Page] ✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:18.874Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:19.214Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:20.161Z",
+      "type": "log",
+      "message": "[fetchJSON] Sending request: {url: /api/auth/login, method: POST, body: Object, bodyStringified: {\"username\":\"admin\",\"password\":\"euZe3CTvcDqqsVz\",\"rememberMe\":false}, bodyType: object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:20.162Z",
+      "type": "log",
+      "message": "[fetchWithCSRF] Adding CSRF token to headers: a4bdf525fa..."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:21.429Z",
+      "type": "log",
+      "message": "Login successful: admin"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:21.916Z",
+      "type": "log",
+      "message": "Session validated, redirecting..."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:22.518Z",
+      "type": "warning",
+      "message": "THREE.Material: 'emissive' is not a property of THREE.MeshBasicMaterial."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:22.524Z",
+      "type": "warning",
+      "message": "Tutorial panel controls-info or button expand-controls not found - skipping"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:22.524Z",
+      "type": "log",
+      "message": "📚 Tutorial system initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:23.316Z",
+      "type": "warning",
+      "message": "[GroupMarkerNotSet(crbug.com/242999)!:A0202A00F40B0000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.285Z",
+      "type": "info",
+      "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.376Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] No schema provided, using raw SQL: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   SELECT\n        u.id,\n        u.username,\n        u.email,\n        u.display_name"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.376Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.377Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (users): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: UPDATE users SET last_active = NOW() WHERE id = $1, final: UPDATE users.users SET last_active = NOW() WHERE id = $1}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.377Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.380Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: \n      SELECT * FROM project_metadata\n      WHERE project_slug = $1\n    , final: \n      SELECT * FROM content.project_metadata\n      WHERE project_slug = $1\n    }"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.381Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.407Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM workspaces WHERE id = $1, final: SELECT * FROM content.workspaces WHERE id = $1}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.407Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.410Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM canvas_nodes\n         WHERE workspace_id = $1 AND is_deleted = fal, final: SELECT * FROM content.canvas_nodes\n         WHERE workspace_id = $1 AND is_delet}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.410Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.411Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM node_connections\n         WHERE workspace_id = $1 AND is_deleted =, final: SELECT * FROM content.node_connections\n         WHERE workspace_id = $1 AND is_d}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.412Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.415Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM viewport_states WHERE workspace_id = $1 AND user_id = $2, final: SELECT * FROM content.viewport_states WHERE workspace_id = $1 AND user_id = $2}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.417Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.571Z",
+      "type": "log",
+      "message": "[DEBUG] Initializing Yjs with workspace ID: noxii"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.603Z",
+      "type": "info",
+      "message": "[INFO] [Workspace] Yjs initialized for workspace: noxii"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.609Z",
+      "type": "log",
+      "message": "[DEBUG] Workspace loading check: {initialWorkspace: true, projectSlug: noxii, workspaceId: null, isIndexedDBSynced: false}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.609Z",
+      "type": "log",
+      "message": "[DEBUG] Waiting for IndexedDB sync before loading server data..."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.626Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.628Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.644Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.647Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.676Z",
+      "type": "info",
+      "message": "[INFO] 💾 Workspace synced with IndexedDB "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.676Z",
+      "type": "log",
+      "message": "[Yjs] IndexedDB synced - offline data ready"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.677Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.682Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.686Z",
+      "type": "log",
+      "message": "[DEBUG] Workspace loading check: {initialWorkspace: true, projectSlug: noxii, workspaceId: null, isIndexedDBSynced: true}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.689Z",
+      "type": "log",
+      "message": "[DEBUG] IndexedDB synced, loading workspace data"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.689Z",
+      "type": "log",
+      "message": "[DEBUG] Loading workspace from server prop"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.691Z",
+      "type": "log",
+      "message": "[loadWorkspace] Seeding empty Yjs from server data: {serverNodes: 5, serverConnections: 0}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.697Z",
+      "type": "log",
+      "message": "[Yjs Observer] Nodes changed, processing event: {keysChanged: Array(5), actions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.699Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_bf9390e2-40c8-42a2-97ac-298d5f5756ef {id: node_bf9390e2-40c8-42a2-97ac-298d5f5756ef, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.702Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_00c2ff93-3436-4a8f-a3f2-41b64ecd7863 {id: node_00c2ff93-3436-4a8f-a3f2-41b64ecd7863, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.703Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_7061041e-2868-4e8f-b801-b2017f5d24da {id: node_7061041e-2868-4e8f-b801-b2017f5d24da, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.704Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_07de815f-8d64-4399-88de-cc5a525d306c {id: node_07de815f-8d64-4399-88de-cc5a525d306c, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.708Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_1c97429d-9feb-4893-b813-6f82cf2f2139 {id: node_1c97429d-9feb-4893-b813-6f82cf2f2139, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.733Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.734Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.775Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.775Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.775Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.776Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.776Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.776Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.776Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.776Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.777Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:24.777Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:25.168Z",
+      "type": "log",
+      "message": "✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:29.640Z",
+      "type": "info",
+      "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:30.043Z",
+      "type": "log",
+      "message": "[Login Page] Initializing CSRF token..."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:30.523Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:30.534Z",
+      "type": "log",
+      "message": "✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:31.099Z",
+      "type": "log",
+      "message": "[Login Page] ✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:31.101Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:31.504Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:32.426Z",
+      "type": "log",
+      "message": "[fetchJSON] Sending request: {url: /api/auth/login, method: POST, body: Object, bodyStringified: {\"username\":\"admin\",\"password\":\"euZe3CTvcDqqsVz\",\"rememberMe\":false}, bodyType: object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:32.427Z",
+      "type": "log",
+      "message": "[fetchWithCSRF] Adding CSRF token to headers: 30ba710757..."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:33.538Z",
+      "type": "log",
+      "message": "Login successful: admin"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:33.977Z",
+      "type": "log",
+      "message": "Session validated, redirecting..."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:34.600Z",
+      "type": "warning",
+      "message": "THREE.Material: 'emissive' is not a property of THREE.MeshBasicMaterial."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:34.603Z",
+      "type": "warning",
+      "message": "Tutorial panel controls-info or button expand-controls not found - skipping"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:34.603Z",
+      "type": "log",
+      "message": "📚 Tutorial system initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:35.441Z",
+      "type": "warning",
+      "message": "[GroupMarkerNotSet(crbug.com/242999)!:A0F02900F40B0000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.630Z",
+      "type": "info",
+      "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.693Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] No schema provided, using raw SQL: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   SELECT\n        u.id,\n        u.username,\n        u.email,\n        u.display_name"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.694Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.695Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (users): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: UPDATE users SET last_active = NOW() WHERE id = $1, final: UPDATE users.users SET last_active = NOW() WHERE id = $1}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.696Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.697Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: \n      SELECT * FROM project_metadata\n      WHERE project_slug = $1\n    , final: \n      SELECT * FROM content.project_metadata\n      WHERE project_slug = $1\n    }"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.697Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.699Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM workspaces WHERE id = $1, final: SELECT * FROM content.workspaces WHERE id = $1}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.699Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.701Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM canvas_nodes\n         WHERE workspace_id = $1 AND is_deleted = fal, final: SELECT * FROM content.canvas_nodes\n         WHERE workspace_id = $1 AND is_delet}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.708Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.709Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM node_connections\n         WHERE workspace_id = $1 AND is_deleted =, final: SELECT * FROM content.node_connections\n         WHERE workspace_id = $1 AND is_d}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.711Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.711Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM viewport_states WHERE workspace_id = $1 AND user_id = $2, final: SELECT * FROM content.viewport_states WHERE workspace_id = $1 AND user_id = $2}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.711Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.880Z",
+      "type": "log",
+      "message": "[DEBUG] Initializing Yjs with workspace ID: noxii"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.919Z",
+      "type": "info",
+      "message": "[INFO] [Workspace] Yjs initialized for workspace: noxii"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.921Z",
+      "type": "log",
+      "message": "[DEBUG] Workspace loading check: {initialWorkspace: true, projectSlug: noxii, workspaceId: null, isIndexedDBSynced: false}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.921Z",
+      "type": "log",
+      "message": "[DEBUG] Waiting for IndexedDB sync before loading server data..."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.931Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.932Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.944Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.946Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.969Z",
+      "type": "info",
+      "message": "[INFO] 💾 Workspace synced with IndexedDB "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.970Z",
+      "type": "log",
+      "message": "[Yjs] IndexedDB synced - offline data ready"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.973Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.978Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.986Z",
+      "type": "log",
+      "message": "[DEBUG] Workspace loading check: {initialWorkspace: true, projectSlug: noxii, workspaceId: null, isIndexedDBSynced: true}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.989Z",
+      "type": "log",
+      "message": "[DEBUG] IndexedDB synced, loading workspace data"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.994Z",
+      "type": "log",
+      "message": "[DEBUG] Loading workspace from server prop"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:36.996Z",
+      "type": "log",
+      "message": "[loadWorkspace] Seeding empty Yjs from server data: {serverNodes: 5, serverConnections: 0}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.001Z",
+      "type": "log",
+      "message": "[Yjs Observer] Nodes changed, processing event: {keysChanged: Array(5), actions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.008Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_bf9390e2-40c8-42a2-97ac-298d5f5756ef {id: node_bf9390e2-40c8-42a2-97ac-298d5f5756ef, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.010Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_00c2ff93-3436-4a8f-a3f2-41b64ecd7863 {id: node_00c2ff93-3436-4a8f-a3f2-41b64ecd7863, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.012Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_7061041e-2868-4e8f-b801-b2017f5d24da {id: node_7061041e-2868-4e8f-b801-b2017f5d24da, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.014Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_07de815f-8d64-4399-88de-cc5a525d306c {id: node_07de815f-8d64-4399-88de-cc5a525d306c, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.014Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_1c97429d-9feb-4893-b813-6f82cf2f2139 {id: node_1c97429d-9feb-4893-b813-6f82cf2f2139, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.021Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.027Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.046Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.046Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.058Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.058Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.062Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.063Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.072Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.081Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.081Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.081Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:37.578Z",
+      "type": "log",
+      "message": "✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:39.280Z",
+      "type": "info",
+      "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:39.609Z",
+      "type": "log",
+      "message": "[Login Page] Initializing CSRF token..."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:40.288Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:40.300Z",
+      "type": "log",
+      "message": "✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:40.796Z",
+      "type": "log",
+      "message": "[Login Page] ✅ CSRF token initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:40.809Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:41.240Z",
+      "type": "error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:42.132Z",
+      "type": "log",
+      "message": "[fetchJSON] Sending request: {url: /api/auth/login, method: POST, body: Object, bodyStringified: {\"username\":\"admin\",\"password\":\"euZe3CTvcDqqsVz\",\"rememberMe\":false}, bodyType: object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:42.133Z",
+      "type": "log",
+      "message": "[fetchWithCSRF] Adding CSRF token to headers: cdf6250a50..."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:43.085Z",
+      "type": "log",
+      "message": "Login successful: admin"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:43.510Z",
+      "type": "log",
+      "message": "Session validated, redirecting..."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:44.080Z",
+      "type": "warning",
+      "message": "THREE.Material: 'emissive' is not a property of THREE.MeshBasicMaterial."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:44.082Z",
+      "type": "warning",
+      "message": "Tutorial panel controls-info or button expand-controls not found - skipping"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:44.082Z",
+      "type": "log",
+      "message": "📚 Tutorial system initialized"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:44.924Z",
+      "type": "warning",
+      "message": "[GroupMarkerNotSet(crbug.com/242999)!:A0202A00F40B0000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.224Z",
+      "type": "info",
+      "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.284Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] No schema provided, using raw SQL: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   SELECT\n        u.id,\n        u.username,\n        u.email,\n        u.display_name"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.285Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.287Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (users): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: UPDATE users SET last_active = NOW() WHERE id = $1, final: UPDATE users.users SET last_active = NOW() WHERE id = $1}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.287Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.288Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: \n      SELECT * FROM project_metadata\n      WHERE project_slug = $1\n    , final: \n      SELECT * FROM content.project_metadata\n      WHERE project_slug = $1\n    }"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.288Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.289Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM workspaces WHERE id = $1, final: SELECT * FROM content.workspaces WHERE id = $1}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.289Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.289Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM canvas_nodes\n         WHERE workspace_id = $1 AND is_deleted = fal, final: SELECT * FROM content.canvas_nodes\n         WHERE workspace_id = $1 AND is_delet}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.289Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.293Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM node_connections\n         WHERE workspace_id = $1 AND is_deleted =, final: SELECT * FROM content.node_connections\n         WHERE workspace_id = $1 AND is_d}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.293Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.294Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM viewport_states WHERE workspace_id = $1 AND user_id = $2, final: SELECT * FROM content.viewport_states WHERE workspace_id = $1 AND user_id = $2}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.294Z",
+      "type": "log",
+      "message": "%c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.473Z",
+      "type": "log",
+      "message": "[DEBUG] Initializing Yjs with workspace ID: noxii"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.496Z",
+      "type": "info",
+      "message": "[INFO] [Workspace] Yjs initialized for workspace: noxii"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.498Z",
+      "type": "log",
+      "message": "[DEBUG] Workspace loading check: {initialWorkspace: true, projectSlug: noxii, workspaceId: null, isIndexedDBSynced: false}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.499Z",
+      "type": "log",
+      "message": "[DEBUG] Waiting for IndexedDB sync before loading server data..."
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.521Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.522Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.535Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.538Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.570Z",
+      "type": "info",
+      "message": "[INFO] 💾 Workspace synced with IndexedDB "
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.570Z",
+      "type": "log",
+      "message": "[Yjs] IndexedDB synced - offline data ready"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.570Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.573Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 0, visibleNodes: 0, culledNodes: 0, viewportBounds: Object, nodePositions: Array(0)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.592Z",
+      "type": "log",
+      "message": "[DEBUG] Workspace loading check: {initialWorkspace: true, projectSlug: noxii, workspaceId: null, isIndexedDBSynced: true}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.595Z",
+      "type": "log",
+      "message": "[DEBUG] IndexedDB synced, loading workspace data"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.595Z",
+      "type": "log",
+      "message": "[DEBUG] Loading workspace from server prop"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.596Z",
+      "type": "log",
+      "message": "[loadWorkspace] Seeding empty Yjs from server data: {serverNodes: 5, serverConnections: 0}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.609Z",
+      "type": "log",
+      "message": "[Yjs Observer] Nodes changed, processing event: {keysChanged: Array(5), actions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.613Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_bf9390e2-40c8-42a2-97ac-298d5f5756ef {id: node_bf9390e2-40c8-42a2-97ac-298d5f5756ef, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.613Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_00c2ff93-3436-4a8f-a3f2-41b64ecd7863 {id: node_00c2ff93-3436-4a8f-a3f2-41b64ecd7863, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.613Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_7061041e-2868-4e8f-b801-b2017f5d24da {id: node_7061041e-2868-4e8f-b801-b2017f5d24da, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.615Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_07de815f-8d64-4399-88de-cc5a525d306c {id: node_07de815f-8d64-4399-88de-cc5a525d306c, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.615Z",
+      "type": "log",
+      "message": "[Yjs Observer] add node: node_1c97429d-9feb-4893-b813-6f82cf2f2139 {id: node_1c97429d-9feb-4893-b813-6f82cf2f2139, workspace_id: noxii, position: Object, size: Object, content: Object}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.626Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.634Z",
+      "type": "log",
+      "message": "[WorkspaceCanvas] Rendering: {totalNodes: 5, visibleNodes: 5, culledNodes: 0, viewportBounds: Object, nodePositions: Array(5)}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.650Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.651Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.661Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.661Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.669Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.669Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.672Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.673Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.677Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:46.682Z",
+      "type": "log",
+      "message": "[TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}"
+    },
+    {
+      "timestamp": "2025-11-28T09:21:47.080Z",
+      "type": "log",
+      "message": "✅ CSRF token initialized"
+    }
+  ]
+}

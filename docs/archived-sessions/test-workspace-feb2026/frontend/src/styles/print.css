@@ -1,0 +1,405 @@
+/* Print Styles for Veritable Games
+ * Clean, plain text output for printing/PDF
+ * No styling, no UI elements, just content
+ */
+
+@media print {
+  /* Page Setup - standard document margins */
+  @page {
+    size: A4;
+    margin: 25mm 25mm 25mm 25mm;
+  }
+
+  /* Reset everything to plain text */
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Basic document styling */
+  body {
+    font-family: 'Times New Roman', Times, serif !important;
+    font-size: 12pt !important;
+    line-height: 1.5 !important;
+    background: white !important;
+    color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hide ALL navigation and UI elements - be extremely thorough */
+  nav,
+  header,
+  footer,
+  aside,
+  button,
+  input,
+  select,
+  textarea,
+  form,
+  svg,
+  [role="navigation"],
+  [role="banner"],
+  [role="contentinfo"],
+  /* Hide main navigation menu items */
+  a[href="/"],
+  a[href="/about"],
+  a[href="/projects"],
+  a[href="/forums"],
+  a[href="/library"],
+  a[href="/wiki"],
+  a[href="/news"],
+  /* Hide breadcrumb and its contents */
+  nav.text-sm.mb-4.text-gray-400,
+  nav.text-sm.mb-4.text-gray-400 *,
+  /* Hide metadata line completely */
+  div.flex.items-center.space-x-4.text-sm.text-gray-400,
+  div.flex.items-center.space-x-4.text-sm.text-gray-400 *,
+  /* Hide admin and user controls */
+  div.flex.items-center.space-x-2,
+  div.flex.items-center.space-x-2 *,
+  /* Hide footer section completely */
+  div.mt-4.pt-6.border-t.border-gray-700,
+  div.mt-4.pt-6.border-t.border-gray-700 *,
+  /* Hide copyright */
+  p.text-center.text-gray-500.text-sm,
+  /* Hide specific footer links */
+  a[href*="contact"],
+  a[href*="terms"],
+  a[href*="privacy"],
+  a[href*="cookies"],
+  a[href*="admin"],
+  a[href*="/edit"],
+  a[href*="/history"],
+  /* Hide Tags section completely */
+  .TagEditor,
+  .TagEditor *,
+  /* Hide tag pills/badges */
+  span.inline-flex.items-center.px-2.py-1.text-xs.font-medium.rounded-full,
+  /* Hide "No tags" text */
+  div.mt-6.p-4.bg-gray-800.border.border-gray-700.rounded-lg,
+  /* Hide any remaining tag-related content */
+  div.flex.flex-wrap.gap-2,
+  /* Hide TOC icon */
+  .WikipediaStyleTOC,
+  .WikipediaStyleTOC *,
+  /* Hide Login Widget */
+  .LoginWidget,
+  .LoginWidget *,
+  /* Hide pagination */
+  div.flex.items-center.justify-center.space-x-2,
+  /* Hide all dropdowns */
+  div.relative,
+  /* Hide view history link */
+  a[href$="/history"] {
+    display: none !important;
+  }
+
+  /* Show ALL content areas - specifically wiki content */
+  main,
+  article,
+  section,
+  .prose,
+  .prose-invert,
+  .prose-blue,
+  .wiki-content,
+  .wiki-content-with-infobox,
+  .forum-content,
+  .content,
+  div.prose,
+  div[class*='prose'],
+  [data-scroll-container='wiki-content'],
+  div[class*='flex'],
+  div[class*='overflow'] {
+    display: block !important;
+    visibility: visible !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: static !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+  }
+
+  /* Ensure all text content is visible */
+  p,
+  span,
+  div,
+  section,
+  article,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  li,
+  dl,
+  dt,
+  dd,
+  blockquote,
+  pre,
+  code {
+    display: block !important;
+    visibility: visible !important;
+    position: static !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Headings - simple and clear */
+  h1 {
+    font-size: 24pt !important;
+    font-weight: bold !important;
+    margin: 0 0 12pt 0 !important;
+    padding: 0 !important;
+    page-break-after: avoid !important;
+  }
+
+  h2 {
+    font-size: 18pt !important;
+    font-weight: bold !important;
+    margin: 18pt 0 10pt 0 !important;
+    padding: 0 !important;
+    page-break-after: avoid !important;
+  }
+
+  h3 {
+    font-size: 14pt !important;
+    font-weight: bold !important;
+    margin: 14pt 0 8pt 0 !important;
+    padding: 0 !important;
+    page-break-after: avoid !important;
+  }
+
+  h4 {
+    font-size: 12pt !important;
+    font-weight: bold !important;
+    margin: 12pt 0 6pt 0 !important;
+    padding: 0 !important;
+    page-break-after: avoid !important;
+  }
+
+  /* Paragraphs - ensure they're visible */
+  p {
+    display: block !important;
+    visibility: visible !important;
+    font-size: 12pt !important;
+    line-height: 1.5 !important;
+    margin: 0 0 12pt 0 !important;
+    padding: 0 !important;
+    text-align: justify !important;
+    color: black !important;
+    background: white !important;
+    opacity: 1 !important;
+  }
+
+  /* Lists */
+  ul,
+  ol {
+    margin: 0 0 12pt 0 !important;
+    padding-left: 20pt !important;
+  }
+
+  li {
+    font-size: 12pt !important;
+    line-height: 1.5 !important;
+    margin: 0 0 6pt 0 !important;
+  }
+
+  /* Links - plain text without URLs */
+  a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+
+  /* Don't show URLs in print */
+  a[href]:after {
+    content: '' !important;
+  }
+
+  /* Tables - simple borders */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 12pt 0 !important;
+  }
+
+  th,
+  td {
+    border: 1px solid black !important;
+    padding: 6pt !important;
+    text-align: left !important;
+  }
+
+  th {
+    font-weight: bold !important;
+    background: #f0f0f0 !important;
+  }
+
+  /* Images */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 12pt 0 !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Code blocks */
+  pre,
+  code {
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 10pt !important;
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+    padding: 6pt !important;
+    margin: 12pt 0 !important;
+    white-space: pre-wrap !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    font-style: italic !important;
+    margin: 12pt 20pt !important;
+    padding-left: 10pt !important;
+    border-left: 3pt solid #ccc !important;
+  }
+
+  /* Page breaks */
+  h1,
+  h2 {
+    page-break-before: auto !important;
+    page-break-after: avoid !important;
+  }
+
+  p,
+  li,
+  blockquote {
+    orphans: 3 !important;
+    widows: 3 !important;
+  }
+
+  /* Keep pseudo elements that might contain content */
+  ::before,
+  ::after {
+    content: attr(content) !important;
+  }
+
+  /* Ensure ALL content is visible */
+  * {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Don't hide content that might have bg/text/border classes */
+  div[class*='prose'],
+  article[class*='prose'],
+  section[class*='prose'],
+  main > div,
+  div[class*='bg-gray'],
+  div[class*='border'],
+  div[class*='rounded'],
+  div[class*='p-'] {
+    display: block !important;
+    background: white !important;
+    color: black !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Hide wiki-specific UI elements but keep content */
+  .TagEditor,
+  .InfoboxRenderer,
+  div[class*="border-t border-gray"], /* footer divider */
+  /* Hide specific footer elements */
+  div.mt-4.pt-6.border-t.border-gray-700,
+  /* Hide admin controls */
+  div:has(> button[onClick*="Admin"]),
+  button[onClick*="setShowAdminActions"],
+  /* Hide edit/delete links */
+  a[href*="/edit"],
+  a[href*="/history"],
+  button[class*="delete"],
+  button[aria-label*="Delete"] {
+    display: none !important;
+  }
+
+  /* Hide forum-specific UI elements */
+  .forum-header,
+  .forum-stats,
+  .reply-button,
+  .vote-buttons,
+  .user-avatar,
+  .post-meta,
+  .signature {
+    display: none !important;
+  }
+
+  /* Simple page header/footer for printed pages */
+  @page {
+    @top-center {
+      content: none;
+    }
+    @bottom-center {
+      content: counter(page);
+      font-size: 10pt;
+    }
+  }
+
+  /* FINAL OVERRIDES */
+
+  /* Hide the entire page header section */
+  .flex-shrink-0.mb-6,
+  .flex-shrink-0.mb-6 * {
+    display: none !important;
+  }
+
+  /* But show the main title */
+  h1.text-3xl.font-bold.text-white {
+    display: block !important;
+    margin-bottom: 20pt !important;
+  }
+
+  /* Hide the entire tags section including the border-t container */
+  div.border-t.border-gray-200.pt-4.mt-6,
+  div.border-t.border-gray-200.pt-4.mt-6 *,
+  /* Hide the Tags heading specifically */
+  h3.text-sm.font-medium.text-gray-700,
+  /* Hide ALL h2/h3 headings that aren't in article content */
+  h2:not(.prose h2):not(.prose-invert h2):not(.wiki-content-with-infobox h2),
+  h3:not(.prose h3):not(.prose-invert h3):not(.wiki-content-with-infobox h3) {
+    display: none !important;
+  }
+
+  /* Ensure wiki article content is absolutely visible */
+  .bg-gray-900\/50 > .wiki-content-with-infobox > *,
+  .wiki-content-with-infobox .prose,
+  .wiki-content-with-infobox p,
+  .wiki-content-with-infobox h1,
+  .wiki-content-with-infobox h2,
+  .wiki-content-with-infobox h3,
+  .wiki-content-with-infobox h4,
+  .wiki-content-with-infobox ul,
+  .wiki-content-with-infobox ol,
+  .wiki-content-with-infobox li,
+  .wiki-content-with-infobox blockquote {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: black !important;
+    background: transparent !important;
+    page-break-inside: auto !important;
+  }
+}

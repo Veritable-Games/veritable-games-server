@@ -1,0 +1,18 @@
+Migration Log - 2025-11-21T05:39:43.978Z
+========================================
+Total documents: 10
+Migrated: 0
+Failed: 10
+Duration: 0.1s
+
+Errors:
+  [5] the-emotion-machine: Verification failed: ID mismatch (expected 5, got 5)
+  [7] mutual-aid-a-factor-of-evolution: Verification failed: ID mismatch (expected 7, got 7)
+  [8] the-conquest-of-bread: Verification failed: ID mismatch (expected 8, got 8)
+  [13] critical-consciousness-in-education: Verification failed: ID mismatch (expected 13, got 13)
+  [15] neural-networks-and-deep-learning: Verification failed: ID mismatch (expected 15, got 15)
+  [19] workplace-democracy-implementation-guide: Verification failed: ID mismatch (expected 19, got 19)
+  [163] 100-years-ago-the-philadelphia-dockers-strike-and-local-8-of-the-iww-mouvement-communiste-and-kole: Verification failed: ID mismatch (expected 163, got 163)
+  [164] 13340-29558-1-pb-1: Verification failed: ID mismatch (expected 164, got 164)
+  [165] 13340-29558-1-pb: Verification failed: ID mismatch (expected 165, got 165)
+  [166] 1892-new-orleans-general-strike: Verification failed: ID mismatch (expected 166, got 166)

@@ -1,0 +1,323 @@
+name: Performance CI
+
+on:
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - "src/**"
+      - "public/**"
+      - "package.json"
+      - "package-lock.json"
+      - "next.config.js"
+      - "tailwind.config.js"
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      update_baseline:
+        description: "Update performance baseline"
+        required: false
+        default: "false"
+        type: boolean
+
+jobs:
+  performance-analysis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Need full history for baseline comparison
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+        env:
+          NODE_ENV: production
+          NEXT_TELEMETRY_DISABLED: 1
+
+      - name: Setup Chrome for Lighthouse
+        uses: browser-actions/setup-chrome@latest
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.12.x
+
+      - name: Run performance analysis
+        run: node scripts/performance-ci.js
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+          UPDATE_BASELINE: ${{ github.event.inputs.update_baseline || (github.ref == 'refs/heads/main' && 'true') || 'false' }}
+          CI: true
+
+      - name: Run bundle analysis
+        run: npm run optimize:bundle
+
+      - name: Run Lighthouse CI
+        run: |
+          npm run start &
+          SERVER_PID=$!
+          sleep 10 # Wait for server to start
+          lhci autorun || echo "Lighthouse CI completed with warnings"
+          kill $SERVER_PID
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
+
+      - name: Upload performance artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-reports-${{ github.sha }}
+          path: |
+            performance-reports/
+            bundle-analysis.json
+            .lighthouseci/
+          retention-days: 30
+
+      - name: Comment PR with performance results
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            // Read performance report
+            const reportsDir = 'performance-reports';
+            const files = fs.readdirSync(reportsDir)
+              .filter(f => f.startsWith('performance-') && f.endsWith('.json'))
+              .sort()
+              .reverse();
+
+            if (files.length === 0) {
+              console.log('No performance report found');
+              return;
+            }
+
+            const reportPath = path.join(reportsDir, files[0]);
+            const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
+
+            // Read bundle analysis
+            let bundleAnalysis = {};
+            try {
+              bundleAnalysis = JSON.parse(fs.readFileSync('bundle-analysis.json', 'utf8'));
+            } catch (e) {
+              console.log('No bundle analysis found');
+            }
+
+            // Create comment body
+            const formatBytes = (bytes) => {
+              const units = ['B', 'KB', 'MB', 'GB'];
+              let size = bytes;
+              let unitIndex = 0;
+              while (size >= 1024 && unitIndex < units.length - 1) {
+                size /= 1024;
+                unitIndex++;
+              }
+              return `${size.toFixed(2)} ${units[unitIndex]}`;
+            };
+
+            const buildAnalysis = report.buildAnalysis || {};
+            const lighthouse = report.lighthouse || {};
+
+            let comment = `## 📊 Performance Analysis Report
+
+            ### Bundle Analysis
+            - **Total Size**: ${formatBytes(buildAnalysis.totalSize || 0)}
+            - **JavaScript**: ${formatBytes(buildAnalysis.jsSize || 0)}
+            - **CSS**: ${formatBytes(buildAnalysis.cssSize || 0)}
+            - **Chunks**: ${(buildAnalysis.chunks || []).length}
+
+            ### Core Web Vitals
+            - **LCP**: ${lighthouse.metrics?.LCP || 'N/A'}ms
+            - **FID**: ${lighthouse.metrics?.FID || 'N/A'}ms
+            - **CLS**: ${lighthouse.metrics?.CLS || 'N/A'}
+            - **FCP**: ${lighthouse.metrics?.FCP || 'N/A'}ms
+            - **TTFB**: ${lighthouse.metrics?.TTFB || 'N/A'}ms
+
+            ### Lighthouse Scores
+            - **Performance**: ${lighthouse.performance || 'N/A'}/100
+            - **Accessibility**: ${lighthouse.accessibility || 'N/A'}/100
+            - **Best Practices**: ${lighthouse.bestPractices || 'N/A'}/100
+            - **SEO**: ${lighthouse.seo || 'N/A'}/100
+            `;
+
+            // Add regression information if available
+            if (report.regressions && report.regressions.length > 0) {
+              comment += `\n### ⚠️ Performance Regressions\n`;
+              report.regressions.forEach(regression => {
+                const severity = regression.severity === 'critical' ? '🚨' : '⚠️';
+                comment += `- ${severity} **${regression.metric}**: +${regression.change}% regression\n`;
+              });
+            }
+
+            if (report.improvements && report.improvements.length > 0) {
+              comment += `\n### ✅ Performance Improvements\n`;
+              report.improvements.forEach(improvement => {
+                comment += `- **${improvement.metric}**: ${improvement.change}% improvement\n`;
+              });
+            }
+
+            comment += `\n*Report generated for commit ${context.sha.substring(0, 7)}*`;
+
+            // Post comment
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+  lighthouse-ci:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.12.x
+          lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
+
+  bundle-size-check:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check bundle size
+        uses: andresz1/size-limit-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          build_script: build
+          script: |
+            npx size-limit --json > size-limit-report.json
+            node -e "
+              const report = require('./size-limit-report.json');
+              const totalSize = report.reduce((sum, item) => sum + item.size, 0);
+              const formattedSize = (totalSize / 1024).toFixed(2) + ' KB';
+              console.log('Total bundle size:', formattedSize);
+              
+              // Check if size exceeds budget
+              const budget = 1000 * 1024; // 1MB budget
+              if (totalSize > budget) {
+                console.error('Bundle size exceeds budget!');
+                process.exit(1);
+              }
+            "
+
+  performance-monitoring:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build and analyze
+        run: |
+          npm run build
+          npm run optimize:bundle
+
+      - name: Send metrics to monitoring service
+        run: |
+          node -e "
+            const fs = require('fs');
+            const analysis = JSON.parse(fs.readFileSync('bundle-analysis.json', 'utf8'));
+            
+            // Send to your monitoring service (DataDog, New Relic, etc.)
+            const metrics = {
+              bundleSize: analysis.totalSize,
+              jsSize: analysis.jsSize,
+              cssSize: analysis.cssSize,
+              chunkCount: analysis.chunks?.length || 0,
+              timestamp: Date.now(),
+              branch: 'main',
+              commit: process.env.GITHUB_SHA
+            };
+            
+            console.log('Metrics to send:', JSON.stringify(metrics, null, 2));
+            
+            // Example: Send to webhook
+            // fetch(process.env.MONITORING_WEBHOOK_URL, {
+            //   method: 'POST',
+            //   headers: { 'Content-Type': 'application/json' },
+            //   body: JSON.stringify(metrics)
+            // });
+          "
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+          MONITORING_WEBHOOK_URL: ${{ secrets.MONITORING_WEBHOOK_URL }}
+
+  security-audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Run security audit
+        run: |
+          npm audit --audit-level=high
+          npm run security:audit
+
+      - name: Check for vulnerable dependencies
+        run: |
+          npx audit-ci --config .auditci.json || true

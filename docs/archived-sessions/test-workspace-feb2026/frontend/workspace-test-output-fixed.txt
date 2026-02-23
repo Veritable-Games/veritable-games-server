@@ -1,0 +1,183 @@
+🚀 Starting Automated Node Click Test
+
+================================================================================
+
+🔑 Logging in as admin...
+🔵 [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+🔵 [LOG] [Login Page] Initializing CSRF token...
+🔴 [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized)
+🔵 [LOG] ✅ CSRF token initialized
+🔵 [LOG] [Login Page] ✅ CSRF token initialized
+🔴 [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized)
+🔴 [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized)
+🔵 [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o
+   Username: admin
+   Password: ***************
+🔵 [LOG] [fetchJSON] Sending request: {url: /api/auth/login, method: POST, body: Object, bodyStringified: {"username":"admin","password":"euZe3CTvcDqqsVz","rememberMe":false}, bodyType: object}
+🔵 [LOG] [fetchWithCSRF] Adding CSRF token to headers: ca963e1f06...
+🔵 [LOG] Login successful: admin
+🔵 [LOG] Session validated, redirecting...
+✅ Login successful!
+
+📍 Navigating to workspace...
+🔴 [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+🔵 [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+🔵 [LOG] %c%s%c [PostgreSQL Pool] Initializing in traditional mode (max: 20, min: 2) background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  
+🔵 [LOG] %c%s%c [PostgreSQL Pool] No schema provided, using raw SQL: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   SELECT
+        u.id,
+        u.username,
+        u.email,
+        u.display_name
+🔵 [LOG] %c%s%c [PostgreSQL Pool] New client connected background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  
+🔵 [LOG] %c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  
+🔵 [LOG] %c%s%c [PostgreSQL Pool] Schema prefix applied (users): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: UPDATE users SET last_active = NOW() WHERE id = $1, final: UPDATE users.users SET last_active = NOW() WHERE id = $1}
+🔵 [LOG] %c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  
+🔵 [LOG] %c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: 
+      SELECT * FROM project_metadata
+      WHERE project_slug = $1
+    , final: 
+      SELECT * FROM content.project_metadata
+      WHERE project_slug = $1
+    }
+🔵 [LOG] %c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  
+🔵 [LOG] %c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM workspaces WHERE id = $1, final: SELECT * FROM content.workspaces WHERE id = $1}
+🔵 [LOG] %c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  
+🔵 [LOG] %c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM canvas_nodes
+         WHERE workspace_id = $1 AND is_deleted = fal, final: SELECT * FROM content.canvas_nodes
+         WHERE workspace_id = $1 AND is_delet}
+🔵 [LOG] %c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  
+🔵 [LOG] %c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM node_connections
+         WHERE workspace_id = $1 AND is_deleted =, final: SELECT * FROM content.node_connections
+         WHERE workspace_id = $1 AND is_d}
+🔵 [LOG] %c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  
+🔵 [LOG] %c%s%c [PostgreSQL Pool] Schema prefix applied (content): background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   {original: SELECT * FROM viewport_states WHERE workspace_id = $1 AND user_id = $2, final: SELECT * FROM content.viewport_states WHERE workspace_id = $1 AND user_id = $2}
+🔵 [LOG] %c%s%c [PostgreSQL Pool] Client acquired from pool background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server  
+🔵 [LOG] [DEBUG] Workspace loading - initialWorkspace: {workspace: Object, nodes: Array(6), connections: Array(20), viewportState: Object}
+🔵 [LOG] [DEBUG] Workspace loading - projectSlug: noxii
+🔵 [LOG] [DEBUG] Workspace loading - workspaceId from store: null
+🔵 [LOG] [DEBUG] Loading workspace from server prop
+🔵 [LOG] [WorkspaceCanvas] Rendering: {totalNodes: 6, visibleNodes: 1, culledNodes: 5, viewportBounds: Object, nodePositions: Array(6)}
+🔵 [LOG] [WorkspaceCanvas] Rendering: {totalNodes: 6, visibleNodes: 1, culledNodes: 5, viewportBounds: Object, nodePositions: Array(6)}
+🔴 [ERROR] Error: <path> attribute d: Expected number, "…195.454514605112NaN -665.0030614…".
+🔴 [ERROR] Error: <path> attribute d: Expected number, "…195.454514605112NaN -665.0030614…".
+🔵 [LOG] [TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}
+🔵 [LOG] [TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: text}
+🔵 [INFO] [INFO] [Workspace] Yjs destroyed 
+🔵 [LOG] [Yjs Init] Syncing local nodes TO Yjs: 6 nodes
+🔵 [LOG] [Yjs Observer] Nodes changed, processing event: {keysChanged: Array(1), actions: Array(1)}
+🔵 [LOG] [Yjs Observer] add node: node_bf357aa6-5a14-4557-8760-c3b4f0bb2f02 Proxy(Object)
+🔵 [LOG] [Yjs Observer] Nodes changed, processing event: {keysChanged: Array(1), actions: Array(1)}
+🔵 [LOG] [Yjs Observer] add node: node_7b9f1485-90fb-4000-9371-3575cfdd2974 Proxy(Object)
+🔵 [LOG] [Yjs Observer] Nodes changed, processing event: {keysChanged: Array(1), actions: Array(1)}
+🔵 [LOG] [Yjs Observer] add node: node_d7616436-0f13-4f21-b599-f6ce0de9635e Proxy(Object)
+🔵 [LOG] [Yjs Observer] Nodes changed, processing event: {keysChanged: Array(1), actions: Array(1)}
+🔵 [LOG] [Yjs Observer] add node: node_504d611f-ec1c-454b-9479-c029e28f7ff5 Proxy(Object)
+🔵 [LOG] [Yjs Observer] Nodes changed, processing event: {keysChanged: Array(1), actions: Array(1)}
+🔵 [LOG] [Yjs Observer] add node: node_471b280b-82a2-4e32-adf5-4b8385840154 Proxy(Object)
+🔵 [LOG] [Yjs Observer] Nodes changed, processing event: {keysChanged: Array(1), actions: Array(1)}
+🔵 [LOG] [Yjs Observer] add node: node_6d5d1527-9729-46fa-a226-40de74748681 Proxy(Object)
+🔵 [LOG] [Yjs Init] Syncing local connections TO Yjs: 20 connections
+🔵 [INFO] [INFO] [Workspace] Yjs initialized for workspace: noxii
+🔵 [LOG] [WorkspaceCanvas] Rendering: {totalNodes: 6, visibleNodes: 4, culledNodes: 2, viewportBounds: Object, nodePositions: Array(6)}
+🔵 [LOG] [WorkspaceCanvas] Rendering: {totalNodes: 6, visibleNodes: 4, culledNodes: 2, viewportBounds: Object, nodePositions: Array(6)}
+🔵 [LOG] [TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}
+🔵 [LOG] [TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}
+🔵 [LOG] [TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}
+🔵 [LOG] [TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}
+🔵 [LOG] [TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}
+🔵 [LOG] [TextNode] Calculated font size: {fontSize: 16, contentLength: 0, containerSize: Object, nodeType: note}
+🔴 [ERROR] WebSocket connection to 'ws://localhost:3002/noxii?workspace=noxii' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+🔴 [ERROR] PAGE ERROR: Cannot perform 'IsArray' on a proxy that has been revoked
+TypeError: Cannot perform 'IsArray' on a proxy that has been revoked
+    at Module.isArray (<anonymous>)
+    at Module.writeAny (http://localhost:3000/_next/static/chunks/node_modules_lib0_86a7e209._.js:1134:163)
+    at UpdateEncoderV1.writeAny (http://localhost:3000/_next/static/chunks/node_modules_yjs_dist_yjs_mjs_72f740f2._.js:1152:152)
+    at ContentAny.write (http://localhost:3000/_next/static/chunks/node_modules_yjs_dist_yjs_mjs_72f740f2._.js:8427:21)
+    at Item.write (http://localhost:3000/_next/static/chunks/node_modules_yjs_dist_yjs_mjs_72f740f2._.js:9182:22)
+    at writeStructs (http://localhost:3000/_next/static/chunks/node_modules_yjs_dist_yjs_mjs_72f740f2._.js:1359:17)
+    at http://localhost:3000/_next/static/chunks/node_modules_yjs_dist_yjs_mjs_72f740f2._.js:1391:9
+    at Array.forEach (<anonymous>)
+    at writeClientsStructs (http://localhost:3000/_next/static/chunks/node_modules_yjs_dist_yjs_mjs_72f740f2._.js:1389:182)
+    at writeStateAsUpdate (http://localhost:3000/_next/static/chunks/node_modules_yjs_dist_yjs_mjs_72f740f2._.js:1782:5)
+    at encodeStateAsUpdateV2 (http://localhost:3000/_next/static/chunks/node_modules_yjs_dist_yjs_mjs_72f740f2._.js:1802:5)
+    at Module.encodeStateAsUpdate (http://localhost:3000/_next/static/chunks/node_modules_yjs_dist_yjs_mjs_72f740f2._.js:1833:66)
+    at beforeApplyUpdatesCallback (http://localhost:3000/_next/static/chunks/node_modules_1a299f1b._.js:3896:380)
+    at http://localhost:3000/_next/static/chunks/node_modules_1a299f1b._.js:3786:13
+🔴 [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+🔵 [LOG] [Fast Refresh] rebuilding
+🔵 [INFO] [INFO] 🔌 WebSocket status: connecting 
+🔴 [ERROR] WebSocket connection to 'ws://localhost:3002/noxii?workspace=noxii' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+🔵 [INFO] [INFO] 🔌 WebSocket status: connecting 
+🔴 [ERROR] WebSocket connection to 'ws://localhost:3002/noxii?workspace=noxii' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+🔵 [LOG] [Fast Refresh] done in 614ms
+🔵 [LOG] ✅ CSRF token initialized
+🔵 [INFO] [INFO] 🔌 WebSocket status: connecting 
+🔴 [ERROR] WebSocket connection to 'ws://localhost:3002/noxii?workspace=noxii' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+✅ Workspace page loaded
+
+⏳ Waiting for workspace nodes to load...
+✅ Found 4 nodes!
+
+
+📊 Nodes available: 4
+📋 Node IDs before click: node_d7616436-0f13-4f21-b599-f6ce0de9635e, node_504d611f-ec1c-454b-9479-c029e28f7ff5, node_471b280b-82a2-4e32-adf5-4b8385840154, node_6d5d1527-9729-46fa-a226-40de74748681
+
+🖱️  Clicking first node...
+🎯 Target node: node_d7616436-0f13-4f21-b599-f6ce0de9635e
+
+🔵 [INFO] [INFO] 🔌 WebSocket status: connecting 
+🔴 [ERROR] WebSocket connection to 'ws://localhost:3002/noxii?workspace=noxii' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+🔵 [INFO] [INFO] 🔌 WebSocket status: connecting 
+🔴 [ERROR] WebSocket connection to 'ws://localhost:3002/noxii?workspace=noxii' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+🔵 [INFO] [INFO] 🔌 WebSocket status: connecting 
+🔴 [ERROR] WebSocket connection to 'ws://localhost:3002/noxii?workspace=noxii' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+🔵 [INFO] [INFO] 🔌 WebSocket status: connecting 
+🔴 [ERROR] WebSocket connection to 'ws://localhost:3002/noxii?workspace=noxii' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+🔵 [INFO] [INFO] 🔌 WebSocket status: connecting 
+🔴 [ERROR] WebSocket connection to 'ws://localhost:3002/noxii?workspace=noxii' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+🔵 [INFO] [INFO] 🔌 WebSocket status: connecting 
+🔴 [ERROR] WebSocket connection to 'ws://localhost:3002/noxii?workspace=noxii' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+🔵 [INFO] [INFO] 🔌 WebSocket status: connecting 
+🔴 [ERROR] WebSocket connection to 'ws://localhost:3002/noxii?workspace=noxii' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+🔵 [INFO] [INFO] 🔌 WebSocket status: connecting 
+🔴 [ERROR] WebSocket connection to 'ws://localhost:3002/noxii?workspace=noxii' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+🔵 [INFO] [INFO] 🔌 WebSocket status: connecting 
+🔴 [ERROR] WebSocket connection to 'ws://localhost:3002/noxii?workspace=noxii' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+🔵 [INFO] [INFO] 🔌 WebSocket status: connecting 
+🔴 [ERROR] WebSocket connection to 'ws://localhost:3002/noxii?workspace=noxii' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+🔵 [INFO] [INFO] 🔌 WebSocket status: connecting 
+🔴 [ERROR] WebSocket connection to 'ws://localhost:3002/noxii?workspace=noxii' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+🔵 [INFO] [INFO] 🔌 WebSocket status: connecting 
+🔴 [ERROR] WebSocket connection to 'ws://localhost:3002/noxii?workspace=noxii' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+
+❌ TEST ERROR: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-node-id]').first()[22m
+[2m    - locator resolved to <div tabindex="0" role="article" aria-label="Sticky note: " data-node-id="node_d7616436-0f13-4f21-b599-f6ce0de9635e" class="pointer-events-auto absolute flex  focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-neutral-900 cursor-grab">…</div>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - element is outside of the viewport[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - element is outside of the viewport[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    58 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - element is outside of the viewport[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+    at runTest (/home/user/Projects/veritable-games-main/frontend/scripts/playwright/test-node-click-automated.ts:212:21) {
+  name: 'TimeoutError'
+}
+📄 Error logs saved to: workspace-test-logs-error.json

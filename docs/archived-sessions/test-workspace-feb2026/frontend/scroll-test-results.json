@@ -1,0 +1,174 @@
+{
+  "timestamp": "2025-12-26T08:05:08.373Z",
+  "tests": [
+    {
+      "name": "Grid View - 50000px scroll position",
+      "viewMode": "grid",
+      "description": "Scroll to 50000px in grid view, reload, verify position restored",
+      "status": "PENDING - Manual test required",
+      "expectedBehavior": "ScrollTop should be restored to ~50000px (±10px tolerance)",
+      "itemHeight": 252,
+      "notes": "Grid rows are 252px tall. Offset = scrollTop - (rowIndex * 252). Save should occur when user stops scrolling (debounced 500ms)."
+    },
+    {
+      "name": "Grid View - Sub-pixel positioning (250px)",
+      "viewMode": "grid",
+      "description": "Scroll to 250px (edge of row), reload, verify exact position",
+      "status": "PENDING - Manual test required",
+      "expectedBehavior": "ScrollTop should be restored to exactly 250px (±5px tolerance)",
+      "itemHeight": 252,
+      "notes": "This tests the offset parameter: offset should be ~250px for first row"
+    },
+    {
+      "name": "List View - 5000px scroll position",
+      "viewMode": "list",
+      "description": "Scroll to 5000px in list view, reload, verify position restored",
+      "status": "PENDING - Manual test required",
+      "expectedBehavior": "ScrollTop should be restored to ~5000px (±10px tolerance)",
+      "itemHeight": 36,
+      "notes": "List items are 36px tall. This tests large scroll in list view."
+    },
+    {
+      "name": "List View - Sub-pixel positioning (100px)",
+      "viewMode": "list",
+      "description": "Scroll to 100px, reload, verify exact position",
+      "status": "PENDING - Manual test required",
+      "expectedBehavior": "ScrollTop should be restored to exactly 100px (±5px tolerance)",
+      "itemHeight": 36,
+      "notes": "This tests offset calculation for list view: 100 = (2 * 36) + 28"
+    },
+    {
+      "name": "Cross-view switching - Grid to List and back",
+      "viewMode": "mixed",
+      "description": "Scroll in grid, switch to list, scroll in list, switch back to grid",
+      "status": "PENDING - Manual test required",
+      "expectedBehavior": "Each view maintains its own saved scroll position",
+      "notes": "localStorage stores scrollPosition with viewMode field. When switching views, correct position should restore."
+    }
+  ],
+  "instructions": {
+    "prerequisites": [
+      "Dev server running: npm run dev",
+      "Browser navigation to http://localhost:3000/library",
+      "Library should have documents loaded",
+      "Open browser Developer Tools (F12)"
+    ],
+    "manualSteps": [
+      {
+        "step": 1,
+        "name": "Test Grid View - 50000px",
+        "actions": [
+          "Ensure in GRID view (click Grid button in toolbar)",
+          "Open DevTools → Console",
+          "Open DevTools → Storage → LocalStorage → http://localhost:3000",
+          "Scroll down to ~50000px",
+          "In Console, run: document.querySelector(\"main\").scrollTop (note the value)",
+          "Check localStorage: should see \"library-preferences\" with scrollPosition data",
+          "Reload page (Ctrl+R)",
+          "In Console, run: document.querySelector(\"main\").scrollTop again",
+          "Compare: drift = |newValue - previousValue|",
+          "PASS if drift < 10px, FAIL if drift ≥ 10px"
+        ]
+      },
+      {
+        "step": 2,
+        "name": "Test Grid View - 250px sub-pixel",
+        "actions": [
+          "Reload page to reset",
+          "Scroll to exactly 250px: document.querySelector(\"main\").scrollTop = 250",
+          "Wait 600ms for debounce",
+          "Note the scrollTop value",
+          "Reload page",
+          "Check scrollTop matches (±5px tolerance)",
+          "PASS if drift < 5px, FAIL if drift ≥ 5px"
+        ]
+      },
+      {
+        "step": 3,
+        "name": "Test List View - 5000px",
+        "actions": [
+          "Click List view button",
+          "Scroll to ~5000px",
+          "Note scrollTop value",
+          "Reload page",
+          "Check scrollTop matches (±10px tolerance)",
+          "PASS if drift < 10px, FAIL if drift ≥ 10px"
+        ]
+      },
+      {
+        "step": 4,
+        "name": "Test List View - 100px sub-pixel",
+        "actions": [
+          "Reload page to reset",
+          "Scroll to exactly 100px: document.querySelector(\"main\").scrollTop = 100",
+          "Wait 600ms for debounce",
+          "Note the scrollTop value",
+          "Reload page",
+          "Check scrollTop matches (±5px tolerance)",
+          "PASS if drift < 5px, FAIL if drift ≥ 5px"
+        ]
+      },
+      {
+        "step": 5,
+        "name": "Test Cross-view Switching",
+        "actions": [
+          "In grid view, scroll to 1000px",
+          "Wait 600ms for debounce",
+          "Switch to list view",
+          "Scroll to 500px",
+          "Wait 600ms",
+          "Switch back to grid view - should restore to ~1000px",
+          "Switch to list view - should restore to ~500px",
+          "PASS if each view maintains its position (±20px tolerance)"
+        ]
+      }
+    ],
+    "expectedConsoleOutput": [
+      "When scrolling, you should see logs like: \"[LibraryPageClient] Scroll position saved\"",
+      "In localStorage, library-preferences should contain: {\"scrollPosition\":{\"viewMode\":\"grid\",\"index\":198,\"offset\":124},...}",
+      "The offset represents: scrollTop - (index * itemHeight)",
+      "For grid: offset = scrollTop - (rowIndex * 252)",
+      "For list: offset = scrollTop - (itemIndex * 36)"
+    ]
+  },
+  "technicalDetails": {
+    "fileLocations": [
+      {
+        "file": "src/hooks/useLibraryPreferences.ts",
+        "purpose": "Manages scroll position saving with debounce (500ms)",
+        "keyFunction": "saveScrollPosition(viewMode, index, offset?)"
+      },
+      {
+        "file": "src/app/library/LibraryPageClient.tsx",
+        "purpose": "Main library component",
+        "sections": [
+          "VirtuosoGridView: handleRangeChanged saves grid scroll position (252px rows)",
+          "VirtuosoListView: handleRangeChanged saves list scroll position (36px items)",
+          "Scroll restoration: requestAnimationFrame + scrollToIndex + scrollBy(offset)"
+        ]
+      }
+    ],
+    "offsetCalculation": {
+      "grid": {
+        "itemHeight": 252,
+        "formula": "offset = scrollTop - (rowIndex * 252)",
+        "example": "scrollTop=50000, rowIndex=198 → offset=50000-(198*252)=50000-49896=104",
+        "restoration": "scrollToIndex(198) → scrollBy(104)",
+        "resultingScrollTop": "49896 + 104 = 50000"
+      },
+      "list": {
+        "itemHeight": 36,
+        "formula": "offset = scrollTop - (itemIndex * 36)",
+        "example": "scrollTop=5000, itemIndex=138 → offset=5000-(138*36)=5000-4968=32",
+        "restoration": "scrollToIndex(138) → scrollBy(32)",
+        "resultingScrollTop": "4968 + 32 = 5000"
+      }
+    },
+    "performanceNotes": [
+      "Scroll position saves are debounced (500ms) to avoid localStorage thrashing",
+      "Large scroll positions (50000px+) with offset tracking prevent index-only drift",
+      "Grid view: 2 documents per row affects mapping between index and scrollTop",
+      "List view: 1 document per row = direct index-to-scrollTop mapping"
+    ]
+  }
+}

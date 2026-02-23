@@ -1,0 +1,236 @@
+/* GameStateOverlay Responsive Styles */
+
+/* Base styles for all screen sizes */
+.gameStateOverlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Hide overlay when revision manager is in fullscreen */
+html[style*='--revision-manager-fullscreen: 1'] .gameStateOverlay {
+  display: none !important;
+}
+
+.panel {
+  pointer-events: auto;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.panel:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Internal State Panel - Top Left */
+.internalStatePanel {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  min-width: 280px;
+  max-width: 20rem;
+}
+
+/* Active Expressions Panel - Top Right */
+.expressionsPanel {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  min-width: 200px;
+  max-width: 16rem;
+}
+
+/* State Indicator - Center Top */
+.stateIndicator {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Analysis Bars - Bottom Left */
+.analysisPanel {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  min-width: 200px;
+  max-width: 16rem;
+}
+
+/* Game Menu - Bottom Right */
+.gameMenu {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+/* Progress bar animations */
+.progressBar {
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pulseIndicator {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .gameStateOverlay {
+    padding: 0.5rem;
+  }
+
+  /* Stack panels vertically on mobile */
+  .internalStatePanel {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    min-width: unset;
+    max-width: unset;
+    width: calc(100% - 1rem);
+  }
+
+  .expressionsPanel {
+    position: absolute;
+    top: 10rem; /* Below internal state panel */
+    left: 0.5rem;
+    right: 0.5rem;
+    min-width: unset;
+    max-width: unset;
+    width: calc(100% - 1rem);
+  }
+
+  .stateIndicator {
+    position: absolute;
+    top: 16rem; /* Below expressions panel */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .analysisPanel {
+    position: absolute;
+    bottom: 4rem; /* Above game menu */
+    left: 0.5rem;
+    right: 0.5rem;
+    min-width: unset;
+    max-width: unset;
+    width: calc(100% - 1rem);
+  }
+
+  .gameMenu {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    right: unset;
+  }
+
+  /* Reduce font sizes on mobile */
+  .panel {
+    font-size: 0.75rem;
+  }
+
+  /* Make metrics grid single column on very small screens */
+  @media (max-width: 480px) {
+    .metricsGrid {
+      grid-template-columns: 1fr !important;
+      gap: 1rem !important;
+    }
+  }
+}
+
+/* Tablet Responsive Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .internalStatePanel {
+    max-width: 18rem;
+  }
+
+  .expressionsPanel {
+    max-width: 14rem;
+  }
+
+  .analysisPanel {
+    max-width: 14rem;
+  }
+}
+
+/* Large Screen Optimizations */
+@media (min-width: 1440px) {
+  .internalStatePanel {
+    top: 2rem;
+    left: 2rem;
+    max-width: 24rem;
+  }
+
+  .expressionsPanel {
+    top: 2rem;
+    right: 2rem;
+    max-width: 20rem;
+  }
+
+  .stateIndicator {
+    top: 2rem;
+  }
+
+  .analysisPanel {
+    bottom: 2rem;
+    left: 2rem;
+    max-width: 20rem;
+  }
+
+  .gameMenu {
+    bottom: 2rem;
+    right: 2rem;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .panel,
+  .progressBar,
+  .pulseIndicator {
+    transition: none;
+    animation: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .panel {
+    background-color: rgba(0, 0, 0, 0.95);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* Focus styles for keyboard navigation */
+.panel:focus-within {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .panel {
+    backdrop-filter: blur(12px);
+  }
+}

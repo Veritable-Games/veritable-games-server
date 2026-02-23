@@ -1,0 +1,75 @@
+version: "3.8"
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: godot-mcp-staging-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: veritable_games
+    ports:
+      - "5432:5432"
+    volumes:
+      - godot-staging-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - godot-staging
+
+  # Godot MCP Router
+  godot-router:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: godot-mcp-router-staging
+    environment:
+      NODE_ENV: staging
+      LOG_LEVEL: debug
+      LOG_FORMAT: json
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/veritable_games
+      DATABASE_POOL_SIZE: "10"
+      API_BASE_URL: http://localhost:3002
+      GODOT_PROJECTS_PATH: /godot-projects
+      MCP_IDLE_TIMEOUT: "1800000"
+      ENABLE_METRICS: "true"
+      ALERTING_ENABLED: "false"
+    ports:
+      - "3002:3002"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - godot-projects:/godot-projects
+      - ./dist:/app/dist
+    networks:
+      - godot-staging
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--quiet",
+          "--tries=1",
+          "--spider",
+          "http://localhost:3002/api/health/liveness",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  godot-staging-db:
+    driver: local
+  godot-projects:
+    driver: local
+
+networks:
+  godot-staging:
+    driver: bridge

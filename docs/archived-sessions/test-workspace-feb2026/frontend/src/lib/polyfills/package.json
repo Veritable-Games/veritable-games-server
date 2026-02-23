@@ -1,0 +1,12 @@
+{
+  "name": "styled-jsx-noop",
+  "version": "1.0.0",
+  "description": "No-op polyfill for styled-jsx to prevent runtime errors",
+  "main": "styled-jsx-noop.js",
+  "module": "styled-jsx-noop.js",
+  "exports": {
+    ".": "./styled-jsx-noop.js",
+    "./style": "./styled-jsx-noop.js",
+    "./css": "./styled-jsx-noop.js"
+  }
+}

@@ -1,0 +1,29 @@
+🚀 Starting Automated Node Click Test
+
+================================================================================
+
+🔑 Logging in as admin...
+🔵 [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+🔵 [LOG] [Login Page] Initializing CSRF token...
+🔴 [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized)
+🔵 [LOG] ✅ CSRF token initialized
+🔵 [LOG] [Login Page] ✅ CSRF token initialized
+🔴 [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized)
+🔴 [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized)
+🔵 [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o
+   Username: admin
+   Password: ****************
+🔵 [LOG] [fetchJSON] Sending request: {url: /api/auth/login, method: POST, body: Object, bodyStringified: {"username":"admin","password":"TestPassword123!","rememberMe":false}, bodyType: object}
+🔵 [LOG] [fetchWithCSRF] Adding CSRF token to headers: 73b19d9bf5...
+🔴 [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized)
+⚠️ [WARNING] [fetchJSON] Validation error 401 from /api/auth/login
+🔴 [ERROR] Login error: Error: Invalid username or password
+    at fetchJSON (http://localhost:3000/_next/static/chunks/src_98214ee7._.js:163:15)
+    at async onSubmit (http://localhost:3000/_next/static/chunks/src_f2c069ca._.js:1339:28)
+    at async http://localhost:3000/_next/static/chunks/node_modules_019158f1._.js:2027:21
+❌ Login failed - still on login page
+
+
+❌ TEST ERROR: Error: Login failed - cannot proceed with test
+    at runTest (/home/user/Projects/veritable-games-main/frontend/scripts/playwright/test-node-click-automated.ts:157:13)
+📄 Error logs saved to: workspace-test-logs-error.json

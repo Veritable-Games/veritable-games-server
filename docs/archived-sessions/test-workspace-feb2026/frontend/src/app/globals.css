@@ -1,0 +1,646 @@
+/* Import print styles for PDF generation - must be first */
+@import '../styles/print.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tailwind utility overrides removed - using default values */
+
+@font-face {
+  font-family: 'Kalinga';
+  src: url('/fonts/34688578316.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kalinga';
+  src: url('/fonts/41956811750.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Single consistent dark theme - restored from original */
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Kalinga', Arial, Helvetica, sans-serif;
+}
+
+/* Revision Manager Fullscreen Support */
+/* Hide floating elements when revision manager is in fullscreen */
+html[style*='--revision-manager-fullscreen: 1'] .fixed.bottom-4.right-4,
+html[style*='--revision-manager-fullscreen: 1'] [class*='gameStateOverlay'] {
+  display: none !important;
+}
+
+/* Ensure fullscreen isolation */
+.revision-manager-fullscreen {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 100 !important;
+  isolation: isolate !important;
+  background: rgb(17, 24, 39) !important; /* bg-gray-900 */
+}
+
+/* Prevent scroll and layout issues during fullscreen */
+body.revision-manager-fullscreen-active {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+}
+
+/* Editor panel height fixes */
+.revision-editor-panel {
+  min-height: 0 !important;
+  height: 100% !important;
+}
+
+/* Sticky footer positioning */
+.revision-editor-footer {
+  position: sticky !important;
+  bottom: 0 !important;
+  z-index: 10 !important;
+  backdrop-filter: blur(8px);
+}
+
+/* Monaco Editor Overrides - Reset global min-height/min-width for Monaco internal elements */
+.monaco-editor button,
+.monaco-editor [tabindex],
+.monaco-editor [role='button'],
+.monaco-editor input,
+.monaco-editor textarea {
+  min-width: unset !important;
+  min-height: unset !important;
+}
+
+/* Monaco inputarea and textarea should be invisible - fix white box issue */
+.monaco-editor .inputarea,
+.monaco-editor textarea,
+.monaco-editor .monaco-mouse-cursor-text,
+.monaco-editor .cursor-layer,
+.monaco-editor .inputarea.monaco-mouse-cursor-text {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: transparent !important;
+  caret-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Force dark background on Monaco gutter, margin, and all internal elements */
+.monaco-editor,
+.monaco-editor .margin,
+.monaco-editor .margin-view-overlays,
+.monaco-editor .line-numbers,
+.monaco-editor .glyph-margin,
+.monaco-editor .decorationsOverviewRuler,
+.monaco-editor .minimap,
+.monaco-editor .scroll-decoration,
+.monaco-editor .editor-scrollable,
+.monaco-editor .overflow-guard {
+  background: #1e1e1e !important;
+  background-color: #1e1e1e !important;
+}
+
+/* Fix white overflow areas */
+.monaco-editor .monaco-scrollable-element {
+  background: #1e1e1e !important;
+}
+
+/* Ensure the textarea wrapper is also transparent */
+.monaco-editor .inputarea.ime-input,
+.monaco-editor textarea.inputarea {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Ensure Monaco diff editor internal elements are also fixed */
+.monaco-diff-editor button,
+.monaco-diff-editor [tabindex],
+.monaco-diff-editor [role='button'],
+.monaco-diff-editor input,
+.monaco-diff-editor textarea {
+  min-width: unset !important;
+  min-height: unset !important;
+}
+
+.monaco-diff-editor .inputarea,
+.monaco-diff-editor textarea,
+.monaco-diff-editor .monaco-mouse-cursor-text {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: transparent !important;
+  caret-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Force dark background on Monaco diff editor areas */
+.monaco-diff-editor,
+.monaco-diff-editor .margin,
+.monaco-diff-editor .margin-view-overlays,
+.monaco-diff-editor .line-numbers,
+.monaco-diff-editor .editor-scrollable,
+.monaco-diff-editor .overflow-guard {
+  background: #1e1e1e !important;
+  background-color: #1e1e1e !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  body {
+    --background: #000000;
+    --foreground: #ffffff;
+  }
+}
+
+/* Respect user's animation preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Zoom and Pan Cursor Styles */
+.cursor-grab {
+  cursor: grab;
+  cursor: -webkit-grab;
+}
+
+.cursor-grabbing {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+/* Enhanced cursor visibility for high contrast mode */
+@media (prefers-contrast: high) {
+  .cursor-grab::before,
+  .cursor-grabbing::before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    inset: 0;
+  }
+}
+
+/* Fade-in animation for zoom indicator */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 200ms ease-out;
+}
+
+/* Enhanced Focus Indicators for WCAG 2.1 AA Compliance */
+/* Default focus styles - visible focus ring for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid #60a5fa !important; /* blue-400 */
+  outline-offset: 2px !important;
+  z-index: 10;
+}
+
+/* Screen Reader Only Content */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Make sr-only content visible when focused */
+.sr-only:focus {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0.25rem 0.5rem !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  z-index: 1000 !important;
+}
+
+/* Not sr-only variant for elements that should become visible when focused */
+.focus\:not-sr-only:focus {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0.25rem 0.5rem !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+}
+
+/* High contrast mode improvements */
+@media (prefers-contrast: high) {
+  /* Ensure sufficient contrast for interactive elements */
+  button,
+  input,
+  select,
+  textarea {
+    border: 2px solid currentColor !important;
+  }
+
+  /* Ensure table borders are visible */
+  table,
+  th,
+  td {
+    border: 1px solid currentColor !important;
+  }
+
+  /* Make focus indicators more prominent */
+  *:focus-visible {
+    outline: 3px solid #ffffff !important;
+    outline-offset: 2px !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+}
+
+/* Ensure minimum touch target sizes for mobile accessibility */
+@media (pointer: coarse) {
+  button,
+  input[type='button'],
+  input[type='submit'],
+  input[type='reset'],
+  input[type='checkbox'],
+  input[type='radio'],
+  select,
+  [role='button'],
+  [role='tab'],
+  [role='menuitem'] {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+}
+
+/* Improved scrollbar styling for accessibility */
+.scrollbar-styled {
+  scrollbar-width: thin;
+  scrollbar-color: #6b7280 #f3f4f6;
+}
+
+.scrollbar-styled::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-styled::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 4px;
+}
+
+.scrollbar-styled::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 4px;
+}
+
+.scrollbar-styled::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* High contrast focus for better visibility */
+@media (prefers-contrast: high) {
+  *:focus-visible {
+    outline: 3px solid #ffffff !important;
+    outline-offset: 3px !important;
+  }
+}
+
+/* Custom focus styles for interactive elements */
+button:focus-visible,
+a:focus-visible,
+[role='button']:focus-visible,
+[role='link']:focus-visible,
+[tabindex]:focus-visible:not([tabindex='-1']) {
+  outline: 2px solid #60a5fa !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2) !important;
+}
+
+/* Form element focus styles */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #60a5fa !important;
+  outline-offset: 0 !important;
+  border-color: #60a5fa !important;
+}
+
+/* Skip links removed - were causing visual issues behind logo */
+
+/* Screen reader only text utility */
+.sr-only:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Ensure interactive elements maintain minimum touch target size */
+/* WCAG 2.5.5 Target Size (Level AAA) - 44x44px recommended for touch targets */
+button,
+[role='button'],
+[tabindex]:not([tabindex='-1']) {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Exempt header action buttons from touch target minimum - they use explicit sizing */
+button.header-action-btn {
+  min-height: unset;
+  min-width: unset;
+}
+
+/* Exempt inline text link buttons - they appear inline with text */
+button.inline-text-link {
+  min-height: unset;
+  min-width: unset;
+}
+
+@media (pointer: coarse) {
+  button.header-action-btn {
+    min-height: unset !important;
+    min-width: unset !important;
+  }
+}
+
+/* Exempt compact selects from touch target minimum - they use explicit sizing */
+select.compact-select {
+  min-height: unset;
+  min-width: unset;
+}
+
+@media (pointer: coarse) {
+  select.compact-select {
+    min-height: unset !important;
+    min-width: unset !important;
+  }
+}
+
+/* Links - no min-height to prevent breadcrumb wrapping issues */
+/* REMOVED: min-height: 24px on <a> tags was making links taller than surrounding text/spans */
+/* in flex containers with text-xs (12px), causing layout breaks and wrapping. */
+/* WCAG AA only requires contrast, not specific touch target sizes for text links. */
+/* Touch targets for mobile are enforced via @media (pointer: coarse) rule above. */
+
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Typography plugin handles all prose styling - no fallbacks needed */
+
+/* Enhanced Visual Hierarchy for Wiki Headers */
+.prose h1 {
+  @apply mb-6 border-b-2 border-neutral-300 pb-3 text-4xl font-bold dark:border-neutral-700;
+  line-height: 1.2;
+}
+
+.prose h2 {
+  @apply mb-4 mt-8 border-b border-neutral-200 pb-2 text-3xl font-semibold dark:border-neutral-800;
+  line-height: 1.3;
+}
+
+.prose h3 {
+  @apply mb-3 mt-6 text-2xl font-medium;
+  line-height: 1.4;
+}
+
+.prose h4 {
+  @apply mb-2 mt-4 text-xl font-normal italic;
+  line-height: 1.5;
+}
+
+/* Section spacing for better visual separation */
+.prose > * + h2 {
+  @apply mt-12;
+}
+
+.prose > * + h3 {
+  @apply mt-8;
+}
+
+/* Wiki infobox floating layout styles */
+.wiki-content-with-infobox {
+  /* Create a new block formatting context to contain floats properly */
+  display: flow-root;
+}
+
+/* Ensure content elements respect floating infoboxes */
+.wiki-content-with-infobox .prose * {
+  /* Prevent content from overlapping with floated infoboxes */
+  box-sizing: border-box;
+}
+
+/* Fix horizontal rules and borders to not extend under floating infoboxes */
+.wiki-content-with-infobox .prose hr {
+  /* Make horizontal rules respect floating elements */
+  clear: both;
+  margin-right: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure headings with border-bottom don't extend under infoboxes */
+.wiki-content-with-infobox .prose h1,
+.wiki-content-with-infobox .prose h2 {
+  /* Prevent heading underlines from going under floating infoboxes */
+  overflow: hidden;
+  display: flow-root;
+}
+
+/* Custom scrollbar styles for error display components */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(127, 29, 29, 0.1); /* red-900/10 */
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(220, 38, 38, 0.3); /* red-600/30 */
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(220, 38, 38, 0.5); /* red-600/50 */
+}
+
+/* Custom scrollbar styles for table containers */
+.scrollbar-styled {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.4) transparent; /* neutral-400/40 track transparent */
+}
+
+.scrollbar-styled::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-styled::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+
+.scrollbar-styled::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.4); /* neutral-400/40 */
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background-clip: content-box;
+}
+
+.scrollbar-styled::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.6); /* neutral-400/60 */
+  background-clip: content-box;
+}
+
+/* Dark mode scrollbar */
+@media (prefers-color-scheme: dark) {
+  .scrollbar-styled {
+    scrollbar-color: rgba(115, 115, 115, 0.4) transparent; /* neutral-500/40 track transparent */
+  }
+
+  .scrollbar-styled::-webkit-scrollbar-thumb {
+    background: rgba(115, 115, 115, 0.4); /* neutral-500/40 */
+  }
+
+  .scrollbar-styled::-webkit-scrollbar-thumb:hover {
+    background: rgba(115, 115, 115, 0.6); /* neutral-500/60 */
+  }
+}
+
+/* Error scroll container styles removed - unused */
+
+/* Settings Layout Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Respect reduced motion preferences for settings animations */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fadeIn {
+    animation: none;
+  }
+}
+
+/* Reference Card Deletion Animation */
+@keyframes fadeOutScale {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.reference-card-deleting {
+  animation: fadeOutScale 300ms ease-out forwards;
+  pointer-events: none;
+}
+
+/* Masonry Grid Layout - CSS Columns */
+.masonry-grid {
+  /* Browser will calculate optimal column count based on available width and min column width */
+  column-count: auto;
+  column-width: 250px;
+  column-gap: 1rem;
+  /* Prevent orphaned columns at bottom of container */
+  orphans: 1;
+  widows: 1;
+}
+
+.masonry-item {
+  /* Prevent items from breaking across columns */
+  break-inside: avoid;
+  /* Prevent page breaks inside items for print */
+  page-break-inside: avoid;
+  /* Margin between stacked items */
+  margin-bottom: 1rem;
+  /* Force display block to prevent weird column breaks */
+  display: block;
+}
+
+/* Responsive column counts for better control on different screen sizes */
+@media (max-width: 640px) {
+  .masonry-grid {
+    column-count: 1;
+    column-width: auto;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .masonry-grid {
+    column-count: auto;
+    column-width: 250px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .masonry-grid {
+    column-count: auto;
+    column-width: 280px;
+  }
+}

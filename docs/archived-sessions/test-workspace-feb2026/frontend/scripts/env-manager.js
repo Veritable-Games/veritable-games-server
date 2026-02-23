@@ -1,0 +1,720 @@
+#!/usr/bin/env node
+
+/**
+ * Environment Configuration Manager
+ * Handles environment variables, secrets, and configuration across environments
+ * Supports vault integration, validation, and secure secret management
+ */
+
+const fs = require('fs').promises;
+const path = require('path');
+const crypto = require('crypto');
+const { exec } =
+  require('child_process').promise || require('util').promisify(require('child_process').exec);
+const readline = require('readline');
+
+class EnvironmentManager {
+  constructor() {
+    this.envFile = '.env.local';
+    this.vaultFile = '.env.vault';
+    this.secretsFile = '.env.secrets.enc';
+    this.schemaFile = '.env.schema.json';
+    this.environments = ['development', 'staging', 'production'];
+  }
+
+  /**
+   * Initialize environment configuration
+   */
+  async init() {
+    console.log('Initializing environment configuration...\n');
+
+    // Create schema file
+    const schema = {
+      version: '1.0.0',
+      variables: {
+        // Core configuration
+        NODE_ENV: {
+          type: 'string',
+          required: true,
+          enum: ['development', 'test', 'staging', 'production'],
+          description: 'Application environment',
+        },
+        NEXT_PUBLIC_API_URL: {
+          type: 'string',
+          required: true,
+          pattern: '^https?://',
+          description: 'Public API endpoint',
+        },
+
+        // Security
+        SESSION_SECRET: {
+          type: 'string',
+          required: true,
+          secret: true,
+          minLength: 32,
+          description: 'Secret for session encryption',
+        },
+        CSRF_SECRET: {
+          type: 'string',
+          required: true,
+          secret: true,
+          minLength: 32,
+          description: 'Secret for CSRF token generation',
+        },
+        ENCRYPTION_KEY: {
+          type: 'string',
+          required: true,
+          secret: true,
+          minLength: 32,
+          description: 'General encryption key',
+        },
+
+        // Database
+        DATABASE_PATH: {
+          type: 'string',
+          required: true,
+          default: './data',
+          description: 'Path to database files',
+        },
+
+        // Redis
+        REDIS_URL: {
+          type: 'string',
+          required: false,
+          pattern: '^redis://',
+          description: 'Redis connection URL',
+        },
+
+        // AWS
+        AWS_ACCESS_KEY_ID: {
+          type: 'string',
+          required: false,
+          secret: true,
+          description: 'AWS access key',
+        },
+        AWS_SECRET_ACCESS_KEY: {
+          type: 'string',
+          required: false,
+          secret: true,
+          description: 'AWS secret key',
+        },
+        AWS_REGION: {
+          type: 'string',
+          required: false,
+          default: 'us-east-1',
+          description: 'AWS region',
+        },
+        S3_BUCKET: {
+          type: 'string',
+          required: false,
+          description: 'S3 bucket for backups',
+        },
+
+        // Monitoring
+        SENTRY_DSN: {
+          type: 'string',
+          required: false,
+          secret: true,
+          pattern: '^https://',
+          description: 'Sentry error tracking DSN',
+        },
+        SENTRY_ORG: {
+          type: 'string',
+          required: false,
+          description: 'Sentry organization',
+        },
+        SENTRY_PROJECT: {
+          type: 'string',
+          required: false,
+          description: 'Sentry project',
+        },
+
+        // CDN
+        CDN_URL: {
+          type: 'string',
+          required: false,
+          pattern: '^https?://',
+          description: 'CDN base URL',
+        },
+        CLOUDFLARE_CDN_DOMAIN: {
+          type: 'string',
+          required: false,
+          description: 'Cloudflare CDN domain',
+        },
+        CLOUDFLARE_IMAGES: {
+          type: 'boolean',
+          required: false,
+          default: false,
+          description: 'Enable Cloudflare image optimization',
+        },
+
+        // Feature flags
+        ENABLE_DEBUG: {
+          type: 'boolean',
+          required: false,
+          default: false,
+          description: 'Enable debug mode',
+        },
+        ENABLE_MAINTENANCE_MODE: {
+          type: 'boolean',
+          required: false,
+          default: false,
+          description: 'Enable maintenance mode',
+        },
+
+        // Build configuration
+        TURBO_TOKEN: {
+          type: 'string',
+          required: false,
+          secret: true,
+          description: 'Turbopack remote cache token',
+        },
+        TURBO_TEAM: {
+          type: 'string',
+          required: false,
+          description: 'Turbopack team identifier',
+        },
+      },
+    };
+
+    await fs.writeFile(this.schemaFile, JSON.stringify(schema, null, 2));
+    console.log('✓ Created environment schema');
+
+    // Create example .env.local
+    const exampleEnv = `# Environment Configuration
+# Generated by env-manager
+
+# Core
+NODE_ENV=development
+NEXT_PUBLIC_API_URL=http://localhost:3000
+
+# Security (generate with: openssl rand -hex 32)
+SESSION_SECRET=your-session-secret-here
+CSRF_SECRET=your-csrf-secret-here
+ENCRYPTION_KEY=your-encryption-key-here
+
+# Database
+DATABASE_PATH=./data
+
+# Optional services
+# REDIS_URL=redis://localhost:6379
+# SENTRY_DSN=https://your-sentry-dsn
+# AWS_ACCESS_KEY_ID=your-aws-key
+# AWS_SECRET_ACCESS_KEY=your-aws-secret
+
+# Feature flags
+ENABLE_DEBUG=true
+ENABLE_MAINTENANCE_MODE=false
+`;
+
+    if (!(await this.fileExists(this.envFile))) {
+      await fs.writeFile(this.envFile, exampleEnv);
+      console.log('✓ Created .env.local example');
+    }
+
+    console.log('\n✓ Environment configuration initialized');
+    console.log('  Next steps:');
+    console.log('  1. Update .env.local with your values');
+    console.log('  2. Run "npm run env:validate" to verify configuration');
+    console.log('  3. Run "npm run env:encrypt" to secure secrets');
+  }
+
+  /**
+   * Validate environment configuration
+   */
+  async validate(environment = process.env.NODE_ENV || 'development') {
+    console.log(`Validating environment: ${environment}\n`);
+
+    // Load schema
+    const schemaContent = await fs.readFile(this.schemaFile, 'utf8');
+    const schema = JSON.parse(schemaContent);
+
+    // Load current environment
+    const env = await this.loadEnvironment(environment);
+
+    const errors = [];
+    const warnings = [];
+
+    // Validate each variable
+    for (const [name, config] of Object.entries(schema.variables)) {
+      const value = env[name];
+
+      // Check required
+      if (config.required && !value) {
+        errors.push(`Missing required variable: ${name}`);
+        continue;
+      }
+
+      if (!value && !config.required) {
+        if (config.default !== undefined) {
+          warnings.push(`Using default for ${name}: ${config.default}`);
+        }
+        continue;
+      }
+
+      // Type validation
+      if (config.type === 'boolean') {
+        if (value !== 'true' && value !== 'false') {
+          errors.push(`${name} must be 'true' or 'false'`);
+        }
+      } else if (config.type === 'number') {
+        if (isNaN(Number(value))) {
+          errors.push(`${name} must be a number`);
+        }
+      }
+
+      // Pattern validation
+      if (config.pattern) {
+        const regex = new RegExp(config.pattern);
+        if (!regex.test(value)) {
+          errors.push(`${name} does not match pattern: ${config.pattern}`);
+        }
+      }
+
+      // Enum validation
+      if (config.enum && !config.enum.includes(value)) {
+        errors.push(`${name} must be one of: ${config.enum.join(', ')}`);
+      }
+
+      // Length validation
+      if (config.minLength && value.length < config.minLength) {
+        errors.push(`${name} must be at least ${config.minLength} characters`);
+      }
+    }
+
+    // Additional validations
+    if (environment === 'production') {
+      // Production-specific checks
+      if (!env.SENTRY_DSN) {
+        warnings.push('SENTRY_DSN not configured for production');
+      }
+      if (!env.CDN_URL) {
+        warnings.push('CDN_URL not configured for production');
+      }
+      if (env.ENABLE_DEBUG === 'true') {
+        errors.push('ENABLE_DEBUG must be false in production');
+      }
+    }
+
+    // Print results
+    if (errors.length > 0) {
+      console.error('❌ Validation failed with errors:');
+      errors.forEach(e => console.error(`  - ${e}`));
+    }
+
+    if (warnings.length > 0) {
+      console.warn('\n⚠️  Warnings:');
+      warnings.forEach(w => console.warn(`  - ${w}`));
+    }
+
+    if (errors.length === 0) {
+      console.log('✅ Environment configuration is valid');
+      return true;
+    }
+
+    return false;
+  }
+
+  /**
+   * Generate secrets
+   */
+  async generateSecrets() {
+    console.log('Generating secure secrets...\n');
+
+    const secrets = {
+      SESSION_SECRET: crypto.randomBytes(32).toString('hex'),
+      CSRF_SECRET: crypto.randomBytes(32).toString('hex'),
+      ENCRYPTION_KEY: crypto.randomBytes(32).toString('hex'),
+      BACKUP_ENCRYPTION_KEY: crypto.randomBytes(32).toString('hex'),
+    };
+
+    console.log('Generated secrets:');
+    for (const [name, value] of Object.entries(secrets)) {
+      console.log(`${name}=${value}`);
+    }
+
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    });
+
+    const answer = await new Promise(resolve => {
+      rl.question('\nUpdate .env.local with these secrets? (y/n): ', resolve);
+    });
+
+    rl.close();
+
+    if (answer.toLowerCase() === 'y') {
+      await this.updateEnvFile(secrets);
+      console.log('✓ Updated .env.local with new secrets');
+    }
+
+    return secrets;
+  }
+
+  /**
+   * Encrypt secrets for secure storage
+   */
+  async encryptSecrets(masterKey) {
+    console.log('Encrypting secrets...\n');
+
+    // Load current environment
+    const env = await this.loadEnvironment();
+
+    // Load schema to identify secrets
+    const schemaContent = await fs.readFile(this.schemaFile, 'utf8');
+    const schema = JSON.parse(schemaContent);
+
+    const secrets = {};
+
+    // Extract secrets
+    for (const [name, config] of Object.entries(schema.variables)) {
+      if (config.secret && env[name]) {
+        secrets[name] = env[name];
+      }
+    }
+
+    if (Object.keys(secrets).length === 0) {
+      console.log('No secrets found to encrypt');
+      return;
+    }
+
+    // Encrypt secrets
+    const key = crypto.scryptSync(masterKey || 'default-master-key', 'salt', 32);
+    const iv = crypto.randomBytes(16);
+    const cipher = crypto.createCipheriv('aes-256-cbc', key, iv);
+
+    const encrypted = Buffer.concat([iv, cipher.update(JSON.stringify(secrets)), cipher.final()]);
+
+    await fs.writeFile(this.secretsFile, encrypted.toString('base64'));
+
+    console.log(`✓ Encrypted ${Object.keys(secrets).length} secrets`);
+    console.log(`  Stored in: ${this.secretsFile}`);
+    console.log('\n⚠️  Keep your master key safe!');
+  }
+
+  /**
+   * Decrypt secrets
+   */
+  async decryptSecrets(masterKey) {
+    if (!(await this.fileExists(this.secretsFile))) {
+      throw new Error('No encrypted secrets file found');
+    }
+
+    const encryptedContent = await fs.readFile(this.secretsFile, 'utf8');
+    const encrypted = Buffer.from(encryptedContent, 'base64');
+
+    const key = crypto.scryptSync(masterKey || 'default-master-key', 'salt', 32);
+    const iv = encrypted.slice(0, 16);
+    const data = encrypted.slice(16);
+
+    const decipher = crypto.createDecipheriv('aes-256-cbc', key, iv);
+    const decrypted = Buffer.concat([decipher.update(data), decipher.final()]);
+
+    return JSON.parse(decrypted.toString());
+  }
+
+  /**
+   * Switch environment
+   */
+  async switchEnvironment(targetEnv) {
+    if (!this.environments.includes(targetEnv)) {
+      throw new Error(`Invalid environment: ${targetEnv}`);
+    }
+
+    console.log(`Switching to ${targetEnv} environment...\n`);
+
+    // Load vault configuration
+    const vaultContent = await fs.readFile(this.vaultFile, 'utf8');
+    const vault = this.parseVault(vaultContent);
+
+    if (!vault[targetEnv]) {
+      throw new Error(`No configuration found for ${targetEnv}`);
+    }
+
+    // Build environment variables
+    const env = { ...vault[targetEnv] };
+
+    // Resolve vault references
+    for (const [key, value] of Object.entries(env)) {
+      if (typeof value === 'string' && value.startsWith('@vault:')) {
+        const [, scope, secretKey] = value.split(':');
+
+        if (scope === 'all' || scope === targetEnv) {
+          // Try to get from encrypted secrets
+          try {
+            const secrets = await this.decryptSecrets();
+            if (secrets[secretKey]) {
+              env[key] = secrets[secretKey];
+            } else {
+              console.warn(`Warning: Secret ${secretKey} not found in vault`);
+              env[key] = `<${secretKey}-not-found>`;
+            }
+          } catch (err) {
+            console.warn(`Warning: Could not decrypt secrets: ${err.message}`);
+            env[key] = `<${secretKey}-encrypted>`;
+          }
+        }
+      }
+    }
+
+    // Write new .env.local
+    const envContent = Object.entries(env)
+      .map(([key, value]) => `${key}=${value}`)
+      .join('\n');
+
+    await fs.writeFile(this.envFile, envContent);
+
+    console.log(`✓ Switched to ${targetEnv} environment`);
+    console.log(`  Configuration written to ${this.envFile}`);
+  }
+
+  /**
+   * Export environment for CI/CD
+   */
+  async exportForCI(environment, format = 'github') {
+    console.log(`Exporting ${environment} environment for CI/CD...\n`);
+
+    const env = await this.loadEnvironment(environment);
+
+    // Filter out secrets for export
+    const schemaContent = await fs.readFile(this.schemaFile, 'utf8');
+    const schema = JSON.parse(schemaContent);
+
+    const publicVars = {};
+    const secretVars = {};
+
+    for (const [name, value] of Object.entries(env)) {
+      if (schema.variables[name]?.secret) {
+        secretVars[name] = value;
+      } else {
+        publicVars[name] = value;
+      }
+    }
+
+    let output;
+
+    switch (format) {
+      case 'github':
+        // GitHub Actions format
+        output = `# GitHub Actions Environment Variables\n\n`;
+        output += `# Add these to your repository secrets:\n`;
+        for (const [name] of Object.entries(secretVars)) {
+          output += `# - ${name}\n`;
+        }
+        output += `\n# Add these to your workflow:\n`;
+        output += `env:\n`;
+        for (const [name, value] of Object.entries(publicVars)) {
+          output += `  ${name}: ${value}\n`;
+        }
+        break;
+
+      case 'docker':
+        // Docker format
+        output = `# Docker Environment Variables\n\n`;
+        for (const [name, value] of Object.entries(publicVars)) {
+          output += `ENV ${name}="${value}"\n`;
+        }
+        output += `\n# Pass secrets at runtime:\n`;
+        for (const [name] of Object.entries(secretVars)) {
+          output += `# -e ${name}=$${name}\n`;
+        }
+        break;
+
+      case 'kubernetes':
+        // Kubernetes ConfigMap and Secret
+        output = `# Kubernetes ConfigMap\n`;
+        output += `apiVersion: v1\n`;
+        output += `kind: ConfigMap\n`;
+        output += `metadata:\n`;
+        output += `  name: app-config\n`;
+        output += `data:\n`;
+        for (const [name, value] of Object.entries(publicVars)) {
+          output += `  ${name}: "${value}"\n`;
+        }
+        output += `---\n`;
+        output += `# Kubernetes Secret (base64 encode values)\n`;
+        output += `apiVersion: v1\n`;
+        output += `kind: Secret\n`;
+        output += `metadata:\n`;
+        output += `  name: app-secrets\n`;
+        output += `type: Opaque\n`;
+        output += `data:\n`;
+        for (const [name, value] of Object.entries(secretVars)) {
+          const encoded = Buffer.from(value).toString('base64');
+          output += `  ${name}: ${encoded}\n`;
+        }
+        break;
+
+      default:
+        // Shell export format
+        output = `#!/bin/bash\n# Environment Variables Export\n\n`;
+        for (const [name, value] of Object.entries(env)) {
+          output += `export ${name}="${value}"\n`;
+        }
+    }
+
+    const filename = `env-export-${environment}-${format}.txt`;
+    await fs.writeFile(filename, output);
+
+    console.log(`✓ Exported environment to ${filename}`);
+    console.log(`  Format: ${format}`);
+    console.log(`  Public variables: ${Object.keys(publicVars).length}`);
+    console.log(`  Secret variables: ${Object.keys(secretVars).length}`);
+  }
+
+  // Utility functions
+  async loadEnvironment(environment = 'development') {
+    const env = {};
+
+    // Load from .env.local if it exists
+    if (await this.fileExists(this.envFile)) {
+      const content = await fs.readFile(this.envFile, 'utf8');
+      const lines = content.split('\n');
+
+      for (const line of lines) {
+        if (line && !line.startsWith('#')) {
+          const [key, ...valueParts] = line.split('=');
+          if (key) {
+            env[key.trim()] = valueParts.join('=').trim();
+          }
+        }
+      }
+    }
+
+    // Override with process.env
+    Object.assign(env, process.env);
+
+    return env;
+  }
+
+  parseVault(content) {
+    const vault = {};
+    let currentSection = null;
+
+    const lines = content.split('\n');
+
+    for (const line of lines) {
+      if (line.startsWith('[') && line.endsWith(']')) {
+        currentSection = line.slice(1, -1);
+        vault[currentSection] = {};
+      } else if (currentSection && line.includes('=')) {
+        const [key, ...valueParts] = line.split('=');
+        if (key) {
+          vault[currentSection][key.trim()] = valueParts.join('=').trim();
+        }
+      }
+    }
+
+    return vault;
+  }
+
+  async updateEnvFile(updates) {
+    let content = '';
+
+    if (await this.fileExists(this.envFile)) {
+      content = await fs.readFile(this.envFile, 'utf8');
+    }
+
+    for (const [key, value] of Object.entries(updates)) {
+      const regex = new RegExp(`^${key}=.*$`, 'gm');
+      if (regex.test(content)) {
+        content = content.replace(regex, `${key}=${value}`);
+      } else {
+        content += `\n${key}=${value}`;
+      }
+    }
+
+    await fs.writeFile(this.envFile, content);
+  }
+
+  async fileExists(filepath) {
+    try {
+      await fs.access(filepath);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+}
+
+// CLI Interface
+async function main() {
+  const manager = new EnvironmentManager();
+  const command = process.argv[2];
+
+  try {
+    switch (command) {
+      case 'init':
+        await manager.init();
+        break;
+
+      case 'validate':
+        const env = process.argv[3] || process.env.NODE_ENV || 'development';
+        const isValid = await manager.validate(env);
+        process.exit(isValid ? 0 : 1);
+        break;
+
+      case 'generate-secrets':
+        await manager.generateSecrets();
+        break;
+
+      case 'encrypt':
+        const masterKey = process.argv[3] || process.env.MASTER_KEY;
+        await manager.encryptSecrets(masterKey);
+        break;
+
+      case 'decrypt':
+        const decryptKey = process.argv[3] || process.env.MASTER_KEY;
+        const secrets = await manager.decryptSecrets(decryptKey);
+        console.log('Decrypted secrets:', Object.keys(secrets));
+        break;
+
+      case 'switch':
+        const targetEnv = process.argv[3];
+        if (!targetEnv) {
+          console.error('Usage: npm run env:switch <environment>');
+          process.exit(1);
+        }
+        await manager.switchEnvironment(targetEnv);
+        break;
+
+      case 'export':
+        const exportEnv = process.argv[3] || 'production';
+        const format = process.argv[4] || 'github';
+        await manager.exportForCI(exportEnv, format);
+        break;
+
+      default:
+        console.log(`
+Environment Configuration Manager
+
+Commands:
+  init                Initialize environment configuration
+  validate [env]      Validate environment variables
+  generate-secrets    Generate secure random secrets
+  encrypt [key]       Encrypt secrets for storage
+  decrypt [key]       Decrypt stored secrets
+  switch <env>        Switch to different environment
+  export <env> [fmt]  Export for CI/CD (github/docker/kubernetes)
+
+Examples:
+  npm run env:init
+  npm run env:validate production
+  npm run env:generate-secrets
+  npm run env:encrypt myMasterKey123
+  npm run env:switch staging
+  npm run env:export production github
+        `);
+    }
+  } catch (error) {
+    console.error('Error:', error.message);
+    process.exit(1);
+  }
+}
+
+if (require.main === module) {
+  main().catch(console.error);
+}
+
+module.exports = EnvironmentManager;

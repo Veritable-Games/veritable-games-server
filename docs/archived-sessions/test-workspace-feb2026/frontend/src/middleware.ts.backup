@@ -1,0 +1,130 @@
+/**
+ * Global Authentication Middleware
+ *
+ * Implements full lockdown mode - all pages require authentication.
+ * Only the login/register pages and authentication API are publicly accessible.
+ *
+ * This middleware runs on EVERY request and redirects unauthenticated users
+ * to the login page, storing the original URL for post-login redirect.
+ */
+
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+import { getSecurityHeaders } from '@/lib/security/csp';
+
+/**
+ * Public paths that don't require authentication
+ */
+const PUBLIC_PATHS = [
+  '/auth/login',
+  '/auth/register',
+  '/api/auth/login',
+  '/api/auth/register',
+  '/api/auth/session',
+  '/api/health',
+];
+
+/**
+ * Check if a path is publicly accessible
+ */
+function isPublicPath(pathname: string): boolean {
+  return PUBLIC_PATHS.some(publicPath => pathname.startsWith(publicPath));
+}
+
+/**
+ * Check if a path is a static asset
+ */
+function isStaticAsset(pathname: string): boolean {
+  return (
+    pathname.startsWith('/_next/') ||
+    pathname.startsWith('/static/') ||
+    pathname.startsWith('/uploads/') ||
+    pathname.includes('.') // Files with extensions (CSS, JS, images, etc.)
+  );
+}
+
+/**
+ * Check if user has a valid session cookie
+ *
+ * Note: This is a lightweight check - actual session validation happens
+ * in API routes via getCurrentUser(). The middleware just gates access.
+ */
+function hasSessionCookie(request: NextRequest): boolean {
+  const sessionId = request.cookies.get('session_id')?.value;
+  return !!sessionId;
+}
+
+/**
+ * Global middleware function
+ */
+export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // Allow static assets without authentication
+  if (isStaticAsset(pathname)) {
+    return NextResponse.next();
+  }
+
+  // Allow public paths
+  if (isPublicPath(pathname)) {
+    return NextResponse.next();
+  }
+
+  // Check for session cookie
+  const hasSession = hasSessionCookie(request);
+
+  if (!hasSession) {
+    // User is not authenticated - redirect to login
+    const loginUrl = new URL('/auth/login', request.url);
+
+    // Store the original URL for post-login redirect (except for root)
+    if (pathname !== '/') {
+      loginUrl.searchParams.set('redirect', pathname);
+    }
+
+    const response = NextResponse.redirect(loginUrl);
+
+    // Add security headers
+    const isDevelopment = process.env.NODE_ENV === 'development';
+    const securityHeaders = getSecurityHeaders(isDevelopment);
+
+    Object.entries(securityHeaders).forEach(([key, value]) => {
+      response.headers.set(key, value);
+    });
+
+    return response;
+  }
+
+  // User has session cookie - allow access
+  // (Actual session validation happens in API routes via getCurrentUser)
+  const response = NextResponse.next();
+
+  // Add security headers to all responses
+  const isDevelopment = process.env.NODE_ENV === 'development';
+  const securityHeaders = getSecurityHeaders(isDevelopment);
+
+  Object.entries(securityHeaders).forEach(([key, value]) => {
+    response.headers.set(key, value);
+  });
+
+  return response;
+}
+
+/**
+ * Matcher configuration
+ *
+ * This tells Next.js which routes to run the middleware on.
+ * We want to run it on all routes except static files.
+ */
+export const config = {
+  matcher: [
+    /*
+     * Match all request paths except:
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     * - public files with extensions
+     */
+    '/((?!_next/static|_next/image|favicon.ico|.*\\..*$).*)',
+  ],
+};

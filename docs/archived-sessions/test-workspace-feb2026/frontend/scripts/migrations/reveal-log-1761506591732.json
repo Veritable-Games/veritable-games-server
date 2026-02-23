@@ -1,0 +1,1143 @@
+{
+  "timestamp": "2025-10-26T19:23:11.748Z",
+  "mode": "execute",
+  "backupPath": "/home/user/Projects/web/veritable-games-main/frontend/data/content.backup-reveal-1761506591735.db",
+  "summary": {
+    "total": 161,
+    "revealed": 161,
+    "errors": 0,
+    "byGalleryType": {
+      "references": 149,
+      "concept-art": 12
+    }
+  },
+  "details": [
+    {
+      "id": 4,
+      "gallery_type": "references",
+      "filename": "ref-1759626335696-1befaf3fea60ebf3.jpg",
+      "was_deleted_at": "2025-10-06 16:29:09",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 7,
+      "gallery_type": "references",
+      "filename": "ref-1759626615916-bfd4b3ffb26b1ca2.jpg",
+      "was_deleted_at": "2025-10-08 21:40:52",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 8,
+      "gallery_type": "references",
+      "filename": "ref-1759626627256-4e4a9cbf3ae5744d.jpg",
+      "was_deleted_at": "2025-10-06 05:33:46",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 11,
+      "gallery_type": "references",
+      "filename": "ref-1759626676921-0a7b77b6420a0713.PNG",
+      "was_deleted_at": "2025-10-08 21:53:22",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 13,
+      "gallery_type": "references",
+      "filename": "ref_1759637985880_eb77b629f5432b34.jpg",
+      "was_deleted_at": "2025-10-06 05:33:40",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 14,
+      "gallery_type": "references",
+      "filename": "ref_1759700960347_f6e01a04c7856fde.jpg",
+      "was_deleted_at": "2025-10-08 21:53:37",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 22,
+      "gallery_type": "references",
+      "filename": "ref_1759701469987_9e05e6ff79ccffcb.jpg",
+      "was_deleted_at": "2025-10-08 22:24:31",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 23,
+      "gallery_type": "references",
+      "filename": "ref_1759724344830_3327be3aad5a47c8.png",
+      "was_deleted_at": "2025-10-06 05:13:06",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 24,
+      "gallery_type": "references",
+      "filename": "ref_1759727618094_4a8324ea23b78f77.gif",
+      "was_deleted_at": "2025-10-06 05:13:45",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 30,
+      "gallery_type": "references",
+      "filename": "ref_1759941254064_f4e6fdc974e0bbe6.jpg",
+      "was_deleted_at": "2025-10-08 17:11:55",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 31,
+      "gallery_type": "references",
+      "filename": "ref_1759941260605_78e575d22fd588cc.jpg",
+      "was_deleted_at": "2025-10-08 16:38:50",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 32,
+      "gallery_type": "references",
+      "filename": "ref_1759941261961_60a4c40fbd726b0a.jpg",
+      "was_deleted_at": "2025-10-08 16:40:19",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 34,
+      "gallery_type": "references",
+      "filename": "ref_1759941344571_892d407300f219ed.gif",
+      "was_deleted_at": "2025-10-08 16:35:55",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 38,
+      "gallery_type": "references",
+      "filename": "ref_1759941669566_0eb2c35b777a76eb.jpg",
+      "was_deleted_at": "2025-10-08 16:41:49",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 40,
+      "gallery_type": "references",
+      "filename": "ref_1759941779146_a066fb34ec9a091a.jpg",
+      "was_deleted_at": "2025-10-08 16:43:04",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 42,
+      "gallery_type": "references",
+      "filename": "ref_1759941819290_7a4769a9d321884e.jpg",
+      "was_deleted_at": "2025-10-08 16:47:53",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 43,
+      "gallery_type": "references",
+      "filename": "ref_1759941876084_995ebbe99b1440ad.jpg",
+      "was_deleted_at": "2025-10-08 16:48:04",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 52,
+      "gallery_type": "references",
+      "filename": "ref_1759942032883_6e991a828b0318cd.jpg",
+      "was_deleted_at": "2025-10-08 16:47:56",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 53,
+      "gallery_type": "references",
+      "filename": "ref_1759942034322_b6eb6c0ea612c1f3.jpg",
+      "was_deleted_at": "2025-10-08 16:47:59",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 54,
+      "gallery_type": "references",
+      "filename": "ref_1759942098869_995ebbe99b1440ad.jpg",
+      "was_deleted_at": "2025-10-08 21:55:03",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 68,
+      "gallery_type": "references",
+      "filename": "ref_1759942284122_bc3cd047431019ac.jpg",
+      "was_deleted_at": "2025-10-08 21:30:28",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 69,
+      "gallery_type": "references",
+      "filename": "ref_1759942309619_b99fb239fe9c07d9.jpg",
+      "was_deleted_at": "2025-10-08 17:24:56",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 73,
+      "gallery_type": "references",
+      "filename": "ref_1759942340819_455abb89230241f5.jpg",
+      "was_deleted_at": "2025-10-08 17:02:25",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 75,
+      "gallery_type": "references",
+      "filename": "ref_1759942354876_2e76cc6d94d16616.jpg",
+      "was_deleted_at": "2025-10-08 17:14:12",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 78,
+      "gallery_type": "references",
+      "filename": "ref_1759942413768_aa245a53f456d61a.jpg",
+      "was_deleted_at": "2025-10-08 17:12:00",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 79,
+      "gallery_type": "references",
+      "filename": "ref_1759942436424_2ec11ac848019937.jpg",
+      "was_deleted_at": "2025-10-08 17:25:00",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 85,
+      "gallery_type": "references",
+      "filename": "ref_1759942470942_1d070c6588610780.jpg",
+      "was_deleted_at": "2025-10-08 17:25:05",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 86,
+      "gallery_type": "references",
+      "filename": "ref_1759942476865_2a7328b9a4f6aebb.jpg",
+      "was_deleted_at": "2025-10-08 17:24:00",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 88,
+      "gallery_type": "references",
+      "filename": "ref_1759942551198_8d8fdffbefb2b504.jpg",
+      "was_deleted_at": "2025-10-08 17:23:51",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 89,
+      "gallery_type": "references",
+      "filename": "ref_1759942552430_5c61a88b348150c2.jpg",
+      "was_deleted_at": "2025-10-08 17:23:49",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 90,
+      "gallery_type": "references",
+      "filename": "ref_1759942553777_773ead236f5a3223.jpg",
+      "was_deleted_at": "2025-10-08 17:23:53",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 94,
+      "gallery_type": "references",
+      "filename": "ref_1759942597524_9943fb127c6ab8a0.jpg",
+      "was_deleted_at": "2025-10-13 05:23:34",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 102,
+      "gallery_type": "references",
+      "filename": "ref_1759942730106_ca8abc5d672de499.jpg",
+      "was_deleted_at": "2025-10-08 21:41:35",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 104,
+      "gallery_type": "references",
+      "filename": "ref_1759942802774_4bb640db1ecb36c6.jpg",
+      "was_deleted_at": "2025-10-08 17:14:00",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 107,
+      "gallery_type": "references",
+      "filename": "ref_1759942854989_0894eaffa1b77d16.jpg",
+      "was_deleted_at": "2025-10-08 17:01:19",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 110,
+      "gallery_type": "references",
+      "filename": "ref_1759942925677_e929b82bdbf26dbe.jpg",
+      "was_deleted_at": "2025-10-08 17:02:42",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 115,
+      "gallery_type": "references",
+      "filename": "ref_1759943027116_2439605b42013b57.jpg",
+      "was_deleted_at": "2025-10-08 17:14:39",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 121,
+      "gallery_type": "references",
+      "filename": "ref_1759943107114_4bb640db1ecb36c6.jpg",
+      "was_deleted_at": "2025-10-08 17:05:34",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 125,
+      "gallery_type": "references",
+      "filename": "ref_1759943196676_bf055b6a3df40978.jpg",
+      "was_deleted_at": "2025-10-08 17:24:44",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 126,
+      "gallery_type": "references",
+      "filename": "ref_1759943213152_5396d19298bd1ee2.jpg",
+      "was_deleted_at": "2025-10-08 17:06:59",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 130,
+      "gallery_type": "references",
+      "filename": "ref_1759943252214_8bb9544a9da27d69.jpg",
+      "was_deleted_at": "2025-10-08 17:24:47",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 136,
+      "gallery_type": "references",
+      "filename": "ref_1759943329791_7aa4bd19efdf317d.jpg",
+      "was_deleted_at": "2025-10-08 17:11:39",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 137,
+      "gallery_type": "references",
+      "filename": "ref_1759943335650_4df7a71760dbf874.jpg",
+      "was_deleted_at": "2025-10-08 17:11:37",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 143,
+      "gallery_type": "references",
+      "filename": "ref_1759943425669_faffbdb1cc863ca3.jpg",
+      "was_deleted_at": "2025-10-08 21:25:46",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 151,
+      "gallery_type": "references",
+      "filename": "ref_1759943662553_bd144f588483c086.jpg",
+      "was_deleted_at": "2025-10-08 21:18:38",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 155,
+      "gallery_type": "references",
+      "filename": "ref_1759943713437_09aa629d1b0404a4.jpg",
+      "was_deleted_at": "2025-10-08 21:40:43",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 156,
+      "gallery_type": "references",
+      "filename": "ref_1759943715197_9c157c67109ddbc5.jpg",
+      "was_deleted_at": "2025-10-08 21:40:41",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 157,
+      "gallery_type": "references",
+      "filename": "ref_1759943719614_e847e939eac96d8d.jpg",
+      "was_deleted_at": "2025-10-08 21:40:38",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 158,
+      "gallery_type": "references",
+      "filename": "ref_1759943721159_980db9fa441fc915.jpg",
+      "was_deleted_at": "2025-10-08 21:40:46",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 161,
+      "gallery_type": "references",
+      "filename": "ref_1759943799531_b183d4da96ff31a2.jpg",
+      "was_deleted_at": "2025-10-08 17:17:06",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 163,
+      "gallery_type": "references",
+      "filename": "ref_1759943835249_b183d4da96ff31a2.jpg",
+      "was_deleted_at": "2025-10-08 21:53:26",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 185,
+      "gallery_type": "references",
+      "filename": "ref_1759944222703_3e23f82d6a5a3a92.jpg",
+      "was_deleted_at": "2025-10-08 17:25:20",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 186,
+      "gallery_type": "references",
+      "filename": "ref_1759944247725_2a7328b9a4f6aebb.jpg",
+      "was_deleted_at": "2025-10-08 17:24:28",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 195,
+      "gallery_type": "references",
+      "filename": "ref_1759944483762_128f78773f45f7b1.jpg",
+      "was_deleted_at": "2025-10-24 23:29:20",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 196,
+      "gallery_type": "references",
+      "filename": "ref_1759944486469_abad837581ab510c.jpg",
+      "was_deleted_at": "2025-10-24 23:29:26",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 197,
+      "gallery_type": "references",
+      "filename": "ref_1759944496280_873ff924ec62e259.jpg",
+      "was_deleted_at": "2025-10-08 21:40:59",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 200,
+      "gallery_type": "references",
+      "filename": "ref_1759944513738_9867b39501e67f8f.jpg",
+      "was_deleted_at": "2025-10-08 21:29:57",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 202,
+      "gallery_type": "references",
+      "filename": "ref_1759944564538_84904208c38c7c20.jpg",
+      "was_deleted_at": "2025-10-08 17:30:22",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 205,
+      "gallery_type": "references",
+      "filename": "ref_1759944652297_3f8e44b37cb7f83f.jpg",
+      "was_deleted_at": "2025-10-08 21:23:11",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 214,
+      "gallery_type": "references",
+      "filename": "ref_1759944753760_e2035d4f2b66cb01.jpg",
+      "was_deleted_at": "2025-10-08 17:32:39",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 216,
+      "gallery_type": "references",
+      "filename": "ref_1759948317283_12b59bbd48e8362a.jpg",
+      "was_deleted_at": "2025-10-24 23:29:09",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 217,
+      "gallery_type": "references",
+      "filename": "ref_1759948319170_4f5e12287db2fdd2.jpg",
+      "was_deleted_at": "2025-10-08 21:42:02",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 218,
+      "gallery_type": "references",
+      "filename": "ref_1759948321018_4bb708d3baf8075e.jpg",
+      "was_deleted_at": "2025-10-08 21:42:00",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 225,
+      "gallery_type": "references",
+      "filename": "ref_1759948467928_496e95027292b2f2.jpg",
+      "was_deleted_at": "2025-10-08 18:34:56",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 240,
+      "gallery_type": "references",
+      "filename": "ref_1759958016689_7ad99b68ef17218a.jpg",
+      "was_deleted_at": "2025-10-08 21:41:11",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 242,
+      "gallery_type": "references",
+      "filename": "ref_1759958037559_87c8ef4b2c22a18b.jpg",
+      "was_deleted_at": "2025-10-08 21:14:24",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 244,
+      "gallery_type": "references",
+      "filename": "ref_1759958135199_a239cd4e58749394.gif",
+      "was_deleted_at": "2025-10-08 21:41:22",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 245,
+      "gallery_type": "references",
+      "filename": "ref_1759958136305_dd38bfdaa58eb029.gif",
+      "was_deleted_at": "2025-10-08 21:41:20",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 269,
+      "gallery_type": "references",
+      "filename": "ref_1759958231154_515851a3dc55e61b.jpg",
+      "was_deleted_at": "2025-10-08 21:41:17",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 271,
+      "gallery_type": "references",
+      "filename": "ref_1759958331514_e0852c8dfe822f7b.jpg",
+      "was_deleted_at": "2025-10-08 21:20:57",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 272,
+      "gallery_type": "references",
+      "filename": "ref_1759958336578_3dc2d69a8647beee.jpg",
+      "was_deleted_at": "2025-10-08 21:30:15",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 285,
+      "gallery_type": "references",
+      "filename": "ref_1759958525360_273c79884778b41d.jpg",
+      "was_deleted_at": "2025-10-08 21:30:11",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 288,
+      "gallery_type": "references",
+      "filename": "ref_1759958653584_faffbdb1cc863ca3.jpg",
+      "was_deleted_at": "2025-10-08 21:41:53",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 292,
+      "gallery_type": "references",
+      "filename": "ref_1759958804551_0f54cb2f4ad685d1.jpg",
+      "was_deleted_at": "2025-10-08 21:41:47",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 293,
+      "gallery_type": "references",
+      "filename": "ref_1759958833607_bb00e0bbe1c1a7a7.jpg",
+      "was_deleted_at": "2025-10-08 21:27:25",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 294,
+      "gallery_type": "references",
+      "filename": "ref_1759958853041_bb00e0bbe1c1a7a7.jpg",
+      "was_deleted_at": "2025-10-08 21:27:38",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 295,
+      "gallery_type": "references",
+      "filename": "ref_1759958861024_bb00e0bbe1c1a7a7.jpg",
+      "was_deleted_at": "2025-10-08 22:18:00",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 299,
+      "gallery_type": "references",
+      "filename": "ref_1759958881456_590e1fe708038b94.jpg",
+      "was_deleted_at": "2025-10-08 21:28:13",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 302,
+      "gallery_type": "references",
+      "filename": "ref_1759958937006_ca84161392c44bca.jpg",
+      "was_deleted_at": "2025-10-08 22:22:20",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 305,
+      "gallery_type": "references",
+      "filename": "ref_1759959231820_e8f8adfd13e6c471.jpg",
+      "was_deleted_at": "2025-10-08 22:42:01",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 306,
+      "gallery_type": "references",
+      "filename": "ref_1759959233393_9867b39501e67f8f.jpg",
+      "was_deleted_at": "2025-10-08 22:41:38",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 309,
+      "gallery_type": "references",
+      "filename": "ref_1759959264394_679a04051bace426.jpg",
+      "was_deleted_at": "2025-10-24 23:28:56",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 317,
+      "gallery_type": "references",
+      "filename": "ref_1759959426971_64fe09077a613eb7.jpg",
+      "was_deleted_at": "2025-10-08 21:37:31",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 353,
+      "gallery_type": "references",
+      "filename": "ref_1759959970383_25f0cac79e0cccb7.jpg",
+      "was_deleted_at": "2025-10-08 21:50:59",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 355,
+      "gallery_type": "references",
+      "filename": "ref_1759960030196_bb31edc0246e1bc5.jpg",
+      "was_deleted_at": "2025-10-08 21:52:54",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 375,
+      "gallery_type": "references",
+      "filename": "ref_1759960535952_18a1b74f894f6657.jpg",
+      "was_deleted_at": "2025-10-22 06:53:44",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 376,
+      "gallery_type": "references",
+      "filename": "ref_1759960544562_64fe09077a613eb7.jpg",
+      "was_deleted_at": "2025-10-22 06:55:07",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 388,
+      "gallery_type": "references",
+      "filename": "ref_1759960834474_86b3bb687e8ad0f4.jpg",
+      "was_deleted_at": "2025-10-08 22:00:50",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 397,
+      "gallery_type": "references",
+      "filename": "ref_1759961132186_991e7a693b0ebc1c.jpg",
+      "was_deleted_at": "2025-10-08 22:05:37",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 436,
+      "gallery_type": "references",
+      "filename": "ref_1759961987763_a3b0cfdeb56d5009.png",
+      "was_deleted_at": "2025-10-08 22:20:57",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 443,
+      "gallery_type": "references",
+      "filename": "image_1759962315123_aa41207006886d82.png",
+      "was_deleted_at": "2025-10-26 13:51:40",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 472,
+      "gallery_type": "references",
+      "filename": "ref_1759962738436_ae8f48ca06ac9bc7.png",
+      "was_deleted_at": "2025-10-08 22:42:18",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 482,
+      "gallery_type": "references",
+      "filename": "ref_1759962845424_8828913ad23e9fa8.jpg",
+      "was_deleted_at": "2025-10-22 06:54:21",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 486,
+      "gallery_type": "references",
+      "filename": "ref_1759962932937_9b73db6d77834ece.jpg",
+      "was_deleted_at": "2025-10-08 22:45:53",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 499,
+      "gallery_type": "references",
+      "filename": "ref_1759963121780_84299fabecb9bd97.jpg",
+      "was_deleted_at": "2025-10-08 22:42:09",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 500,
+      "gallery_type": "references",
+      "filename": "ref_1759963205766_d73a5c1b0a3ddbae.jpg",
+      "was_deleted_at": "2025-10-08 22:45:34",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 518,
+      "gallery_type": "references",
+      "filename": "ref_1759963729311_2ac2a80c11664075.jpg",
+      "was_deleted_at": "2025-10-08 22:50:22",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 519,
+      "gallery_type": "references",
+      "filename": "ref_1759963729319_e65c533231ca7064.jpg",
+      "was_deleted_at": "2025-10-08 22:50:26",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 520,
+      "gallery_type": "references",
+      "filename": "ref_1759963730110_5e4c4350bf9ccd80.jpg",
+      "was_deleted_at": "2025-10-08 22:50:16",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 532,
+      "gallery_type": "references",
+      "filename": "ref_1759963733350_d11a16d737f4a4ae.jpg",
+      "was_deleted_at": "2025-10-08 22:49:43",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 559,
+      "gallery_type": "references",
+      "filename": "ref_1759964573777_df39e5194b43cccd.png",
+      "was_deleted_at": "2025-10-24 23:29:23",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 582,
+      "gallery_type": "concept-art",
+      "filename": "image_1761476553368_4da2cabd074aea4a.png",
+      "was_deleted_at": "2025-10-26 11:02:43",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 590,
+      "gallery_type": "concept-art",
+      "filename": "image_1761476603961_1b488b636def1b72.png",
+      "was_deleted_at": "2025-10-26 11:08:32",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 611,
+      "gallery_type": "concept-art",
+      "filename": "image_1761477292916_c3b9b831755586c1.jpg",
+      "was_deleted_at": "2025-10-26 11:43:24",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 623,
+      "gallery_type": "concept-art",
+      "filename": "image_1761479331438_f7f6aaf631c5ea2e.jpg",
+      "was_deleted_at": "2025-10-26 11:48:58",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 693,
+      "gallery_type": "concept-art",
+      "filename": "image_1761481608788_cfaeaad1b2e5f7e8.psd",
+      "was_deleted_at": "2025-10-26 13:32:03",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 694,
+      "gallery_type": "concept-art",
+      "filename": "image_1761481608799_ac9fef9eab95bde5.psd",
+      "was_deleted_at": "2025-10-26 13:32:03",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 721,
+      "gallery_type": "concept-art",
+      "filename": "image_1761481674610_8c43c28b484d9e20.jpg",
+      "was_deleted_at": "2025-10-26 13:40:59",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 729,
+      "gallery_type": "concept-art",
+      "filename": "image_1761481876739_2b7a962963f4cf57.jpg",
+      "was_deleted_at": "2025-10-26 13:39:36",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 730,
+      "gallery_type": "concept-art",
+      "filename": "image_1761481876739_83df16158ee29b55.jpg",
+      "was_deleted_at": "2025-10-26 13:39:37",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 736,
+      "gallery_type": "concept-art",
+      "filename": "image_1761481924980_ec9b1bf5923dfebf.png",
+      "was_deleted_at": "2025-10-26 13:39:47",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 800,
+      "gallery_type": "references",
+      "filename": "image_1761482683495_14401ef3ae7f438e.jpg",
+      "was_deleted_at": "2025-10-26 14:00:52",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 801,
+      "gallery_type": "references",
+      "filename": "image_1761482685254_4e7a6ba75b576dfa.jpg",
+      "was_deleted_at": "2025-10-26 14:00:52",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 802,
+      "gallery_type": "references",
+      "filename": "image_1761482687019_48b6f31ec92fa3dc.jpg",
+      "was_deleted_at": "2025-10-26 14:00:52",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 803,
+      "gallery_type": "references",
+      "filename": "image_1761482688894_f80132284ad77a0a.jpg",
+      "was_deleted_at": "2025-10-26 14:00:52",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 828,
+      "gallery_type": "references",
+      "filename": "image_1761482820497_cfe4eec5bf29878b.jpg",
+      "was_deleted_at": "2025-10-26 13:48:15",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 835,
+      "gallery_type": "references",
+      "filename": "image_1761482821175_03342fb093d5d2ec.jpg",
+      "was_deleted_at": "2025-10-26 13:45:55",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 842,
+      "gallery_type": "references",
+      "filename": "image_1761482822475_ff1897f73a86194d.jpg",
+      "was_deleted_at": "2025-10-26 13:52:24",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 845,
+      "gallery_type": "references",
+      "filename": "image_1761482822577_617711bd1a67d2c4.jpg",
+      "was_deleted_at": "2025-10-26 13:50:46",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 846,
+      "gallery_type": "references",
+      "filename": "image_1761482822809_516a4f2a2eb53935.jpg",
+      "was_deleted_at": "2025-10-26 13:50:26",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 852,
+      "gallery_type": "references",
+      "filename": "image_1761482823210_ff1897f73a86194d.jpg",
+      "was_deleted_at": "2025-10-26 13:52:44",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 858,
+      "gallery_type": "references",
+      "filename": "image_1761482824662_9577694e9e922b4e.jpg",
+      "was_deleted_at": "2025-10-26 13:52:24",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 872,
+      "gallery_type": "references",
+      "filename": "image_1761482825261_a1b443c038da507d.gif",
+      "was_deleted_at": "2025-10-26 13:53:07",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 875,
+      "gallery_type": "references",
+      "filename": "image_1761482826292_ff1897f73a86194d.jpg",
+      "was_deleted_at": "2025-10-26 13:52:04",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 878,
+      "gallery_type": "references",
+      "filename": "image_1761482826293_ff1897f73a86194d.jpg",
+      "was_deleted_at": "2025-10-26 13:51:54",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 881,
+      "gallery_type": "references",
+      "filename": "image_1761482826706_1216fac21acad057.jpg",
+      "was_deleted_at": "2025-10-26 13:46:43",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 882,
+      "gallery_type": "references",
+      "filename": "image_1761482827213_1a097a464bce10a9.jpg",
+      "was_deleted_at": "2025-10-26 13:44:52",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 893,
+      "gallery_type": "references",
+      "filename": "image_1761482827702_9577694e9e922b4e.jpg",
+      "was_deleted_at": "2025-10-26 13:52:04",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 894,
+      "gallery_type": "references",
+      "filename": "image_1761482828189_1216fac21acad057.jpg",
+      "was_deleted_at": "2025-10-26 13:46:54",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 895,
+      "gallery_type": "references",
+      "filename": "image_1761482828197_dff72c23c84a3120.jpg",
+      "was_deleted_at": "2025-10-26 13:51:12",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 896,
+      "gallery_type": "references",
+      "filename": "image_1761482828197_516a4f2a2eb53935.jpg",
+      "was_deleted_at": "2025-10-26 13:50:43",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 902,
+      "gallery_type": "references",
+      "filename": "image_1761482828620_d6ed8adb77439c59.jpg",
+      "was_deleted_at": "2025-10-26 13:53:07",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 911,
+      "gallery_type": "references",
+      "filename": "image_1761482829543_1a097a464bce10a9.jpg",
+      "was_deleted_at": "2025-10-26 13:44:51",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 913,
+      "gallery_type": "references",
+      "filename": "image_1761482829567_9577694e9e922b4e.jpg",
+      "was_deleted_at": "2025-10-26 13:51:59",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 915,
+      "gallery_type": "references",
+      "filename": "image_1761482829590_9577694e9e922b4e.jpg",
+      "was_deleted_at": "2025-10-26 13:52:45",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 927,
+      "gallery_type": "references",
+      "filename": "image_1761482831036_516a4f2a2eb53935.jpg",
+      "was_deleted_at": "2025-10-26 13:50:01",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 934,
+      "gallery_type": "references",
+      "filename": "image_1761482832027_a3840922ce0a9425.jpg",
+      "was_deleted_at": "2025-10-26 13:52:21",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 943,
+      "gallery_type": "references",
+      "filename": "image_1761482832988_1a097a464bce10a9.jpg",
+      "was_deleted_at": "2025-10-26 13:46:08",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 944,
+      "gallery_type": "references",
+      "filename": "image_1761482832988_516a4f2a2eb53935.jpg",
+      "was_deleted_at": "2025-10-26 13:50:15",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 949,
+      "gallery_type": "references",
+      "filename": "image_1761482833530_d6ed8adb77439c59.jpg",
+      "was_deleted_at": "2025-10-26 13:52:59",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 957,
+      "gallery_type": "references",
+      "filename": "image_1761482834033_9577694e9e922b4e.jpg",
+      "was_deleted_at": "2025-10-26 13:47:17",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 960,
+      "gallery_type": "references",
+      "filename": "image_1761482835058_9577694e9e922b4e.jpg",
+      "was_deleted_at": "2025-10-26 13:47:18",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 965,
+      "gallery_type": "references",
+      "filename": "image_1761482835513_1a097a464bce10a9.jpg",
+      "was_deleted_at": "2025-10-26 13:46:55",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 971,
+      "gallery_type": "references",
+      "filename": "image_1761482836062_a1b443c038da507d.gif",
+      "was_deleted_at": "2025-10-26 13:46:04",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 972,
+      "gallery_type": "references",
+      "filename": "image_1761482836064_a1b443c038da507d.gif",
+      "was_deleted_at": "2025-10-26 13:45:58",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 976,
+      "gallery_type": "references",
+      "filename": "image_1761482837040_516a4f2a2eb53935.jpg",
+      "was_deleted_at": "2025-10-26 13:50:47",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 981,
+      "gallery_type": "references",
+      "filename": "image_1761482837481_a3840922ce0a9425.jpg",
+      "was_deleted_at": "2025-10-26 13:51:46",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 982,
+      "gallery_type": "references",
+      "filename": "image_1761482837487_516a4f2a2eb53935.jpg",
+      "was_deleted_at": "2025-10-26 13:50:28",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 986,
+      "gallery_type": "references",
+      "filename": "image_1761482837983_1a097a464bce10a9.jpg",
+      "was_deleted_at": "2025-10-26 13:46:21",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 996,
+      "gallery_type": "references",
+      "filename": "image_1761482838934_a3840922ce0a9425.jpg",
+      "was_deleted_at": "2025-10-26 13:52:03",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 997,
+      "gallery_type": "references",
+      "filename": "image_1761482838938_a3840922ce0a9425.jpg",
+      "was_deleted_at": "2025-10-26 13:52:42",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 1005,
+      "gallery_type": "references",
+      "filename": "image_1761482839448_a1b443c038da507d.gif",
+      "was_deleted_at": "2025-10-26 13:45:30",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 1007,
+      "gallery_type": "references",
+      "filename": "image_1761482840451_90df0a3561c133c2.png",
+      "was_deleted_at": "2025-10-26 13:51:13",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 1010,
+      "gallery_type": "references",
+      "filename": "image_1761482840454_a1b443c038da507d.gif",
+      "was_deleted_at": "2025-10-26 13:46:01",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 1017,
+      "gallery_type": "references",
+      "filename": "image_1761482841406_1a097a464bce10a9.jpg",
+      "was_deleted_at": "2025-10-26 13:50:40",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 1036,
+      "gallery_type": "references",
+      "filename": "image_1761482843650_1a097a464bce10a9.jpg",
+      "was_deleted_at": "2025-10-26 13:46:48",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 1046,
+      "gallery_type": "references",
+      "filename": "image_1761482844658_1a097a464bce10a9.jpg",
+      "was_deleted_at": "2025-10-26 13:51:03",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 1063,
+      "gallery_type": "references",
+      "filename": "image_1761482846680_1a097a464bce10a9.jpg",
+      "was_deleted_at": "2025-10-26 13:51:21",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 1081,
+      "gallery_type": "references",
+      "filename": "image_1761482849151_702d375a5d9f8a65.png",
+      "was_deleted_at": "2025-10-26 13:49:52",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 1166,
+      "gallery_type": "concept-art",
+      "filename": "image_1761483591354_cd7efe89121d7c5e.png",
+      "was_deleted_at": "2025-10-26 19:11:56",
+      "was_deleted_by": "1.0"
+    },
+    {
+      "id": 1167,
+      "gallery_type": "concept-art",
+      "filename": "image_1761483591353_759c3590f9cebc8d.jpg",
+      "was_deleted_at": "2025-10-26 19:11:59",
+      "was_deleted_by": "1.0"
+    }
+  ]
+}

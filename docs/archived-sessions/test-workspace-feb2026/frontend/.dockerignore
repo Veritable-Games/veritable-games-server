@@ -1,0 +1,87 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build outputs
+.next
+out
+dist
+build
+
+# Environment files
+.env*
+!.env.example
+
+# Testing
+coverage
+.nyc_output
+__tests__
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+e2e
+jest.config.js
+jest.setup.js
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*.swn
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Caches
+.cache
+.turbo
+.eslintcache
+
+# Documentation (except README)
+docs
+*.md
+!README.md
+
+# Large data files (SQLite databases)
+data/*.db
+data/*.db-shm
+data/*.db-wal
+
+# Large user-uploaded files (1.1GB+ directory)
+# Should be mounted as Docker volume or handle separately
+public/uploads
+
+# Scripts not needed in production
+scripts/debug
+# scripts/migrations  # KEEP: Required for startup migration (fix-truncated-password-hashes.js)
+scripts/gallery
+scripts/user-management
+
+# Temporary files
+tmp
+temp
+*.tmp
+*.swp
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.circleci
+
+# Docker
+Dockerfile*
+.dockerignore
+docker-compose*.yml
