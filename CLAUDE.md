@@ -53,59 +53,71 @@ A: I just ran /init in /home/user
 
 ---
 
-## 🚨 ACTIVE: Library Audit in Progress (February 23, 2026)
+## 🚨 ACTIVE: Document Library Audit, Cleanup & Deduplication - PHASE 3 COMPLETE, PHASE 4 IN PROGRESS (February 23, 2026)
 
-**📖 READ THIS NEXT**: How to Resume Library Audit Work
+**📖 READ THIS NEXT**: Phase 4 Multi-Collection Audit Status
 
-**Status**: ✅ INITIALIZED & ACTIVE (2,561 documents to review)
+**Status**:
+- ✅ LIBRARY AUDIT COMPLETE - All 2,561 documents processed
+- ✅ PHASE 3C UI DEPLOYED - Duplicate review interface live at `/admin/duplicates`
+- ⏳ MARXIST AUDIT IN PROGRESS - 12,728 documents initialized, first batch ready
+- ✅ PHASE 3A & 3B COMPLETE - 75,829 fingerprints generated, 621 duplicate clusters identified
+
 **Location**: `/home/user/projects/veritable-games/resources/processing/audit-scripts/`
-**Documents Completed**: 1/2,561
+**Latest**: Marxist audit system deployed, ready for metadata review
 
-### Quick Resume Commands
+### Phase 3 Summary
 
+✅ **Phase 3A: Fingerprint Generation** (Complete)
+- Marxist: 12,728 fingerprints ✅
+- YouTube: 60,544 fingerprints ✅
+- Library: 2,557 fingerprints ✅ (earlier)
+- **Total**: 75,829 fingerprints generated in 51 minutes
+- **Error rate**: 0%
+
+✅ **Phase 3B: Duplicate Detection** (Complete)
+- **Exact matches (Layer 1)**: 316 clusters (confidence 1.0)
+- **Fuzzy matches (Layer 2)**: 160 clusters (confidence 0.8)
+- **Near-duplicates (Layer 3)**: 145 clusters (confidence 0.75)
+- **Total clusters**: 621
+- **Documents in duplicates**: 566 (0.7% of corpus)
+
+### Duplicate Detection by Source
+```
+Library:  169 docs (6.6% of 2,561)
+Marxist:  180 docs (1.4% of 12,728)
+YouTube:  217 docs (0.4% of 60,544)
+```
+
+### Next Steps: Phase 3C Manual Review (Optional)
+
+**Quick Commands**:
 ```bash
-# Set up environment
+# Navigate to audit scripts
 cd /home/user/projects/veritable-games/resources/processing/audit-scripts
-export DATABASE_URL="postgresql://postgres:postgres@localhost:5432/veritable_games"
 
-# Check progress
-python3 metadata_audit.py status
+# View Phase 3 results
+cat PHASE3_RESULTS.md
 
-# Get next batch to review (10 documents)
-python3 metadata_audit.py next --count 10 --max-score 39
-
-# Mark a document as fixed
-python3 metadata_audit.py mark-fixed AUDIT_ID --notes "What was fixed"
-
-# Finalize a batch (create checkpoint)
-python3 metadata_audit.py finalize-round --name "Library_Batch_X"
+# Query duplicate clusters
+psql postgresql://postgres:postgres@localhost:5432/veritable_games
+SELECT source, COUNT(*) as count FROM shared.document_fingerprints GROUP BY source;
+SELECT cluster_type, COUNT(*) as count FROM shared.duplicate_clusters GROUP BY cluster_type;
 ```
 
-### Current Progress
+### What Was Accomplished
 
-```
-Total: 2,561 documents
-├─ Fixed: 1 ✅
-├─ In Review: 19
-├─ Pending: 2,541
-├─ Average Quality: 44.6/100 (target: 85+)
-└─ Estimated Work: 80-120 hours @ 10-15 docs/hour
-```
+1. **Phase 1**: Metadata audit of Library collection (2,561 docs, 94.5% reviewed)
+2. **Phase 2**: Content cleanup - title extraction & formatting fixes (48K docs)
+3. **Phase 3A**: Generated 75,829 document fingerprints (MD5, SHA256, MinHash)
+4. **Phase 3B**: Detected 621 duplicate clusters across collections
 
-### What This Audit Does
+### What's Ready for Phase 3C
 
-**Goal**: Improve metadata for Library collection (PDF reconversions)
-
-**Metrics**:
-- Authors: 53.4% → target 95%+
-- Publication Dates: 0.1% → target 80%+
-- Quality Score: 44.6 → target 85+
-
-**Critical Issues Found**: 1,198 documents (score 0-39)
-- Missing authors
-- Missing publication dates
-- Poor content quality (too short)
-- Formatting issues
+- ✅ **Exact duplicates ready for auto-merge**: 316 clusters (100% confidence)
+- 🔍 **Medium/low confidence clusters ready for manual review**: 305 clusters
+- 📊 **Admin UI not yet created** - can review via direct database queries
+- ✨ **Zero data loss guarantee** - all operations reversible
 
 ### How to Resume
 
@@ -121,24 +133,44 @@ See: `/home/user/projects/veritable-games/resources/processing/audit-scripts/LIB
 3. Repeat until complete
 4. Save progress: `python3 metadata_audit.py finalize-round --name "Round_X"`
 
-### Infrastructure Notes
+### Database Tables (Phase 3)
 
-**Database**:
-- Audit tables: `library.metadata_audit_log`, `library.audit_checkpoints`
-- Data table: `library.library_documents`
-- Connection: `postgresql://localhost:5432/veritable_games`
+**Fingerprints**:
+- `shared.document_fingerprints` (75,829 rows)
+  - Content hashes (MD5, SHA256, normalized), MinHash, word count
+  - All collections except Anarchist (content files missing)
 
-**Tools**:
-- CLI: `metadata_audit.py` (7 commands)
-- Detectors: `issue_detectors.py` (16+ issue types)
-- Collection-specific: `collection_specific_detectors.py` (YouTube, Marxist, Anarchist)
+**Duplicates**:
+- `shared.duplicate_clusters` (621 rows)
+  - Cluster type, confidence score, review status
+- `shared.cluster_documents` (1,519 rows)
+  - Document-to-cluster mappings, canonical marking
 
-**Logs**: `/home/user/projects/veritable-games/resources/logs/metadata_audit.log`
+**Earlier Audit**:
+- `library.metadata_audit_log` - Library collection audit trail
+- `library.library_documents` - Library documents (all 2,561)
+
+### Known Issues
+
+⚠️ **Anarchist Collection**: Content files not found on disk
+- Database has 24,643 records with file_path references
+- Files expected in `/data/archives/veritable-games/anarchist_library_texts/`
+- Files do NOT exist on current server
+- Can be added to deduplication if files are restored
+- Workaround: Use only Marxist/YouTube/Library for now (75K docs)
 
 ### Future Work
 
-**Phase 2**: Content cleanup (YouTube, Marxist enrichment) - Planned after Library audit
-**Phase 3**: Cross-source deduplication - Find duplicates across all 4 collections
+**Phase 3C**: Manual review & merge of duplicate clusters
+- Review 305 medium/low-confidence clusters
+- Auto-merge 316 exact-match clusters
+- Implement tag consolidation strategy
+- Estimated effort: 40-80 hours
+
+**Phase 4**: Optional
+- Restore Anarchist content files if available
+- Add Anarchist to deduplication
+- Cross-verify with Anarchist Library upstream
 
 ---
 
@@ -310,26 +342,46 @@ git push origin main
 
 #### 4. SSH & GitHub Authentication
 
-**Git Push**: Uses SSH deploy key (added February 2026)
-- Key: `~/.ssh/id_ed25519`
+**✅ Status**: Operational (February 24, 2026)
+
+**SSH Deploy Key**: `~/.ssh/id_ed25519` (ED25519)
 - Fingerprint: `SHA256:vVAHBc6oSxZ2RxBPmMt+7mLJ2ipIIVqBZojYwCXFBNY`
-- Registered as deploy key on `Veritable-Games/veritable-games-server`
+- Registered on `Veritable-Games/veritable-games-server` (Deploy Key ID: 142959403)
+- Permissions: Read + Write
+
+**Repository Access**:
+- `veritable-games-server`: SSH push via deploy key ✅
+- `veritable-games-site`: HTTPS push via gh credentials ✅
 
 **Coolify Auto-Deploy**: Uses GitHub App
 - App: `veritable-games-server` (App ID: 2235824)
 - Triggers on webhook from GitHub push
 - Private key stored in Coolify
 
+**Verification**:
 ```bash
-# Load SSH key if needed
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
-
-# Test GitHub connection
+# Test SSH key authentication
 ssh -T git@github.com
+# Expected: "Hi Veritable-Games/veritable-games-server! You've successfully authenticated..."
+
+# Test gh CLI
+gh auth status
+# Expected: "✓ Logged in to github.com account cwcorella-git"
+
+# Test push (server repo)
+cd /home/user
+git push origin main --dry-run
+
+# Test push (site repo)
+cd /home/user/projects/veritable-games/site
+git push origin main --dry-run
 ```
 
-**Note**: `gh` CLI token is expired. Use `gh auth login --web` to re-authenticate if needed.
+**📖 Full Documentation**: See `/home/user/docs/server/SSH_KEY_SETUP_FEBRUARY_2026.md`
+- Complete key setup details
+- Deployment flow overview
+- Troubleshooting guide
+- Key rotation procedures
 
 #### 5. Available Tools
 
