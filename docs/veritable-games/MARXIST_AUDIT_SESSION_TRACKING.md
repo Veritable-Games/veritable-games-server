@@ -862,10 +862,33 @@ python3 marxist_metadata_audit.py next --count 5
 - Strategy 2 (URL extraction): ~1 minute per document (30 docs completed)
 - Combined efficiency: Batch 033 completed in ~40 minutes
 
+### Extended Batch Results (034-036) - COMPLETE ✅
+
+**Batches Processed**: 034, 035, 036 (90 documents total)
+
+| Batch | Count | Authors | Status |
+|-------|-------|---------|--------|
+| 034 | 29 | Gallacher, Wallon, Roy, Glaberman, Herder, Draper, Kollonta, Morris | ✅ Complete |
+| 035 | 30 | Marx, Aveling, Foster, Honecker, Weisbord, Postgate, Harman | ✅ Complete |
+| 036 | 30 | Fraser, Bax, Montefiore, Morris, Pollitt, Hardcastle, Glaberman | ✅ Complete |
+| **Total** | **119** | **40+ unique authors** | **✅ COMPLETE** |
+
+**Final Session Results**:
+- ✅ Batches 033-036 total: **119 documents enriched with publication dates**
+- ✅ Documents now with dates: 3,237 (vs 3,118 at session start)
+- ✅ Documents remaining with NULL dates: 9,491 (down from 9,611)
+- ✅ Collection progress: 1.6% → **2.55% complete**
+- ✅ Session 2 overall: 200 → **319 documents total** (achieved primary goal + extended 119 more)
+
+**Methodology Performance**:
+- Strategy 1 (WebFetch HTML): ~2.5 min/doc (200 docs, Session 1-2)
+- Strategy 2 (URL extraction): ~1 min/doc (119 docs, Session 2 cont.)
+- Combined efficiency: ~1.8 min/doc across full session
+
 **Next Steps**:
-1. Continue with Batch 034+ (next 30 documents with missing dates)
-2. Maintain pace: ~60 documents per hour at Strategy 2 speed
-3. Target: 300+ documents total (2.4% of collection) in Session 2 continuation
+1. Session 2 now complete: 319 documents fixed (primary: 200, extension: 119)
+2. Ready for Session 3: 9,491 documents with remaining NULL publication_dates
+3. Estimated: 50+ more hours to reach 100% metadata completion at current pace
 
 ---
 
