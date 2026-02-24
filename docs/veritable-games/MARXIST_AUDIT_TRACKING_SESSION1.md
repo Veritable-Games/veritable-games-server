@@ -10,15 +10,126 @@
 
 ### Current Session: Session 1 (Feb 24, 2026)
 
-**Batches**: 002 (continuing)
-**Batches Completed**: Batch 001 ✅ (3 documents fixed)
+**Batches**: 003 (continuing)
+**Batches Completed**: Batch 001 ✅ (3 docs), Batch 002 ✅ (5 docs)
 **Target**: CRITICAL priority documents (quality score 0-39)
 **Methodology**: Manual research via source URLs + content inspection
-**Total Session Time**: ~30 minutes
+**Total Session Time**: ~45 minutes
 
 ---
 
-## Audit Batch 002 - Manual Research Log (Feb 24, 2026 - CURRENT)
+## Audit Batch 003 - Manual Research Log (Feb 24, 2026 - CURRENT)
+
+### Document 1: ID 39267
+
+**Initial State**:
+- Slug: `archive-the-marxian-dialectic-and-its-recent-critics`
+- Title: The Marxian Dialectic and Its Recent Critics
+- Author: Archive (placeholder)
+- Date: MISSING
+- Source URL: https://www.marxists.org/archive/mattick-paul/1942/dialectic.htm
+
+**Research Findings**:
+- Title: **"The Marxian Dialectic and Its Recent Critics"** ✅ (already present, confirmed from URL)
+- Author: **Paul Mattick** ✅ (extracted from URL path and confirmed in page metadata)
+- Date: **1942-01-01** ✅ (year from URL path, default to January 1)
+- Source: Marxist analysis article
+
+**Decision**: [x] MARK FIXED
+
+---
+
+### Document 2: ID 38656
+
+**Initial State**:
+- Slug: `archive-obituary-note-from-granma-daily-follows-this`
+- Title: Unknown Title
+- Author: Archive (placeholder)
+- Date: MISSING
+- Source URL: https://www.marxists.org/archive/celia-hart/2005/lastflight.htm
+
+**Research Findings**:
+- Title: **"The Last Flight of the Santamarias"** ✅ (from page title tag)
+- Author: **Celia Hart** ✅ (extracted from URL path and confirmed in page metadata)
+- Date: **2005-02-24** ✅ (from title tag "2-24-2005", interpreted as February 24, 2005)
+- Source: Celia Hart article/letter
+
+**Decision**: [x] MARK FIXED
+
+---
+
+### Document 3: ID 39223
+
+**Initial State**:
+- Slug: `archive-1965`
+- Title: Unknown Title
+- Author: Archive (placeholder)
+- Date: MISSING
+- Source URL: https://www.marxists.org/archive/james-clr/works/1965/eastindians.htm
+
+**Research Findings**:
+- Title: **"West Indians of East Indian Descent"** ✅ (from page h1 tag and description)
+- Author: **C.L.R. James** ✅ (extracted from URL path, confirmed from page)
+- Date: **1965-01-01** ✅ (year from URL path, default to January 1)
+- Source: C.L.R. James work on immigration
+
+**Decision**: [x] MARK FIXED
+
+---
+
+### Document 4: ID 39290
+
+**Initial State**:
+- Slug: `archive-30-july-1994`
+- Title: Unknown Title
+- Author: Archive (placeholder)
+- Date: MISSING
+- Source URL: https://www.marxists.org/archive/foot-paul/1994/07/bliar.html
+
+**Research Findings**:
+- Title: **"Tony Blurs the past"** ✅ (from page h1 tag)
+- Author: **Paul Foot** ✅ (extracted from URL path)
+- Date: **1994-07-30** ✅ (from description "30 July 1994", exact date confirmed)
+- Source: Paul Foot article on Tony Blair
+
+**Decision**: [x] MARK FIXED
+
+---
+
+### Document 5: ID 39343
+
+**Initial State**:
+- Slug: `archive-bhagat-singh-internet-archive-marxism-and-anti-imperialism-in-india-4`
+- Title: Bhagat Singh Internet Archive | Marxism and Anti-Imperialism in India
+- Author: Archive (placeholder)
+- Date: MISSING
+- Source URL: https://www.marxists.org/archive/bhagat-singh/1930/01/28.htm
+
+**Research Findings**:
+- Title: **"Hunger-Strikers' Demands Reiterated"** ✅ (from page h1 tag - actual content title differs from slug)
+- Author: **Bhagat Singh** ✅ (extracted from URL path)
+- Date: **1930-01-28** ✅ (exact date in URL path!)
+- Source: Bhagat Singh's demands during prison hunger strike
+
+**Decision**: [x] MARK FIXED
+
+---
+
+## Audit Batch 003 Summary
+
+| Doc ID | Title | Author | Date | Status |
+|--------|-------|--------|------|--------|
+| 39267 | The Marxian Dialectic and Its Recent Critics | Paul Mattick | 1942-01-01 | ✅ FIXED |
+| 38656 | The Last Flight of the Santamarias | Celia Hart | 2005-02-24 | ✅ FIXED |
+| 39223 | West Indians of East Indian Descent | C.L.R. James | 1965-01-01 | ✅ FIXED |
+| 39290 | Tony Blurs the past | Paul Foot | 1994-07-30 | ✅ FIXED |
+| 39343 | Hunger-Strikers' Demands Reiterated | Bhagat Singh | 1930-01-28 | ✅ FIXED |
+
+**Batch Status**: ✅ COMPLETE (100% - 5/5 documents fixed)
+
+---
+
+## Audit Batch 002 - Manual Research Log (Feb 24, 2026 - COMPLETED)
 
 ### Document 1: ID 38559
 
@@ -317,11 +428,12 @@ python3 marxist_metadata_audit.py mark-skipped [DOC_ID] \
 ### Overall Progress (Target: 25-50 documents this session)
 
 **Cumulative Results**:
-- **Total fixed in session**: 8 documents
+- **Total fixed in session**: 13 documents
 - **Target for session**: 25-50 documents
-- **Current progress**: 16% toward minimum target (32% toward mid-range)
-- **Remaining for session**: 17-42 documents
-- **Time estimate for completion**: 1-2 more hours at current pace (~3.75 min/doc)
+- **Current progress**: 26% toward minimum target (52% toward mid-range)
+- **Remaining for session**: 12-37 documents
+- **Time estimate for completion**: 45 min to 2 hours at current pace (~3.5 min/doc)
+- **Productivity**: On pace to complete 26 documents (reaching minimum) in ~1.5 hour total session
 
 ### Batch 001 Summary (COMPLETE)
 
@@ -431,13 +543,14 @@ python3 marxist_metadata_audit.py next --count 5
 
 ### Batch 001 Results (Feb 24, 2026)
 
-**Session 1 Total Stats**:
-- **Time spent**: ~30 minutes total
-- **Batches completed**: 2
-- **Documents processed**: 10
-- **Documents fixed**: 8 (Batch 001: 3, Batch 002: 5)
-- **Quality improvement**: 8 documents moved from CRITICAL to GOOD/EXCELLENT range
+**Session 1 Total Stats** (through Batch 003):
+- **Time spent**: ~45 minutes total
+- **Batches completed**: 3
+- **Documents processed**: 15
+- **Documents fixed**: 13 (Batch 001: 3, Batch 002: 5, Batch 003: 5)
+- **Quality improvement**: 13 documents moved from CRITICAL to GOOD/EXCELLENT range
 - **Success rate**: 100% (all researched documents successfully fixed)
+- **Efficiency**: ~3.5 minutes per document
 
 **Key findings**:
 - URLs are reliable for author extraction (100% match so far)
