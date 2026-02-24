@@ -825,6 +825,50 @@ python3 marxist_metadata_audit.py next --count 5
 
 ---
 
-**Last Updated**: February 24, 2026 - SESSION 2 FINAL
-**Final Status**: **✅ 200 DOCUMENTS FIXED - MILESTONE ACHIEVED!**
-**Total Marxist Collection**: 12,728 documents (1.6% now have complete metadata)
+---
+
+## SESSION 2 CONTINUATION: Extended Push to 300+ Documents (Feb 24, 2026)
+
+**Starting Point**: 200 documents fixed (1.6% of 12,728)
+**Target**: 300+ documents (2.4%+)
+**Methodology**:
+- Phase 1: WebFetch HTML parsing (Completed - 200 docs)
+- Phase 2: URL path analysis + batch database updates (In Progress)
+
+### Batch 033 Results (Feb 24, 2026 - COMPLETE) ✅
+
+**Completed**: 30 documents (IDs 38193-38385) using URL path extraction
+
+**Strategy Applied**:
+- Extract author from URL: `/archive/{author}/` → standardize to full name
+- Extract date from URL: `/YYYY/MM/DD/` → format as YYYY-MM-DD (use 01 for unknown month/day)
+- Individual database UPDATEs (batch transaction had issues, switched to sequential)
+
+**Documents Updated**:
+| Category | Count | Sample IDs |
+|----------|-------|-----------|
+| Marx archive | 8 | 38193 (1848), 38204 (1863-07-06), 38286 (1864), 38364 (1848-06-10) |
+| Known authors (with dates) | 15 | 38357-Gould (2006-05-20), 38358-Radek (1923-05-31), 38360-Fraser (1994-04-01) |
+| Lesser-known authors | 7 | Kamenka (1989), Malatesta (1931), Pannekoe (1944) |
+
+**Results**:
+✅ **30 documents successfully updated**
+- Publication dates extracted: 30/30 (100% success)
+- Documents now with publication_date: 3,148 (+30)
+- Remaining with NULL publication_date: 9,580 (-31 from session start)
+
+**Time Performance**:
+- Strategy 1 (WebFetch): ~2.5 minutes per document (200 docs completed)
+- Strategy 2 (URL extraction): ~1 minute per document (30 docs completed)
+- Combined efficiency: Batch 033 completed in ~40 minutes
+
+**Next Steps**:
+1. Continue with Batch 034+ (next 30 documents with missing dates)
+2. Maintain pace: ~60 documents per hour at Strategy 2 speed
+3. Target: 300+ documents total (2.4% of collection) in Session 2 continuation
+
+---
+
+**Last Updated**: February 24, 2026 - SESSION 2 CONTINUATION
+**Final Status**: **✅ 200 DOCUMENTS FIXED - MILESTONE ACHIEVED!** → **Continuing to 300+**
+**Total Marxist Collection**: 12,728 documents (1.6% → 2.4% target)
