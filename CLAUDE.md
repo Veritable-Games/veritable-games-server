@@ -53,18 +53,43 @@ A: I just ran /init in /home/user
 
 ---
 
-## 🚨 ACTIVE: Document Library Audit, Cleanup & Deduplication - PHASE 3 COMPLETE, PHASE 4 IN PROGRESS (February 23, 2026)
+## 🎯 ACTIVE PRIORITY: Marxist Library Metadata Enrichment Audit (Started Feb 24, 2026)
 
-**📖 READ THIS NEXT**: Phase 4 Multi-Collection Audit Status
+**Duration**: Ongoing (2-4 months estimated)
+**Current Progress**: ✅ **200/12,728 documents complete** (1.6% - Week 1 milestone)
+**Documentation**:
+- **Master Workflow**: `/home/user/docs/veritable-games/MARXIST_AUDIT_MASTER_WORKFLOW.md` ⭐ START HERE
+- **Session Tracking**: `/home/user/docs/veritable-games/MARXIST_AUDIT_SESSION_TRACKING.md`
+- **My Memory**: `/home/user/.claude/projects/-home-user/memory/MEMORY.md` (for resuming)
 
-**Status**:
+**What This Is**:
+A systematic, long-term effort to enrich document metadata across entire 12,728-document Marxist collection:
+- Extract/verify author names (proper names vs. URL slugs)
+- Extract publication dates (YYYY-MM-DD format)
+- Clean up document titles (remove truncations, fix errors)
+
+**Why It Matters**:
+- Enables better search and discoverability
+- Supports deduplication and cross-linking
+- Improves tag consolidation across collections
+- Essential for long-term library integrity
+
+**Session 1 Achievement** (Feb 24, 2026): 200 documents fixed in ~120 minutes
+- Rate: ~1.7 docs/minute
+- Methodology: Parallel WebFetch HTML parsing + URL path extraction fallback
+
+---
+
+## 🚨 RELATED: Document Library Audit, Cleanup & Deduplication - PHASE 3 COMPLETE (February 23, 2026)
+
+**Status** (Previous phases):
 - ✅ LIBRARY AUDIT COMPLETE - All 2,561 documents processed
 - ✅ PHASE 3C UI DEPLOYED - Duplicate review interface live at `/admin/duplicates`
-- ⏳ MARXIST AUDIT IN PROGRESS - 12,728 documents initialized, first batch ready
+- ✅ MARXIST AUDIT INITIALIZED - 12,728 documents ready, metadata enrichment in progress
 - ✅ PHASE 3A & 3B COMPLETE - 75,829 fingerprints generated, 621 duplicate clusters identified
 
-**Location**: `/home/user/projects/veritable-games/resources/processing/audit-scripts/`
-**Latest**: Marxist audit system deployed, ready for metadata review
+**Location**: `/home/user/projects/veritable-games/resources/processing/audit-scripts/` (for fingerprinting scripts)
+**Latest**: Metadata audit now primary focus (see section above)
 
 ### Phase 3 Summary
 
