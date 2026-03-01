@@ -103,7 +103,39 @@
 - ID 39933: J.R. Campbell, "Socialism for Trade Unionists" (1953-01)
 - Plus 3 more via URL path analysis (Weisbord, Marx, Labriola)
 
-#### Batch 007 (Latest)
+#### Batch 008 (Latest)
+**Documents Processed**: 25
+**Documents Fixed**: 25 (100% success rate via WebFetch!)
+**Extraction Method**: WebFetch HTML parsing (96% success for accessible URLs)
+
+**Key Documents Fixed**:
+- ID 40756: Natalia Sedova, "The Fourth International in Danger!" (1947-06-27)
+- ID 40768: Tom Wintringham, "The Tom Mann Centuria" (1933-01-01)
+- ID 40769: J.R. Johnson, "Ford Tries to Feed the Negro Poisoned Bait" (1941-05-12)
+- ID 40770: Paul Foot, "Battle for the NUM" (1988-01-01)
+- ID 40771: Paul Mattick, "Stalin's Frame-Up System and the Moscow Trials (Review)" (1951-01-01)
+- ID 40779: J.R. Johnson, "The Role of the Indian Capitalist Class" (1943-01-04)
+- ID 40790: Felix Morrow, "Bolshevik Politics versus Neo-Economism" (1946-10-01)
+- ID 40798: Felix Morrow, "The Socialist Party and Its Lovestone Allies..." (1939-10-27)
+- ID 40799: Harry Baldwin, "A Labour MP on Russia" (1953-08-01)
+- ID 40815: Celia Hart, "Fidel and Trotsky" (2006-05-01)
+- ID 40846: Paul Foot, "No time to make up" (1998-12-01)
+- ID 40847: Paul Foot, "Shirley, Shirley, quite contrary..." (1981-05-01)
+- ID 40851: J.R. Johnson, "We Must Fight Against Any Kind of Enslavement" (1940-08-19)
+- ID 40863: Georg Lukács, "History and Class Consciousness" (1923-01-01)
+- ID 40867: T.A. Jackson, "What Communism Means—Part VI" (1922-05-13)
+- ID 40874: Paul Foot, "How Barbara forgot the starving masses..." (1969-04-05)
+- ID 40887: Tom Mann, "Tom Mann for the Defense of Chen Du Siu" (1933-11-04)
+- ID 40900: Felix Morrow, "The Truth About the Cripps Mission" (1942-09-01)
+- ID 40912: Paul Foot, "Why You Should Vote Socialist" (2001-01-01)
+- ID 40914: Maxim Gorky, "An Appeal to the World" (1919-02-06)
+- ID 40919: Paul Foot, "Heath's new race bid" (1969-02-01)
+- ID 40931: Shibdas Ghosh, "Danger from Left Opportunism in Running a United Front Government" (1970-04-24)
+- ID 40940: Paul Mattick, "Organizations of the Unemployed" (1938-08-01)
+- ID 40946: Paul Foot, "Law and Order" (1970-04-01)
+- ID 40957: Felix Morrow, "The A.L.P. Fight – Stalinists Won a Hollow Victory" (1940-03-09)
+
+#### Batch 007
 **Documents Processed**: 25
 **Documents Fixed**: 25 (100% success rate via WebFetch!)
 **Extraction Method**: WebFetch HTML parsing (100% coverage)
@@ -170,8 +202,9 @@
 - **Session 2 Batch 005**: +25 documents (0.20%)
 - **Session 2 Batch 006**: +21 documents (0.17%)
 - **Session 2 Batch 007**: +25 documents (0.20%)
-- **Total**: 316 documents (2.48%)
-- **Remaining**: 12,412 documents (97.52%)
+- **Session 2 Batch 008**: +25 documents (0.20%)
+- **Total**: 341 documents (2.68%)
+- **Remaining**: 12,387 documents (97.32%)
 
 ---
 
