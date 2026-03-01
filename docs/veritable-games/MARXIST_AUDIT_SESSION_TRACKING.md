@@ -291,7 +291,39 @@
 - ID 40191: Victor Berger, "Why We Are in This War" (1917-06-20)
 - ID 40193: Clemens Dutt, "Indian Politics: An Analysis" (1925-07-01)
 
-#### Batch 012 (Current)
+#### Batch 013 (Current)
+**Documents Processed**: 25
+**Documents Fixed**: 25 (100% success rate via WebFetch!)
+**Extraction Method**: WebFetch HTML parsing (100% coverage)
+
+**Key Documents Fixed**:
+- ID 42605: J.R. Johnson, "One-Tenth of the Nation – On Organizing the South" (1946-04-15)
+- ID 42612: Tom Mann, "The Independent Labour Party program and the unemployed" (1895-06-01)
+- ID 42618: John Brown, "Letter to Thomas Russell" (1859-10-21)
+- ID 42623: Paul Foot, "Tony Blair's well oiled machine" (2000-10-01)
+- ID 42625: Bertram D. Wolfe, "Civil War in Spain" (1937-12-01)
+- ID 42632: Tom Quelch, "The British Labor Party Conference" (1922-07-17)
+- ID 42660: Shibdas Ghosh, "Lessons of November Revolution and Revolutionary Movement in India" (1968-11-15)
+- ID 42665: J.R. Johnson, "Production for the Sake of Production: A Reply to Carter" (1943-04-01)
+- ID 42668: Felix Morrow, "Marc Dauber" (1945-04-14)
+- ID 42682: Benny Levy, "Interview With Jacobo Machover" (1991-01-01)
+- ID 42692: Eleanor Marx, "The Irish Dynamiters" (1884-05-01)
+- ID 42697: Jean Longuet, "Dewsbury Election" (1902-02-15)
+- ID 42711: Dowson, "Womens Liberation part 2 — The Status of Women in Canada" (1970-01-01)
+- ID 42717: Felix Morrow, "All Races, Creeds Join Picket Line" (1939-02-24)
+- ID 42726: Karl Liebknecht, "Liebknecht's Protest Against the War Credits" (1914-12-02)
+- ID 42736: Paul Mattick, "Stalin and German Communism" (1949-01-01)
+- ID 42750: Mansoor Hekmat, "New Year Message to the People of Iran" (2001-03-21)
+- ID 42755: J.R. Johnson, "Economic Upheaval in the South" (1946-07-22)
+- ID 42756: T.A. Jackson, "The Puritan Revolution" (1922-06-24)
+- ID 42757: William Paul, "What is Crime?" (1923-03-01)
+- ID 42758: J.R. Johnson, "New International Is a Socialist Weapon" (1946-11-18)
+- ID 42785: Jacques Camatte, "On organization: Capital and community" (1969-01-01)
+- ID 42788: Natalia Sedova Trotsky, "Catastrophe Faces USSR as Result of Stalin's Rule" (1941-09-25)
+- ID 42797: Walter Held, "Stalin in Reality and Legend" (1935-12-01)
+- ID 42815: Clemens Dutt, "The Indian League for Independence" (1929-01-01)
+
+#### Batch 012 (Previous)
 **Documents Processed**: 25
 **Documents Fixed**: 25 (100% success rate via WebFetch!)
 **Extraction Method**: WebFetch HTML parsing (100% coverage)
@@ -335,8 +367,9 @@
 - **Session 2 Batch 010**: +25 documents (0.20%)
 - **Session 2 Batch 011**: +25 documents (0.20%)
 - **Session 2 Batch 012**: +25 documents (0.20%)
-- **Total**: 441 documents (3.47%)
-- **Remaining**: 12,287 documents (96.53%)
+- **Session 2 Batch 013**: +25 documents (0.20%)
+- **Total**: 466 documents (3.66%)
+- **Remaining**: 12,262 documents (96.34%)
 
 ---
 
