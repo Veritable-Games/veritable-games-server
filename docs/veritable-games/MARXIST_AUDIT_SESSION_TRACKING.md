@@ -2880,3 +2880,43 @@ The URL extraction (9,167) + WebFetch extraction (123) + other sources/existing 
 
 **Success Rate**: 100% - All 25 documents successfully enriched with title, author, and publication date
 
+
+---
+
+## Batch 025 (Documents 45947-46113): WebFetch HTML Parsing Results
+
+**Extraction Method**: WebFetch HTML parsing (100% success rate)
+**Documents Processed**: 25
+**Cumulative Total**: 766 documents enriched (6.02% of 12,728 collection)
+
+**Key Documents Fixed**:
+- ID 45947: What Communism Means—Part I | T. A. Jackson | 1922-04-08
+- ID 45950: One-Tenth of the Nation | J.R. Johnson | 1948-10-28
+- ID 45953: 1881 Speech by August Palm | August Palm | 1881-11-06
+- ID 45960: Effects of Monopoly on War Production | Felix Morrow | 1942-02-01
+- ID 45965: Soviet Russia and the Nations of the World | Maxim Gorky | 1919-05-01
+- ID 45979: The Importance of Trades Councils | Tom Quelch | 1926-05-01
+- ID 45982: If only Harold had got the date right | Paul Foot | 1970-07-11
+- ID 45995: Scientific Socialism: Its Revolutionary Aims and Methods | William Paul | 1918-01-01
+- ID 45998: Letter to Shaheed Sukhdev | Bhagat Singh | 1929-04-05
+- ID 46015: Barcelona and France's Future | Felix Morrow | 1939-02-01
+- ID 46016: The Cultural Movement in India and Our Tasks | Shibdas Ghosh | 1969-05-26
+- ID 46020: Century of the great hope | Paul Foot | 2000-01-01
+- ID 46029: Timber Workers and Timber Wolves | William D. Haywood | 1912-08-01
+- ID 46030: Outside the Whale | E P Thompson | 1978-01-01
+- ID 46034: Imperialism's Killers At Work | Albert Moreau | 1930-01-01
+- ID 46038: In the colonial style | Paul Foot | 1996-07-01
+- ID 46049: Manifesto of Democracy | Victor Considerant | 1847-01-01
+- ID 46054: Obsessions of Berlin | Paul Mattick | 1948-10-01
+- ID 46058: Why SUCI is the Only Genuine Communist Party in India | Shibdas Ghosh | 1969-03-18
+- ID 46080: Soviet Psychology: The Riddle of the Self | Feliks Mikhailov | 1976-01-01
+- ID 46096: What will I do when America goes to War? | Paul Mattick | 1935-09-01
+- ID 46104: The Rise and Fall of Political Islam | Mansoor Hekmat | 2001-12-31
+- ID 46111: Roosevelt and Labor after the Third Coal Strike | Felix Morrow | 1943-07-01
+- ID 46112: Why Labour lost | Paul Foot | 1992-05-01
+- ID 46113: Shaking up New Labour | Paul Foot | 2002-09-14
+
+**Notable Authors Discovered**: Paul Foot (6 docs), Felix Morrow (4 docs), Paul Mattick (2 docs), Shibdas Ghosh (2 docs)
+
+**Success Rate**: 100% - All 25 documents successfully enriched with title, author, and publication date
+
