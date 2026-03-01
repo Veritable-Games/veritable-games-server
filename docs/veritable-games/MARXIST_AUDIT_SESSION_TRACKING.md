@@ -103,7 +103,39 @@
 - ID 39933: J.R. Campbell, "Socialism for Trade Unionists" (1953-01)
 - Plus 3 more via URL path analysis (Weisbord, Marx, Labriola)
 
-#### Batch 010 (Latest)
+#### Batch 011 (Latest)
+**Documents Processed**: 25
+**Documents Fixed**: 25 (100% success rate via WebFetch!)
+**Extraction Method**: WebFetch HTML parsing (100% coverage)
+
+**Key Documents Fixed**:
+- ID 41907: Begum Rokeya, "Sultana's Dream" (1905-01-01)
+- ID 41916: Harry Young, "Darwin's Bulldog" (1959-11-01)
+- ID 41927: J.R. Johnson, "The Negro Question" (1940-01-20)
+- ID 41928: Eleanor Marx, "Speech on the First May Day" (1890-05-04)
+- ID 41929: J.R. Johnson, "What Russia Wants in Germany" (1944-07-24)
+- ID 41930: Felix Morrow, "The New Leader, May Day and War" (1939-05-09)
+- ID 41955: Paul Foot, "Rogues and scroungers" (1995-07-29)
+- ID 41959: Vitaly Vygodsky, "Das Kapital" (1960-01-01)
+- ID 41977: Paul Foot, "Dirty Business" (2002-03-01)
+- ID 42005: Guy A. Aldred, "The Case for Anarchism" (1906-01-01)
+- ID 42011: Felix Morrow, "What Really Happened in France?" (1940-07-13)
+- ID 42025: Jim D'Arcy, "Economics: Banks and Credit" (1975-02-01)
+- ID 42036: Jim D'Arcy, "Lewis Henry Morgan and the last 100 years" (1977-09-01)
+- ID 42039: Paul Mattick, "Review of Rudolph Rocker, The Tragedy of Spain" (1937-12-01)
+- ID 42049: Lu Xun, "The Art of the Number-Two Clown" (1933-06-15)
+- ID 42054: Paul Mattick, "Anton Pannekoek" (1962-01-01)
+- ID 42060: Wilhelm Liebknecht, "The Future State" (1898-01-01)
+- ID 42064: Lu Xun, "Village Opera" (1922-10-01)
+- ID 42080: Lu Xun, "A Madman's Diary" (1918-04-01)
+- ID 42086: Felix Morrow, "Stalin Blames the German Proletariat" (1942-06-01)
+- ID 42089: Emile Burns, "Twenty Years of Communist Propaganda" (1940-08-03)
+- ID 42096: Frank Kitz, "Bastille, Bourgeois, and Bumble" (1885-11-01)
+- ID 42097: C.L.R. James, "On The Vanguard" (1969-10-11)
+- ID 42099: E. Sylvia Pankhurst, "The forgotten Keir Hardie" (1921-01-01)
+- ID 42119: Felix Morrow, "Declining America" (1934-11-01)
+
+#### Batch 010
 **Documents Processed**: 25
 **Documents Fixed**: 25 (100% success rate via WebFetch!)
 **Extraction Method**: WebFetch HTML parsing (100% coverage)
@@ -269,8 +301,9 @@
 - **Session 2 Batch 008**: +25 documents (0.20%)
 - **Session 2 Batch 009**: +25 documents (0.20%)
 - **Session 2 Batch 010**: +25 documents (0.20%)
-- **Total**: 391 documents (3.07%)
-- **Remaining**: 12,337 documents (96.93%)
+- **Session 2 Batch 011**: +25 documents (0.20%)
+- **Total**: 416 documents (3.27%)
+- **Remaining**: 12,312 documents (96.73%)
 
 ---
 
