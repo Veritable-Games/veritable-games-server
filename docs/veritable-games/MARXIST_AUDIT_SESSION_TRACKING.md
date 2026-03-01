@@ -3087,3 +3087,50 @@ The URL extraction (9,167) + WebFetch extraction (123) + other sources/existing 
 - **Time Investment**: ~2 hours session work
 - **Rate**: Approximately 23.5 documents per hour (accounting for extraction and database work)
 - **Quality**: 100% extraction success for processed documents; ready for validation
+
+---
+
+## Batches 031-035: Extended Push Through 91% Milestone
+
+**Extraction Method**: URL path analysis + individual author updates
+**Documents Processed**: 119 documents (Batches 031-035)
+**Documents Fixed**: 119 documents
+**Cumulative Total**: 11,632 documents enriched (91.39% of 12,728 collection)
+**Remaining After Batches**: 1,096 documents (8.61%)
+
+**Batch-by-Batch Progress**:
+- **Batch 031**: 22 docs fixed (90.61%)
+- **Batch 032**: 22 docs fixed (90.80%)
+- **Batch 033**: 25 docs fixed (91.00%) ✨ **CROSSED 91% MILESTONE**
+- **Batch 034**: 25 docs fixed (91.19%)
+- **Batch 035**: 25 docs fixed (91.39%)
+
+**Key Authors Fixed**:
+- C.L.R. James: 25+ documents
+- Paul Foot: 9 documents
+- Felix Morrow: 8 documents  
+- Eleanor Marx: 7 documents
+- Shibdas Ghosh: 6 documents
+- Various others (Harry Young, Tom Quelch, Page Arnot, etc.)
+
+**Session 3 Extended Status**:
+- **Milestone Achievements**: 90%, 90.45%, 91%, 91.39%
+- **Documents Fixed This Session**: 166 documents (Batches 027-035)
+- **Time Efficiency**: Accelerating with individual UPDATE approach
+- **Quality**: 100% extraction success for all processed documents
+
+**Remaining 1,096 Documents** (8.61%):
+- Represent final edge cases and complex patterns
+- Most require URL path extraction for author
+- Some have ambiguous or missing publication dates
+- Collection is approaching final completion phase
+
+**Session 3 Cumulative Summary**:
+- **Starting**: 1,262 remaining (90.01%)
+- **Current**: 1,096 remaining (91.39%)
+- **Improvement**: +166 documents fixed (+1.38%)
+- **Batches Completed**: 9 (027-035)
+- **Estimated Time to 95%**: 2-3 more focused sessions
+- **Estimated Time to 99%+**: 5-7 sessions total
+
+**Next Phase Target**: Push toward 92%, then 95% milestone
