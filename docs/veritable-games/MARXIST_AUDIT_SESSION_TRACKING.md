@@ -2600,3 +2600,43 @@ The URL extraction (9,167) + WebFetch extraction (123) + other sources/existing 
 **Remaining**: 522 documents (4.10% - most difficult cases)
 **Session 3 Final Achievement**: 11,701+ document improvement from session start (505→12,206)
 **Historic Session Record**: **1,847% improvement in single extended session!**
+
+---
+
+## Batch 018 (Documents 44603-44749): WebFetch HTML Parsing Results
+
+**Extraction Method**: WebFetch HTML parsing (100% success rate)
+**Documents Processed**: 25
+**Cumulative Total**: 591 documents enriched (4.64% of 12,728 collection)
+
+**Key Documents Fixed**:
+- ID 44603: Natalia Trotsky Exposes New Plot to Free Jacson | Natalia Sedova Trotsky | 1941-08-06
+- ID 44604: Remember the Wrapper | Paul Mattick | 1945-09-01
+- ID 44609: Philosophy and the State | Paul Mattick | 1943-05-01
+- ID 44614: Fascism and Moral Ethical Crisis in Left, Democratic Movement | Shibdas Ghosh | 1973-04-24
+- ID 44630: Letter to a Monarchist | Maxim Gorky | 1912-08-01
+- ID 44647: Womens Liberation part 5 | Forward Group | 1974-01-01
+- ID 44662: The Talented Tenth | C.L.R. James | 1949-04-01
+- ID 44665: One-Tenth of the Nation | J.R. Johnson | 1944-12-11
+- ID 44670: Islam, Children's Rights, and the Hijab-gate of Rah-e-Kargar | Mansoor Hekmat | 1997-06-01
+- ID 44673: Dialectical Logic: Part One - From the History of Dialectics | Evald Ilyenkov | 1970-01-01
+- ID 44679: The Congress | J. Bruce Glasier | 1896-08-08
+- ID 44687: Kung I-chi | Lu Xun | 1919-03-01
+- ID 44689: What Leninism Means to Women | Beth Turner | 1925-01-23
+- ID 44701: Roosevelt Condemns Jews to Be Permanent Pariahs | Felix Morrow | 1939-01-14
+- ID 44705: The Spider and the Fly | Wilhelm Liebknecht | 1883-01-01
+- ID 44721: What Can the Unemployed Do? | Paul Mattick | 1938-03-01
+- ID 44723: The Negro Question | J.R. Johnson | 1939-10-27
+- ID 44725: Road Ahead in Negro Struggle | C.L.R. James | 1949-06-01
+- ID 44726: Learning by Expanding | Yrjö Engeström | 1987-01-01
+- ID 44727: J.R. Johnson: In the International Tradition | J.R. Johnson | 1944-01-01
+- ID 44734: Smash! A new election programme? | Harry Young | 1974-03-01
+- ID 44738: Can Labour bring jobs? | Paul Foot | 1994-06-18
+- ID 44740: Socialist, Not Labour | Jim D'Arcy | 1974-09-01
+- ID 44745: The Negro Question | J.R. Johnson | 1939-09-18
+- ID 44749: At last - Crows peck the eagles | Paul Foot | 1992-06-27
+
+**Notable Authors Discovered**: Paul Mattick, C.L.R. James (also J.R. Johnson), Shibdas Ghosh, Paul Foot, Mansoor Hekmat
+
+**Success Rate**: 100% - All 25 documents successfully enriched with title, author, and publication date
+
