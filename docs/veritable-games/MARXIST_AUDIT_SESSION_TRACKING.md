@@ -103,7 +103,39 @@
 - ID 39933: J.R. Campbell, "Socialism for Trade Unionists" (1953-01)
 - Plus 3 more via URL path analysis (Weisbord, Marx, Labriola)
 
-#### Batch 009 (Latest)
+#### Batch 010 (Latest)
+**Documents Processed**: 25
+**Documents Fixed**: 25 (100% success rate via WebFetch!)
+**Extraction Method**: WebFetch HTML parsing (100% coverage)
+
+**Key Documents Fixed**:
+- ID 41516: Eleanor Marx, "The Factory Hell" (1891-01-01)
+- ID 41520: Felix Morrow, "Lenin's Secret Weapon" (1941-01-25)
+- ID 41532: Harry Young, "Socialism or Capitalism (Election Communication)" (1950-02-02)
+- ID 41557: Paul Foot, "Falling flats ruin Labour's building boast" (1968-11-23)
+- ID 41561: Felix Morrow, "On the Tempo in Europe" (1945-11-15)
+- ID 41586: J.R. Johnson, "Historical Retrogression or Socialist Revolution? - 2" (1945-09-01)
+- ID 41607: Paul Foot, "Dividing Ireland" (1988-07-01)
+- ID 41608: J.R. Johnson, "African Soldiers and the Armies of Democracy" (1939-09-13)
+- ID 41620: J.R. Johnson, "The Negro Question" (1939-08-22)
+- ID 41625: Lu Xun, "Storm in a Teacup" (1920-10-01)
+- ID 41626: Felix Morrow, "Was the German Working Class Responsible for Nazism?" (1945-07-01)
+- ID 41633: Paul Foot, "'Argies' with British guns" (1996-11-07)
+- ID 41634: Paul Foot, "Dead ringer" (1989-11-01)
+- ID 41635: Wilhelm Liebknecht, "Knowledge is Power – Power is Knowledge" (1872-02-05)
+- ID 41652: Paul Foot, "Unemployment – The Socialist Answer" (1963-01-01)
+- ID 41659: Paul Foot, "Haunted by the Future" (2001-03-01)
+- ID 41664: Celia Hart, "Morning Star interview with Celia Hart" (2006-10-17)
+- ID 41665: C.L.R. James, "'Honest' Stanley in a Fix" (1935-12-27)
+- ID 41666: Shibdas Ghosh, "The Twentieth Congress of the CPSU" (1956-05-20)
+- ID 41677: Paul Foot, "Who Said Crime Doesn't Pay?" (2003-06-01)
+- ID 41692: Eleanor Marx, "Dramatic Notes" (1890-02-01)
+- ID 41694: Paul Foot, "T. Cliff and Zionism" (1988-01-01)
+- ID 41697: C.L.R. James, "A.A.B.: The Philosophy of History and Necessity" (1943-07-01)
+- ID 41703: J.R. Johnson, "'Native Son' and Revolution" (1940-05-01)
+- ID 41704: Bela Kun, "The Model Product of Imperialism" (1918-05-24)
+
+#### Batch 009
 **Documents Processed**: 25
 **Documents Fixed**: 25 (100% success rate via WebFetch!)
 **Extraction Method**: WebFetch HTML parsing (100% coverage)
@@ -236,8 +268,9 @@
 - **Session 2 Batch 007**: +25 documents (0.20%)
 - **Session 2 Batch 008**: +25 documents (0.20%)
 - **Session 2 Batch 009**: +25 documents (0.20%)
-- **Total**: 366 documents (2.87%)
-- **Remaining**: 12,362 documents (97.13%)
+- **Session 2 Batch 010**: +25 documents (0.20%)
+- **Total**: 391 documents (3.07%)
+- **Remaining**: 12,337 documents (96.93%)
 
 ---
 
