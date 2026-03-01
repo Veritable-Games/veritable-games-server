@@ -2920,3 +2920,43 @@ The URL extraction (9,167) + WebFetch extraction (123) + other sources/existing 
 
 **Success Rate**: 100% - All 25 documents successfully enriched with title, author, and publication date
 
+
+---
+
+## Batch 026 (Documents 46114-46284): WebFetch HTML Parsing Results
+
+**Extraction Method**: WebFetch HTML parsing (100% success rate)
+**Documents Processed**: 25
+**Cumulative Total**: 791 documents enriched (6.22% of 12,728 collection)
+
+**Key Documents Fixed**:
+- ID 46114: A Socialist India Is the Only Genuine Solution | J.R. Johnson | 1943-01-11
+- ID 46115: The Rotherham lads are here! | Paul Foot | 1980-02-02
+- ID 46126: Housing & the Workers' Revolution | E. Sylvia Pankhurst | 1918-01-01
+- ID 46131: Ross Pritchard – dedicated socialist | Paul Foot | 2001-01-20
+- ID 46132: A Doll's House Repaired | Eleanor Marx Aveling | 1891-03-01
+- ID 46135: Bourbon Campaign to Keep Jim Crow in Education | J.R. Johnson | 1948-02-02
+- ID 46143: This Is Labor's Own Problem! | W.F. Carlton | 1943-10-18
+- ID 46151: Soviet Psychology: The Collected Works of L. S. Vygotsky | Lev Vygotsky | 1925-01-01
+- ID 46152: Essays on the Materialist Conception of History | Antonio Labriola | 1896-01-01
+- ID 46169: Poetry of protest | Paul Foot | 1992-07-01
+- ID 46170: The Italian Revolution | Felix Morrow | 1943-09-01
+- ID 46174: "The Case of the 92nd" | J.R. Johnson | 1945-06-25
+- ID 46182: Freeport and Columbia Murders | J.R. Johnson | 1946-03-11
+- ID 46195: British Honours | William Paul | 1923-01-23
+- ID 46204: Hollywood Does a Re-Take on the War | A.A.B. | 1943-05-24
+- ID 46213: Are We Realists? | William Paul | 1921-10-29
+- ID 46216: The Status of Women in Canada | League for Socialist Action/Ligue Socialiste Ouvrière | 1968-04-01
+- ID 46217: Negro History Week and the Workers | J. Meyer | 1949-02-07
+- ID 46230: The Revolutionary Answer to the Negro Problem in the United States | J. Meyer | 1948-12-01
+- ID 46242: Lenin on Agriculture and the Negro Question | J.R. Johnson | 1947-01-13
+- ID 46266: Why Negroes Should Oppose the War | C.L.R. James | 1939-01-01
+- ID 46272: An Exchange with Lovestone on Finland | Felix Morrow | 1940-02-24
+- ID 46273: Taylor's System and Organization | Nadezhda Krupskaya | 1921-01-01
+- ID 46283: On eliminating dogmatism and formalism and establishing Juche in ideological work | Kim Il Sung | 1955-12-28
+- ID 46284: Developments in Eastern Europe and Prospects for Worker-socialism | Mansoor Hekmat | 1990-05-01
+
+**Notable Authors Discovered**: J.R. Johnson (5 docs), Paul Foot (4 docs), Felix Morrow (2 docs), William Paul (2 docs)
+
+**Success Rate**: 100% - All 25 documents successfully enriched with title, author, and publication date
+
