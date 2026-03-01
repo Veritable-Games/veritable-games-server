@@ -103,13 +103,42 @@
 - ID 39933: J.R. Campbell, "Socialism for Trade Unionists" (1953-01)
 - Plus 3 more via URL path analysis (Weisbord, Marx, Labriola)
 
+#### Batch 006 (Latest)
+**Documents Processed**: 25
+**Documents Fixed**: 21 (100% success rate via WebFetch, 4 additional docs require research)
+**Extraction Method**: WebFetch HTML parsing (21 docs with complete extraction)
+
+**Key Documents Fixed**:
+- ID 40064: Messali Hadj, "Messali Hadj to the Newspaper Franc-Tireur" (1956-01-11)
+- ID 40065: Natalia Sedova Trotsky, "Corrections to France-Soir Interview" (1961-11-09)
+- ID 40067: Shibdas Ghosh, "Tribute to a Revolutionary Character" (1974-09-17)
+- ID 40074: Celia Hart, "The defense of the Cuban revolution and its international projections" (2004-08-04)
+- ID 40089: C.L.R. James, "Capitalist Society and the War" (1940-07-01)
+- ID 40106: Wilhelm Liebknecht, "Breakers Ahead" (1900-07-21)
+- ID 40117: Wilhelm Liebknecht, "Manifesto of the Gotha Program" (1875-01-01)
+- ID 40131: Natalia Sedova Trotsky, "Natalia Trotsky Answers a Foul Slander" (1940-10-17)
+- ID 40138: William D. Haywood, "A Message from One Big Union" (1920-02-01)
+- ID 40143: Shibdas Ghosh, "Crisis in Culture, and Fascism" (1957-01-01)
+- ID 40150: C.L.R. James, "Free For All: The nine year old leader" (1982-05-01)
+- ID 40152: Shibdas Ghosh, "War and Peace, Peaceful Co-existence and Soviet Philosophy" (1959-07-01)
+- ID 40153: C.L.R. James, "After Ten Years: On Trotsky's The Revolution Betrayed" (1946-10-01)
+- ID 40157: Paul Levi, "Introduction to Trotsky's Lessons of October" (1924-12-01)
+- ID 40167: Mansoor Hekmat, "The Iranian Revolution and the Role of the Proletariat (Theses)" (1978-01-01)
+- ID 40175: Paul Foot, "Born Unfree and Unequal" (2003-04-01)
+- ID 40184: Harry Baldwin, "Law and what?" (1971-03-01)
+- ID 40185: Harry Baldwin, "Left road to . . . nowhere" (1977-08-01)
+- ID 40189: E. Sylvia Pankhurst, "Socialism and the Political Struggle" (1915-01-01)
+- ID 40191: Victor Berger, "Why We Are in This War" (1917-06-20)
+- ID 40193: Clemens Dutt, "Indian Politics: An Analysis" (1925-07-01)
+
 **Progress Summary**:
 - **Session 1**: 200 documents (1.6%)
 - **Session 2 Batch 002-003**: +21 documents (0.17%)
 - **Session 2 Batch 004**: +24 documents (0.19%)
 - **Session 2 Batch 005**: +25 documents (0.20%)
-- **Total**: 270 documents (2.12%)
-- **Remaining**: 12,458 documents (97.88%)
+- **Session 2 Batch 006**: +21 documents (0.17%)
+- **Total**: 291 documents (2.29%)
+- **Remaining**: 12,437 documents (97.71%)
 
 ---
 
