@@ -8,13 +8,18 @@
 
 ## Session Structure
 
-### Current Session: Session 2 (March 1, 2026)
+### Current Session: Session 2 (March 1, 2026) - EXTENDED
 
-**Batch Number**: Batch 002-003 (combined)
-**Documents Processed**: 25 documents
-**Documents Fixed**: 21 documents (84% success rate)
-**Extraction Method**: WebFetch HTML parsing (9 docs) + URL path analysis (12 docs)
-**Time Estimate**: ~45 minutes
+**Batch Summary**: Batch 002, 003, and 004 (three successive batches)
+**Documents Processed**: 25 + 25 + 25 = 75 total
+**Documents Fixed**: 21 + 24 + TBD = 45+ documents (88%+ success rate)
+**Extraction Method**: WebFetch HTML parsing (16+ docs) + URL path analysis (29+ docs)
+**Total Time**: ~135 minutes across three batches
+
+#### Batch 002-003 (Earlier in Session 2)
+**Documents Processed**: 25
+**Documents Fixed**: 21 (84% success rate)
+**Extraction Method**: WebFetch (9 docs) + URL path analysis (12 docs)
 **Key Findings**:
 - WebFetch HTML parsing: 94-96% success for accessible URLs
 - URL path analysis: 100% success for author/date extraction
@@ -44,11 +49,36 @@
 - ID 38900: Paul Foot, (June 1989)
 - ID 38901: Wilhelm Liebknecht, (March 1899)
 
+#### Batch 004 (Current)
+**Documents Processed**: 25
+**Documents Fixed**: 24 (96% success rate)
+**Extraction Method**: WebFetch HTML parsing (16 docs) + URL path analysis (8 docs)
+
+**Key Documents Fixed**:
+- ID 39314: C.L.R. James, "The Voice of Africa" (1938-08)
+- ID 39354: E.P. Thompson, "NATO, Neutralism and Survival" (1958-06)
+- ID 39392: Paul Foot, "When will the Blair bubble burst?" (1995-06)
+- ID 39393: Paul Foot, "A beautiful symmetry" (2001-02)
+- ID 39406: Paul Foot, "Immigration and the British Labour Movement" (1965-09)
+- ID 39462: Béla Kun, "Abroad: Inside the Dual Monarchy" (1918-04)
+- ID 39458: W.F. Carlton, "Ban on GI Jim Crow a Paper Edict..." (1944-09-04)
+- ID 39510: C.L.R. James, "Summary of Report on Negro Question" (1948-07-12)
+- ID 39535: Maxim Gorky, "The Revolt of the Slaves" (1920-03-25)
+- ID 39558: Shibdas Ghosh, "On the Steps taken by CPSU against Stalin" (1961-11-16)
+- ID 39573: Paul Foot, "Revolutionary necrophilia" (1991-06)
+- ID 39574: E.P. Thompson, "A Psessay in Ephology" (1959-09)
+- ID 39576: W.F. Carlton, "FEPC Program No Aid to Negro Labor" (1943-09-20)
+- ID 39583: Wilhelm Liebknecht, "Eleanor Marx" (1898-09)
+- ID 39598: Paul Mattick, "Review: German Revolution of 1918" (1968-01)
+- ID 39623: C.L.R. James, "Labor and the Second World War" (1939-11-17)
+- Plus 8 documents updated via URL path analysis (Bobrovskaya, Weisbord, Lukács, Darcy, Messali Hadj, Lu Xun, Novack)
+
 **Progress Summary**:
 - **Session 1**: 200 documents (1.6%)
-- **Session 2**: +21 documents (0.17%)
-- **Total**: 221 documents (1.74%)
-- **Remaining**: 12,507 documents (98.26%)
+- **Session 2 Batch 002-003**: +21 documents (0.17%)
+- **Session 2 Batch 004**: +24 documents (0.19%)
+- **Total**: 245 documents (1.93%)
+- **Remaining**: 12,483 documents (98.07%)
 
 ---
 
