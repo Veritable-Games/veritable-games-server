@@ -291,7 +291,39 @@
 - ID 40191: Victor Berger, "Why We Are in This War" (1917-06-20)
 - ID 40193: Clemens Dutt, "Indian Politics: An Analysis" (1925-07-01)
 
-#### Batch 016 (Current)
+#### Batch 017 (Current)
+**Documents Processed**: 25
+**Documents Fixed**: 25 (100% success rate via WebFetch!)
+**Extraction Method**: WebFetch HTML parsing (100% coverage)
+
+**Key Documents Fixed**:
+- ID 44199: C.L.R. James, "World Politics Today" (1967-03-01)
+- ID 44202: Paul Foot, "How the TUC killed workers' paper" (1973-09-15)
+- ID 44245: Felix Morrow, "European Perspectives and Policy" (1945-07-10)
+- ID 44264: Eleanor Marx, "Record of the International Movement" (1885-04-01)
+- ID 44285: J.R. Johnson, "Which Type of Leader Should Negroes Follow?" (1940-09-02)
+- ID 44289: William D. Haywood, "Pick and Shovel Pointers" (1911-02-01)
+- ID 44290: Hewlett Johnson, "Marxism and the individual" (1943-01-01)
+- ID 44292: Lu Xun, "Preface to Call to Arms" (1922-12-03)
+- ID 44300: Harry Young, "Open Letter to Jimmy Reid" (1972-01-01)
+- ID 44311: Celia Hart, "Fidel and Chavez together and in red…This November 7th" (2004-11-07)
+- ID 44318: Shibdas Ghosh, "Independence on 15th August and Problems of Emancipation of People" (1967-08-15)
+- ID 44319: C.L.R. James, "Revolution and the Negro" (1939-12-01)
+- ID 44328: Frank Kitz, "The Criminal Classes of the Future" (1888-05-05)
+- ID 44329: Shibdas Ghosh, "Imre Nagy" (1958-07-12)
+- ID 44334: Bela Kun, "Social-Traitors, Unite!" (1918-06-22)
+- ID 44338: Harry Young, "Two Steps Back" (1983-03-01)
+- ID 44339: Paul Foot, "The party's just begun" (2002-01-01)
+- ID 44347: Bhagat Singh, "Bhagat Singh's Last Petition" (1931-06-23)
+- ID 44353: Mansoor Hekmat, "Islamic Republic without Khatami" (2001-03-23)
+- ID 44354: Paul Mattick, "How New is the 'New Order' of Fascism" (1941-01-01)
+- ID 44368: J.R. Johnson, "The Communist Party's Zigzags on Negro Policy" (1939-08-15)
+- ID 44382: Eleanor Marx, "Karl Marx" (1883-05-01)
+- ID 44385: Paul Mattick, "John Strachey Confesses" (1937-01-01)
+- ID 44386: Errico Malatesta, "Majorities and Minorities" (1965-01-01)
+- ID 44391: Paul Mattick, "America's War in Indochina" (1971-01-01)
+
+#### Batch 016 (Previous)
 **Documents Processed**: 25
 **Documents Fixed**: 25 (100% success rate via WebFetch!)
 **Extraction Method**: WebFetch HTML parsing (96% coverage, URL analysis for 1 doc)
@@ -467,8 +499,9 @@
 - **Session 2 Batch 014**: +25 documents (0.20%)
 - **Session 2 Batch 015**: +25 documents (0.20%)
 - **Session 2 Batch 016**: +25 documents (0.20%)
-- **Total**: 541 documents (4.25%)
-- **Remaining**: 12,187 documents (95.75%)
+- **Session 2 Batch 017**: +25 documents (0.20%)
+- **Total**: 566 documents (4.45%)
+- **Remaining**: 12,162 documents (95.55%)
 
 ---
 
