@@ -103,7 +103,39 @@
 - ID 39933: J.R. Campbell, "Socialism for Trade Unionists" (1953-01)
 - Plus 3 more via URL path analysis (Weisbord, Marx, Labriola)
 
-#### Batch 008 (Latest)
+#### Batch 009 (Latest)
+**Documents Processed**: 25
+**Documents Fixed**: 25 (100% success rate via WebFetch!)
+**Extraction Method**: WebFetch HTML parsing (100% coverage)
+
+**Key Documents Fixed**:
+- ID 41159: E.V. Ilyenkov, "Dialectical Logic" (1960-01-01)
+- ID 41161: T.A. Jackson, "Four Years—The Story of the Russian Revolution" (1921-11-05)
+- ID 41164: T.A. Jackson, "What Communism Means—Part V" (1922-05-06)
+- ID 41176: Eleanor Marx, "Suggestions for Propaganda Work" (1897-01-16)
+- ID 41184: Paul Foot, "Ambushing the news" (1993-07-03)
+- ID 41193: Eleanor Marx, "Eleanor Marx-Aveling on the Irish Question 1891" (1891-01-25)
+- ID 41200: Georg Lukács, "History and Class Consciousness..." (1923-01-01)
+- ID 41202: Bhagat Singh, "To Young Political Workers" (1931-02-02)
+- ID 41212: Tom Mann, "What a compulsory eight-hour day means to the workers" (1886-01-01)
+- ID 41219: J.R. Johnson, "The Negro Question" (1939-12-16)
+- ID 41232: W.F. Carlton, "Union Labor Must Lead the Fight for Negro Rights" (1943-08-16)
+- ID 41234: Paul Mattick, "Pannekoek's The Party and the Working Class" (1941-08-01)
+- ID 41244: Celia Hart, "Socialism in one country and the Cuban Revolution" (2004-05-10)
+- ID 41249: Hu Yaobang, "Hu Yaobang's Speech at the First Plenum..." (1982-09-13)
+- ID 41258: Felix Morrow, "The Unity Question in the Socialist Workers Party" (1945-08-27)
+- ID 41271: W.F. Carlton, "W.F. Carlton: A Falsification of History" (1944-11-20)
+- ID 41274: Felix Morrow, "War-Mad Liberal" (1939-05-01)
+- ID 41275: T.A. Jackson, "Sedition!" (1921-05-14)
+- ID 41276: H.E., "Stalinist Diplomacy Leaves Trail of Treachery..." (1933-06-03)
+- ID 41277: Paul Mattick, "Review: The Politics of War" (1969-10-01)
+- ID 41278: J.R. Johnson, "The Way Out for Europe" (1943-04-01)
+- ID 41280: Harry Baldwin, "Slaughter in Vietnam" (1970-02-01)
+- ID 41287: G.F. Eckstein, "Henry Luce and Karl Marx" (1948-03-01)
+- ID 41291: C.L.R. James, "Popular Fronts in Past Times" (1936-12-12)
+- ID 41298: Jean Longuet, "The French Municipal Elections" (1896-06-13)
+
+#### Batch 008
 **Documents Processed**: 25
 **Documents Fixed**: 25 (100% success rate via WebFetch!)
 **Extraction Method**: WebFetch HTML parsing (96% success for accessible URLs)
@@ -203,8 +235,9 @@
 - **Session 2 Batch 006**: +21 documents (0.17%)
 - **Session 2 Batch 007**: +25 documents (0.20%)
 - **Session 2 Batch 008**: +25 documents (0.20%)
-- **Total**: 341 documents (2.68%)
-- **Remaining**: 12,387 documents (97.32%)
+- **Session 2 Batch 009**: +25 documents (0.20%)
+- **Total**: 366 documents (2.87%)
+- **Remaining**: 12,362 documents (97.13%)
 
 ---
 
