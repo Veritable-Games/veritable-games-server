@@ -3134,3 +3134,46 @@ The URL extraction (9,167) + WebFetch extraction (123) + other sources/existing 
 - **Estimated Time to 99%+**: 5-7 sessions total
 
 **Next Phase Target**: Push toward 92%, then 95% milestone
+
+---
+
+## Batches 036-038: Final Push Toward 92% Milestone
+
+**Extraction Method**: URL path analysis + individual author updates
+**Documents Processed**: 74 documents (Batches 036-038)
+**Documents Fixed**: 74 documents
+**Cumulative Total**: 11,706 documents enriched (91.98% of 12,728 collection)
+**Remaining After Batches**: 1,022 documents (8.02%)
+
+**Batch-by-Batch Progress**:
+- **Batch 036**: 25 docs fixed (91.58%)
+- **Batch 037**: 25 docs fixed (91.78%)
+- **Batch 038**: 24 docs fixed (91.98%) ✨ **APPROACHING 92% MILESTONE**
+
+**Session 3 Final Tally**:
+- **Batches Completed**: 12 (027-038)
+- **Documents Fixed This Session**: 240 documents
+- **Progress**: 90.01% → 91.98% (+1.97%)
+- **Remaining**: 1,022 documents (8.02%)
+- **Time Efficiency**: Accelerating with individual UPDATE approach
+
+**Key Milestone Achievement**:
+- **91% Milestone**: Reached and sustained ✓
+- **92% Milestone**: 1,022 documents remaining (achievable in next 1-2 sessions)
+- **95% Milestone**: Estimated 5-7 more focused sessions
+
+**Remaining 1,022 Documents** (8.02%):
+- Represent final edge cases and complex patterns
+- Most can be fixed with URL path extraction
+- Some require specialized author mapping
+- Collection approaching completion milestone
+
+**Session 3 FINAL Summary**:
+- **Starting**: 1,262 remaining (90.01%)
+- **Ending**: 1,022 remaining (91.98%)
+- **Total Improvement**: +240 documents fixed (+1.97%)
+- **Batches Completed**: 12 (027-038)
+- **Extraction Success Rate**: 100% for all processed documents
+- **Quality**: Full metadata (author + publication_date) for all fixed docs
+
+**Next Phase Target**: Reach 92%, then 95%, targeting 99%+ completion
