@@ -291,6 +291,38 @@
 - ID 40191: Victor Berger, "Why We Are in This War" (1917-06-20)
 - ID 40193: Clemens Dutt, "Indian Politics: An Analysis" (1925-07-01)
 
+#### Batch 012 (Current)
+**Documents Processed**: 25
+**Documents Fixed**: 25 (100% success rate via WebFetch!)
+**Extraction Method**: WebFetch HTML parsing (100% coverage)
+
+**Key Documents Fixed**:
+- ID 42267: Paul Mattick, "Aspects of Revolt" (1961-01-01)
+- ID 42271: Albert Weisbord, "Scientific Materialism" (1960-01-01)
+- ID 42276: J.R. Johnson, "Labor and the Second World War" (1939-11-03)
+- ID 42277: Paul Foot, "Parliamentary privilege" (1994-11-01)
+- ID 42279: Kim Il Sung, "For the Development of the Non-Aligned Movement" (1986-06-20)
+- ID 42287: Paul Foot, "Powell's poison platform" (1986-12-01)
+- ID 42304: Paul Foot, "A hero of Labour" (1993-05-01)
+- ID 42312: Benny Levy, "Interview With Salomon Malka" (1982-01-16)
+- ID 42315: Friedrich Engels, "Articles by Engels in Labour Standard, 1881" (1881-05-01)
+- ID 42316: Felix Morrow, "Courts Invent Means to Break Strikes When Employers Cannot" (1939-04-01)
+- ID 42318: Albert Weisbord, "Viva Cristo Rey!" (1960-12-01)
+- ID 42324: J.R. Johnson, "Labor Will Take Care of Its Own Union Problems" (1940-07-29)
+- ID 42329: Natalia Sedova Trotsky, "Statement of Trotsky's Widow on His Biography of Stalin" (1946-04-24)
+- ID 42334: Mansoor Hekmat, "Capital Punishment: The most Deplorable form of Deliberate Murder" (2000-09-01)
+- ID 42342: Paul Foot, "The government that devoured itself" (1995-07-01)
+- ID 42346: Mansoor Hekmat, "Democracy: Interpretations and Realities" (1993-01-01)
+- ID 42355: Paul Foot, "Strikes from a sunlounger" (1996-07-13)
+- ID 42356: Felix Morrow, "Lovestone Shows Norman Thomas How to Do It" (1940-01-13)
+- ID 42364: J.R. Johnson, "Who Will Govern France?" (1944-06-26)
+- ID 42368: Antonio Labriola, "Essays on the Materialist Conception of History" (1898-01-01)
+- ID 42376: Paul Foot, "Red Barbara's Rocky Road" (2002-06-01)
+- ID 42379: J.R. Johnson, "One-Tenth of the Nation" (1946-11-18)
+- ID 42380: Paul Mattick, "Barghoorn on Soviet Russian Nationalism — Review" (1956-01-01)
+- ID 42381: Albert Weisbord, "Chapter Seventeen: Scientific Socialism" (1950-01-01)
+- ID 42387: J.R. Johnson, "We Say \"Transform PAC Into a Labor Party\"" (1947-01-06)
+
 **Progress Summary**:
 - **Session 1**: 200 documents (1.6%)
 - **Session 2 Batch 002-003**: +21 documents (0.17%)
@@ -302,8 +334,9 @@
 - **Session 2 Batch 009**: +25 documents (0.20%)
 - **Session 2 Batch 010**: +25 documents (0.20%)
 - **Session 2 Batch 011**: +25 documents (0.20%)
-- **Total**: 416 documents (3.27%)
-- **Remaining**: 12,312 documents (96.73%)
+- **Session 2 Batch 012**: +25 documents (0.20%)
+- **Total**: 441 documents (3.47%)
+- **Remaining**: 12,287 documents (96.53%)
 
 ---
 
