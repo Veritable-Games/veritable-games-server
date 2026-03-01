@@ -291,7 +291,39 @@
 - ID 40191: Victor Berger, "Why We Are in This War" (1917-06-20)
 - ID 40193: Clemens Dutt, "Indian Politics: An Analysis" (1925-07-01)
 
-#### Batch 013 (Current)
+#### Batch 014 (Current)
+**Documents Processed**: 25
+**Documents Fixed**: 25 (100% success rate via WebFetch!)
+**Extraction Method**: WebFetch HTML parsing (100% coverage)
+
+**Key Documents Fixed**:
+- ID 43039: E. Sylvia Pankhurst, "The British Workers and Soviet Russia" (1919-08-09)
+- ID 43042: Mansoor Hekmat, "Ending Terrorism is our Task" (2001-09-14)
+- ID 43055: Felix Morrow, "Can One Justify the ALP War Position?" (1939-10-17)
+- ID 43064: Shibdas Ghosh, "On Liberation Struggle of Bangladesh" (1971-04-24)
+- ID 43071: E.P. Thompson, "At the Point of Decay" (1960-01-01)
+- ID 43072: R. Page Arnot, "India To-day" (1940-09-01)
+- ID 43077: J.R. Johnson, "Negro Protest Runs Too Deep to Be Squashed" (1941-07-21)
+- ID 43104: Harry Young, "The swindle of nationalisation" (1957-11-01)
+- ID 43106: Albert Weisbord, "Offshoots of Liberalism—Pacifism" (1930-01-01)
+- ID 43121: E.P. Thompson, "The Peculiarities of the English" (1965-01-01)
+- ID 43129: Paul Foot, "All fall down" (1990-11-01)
+- ID 43131: C.L.R. James, "Che Guevara" (1967-01-01)
+- ID 43137: Felix Morrow, "Spain's Unions Join Pact Against Stalinist Reaction" (1937-08-28)
+- ID 43139: Mansoor Hekmat, "The History of the Undefeated" (1995-01-01)
+- ID 43160: Bela Kun, "Five Years of Russian Revolution and the Prospects of the World Revolution" (1922-11-01)
+- ID 43170: Ilyenkov, "Soviet Psychology: Dialectics as Logic - Part One" (1960-01-01)
+- ID 43185: Tom Mann, "Power Through the General Strike: A Call to Action" (1923-01-01)
+- ID 43190: Natalia Sedova Trotsky, "Natalia Trotsky Raps Fraud in Times Story" (1948-02-26)
+- ID 43192: Wilhelm Liebknecht, "How It Could Be Done" (1901-09-07)
+- ID 43203: Pol Pot, "Pol Pot: Discussion with Hua Guofeng" (1977-09-29)
+- ID 43207: Paul Foot, "Seize the time" (1993-06-01)
+- ID 43216: Jim D'Arcy, "The Working Class since 1904" (1974-06-01)
+- ID 43225: Paul Mattick, "Long Live the War" (1940-09-01)
+- ID 43226: E.P. Thompson, "Eleanor Marx" (1976-01-01)
+- ID 43227: Felix Morrow, "Sidney Hook: Recruiting Sergeant" (1940-07-27)
+
+#### Batch 013 (Previous)
 **Documents Processed**: 25
 **Documents Fixed**: 25 (100% success rate via WebFetch!)
 **Extraction Method**: WebFetch HTML parsing (100% coverage)
@@ -368,8 +400,9 @@
 - **Session 2 Batch 011**: +25 documents (0.20%)
 - **Session 2 Batch 012**: +25 documents (0.20%)
 - **Session 2 Batch 013**: +25 documents (0.20%)
-- **Total**: 466 documents (3.66%)
-- **Remaining**: 12,262 documents (96.34%)
+- **Session 2 Batch 014**: +25 documents (0.20%)
+- **Total**: 491 documents (3.86%)
+- **Remaining**: 12,237 documents (96.14%)
 
 ---
 

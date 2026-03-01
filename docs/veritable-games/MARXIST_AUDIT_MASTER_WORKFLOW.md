@@ -2,9 +2,9 @@
 
 **Project Duration**: February 24, 2026 - Ongoing (Estimated 2-4 months)
 **Scope**: 12,728 documents in Marxist collection requiring metadata enrichment
-**Current Progress**: 466/12,728 documents complete (3.66%)
-**Session 2 Improvement**: +266 documents (+2.09%), 100% extraction success rate across twelve batches
-**Status**: ✅ Active and ongoing - Session 2 extended with twelve batches (002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013)
+**Current Progress**: 491/12,728 documents complete (3.86%)
+**Session 2 Improvement**: +291 documents (+2.29%), 100% extraction success rate across thirteen batches
+**Status**: ✅ Active and ongoing - Session 2 extended with thirteen batches (002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014)
 
 ---
 
