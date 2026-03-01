@@ -2840,3 +2840,43 @@ The URL extraction (9,167) + WebFetch extraction (123) + other sources/existing 
 
 **Success Rate**: 100% - All 25 documents successfully enriched with title, author, and publication date
 
+
+---
+
+## Batch 024 (Documents 45727-45943): WebFetch HTML Parsing Results
+
+**Extraction Method**: WebFetch HTML parsing (100% success rate)
+**Documents Processed**: 25
+**Cumulative Total**: 741 documents enriched (5.82% of 12,728 collection)
+
+**Key Documents Fixed**:
+- ID 45727: Balance Sheet of the War | J.R. Johnson | 1945-06-04
+- ID 45729: No Alternative for Negroes but to Fight for Labor Party | W.F. Carlton | 1944-08-07
+- ID 45732: For a free and peaceful new world | Kim Il Sung | 1991-04-29
+- ID 45744: Agency and Choice – I | E.P. Thompson | 1958-06-01
+- ID 45750: No challenge, no change | Paul Foot | 1989-07-01
+- ID 45756: Articles in Rheinische Zeitung (1842-1843) | Karl Marx | 1842-01-01
+- ID 45759: Review: A Reappraisal of Marxian Economics by Murray Wolfson | Paul Mattick | 1967-01-01
+- ID 45768: Hounded and humiliated | Lionel Starling and Paul Foot | 1977-06-25
+- ID 45782: The "Victory" in Spain | Paul Mattick | 1936-04-01
+- ID 45789: Capitalism and Ecology: From the Decline of Capital to the Decline of the World | Paul Mattick | 1976-01-01
+- ID 45809: The Antinomies of Bourgeois Thought | Georg Lukács | 1923-01-01
+- ID 45827: Exchange between Bax and Eleanor Marx 1895 | Eleanor Marx-Aveling | 1895-11-16
+- ID 45829: Representation and the State | Guy A. Aldred | 1910-01-01
+- ID 45836: Mordechai Vanunu - Israel's Whistle Test | Paul Foot | 2004-04-01
+- ID 45857: Marx alive in Clerkenwell | Paul Foot | 1995-12-16
+- ID 45861: Ruth First | Paul Foot | 1988-01-01
+- ID 45871: Judges rule against a free press | Paul Foot | 1997-07-12
+- ID 45875: Save Us from These Noble "Friends of the Negro" | J.R. Johnson | 1943-05-03
+- ID 45890: Record of the International Popular Movement | Eleanor Marx | 1884-01-01
+- ID 45908: Labor and the Second World War | J.R. Johnson | 1939-10-27
+- ID 45911: For law, read class | Paul Foot | 1978-04-01
+- ID 45912: Articles in La Reforme (1847-1848) | Friedrich Engels | 1847-10-01
+- ID 45914: Justice Hilton Must Also Go | Bhagat Singh | 1930-06-25
+- ID 45941: Fairy Tales of Reality | Maxim Gorky | 1912-01-01
+- ID 45943: Resolution on the Russian Question | C.L.R. James | 1941-09-19
+
+**Notable Authors Discovered**: Paul Foot (8 docs), J.R. Johnson (3 docs), Paul Mattick (3 docs), Marx/Engels/Eleanor Marx (index collections)
+
+**Success Rate**: 100% - All 25 documents successfully enriched with title, author, and publication date
+
