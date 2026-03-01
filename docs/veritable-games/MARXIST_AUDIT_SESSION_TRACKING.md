@@ -2800,3 +2800,43 @@ The URL extraction (9,167) + WebFetch extraction (123) + other sources/existing 
 
 **Success Rate**: 100% - All 25 documents successfully enriched with title, author, and publication date
 
+
+---
+
+## Batch 023 (Documents 45532-45726): WebFetch HTML Parsing Results
+
+**Extraction Method**: WebFetch HTML parsing (100% success rate)
+**Documents Processed**: 25
+**Cumulative Total**: 716 documents enriched (5.63% of 12,728 collection)
+
+**Key Documents Fixed**:
+- ID 45532: Movements for Independence Grow in West Indian Islands | W.F. Carlton | 1946-10-28
+- ID 45534: FDR's Latest Trick Is So Old It's Moth-Eaten | J.R. Johnson | 1941-06-23
+- ID 45549: A Protest Against Misrepresentation | Jean Longuet | 1897-06-12
+- ID 45558: Reaching across the centuries | Paul Foot | 1989-01-07
+- ID 45564: Glamorising an atrocity | Paul Foot | 1989-11-11
+- ID 45576: The State in Revolutionary Periods | Mansoor Hekmat | 1985-11-01
+- ID 45580: CIO Opens Road to Militant Struggle | Felix Morrow | 1940-11-23
+- ID 45595: The Laws of Movement of Capitalism | Albert Weisbord | 1936-01-01
+- ID 45603: Imperialism in Africa | C.L.R. James | 1941-06-01
+- ID 45606: Fighting for the Abyssinian Emperor | C.L.R. James | 1936-06-05
+- ID 45611: International Report - Minority Report to Plenum | Felix Morrow | 1946-05-15
+- ID 45628: Stalinists Paving Way for New Shift in Line | Felix Morrow | 1945-06-02
+- ID 45633: On the History of the Left Opposition | C.L.R. James | 1941-01-01
+- ID 45637: Soviet Psychology: Practice - Vygotsky's tool-and-result methodology and psychology | Fred Newman and Lois Holzman | 1997-01-01
+- ID 45655: An Appeal to the Leaders of the International Communist Movement | Shibdas Ghosh | 1963-09-01
+- ID 45659: What Does the GI Think as He Sees Hungry Europe? | J.R. Johnson | 1946-11-04
+- ID 45661: Socialist Economics 1: Commodities | Jim D'Arcy | 1974-01-01
+- ID 45663: Southern Liberal and FEPC | J.R. Johnson | 1945-06-18
+- ID 45674: Stalin's Speech - Every Word Was Alien to the Leninist Program | Felix Morrow | 1941-07-12
+- ID 45690: Answer Shows What Powell and Wallace Really Stand For | J. Meyer | 1949-03-28
+- ID 45693: Why water is a commodity | Harry Young | 1989-11-01
+- ID 45700: The Copenhagen Socialist Youth Conference | Walter Held | 1935-10-01
+- ID 45708: On the establishment of the Workers' Party of North Korea... | Kim Il Sung | 1946-09-26
+- ID 45713: Knowledge and Thinking | Evald Ilyenkov | 1973-01-01
+- ID 45726: Trade Unionism and the Class War | Guy A. Aldred | 1919-06-01
+
+**Notable Authors Discovered**: J.R. Johnson (4 docs), Felix Morrow (5 docs), C.L.R. James (3 docs), Paul Foot (2 docs)
+
+**Success Rate**: 100% - All 25 documents successfully enriched with title, author, and publication date
+
