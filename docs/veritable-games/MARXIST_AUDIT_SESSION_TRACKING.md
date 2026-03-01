@@ -291,7 +291,39 @@
 - ID 40191: Victor Berger, "Why We Are in This War" (1917-06-20)
 - ID 40193: Clemens Dutt, "Indian Politics: An Analysis" (1925-07-01)
 
-#### Batch 014 (Current)
+#### Batch 015 (Current)
+**Documents Processed**: 25
+**Documents Fixed**: 25 (100% success rate via WebFetch!)
+**Extraction Method**: WebFetch HTML parsing (100% coverage)
+
+**Key Documents Fixed**:
+- ID 43361: Paul Foot, "A question of principle" (1995-07-15)
+- ID 43381: Soraya Shahabi & Mansoor Hekmat, "Children First" (1999-11-13)
+- ID 43385: C.L.R. James, "Every Cook Can Govern" (1956-06-01)
+- ID 43417: Felix Morrow, "Hitler's \"New Order\" Doesn't Work" (1941-03-01)
+- ID 43423: William D. Haywood, "Pages Torn from \"The Class Struggle\" and Other Haywood Lectures" (1911-11-01)
+- ID 43436: Natalia Sedova Trotsky, "New GPU Slander Drive Is in the Making" (1948-04-01)
+- ID 43450: Maxim Gorky, "Letter on the Russian Revolution" (1906-01-27)
+- ID 43453: Kim Il Sung, "Great Anti-Imperialist Revolutionary Cause of Asian, African and Latin American Peoples Is Invincible" (1968-10-08)
+- ID 43454: J.R. Johnson, "One-Tenth of the Nation" (1945-01-22)
+- ID 43465: Bhagat Singh, "Hunger-strikers' Demands" (1929-06-24)
+- ID 43466: Felix Morrow, "Stalinists Make Official Change in Their Policy" (1945-06-09)
+- ID 43477: Maxim Gorky, "The People Must Know Their History!" (1939-01-01)
+- ID 43487: Tom Brown, "Into Battle with the Bazooka Bands" (1963-07-01)
+- ID 43490: J.R. Johnson, "The Stalinist Menace to World Labor" (1946-04-01)
+- ID 43495: Christopher Hill, "Review of English History" (1938-07-01)
+- ID 43496: Felix Morrow, "Soule's Revolution" (1934-08-01)
+- ID 43528: Paul Foot, "Army reign of terror" (1971-08-01)
+- ID 43536: Jim D'Arcy, "Marxism and the Media" (1975-12-01)
+- ID 43537: Evelyn Roy, "An Indian Communist Manifesto" (1920-06-24)
+- ID 43543: Paul Mattick, "The Story of Japanese Imperialism" (1936-11-01)
+- ID 43553: Shibdas Ghosh, "United Front Politics and Our Task in the Present Situation" (1969-10-29)
+- ID 43571: Harry Baldwin, "For Carter and Ford - Read Capitalism Part 1" (1976-10-01)
+- ID 43572: T.A. Jackson, "The Struggle for a Workers' International" (1928-05-01)
+- ID 43573: John Maclean, "Eight Lectures on Marxism" (1920-01-01)
+- ID 43575: Paul Mattick, "One Dimensional Man In Class Society" (1972-01-01)
+
+#### Batch 014 (Previous)
 **Documents Processed**: 25
 **Documents Fixed**: 25 (100% success rate via WebFetch!)
 **Extraction Method**: WebFetch HTML parsing (100% coverage)
@@ -401,8 +433,9 @@
 - **Session 2 Batch 012**: +25 documents (0.20%)
 - **Session 2 Batch 013**: +25 documents (0.20%)
 - **Session 2 Batch 014**: +25 documents (0.20%)
-- **Total**: 491 documents (3.86%)
-- **Remaining**: 12,237 documents (96.14%)
+- **Session 2 Batch 015**: +25 documents (0.20%)
+- **Total**: 516 documents (4.05%)
+- **Remaining**: 12,212 documents (95.95%)
 
 ---
 
