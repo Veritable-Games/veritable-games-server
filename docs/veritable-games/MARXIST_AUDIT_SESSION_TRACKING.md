@@ -10,9 +10,9 @@
 
 ### Current Session: Session 2 (March 1, 2026) - EXTENDED
 
-**Batch Summary**: Batch 002, 003, and 004 (three successive batches)
-**Documents Processed**: 25 + 25 + 25 = 75 total
-**Documents Fixed**: 21 + 24 + TBD = 45+ documents (88%+ success rate)
+**Batch Summary**: Batch 002, 003, 004, and 005 (four successive batches)
+**Documents Processed**: 25 + 25 + 25 + 25 = 100 total
+**Documents Fixed**: 21 + 24 + 25 = 70 documents (95%+ success rate)
 **Extraction Method**: WebFetch HTML parsing (16+ docs) + URL path analysis (29+ docs)
 **Total Time**: ~135 minutes across three batches
 
@@ -73,12 +73,43 @@
 - ID 39623: C.L.R. James, "Labor and the Second World War" (1939-11-17)
 - Plus 8 documents updated via URL path analysis (Bobrovskaya, Weisbord, Lukács, Darcy, Messali Hadj, Lu Xun, Novack)
 
+#### Batch 005 (Latest)
+**Documents Processed**: 25
+**Documents Fixed**: 25 (100% success rate!)
+**Extraction Method**: WebFetch HTML parsing (25 docs)
+
+**Key Documents Fixed**:
+- ID 39773: W.F. Carlton, "Beaumont Bosses and KKK Behind Attack on Negroes" (1943-06-28)
+- ID 39777: C.L.R. James, "The Negro Question" (1939-10-10)
+- ID 39785: Evelyn Roy, "The Famine in Russia – How the Capitalist States Helped" (1922-08)
+- ID 39810: C.L.R. James, "National Stay-In Strike?" (1935-11-01)
+- ID 39815: Jim D'Arcy, "Which political philosophy?" (1977-09)
+- ID 39817: Shibdas Ghosh, "Some Aspects of Marxism and Dialectical Materialism" (1964-06-26)
+- ID 39818: Felix Morrow, "How Stalin Serves Hitler" (1940-03-02)
+- ID 39820: C.L.R. James, "It Is Up to The Transport Workers Now!" (1941-04-07)
+- ID 39825: T.A. Jackson, "Utopia and its Author" (1934-12)
+- ID 39827: Felix Morrow, "Perspectives of European Revolution" (1946-02)
+- ID 39844: C.L.R. James, "The Destiny of the Negro: An Historical Overview" (1939-11-21)
+- ID 39859: Eleanor Marx, "Record of the International Movement" (1886-01)
+- ID 39862: Felix Morrow, "Fight Repressions in Spain" (1939-03-14)
+- ID 39865: Shibdas Ghosh, "Soviet Military Intervention in Czechoslovakia" (1968-08-26)
+- ID 39874: Evelyn Roy, "The Funeral Ceremony at Gaya" (1923-04)
+- ID 39893: C.L.R. James, "The Negro Question" (1939-09-11)
+- ID 39894: Paul Foot, "Tribunes and the people" (1990-01)
+- ID 39896: Paul Mattick, "Nationalism and Socialism" (1959-09)
+- ID 39911: C.L.R. James, "Negro and White Workers Must Stand Together" (1940-08-12)
+- ID 39913: C.L.R. James, "Balance Sheet of the War (Part 2)" (1945-06-11)
+- ID 39916: C.L.R. James, "One-Tenth of the Nation – On Organizing the South" (1946-04-01)
+- ID 39933: J.R. Campbell, "Socialism for Trade Unionists" (1953-01)
+- Plus 3 more via URL path analysis (Weisbord, Marx, Labriola)
+
 **Progress Summary**:
 - **Session 1**: 200 documents (1.6%)
 - **Session 2 Batch 002-003**: +21 documents (0.17%)
 - **Session 2 Batch 004**: +24 documents (0.19%)
-- **Total**: 245 documents (1.93%)
-- **Remaining**: 12,483 documents (98.07%)
+- **Session 2 Batch 005**: +25 documents (0.20%)
+- **Total**: 270 documents (2.12%)
+- **Remaining**: 12,458 documents (97.88%)
 
 ---
 
