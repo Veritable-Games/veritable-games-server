@@ -291,7 +291,39 @@
 - ID 40191: Victor Berger, "Why We Are in This War" (1917-06-20)
 - ID 40193: Clemens Dutt, "Indian Politics: An Analysis" (1925-07-01)
 
-#### Batch 015 (Current)
+#### Batch 016 (Current)
+**Documents Processed**: 25
+**Documents Fixed**: 25 (100% success rate via WebFetch!)
+**Extraction Method**: WebFetch HTML parsing (96% coverage, URL analysis for 1 doc)
+
+**Key Documents Fixed**:
+- ID 43815: Felix Morrow, "They Alibi for Social Patriots; Insult Leninists" (1939-11-21)
+- ID 43836: Liborio Justo, "Links" (1920-01-01)
+- ID 43845: Felix Morrow, "Congress Planning Anti-Strike Laws" (1940-01-11)
+- ID 43849: Karl Liebknecht, "Where Will Peace Come From?" (1912-11-02)
+- ID 43853: Paul Foot, "How history comes alive" (1993-09-09)
+- ID 43862: W.F. Carlton, "Mr. Minor, This War Is NOT Like the Civil War of 1861" (1944-08-28)
+- ID 43876: Natalia Sedova Trotsky, "Natalia Trotsky's Views on Malamuth's Editing" (1942-03-28)
+- ID 43878: J.R. Johnson, "Beware of Those Pushing You Into the War" (1941-07-07)
+- ID 43879: Felix Morrow, "The Stalinist Policy in the Trade Unions" (1941-05-01)
+- ID 43880: Felix Morrow, "Britain Takes Steps to 'Solve' Spanish Crisis by Recognizing Franco" (1937-11-13)
+- ID 43884: Cecilia Bobrovskaya, "Twenty Years in Underground Russia: Memoirs of a Rank-and-File Bolshevik" (1923-01-01)
+- ID 43897: J.R. Johnson, "The Feeling Is Growing – Something Is Wrong!" (1947-06-02)
+- ID 43901: Lu Xun, "Soap" (1924-03-22)
+- ID 43902: William D. Haywood, "With the Copper Miners of Michigan" (1910-08-01)
+- ID 43903: Paul Mattick, "Child Labor – A Class Issue" (1937-04-01)
+- ID 43904: Mansoor Hekmat, "Religion is Part of the 'Lumpenism' in Society" (1999-06-13)
+- ID 43906: J.R. Johnson, "A Warning Against Stalinist Maneuvers" (1946-03-18)
+- ID 43931: William D. Haywood, "The Fighting I.W.W." (1912-09-01)
+- ID 43937: Albert Weisbord, "Chapter Nineteen: The First International" (1930-01-01)
+- ID 43944: Bhagat Singh, "Letter to Father" (1930-10-04)
+- ID 43970: Clemens Dutt, "The Outsider's India" (1929-05-01)
+- ID 43988: Celia Hart, "Hurricane Reflections" (2005-11-13)
+- ID 43992: W.F. Carlton, "The Story of Harriet Tubman and the American Civil War" (1944-01-03)
+- ID 44024: Hal Draper, "Soapbox in the Sixties" (1982-01-01)
+- ID 44025: W.F. Carlton, "Does Cheap Patronage Cancel Oppression?" (1944-08-14)
+
+#### Batch 015 (Previous)
 **Documents Processed**: 25
 **Documents Fixed**: 25 (100% success rate via WebFetch!)
 **Extraction Method**: WebFetch HTML parsing (100% coverage)
@@ -434,8 +466,9 @@
 - **Session 2 Batch 013**: +25 documents (0.20%)
 - **Session 2 Batch 014**: +25 documents (0.20%)
 - **Session 2 Batch 015**: +25 documents (0.20%)
-- **Total**: 516 documents (4.05%)
-- **Remaining**: 12,212 documents (95.95%)
+- **Session 2 Batch 016**: +25 documents (0.20%)
+- **Total**: 541 documents (4.25%)
+- **Remaining**: 12,187 documents (95.75%)
 
 ---
 
