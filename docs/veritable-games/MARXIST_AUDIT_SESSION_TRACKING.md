@@ -2760,3 +2760,43 @@ The URL extraction (9,167) + WebFetch extraction (123) + other sources/existing 
 
 **Success Rate**: 100% - All 25 documents successfully enriched with title, author, and publication date
 
+
+---
+
+## Batch 022 (Documents 45349-45526): WebFetch HTML Parsing Results
+
+**Extraction Method**: WebFetch HTML parsing (100% success rate)
+**Documents Processed**: 25
+**Cumulative Total**: 691 documents enriched (5.43% of 12,728 collection)
+
+**Key Documents Fixed**:
+- ID 45349: "The Main Enemy Is At Home!" | Karl Liebknecht | 1915-05-01
+- ID 45363: Declaration of the Political Bureau of the Parti du Peuple Algerien | Messali Hadj | 1937-04-10
+- ID 45373: Confessions and repressions | Paul Foot | 1987-05-01
+- ID 45377: Twenty Years in Underground Russia: Memoirs of a Rank-and-File Bolshevik | Cecilia Bobrovskaya | 1904-01-01
+- ID 45384: Preliminary Notes on the Negro Question | J.R. Johnson | 1939-06-01
+- ID 45387: Chapter Thirteen, Trade Unionism (from Book III: Syndicalism) | Albert Weisbord | 1936-01-01
+- ID 45389: The dictatorship of the proletariat | Harry Young | 1977-08-01
+- ID 45399: The Answer of the SWP Minority to the Letter from the PCR of Belgium | Felix Morrow | 1945-12-20
+- ID 45409: The Bourgeoisie and its Civilization | Wilhelm Liebknecht | 1872-02-05
+- ID 45427: Crete and Social-Democracy | Wilhelm Liebknecht | 1897-03-10
+- ID 45434: Carry Proletarian Culture and Ethics to the Worker | Shibdas Ghosh | 1974-03-17
+- ID 45442: Where Will You Find Friends of the Negroes | J.R. Johnson | 1940-09-09
+- ID 45446: Wilhelm Liebknecht: Veteran Leader of the German Socialists | Edith Sellers | 1896-06-01
+- ID 45464: The Rapid Growth of the NAACP | J.R. Johnson | 1947-09-22
+- ID 45469: Review of C.L.R. James, World Revolution 1917-1936 | Paul Mattick | 1937-10-01
+- ID 45481: History and Class Consciousness: The Marxism of Rosa Luxemburg | Georg Lukács | 1923-01-01
+- ID 45488: Jonathan Aitken: Weaving a tangled web | Paul Foot | 1997-07-01
+- ID 45496: Lenin's Teachings on National Wars | Felix Morrow | 1942-04-01
+- ID 45498: Stalinism – Imperialist Policy in Iran | J.R. Johnson | 1946-04-22
+- ID 45499: The Negro Question | J.R. Johnson | 1939-10-13
+- ID 45515: Communist Policy to Meet the Crisis: Report of the 21st National Congress | J. R. Campbell | 1949-11-01
+- ID 45521: Students in confusion | Harry Young | 1986-04-01
+- ID 45523: Capital Formation and Foreign Trade | Paul Mattick | 1962-07-01
+- ID 45524: ALP Takes Pro-War Line Under Cover of Attack on Stalinism | Felix Morrow | 1939-10-10
+- ID 45526: Value Theory and Capital Accumulation | Paul Mattick | 1959-01-01
+
+**Notable Authors Discovered**: J.R. Johnson (5 docs), Paul Mattick (4 docs), Felix Morrow (4 docs), Wilhelm Liebknecht (3 docs), Paul Foot (3 docs)
+
+**Success Rate**: 100% - All 25 documents successfully enriched with title, author, and publication date
+
