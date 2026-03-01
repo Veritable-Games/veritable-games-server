@@ -2,7 +2,7 @@
 
 **All documentation for Veritable Games server organized in one place.**
 
-**Last updated:** November 14, 2025
+**Last updated:** March 1, 2026
 
 ---
 
@@ -42,6 +42,7 @@
 - **[/home/user/projects/veritable-games/README.md](/home/user/projects/veritable-games/README.md)** - Project resources guide
 
 ### Server Management
+- **[server/SERVER_PROJECT_INVENTORY.md](server/SERVER_PROJECT_INVENTORY.md)** ⭐ NEW - Complete project inventory (18 projects, ~1.1 TB, includes 3 Godot games, 1 massive Unity project, 60+ website versions)
 - **[server/DRIVE_ARCHITECTURE.md](server/DRIVE_ARCHITECTURE.md)** - Dual-drive architecture strategy
 - **[server/REPOSITORY_ARCHITECTURE.md](server/REPOSITORY_ARCHITECTURE.md)** - Tool archives & reference materials (5.6GB + 16GB)
 - **[server/CONTAINER_TO_GIT_AUTOMATION.md](server/CONTAINER_TO_GIT_AUTOMATION.md)** - Container-to-git workflow automation
