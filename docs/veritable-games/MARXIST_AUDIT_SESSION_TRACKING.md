@@ -103,7 +103,39 @@
 - ID 39933: J.R. Campbell, "Socialism for Trade Unionists" (1953-01)
 - Plus 3 more via URL path analysis (Weisbord, Marx, Labriola)
 
-#### Batch 006 (Latest)
+#### Batch 007 (Latest)
+**Documents Processed**: 25
+**Documents Fixed**: 25 (100% success rate via WebFetch!)
+**Extraction Method**: WebFetch HTML parsing (100% coverage)
+
+**Key Documents Fixed**:
+- ID 40390: Bela Kun, "The Desocialisation of Minds" (1918-05-11)
+- ID 40404: Harry Young, "International Socialists . . . the Tripe Factory" (1974-04-01)
+- ID 40405: A.A.B., "Giraud – Disciple of Roosevelt – II" (1943-07-26)
+- ID 40432: Paul Foot, "Plague of the market" (1996-06-29)
+- ID 40449: Paul Foot, "House of cards" (1999-01-01)
+- ID 40468: Albert Weisbord, "Communist-Anarchism" (1934-01-01)
+- ID 40471: Georg Lukács, "Reification and the Consciousness of the Proletariat" (1923-01-01)
+- ID 40472: Paul Foot, "Millionaires' welfare" (1998-01-01)
+- ID 40478: Paul Foot, "The Old Firm" (1972-07-01)
+- ID 40491: J.R. Johnson, "Notes Following the Discussions" (1939-06-01)
+- ID 40503: Lu Xun, "Literature of a Revolutionary Period" (1927-04-08)
+- ID 40505: W.F. Carlton, "Harlem Negroes Protest Jim Crow Discrimination" (1943-08-09)
+- ID 40507: Paul Foot, "Without a paddle" (1987-03-01)
+- ID 40508: Bela Kun, "Preface to Fundamental Laws of the Chinese Soviet Republic" (1934-01-01)
+- ID 40516: Paul Foot, "Late developer" (1985-02-01)
+- ID 40525: Eleanor Marx, "Evil May Day" (1894-05-06)
+- ID 40537: E. V. Ilyenkov, "Soviet Psychology: Activity and Knowledge" (1974-01-01)
+- ID 40539: J.R. Johnson, "The Negro Question" (1939-11-07)
+- ID 40543: Karl Liebknecht, "Call for Revolution" (1918-11-01)
+- ID 40544: Pierre Morhange, "Le Dimanche" (1933-01-01)
+- ID 40553: Felix Morrow, "Inflation" (1942-05-01)
+- ID 40554: William Paul, "The Melting Pot: S.L.P. and the Election" (1918-11-01)
+- ID 40572: Bertram D. Wolfe, "Trotsky's Defense" (1937-11-24)
+- ID 40590: Messali Hadj, "Response to M. Deloche of l'Humanité" (1937-02-01)
+- ID 40593: J.R. Johnson, "Socialism versus Free Enterprise" (1944-12-25)
+
+#### Batch 006
 **Documents Processed**: 25
 **Documents Fixed**: 21 (100% success rate via WebFetch, 4 additional docs require research)
 **Extraction Method**: WebFetch HTML parsing (21 docs with complete extraction)
@@ -137,8 +169,9 @@
 - **Session 2 Batch 004**: +24 documents (0.19%)
 - **Session 2 Batch 005**: +25 documents (0.20%)
 - **Session 2 Batch 006**: +21 documents (0.17%)
-- **Total**: 291 documents (2.29%)
-- **Remaining**: 12,437 documents (97.71%)
+- **Session 2 Batch 007**: +25 documents (0.20%)
+- **Total**: 316 documents (2.48%)
+- **Remaining**: 12,412 documents (97.52%)
 
 ---
 
