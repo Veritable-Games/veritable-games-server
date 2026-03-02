@@ -18,7 +18,7 @@ This repository tracks the server-level configuration, infrastructure documentat
 - **Hostname**: veritable-games-server
 - **IP Address**: 192.168.1.15 (local network)
 - **OS**: Ubuntu Server 22.04.5 LTS
-- **Architecture**: Dual-drive (477GB user data + 954GB services)
+- **Architecture**: Dual-drive (477GB root + 5.5TB /data) with hybrid SSD/HDD storage
 - **Deployment**: Coolify (self-hosted PaaS)
 - **Containerization**: Docker with Nixpacks buildpacks
 - **VPN**: WireGuard (10.100.0.0/24 subnet)
@@ -34,15 +34,25 @@ This repository tracks the server-level configuration, infrastructure documentat
 
 **Drive 1** - `/dev/sdb2` (477GB): User data and application code
 - Mount: `/` (root filesystem)
-- Usage: 123GB / 468GB (28% used, 322GB free)
+- Usage: 163GB / 468GB (37% used, 282GB free)
 - Contains: `/home/user/`, projects, git repositories, archives
 
-**Drive 2** - `/dev/sda1` (954GB): System services and Docker
-- Mount: `/var`
-- Usage: 32GB / 938GB (4% used, 859GB free)
-- Contains: Docker volumes/images/containers, PostgreSQL data, logs
+**Drive 2** - `/dev/sda1` (5.5TB): High-capacity storage and services
+- Mount: `/data`
+- Usage: 923GB / 5.5TB (17% used, 4.5TB free)
+- Contains: Docker volumes/images/containers, PostgreSQL data, Bitcoin blockchain, backups
 
-**Rationale**: Separation prevents Docker growth from filling user data partition. See [docs/server/DRIVE_ARCHITECTURE.md](docs/server/DRIVE_ARCHITECTURE.md).
+**Drive 3** - `/mnt/flash` (932GB): USB external drive
+- Status: Mounted and available for backup/archive
+- Contains: Optional backup destination
+
+**Rationale**:
+- `/dev/sdb2`: User data and application code on faster SATA drive
+- `/dev/sda1`: High-capacity HDD for Docker, blockchain, and backups
+- `/mnt/flash`: Emergency backup destination (external USB)
+- Docker data-root: `/home/user/docker-ssd/` (SSD performance), Bitcoin blockchain on `/data` (HDD capacity)
+
+See [docs/server/DRIVE_ARCHITECTURE.md](docs/server/DRIVE_ARCHITECTURE.md) and [docs/server/RECENT_WORK_DEC_2025.md](docs/server/RECENT_WORK_DEC_2025.md).
 
 ## Repository Structure
 
@@ -63,12 +73,15 @@ This repository tracks the server-level configuration, infrastructure documentat
 │   ├── migration-scripts-archive/ # Archived one-time migrations
 │   ├── postgres-daily-*.sql.gz    # Daily PostgreSQL backups
 │   └── *.log                      # Monitoring logs
-├── btcpayserver-docker/            # BTCPay Server (git submodule)
+├── btcpayserver-docker/            # BTCPay Server infrastructure (git submodule)
+├── docker-ssd/                     # Docker data-root (performance, SSD)
 ├── repository/                     # Development tools archive (5.9GB)
 │   └── [metadata tracked, binaries gitignored]
 ├── archives/                       # Reference materials (16GB gitignored)
-├── wireguard-backups/             # VPN configuration and health scripts
-├── shared/                         # Cross-project resources
+├── Downloads/                      # Downloaded files and temporary storage
+├── frontend/                       # Frontend utilities and tools
+├── scripts/                        # Server-level utility scripts
+├── Projects/                       # Additional project directories
 ├── snap/                           # Snap package data (system-managed)
 ├── .claude.json                   # Claude Code configuration
 ├── .gitignore                     # Excludes 54GB (sensitive data, archives)
@@ -81,9 +94,10 @@ This repository tracks the server-level configuration, infrastructure documentat
 - `btcpayserver-docker/` → https://github.com/btcpayserver/btcpayserver-docker
 
 **Repository Statistics**:
-- Tracked: 68 files (1.1 MB)
-- Excluded: ~54 GB via .gitignore
+- Tracked: 93,199 files (server repo + submodules)
+- Excluded: ~54 GB via .gitignore (sensitive data, archives, large binaries)
 - Created: November 21, 2025
+- Updated: March 2, 2026
 
 ## Quick Reference
 
@@ -112,8 +126,8 @@ coolify deploy by-uuid m4s0kwo4kc4oooocck4sswc4
 **Container**: `veritable-games-postgres`
 **Image**: postgres:15-alpine
 **Database**: veritable_games
-**Schemas**: 13 active (public, anarchist, shared, library, auth, wiki, forums, etc.)
-**Tables**: 170+ tables across all schemas
+**Schemas**: 17 active (public, anarchist, shared, library, auth, wiki, forums, cache, content, donations, main, marxist, messaging, system, users, x402_payments, youtube)
+**Tables**: 233 tables across all schemas
 **Networks**: coolify + veritable-games-network (dual-network for isolation)
 
 ```bash
@@ -246,14 +260,13 @@ See [docs/server/CONTAINER_TO_GIT_AUTOMATION.md](docs/server/CONTAINER_TO_GIT_AU
 - [coolify-env-vars-TEMPLATE.txt](docs/deployment/coolify-env-vars-TEMPLATE.txt) - Environment variable template (28 vars)
 
 **Troubleshooting & Incidents**:
-- [COOLIFY_UNSERIALIZE_76_BYTE_ERROR_FIX.md](docs/server/COOLIFY_UNSERIALIZE_76_BYTE_ERROR_FIX.md) - Resolved Nov 15, 2025
-- [OPENVPN_REMOVAL_NOVEMBER_15_2025.md](docs/server/OPENVPN_REMOVAL_NOVEMBER_15_2025.md) - VPN conflict resolution
+- [COOLIFY_RESTORATION_NOV27_2025.md](docs/server/COOLIFY_RESTORATION_NOV27_2025.md) - Coolify restoration after drive failure
+- [WIREGUARD_INCIDENT_RECOVERY_SESSION_MARCH_2_2026.md](docs/veritable-games/WIREGUARD_INCIDENT_RECOVERY_SESSION_MARCH_2_2026.md) - WireGuard network failure analysis (March 2, 2026)
 - [TOKEN_ROTATION_REQUIRED.md](docs/server/TOKEN_ROTATION_REQUIRED.md) - Security token management
 
-**Network & VPN**:
-- [verify-wg-tunnel.sh](wireguard-backups/verify-wg-tunnel.sh) - WireGuard health check script
-- [backup-wg-config.sh](wireguard-backups/backup-wg-config.sh) - VPN configuration backup
-- [coolify-diagnostic.sh](wireguard-backups/coolify-diagnostic.sh) - Coolify health diagnostic
+**Security & SSH**:
+- [SSH_KEY_SETUP_FEBRUARY_2026.md](docs/server/SSH_KEY_SETUP_FEBRUARY_2026.md) - SSH key configuration and deployment
+- [SSH_KEY_SECURITY_PLAN_2026.md](docs/server/SSH_KEY_SECURITY_PLAN_2026.md) - SSH key security strategy
 
 ### Documentation Hub
 
@@ -266,7 +279,7 @@ Complete documentation index: [docs/README.md](docs/README.md)
 ⚠️ **CRITICAL**: Production containers contain all live data. Follow these rules:
 
 **Protected Containers** (DO NOT MODIFY):
-- `veritable-games-postgres` - Production database (13 schemas, 170 tables)
+- `veritable-games-postgres` - Production database (17 schemas, 233 tables)
 - `m4s0kwo4kc4oooocck4sswc4` - Application container (managed by Coolify)
 
 **Before ANY container operation**:
@@ -339,14 +352,14 @@ bash /home/user/wireguard-backups/backup-wg-config.sh
 
 **Weekly Health Checks** (Recommended):
 ```bash
-# WireGuard VPN health
-bash /home/user/wireguard-backups/verify-wg-tunnel.sh
+# Disk space check (root and /data)
+df -h / /data
 
-# Coolify health diagnostic
-bash /home/user/wireguard-backups/coolify-diagnostic.sh
+# Database health
+docker exec veritable-games-postgres psql -U postgres -d veritable_games -c "SELECT 1;"
 
-# Disk space check
-df -h / /var
+# Application container status
+docker ps --filter "name=m4s0kwo4kc4oooocck4sswc4"
 ```
 
 **Monthly Maintenance**:
@@ -558,9 +571,6 @@ coolify resource logs m4s0kwo4kc4oooocck4sswc4
 ### WireGuard VPN Not Working
 
 ```bash
-# Run comprehensive health check
-bash /home/user/wireguard-backups/verify-wg-tunnel.sh
-
 # Check WireGuard status
 sudo wg show wg0
 
@@ -569,6 +579,8 @@ ping 10.100.0.2
 
 # Restart WireGuard
 sudo systemctl restart wg-quick@wg0
+
+# See detailed incident analysis: docs/veritable-games/WIREGUARD_INCIDENT_RECOVERY_SESSION_MARCH_2_2026.md
 ```
 
 ## Production Checklist
@@ -613,13 +625,44 @@ docker inspect m4s0kwo4kc4oooocck4sswc4 --format='{{range .Config.Env}}{{println
 
 ## Recent Infrastructure Changes
 
+### March 2, 2026 - WireGuard Incident Recovery & Documentation
+- ✅ Complete analysis of network failure incident
+- ✅ Created comprehensive recovery guide (WIREGUARD_INCIDENT_RECOVERY_SESSION_MARCH_2_2026.md)
+- ✅ Deleted broken template configurations
+- ✅ Prevented future routing conflicts with mandatory validation procedures
+- ✅ Added critical warnings to CLAUDE.md and setup guides
+
+### March 1, 2026 - Marxist Library Metadata Audit COMPLETE
+- ✅ **100% COMPLETION**: All 12,728 documents enriched with author/date metadata
+- ✅ Rate: ~25 documents/hour (far exceeding 2-4 month estimate)
+- ✅ URL path analysis method: 100% success rate (no external requests needed)
+- ✅ Author mapping database: 80+ authors with proper names extracted
+- ✅ Session duration: 1 week (Feb 24 - Mar 1, 2026)
+
+### March 1, 2026 - YouTube Transcript Cleanup Deployed
+- ✅ Paragraph formatting for wall-of-text transcripts
+- ✅ Preview text generation for YouTube documents
+- ✅ Metadata detection for content extraction
+- ✅ Deployed to production (commit 77f4c31)
+
+### February 23, 2026 - Document Deduplication Phase 3 Complete
+- ✅ Phase 3A: 75,829 document fingerprints generated (0% error rate)
+- ✅ Phase 3B: 621 duplicate clusters identified across 3 collections
+- ✅ Exact matches: 316 clusters (100% confidence, ready for auto-merge)
+- ✅ Fuzzy/near-duplicate: 305 clusters (ready for manual review)
+
+### December 4, 2025 - Hybrid SSD/HDD Storage Migration
+- ✅ Completed migration after second Samsung SSD failure
+- ✅ **NEW ARCHITECTURE**: Docker on `/home/user/docker-ssd/` (SSD), Bitcoin on `/data` (HDD)
+- ✅ All services operational, zero data loss
+- ✅ Old Samsung SSD physically removed (February 2026)
+
 ### November 26, 2025 - PDF Conversion Workflow
 - ✅ Production-ready PDF→Markdown conversion workflow
 - ✅ AI-powered conversion using marker_single (75% artifact fix rate)
 - ✅ Automated cleanup script with 6 pattern fixes
 - ✅ Organized 63 archived scripts (95% reduction in clutter)
 - ✅ Created comprehensive documentation (PDF_CONVERSION_WORKFLOW.md)
-- ✅ Verified on 3 diverse test samples
 - 📊 Performance: ~3.5 min/PDF, 100% success rate
 
 ### November 21, 2025 - Repository Initialization
@@ -629,13 +672,12 @@ docker inspect m4s0kwo4kc4oooocck4sswc4 --format='{{range .Config.Env}}{{println
 - ✅ Added git submodules (veritable-games-site, btcpayserver-docker)
 - ✅ Cleaned up 3.05 GB of obsolete data
 - ✅ Migrated to Veritable-Games organization
-- ⚠️ Discovered exposed tokens (rotation required)
 
-### November 15, 2025 - Network Cleanup
+### November 15, 2025 - Network Cleanup & Container Protection
 - ✅ Removed OpenVPN (conflicted with WireGuard routing)
 - ✅ Resolved WireGuard handshake failures
-- ✅ Created automated health check scripts
 - ✅ Resolved Coolify unserialize error (corrupted environment variables)
+- ✅ Added container protection protocols after incident recovery
 
 ### November 5, 2025 - Production Deployment
 - ✅ Deployed Veritable Games to production
@@ -656,7 +698,7 @@ Private repository - All rights reserved.
 
 ---
 
-**Last Updated**: March 1, 2026
+**Last Updated**: March 2, 2026
 **Repository Created**: November 21, 2025
 **GitHub**: https://github.com/Veritable-Games/veritable-games-server
 **Organization**: Veritable Games

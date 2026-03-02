@@ -26,11 +26,12 @@ The project subdirectory contains all project-specific resources:
 **Repository:** `/home/user/projects/veritable-games/site/`
 
 **Resources:** `/home/user/projects/veritable-games/resources/`
-- `data/` - Anarchist & Marxist literature archives (3.1GB)
+- `data/` - Anarchist & Marxist literature archives (~101GB)
 - `scripts/` - Python import and extraction scripts
 - `sql/` - Database schema migrations
 - `logs/` - Script execution logs
 - `docker-compose.yml` - Local PostgreSQL development environment
+- `processing/` - Audit scripts, conversion workflows, metadata extraction
 
 **Production:** Deployed via Coolify to https://www.veritablegames.com
 

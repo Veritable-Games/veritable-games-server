@@ -2,7 +2,7 @@
 
 **All documentation for Veritable Games server organized in one place.**
 
-**Last updated:** March 1, 2026
+**Last updated:** March 2, 2026
 
 ---
 
@@ -34,19 +34,44 @@
 
 **Documentation organized by project.**
 
-### Veritable Games
-- **[veritable-games/UNIFIED_TAG_SCHEMA_STATUS.md](veritable-games/UNIFIED_TAG_SCHEMA_STATUS.md)** - Unified tag system implementation (Nov 2025)
+### Veritable Games - Active Workflows
+- **[veritable-games/MARXIST_AUDIT_MASTER_WORKFLOW.md](veritable-games/MARXIST_AUDIT_MASTER_WORKFLOW.md)** ✅ COMPLETE - Marxist metadata enrichment (12,728 docs, 100% finished)
+- **[veritable-games/MARXIST_AUDIT_SESSION_TRACKING.md](veritable-games/MARXIST_AUDIT_SESSION_TRACKING.md)** - Session-by-session tracking document
+- **[veritable-games/YOUTUBE_AUDIT_MASTER_WORKFLOW.md](veritable-games/YOUTUBE_AUDIT_MASTER_WORKFLOW.md)** - YouTube transcript processing workflow
+- **[veritable-games/YOUTUBE_AUDIT_SESSION_TRACKING.md](veritable-games/YOUTUBE_AUDIT_SESSION_TRACKING.md)** - YouTube session tracking
+- **[veritable-games/LAPTOP_PDF_RECONVERSION_DECEMBER_2025.md](veritable-games/LAPTOP_PDF_RECONVERSION_DECEMBER_2025.md)** - PDF conversion workflow (830 PDFs, 174 xlarge converted)
+- **[veritable-games/WIREGUARD_INCIDENT_RECOVERY_SESSION_MARCH_2_2026.md](veritable-games/WIREGUARD_INCIDENT_RECOVERY_SESSION_MARCH_2_2026.md)** - Network incident analysis and recovery
+
+### Veritable Games - Reference & Historical
+- **[veritable-games/UNIFIED_TAG_SCHEMA_STATUS.md](veritable-games/UNIFIED_TAG_SCHEMA_STATUS.md)** - Unified tag system implementation (Nov 2025 - Feb 2026)
 - **[veritable-games/FORENSIC_ANALYSIS_REPORT.md](veritable-games/FORENSIC_ANALYSIS_REPORT.md)** - Forensic analysis of past deployment issues
 - **[veritable-games/SCHEMA_OVERRIDE_DIAGNOSIS.md](veritable-games/SCHEMA_OVERRIDE_DIAGNOSIS.md)** - Schema override diagnosis
+- **[veritable-games/PROCESSING_CLEANUP_GUIDE.md](veritable-games/PROCESSING_CLEANUP_GUIDE.md)** - Processing script organization guide
+- **[veritable-games/CONTENT_COLLECTIONS.md](veritable-games/CONTENT_COLLECTIONS.md)** - Collection overview and statistics
+- **[veritable-games/LIBRARY_AUDIT_COMPLETION_FEB23_2026.md](veritable-games/LIBRARY_AUDIT_COMPLETION_FEB23_2026.md)** - Library deduplication completion (Feb 23, 2026)
 - **[veritable-games/DEPLOYED_ANARCHIST_TAGS_API.ts](veritable-games/DEPLOYED_ANARCHIST_TAGS_API.ts)** - API endpoint reference code
 - **[/home/user/projects/veritable-games/README.md](/home/user/projects/veritable-games/README.md)** - Project resources guide
 
+### Deployment Infrastructure
+- **[deployment/INFRASTRUCTURE_INVENTORY.md](deployment/INFRASTRUCTURE_INVENTORY.md)** (750 lines) - Complete Docker infrastructure map and container details
+- **[deployment/POSTGRES_PRODUCTION_CONFIG.md](deployment/POSTGRES_PRODUCTION_CONFIG.md)** (600 lines) - PostgreSQL configuration, performance tuning, procedures
+- **[deployment/VOLUME_BACKUP_STRATEGY.md](deployment/VOLUME_BACKUP_STRATEGY.md)** (650 lines) - Volume backup and disaster recovery procedures
+
 ### Server Management
-- **[server/SERVER_PROJECT_INVENTORY.md](server/SERVER_PROJECT_INVENTORY.md)** ⭐ NEW - Complete project inventory (18 projects, ~1.1 TB, includes 3 Godot games, 1 massive Unity project, 60+ website versions)
-- **[server/DRIVE_ARCHITECTURE.md](server/DRIVE_ARCHITECTURE.md)** - Dual-drive architecture strategy
-- **[server/REPOSITORY_ARCHITECTURE.md](server/REPOSITORY_ARCHITECTURE.md)** - Tool archives & reference materials (5.6GB + 16GB)
+- **[server/SERVER_PROJECT_INVENTORY.md](server/SERVER_PROJECT_INVENTORY.md)** ⭐ COMPLETE - Project inventory (18 projects, ~1.1 TB, includes 3 Godot, 1 Unity, 60+ websites)
+- **[server/DRIVE_ARCHITECTURE.md](server/DRIVE_ARCHITECTURE.md)** - Dual-drive (477GB root, 5.5TB /data) architecture and file placement
+- **[server/REPOSITORY_ARCHITECTURE.md](server/REPOSITORY_ARCHITECTURE.md)** - Repository organization (5.9GB tools, 16GB reference)
+- **[server/CONTAINER_PROTECTION_AND_RECOVERY.md](server/CONTAINER_PROTECTION_AND_RECOVERY.md)** - 🚨 CRITICAL container safety protocols
+- **[server/SSH_KEY_SETUP_FEBRUARY_2026.md](server/SSH_KEY_SETUP_FEBRUARY_2026.md)** - SSH authentication setup (ED25519 deploy key, GitHub integration)
+- **[server/SSH_KEY_SECURITY_PLAN_2026.md](server/SSH_KEY_SECURITY_PLAN_2026.md)** - SSH key security strategy and rotation procedures
 - **[server/CONTAINER_TO_GIT_AUTOMATION.md](server/CONTAINER_TO_GIT_AUTOMATION.md)** - Container-to-git workflow automation
-- **[server/tmate-setup-guide.md](server/tmate-setup-guide.md)** - Remote access setup
+- **[server/RECENT_WORK_DEC_2025.md](server/RECENT_WORK_DEC_2025.md)** - December 2025 storage migration summary (SSD failure recovery)
+- **[server/COOLIFY_RESTORATION_NOV27_2025.md](server/COOLIFY_RESTORATION_NOV27_2025.md)** - Coolify restoration after drive failure
+- **[server/MONITORING_AND_BACKUP_SYSTEM.md](server/MONITORING_AND_BACKUP_SYSTEM.md)** - Backup and health monitoring setup
+- **[server/BTCPAY_DISASTER_RECOVERY_GUIDE.md](server/BTCPAY_DISASTER_RECOVERY_GUIDE.md)** - BTCPayServer disaster recovery
+- **[server/BTCPAY_WALLET_BACKUP_CHECKLIST.md](server/BTCPAY_WALLET_BACKUP_CHECKLIST.md)** - Bitcoin wallet backup procedures
+- **[server/TOKEN_ROTATION_REQUIRED.md](server/TOKEN_ROTATION_REQUIRED.md)** - ⚠️ Token security and rotation requirements
+- **[server/tmate-setup-guide.md](server/tmate-setup-guide.md)** - Remote terminal access setup
 
 ---
 
@@ -65,6 +90,11 @@
 /home/user/docs/
 ├── README.md (this file)                    # Documentation index
 │
+├── deployment/                              # Infrastructure & deployment
+│   ├── INFRASTRUCTURE_INVENTORY.md          # Docker infrastructure map
+│   ├── POSTGRES_PRODUCTION_CONFIG.md        # Database configuration
+│   └── VOLUME_BACKUP_STRATEGY.md            # Backup procedures
+│
 ├── reference/                               # Technical reference docs
 │   ├── architecture.md                      # System architecture
 │   ├── troubleshooting.md                   # Troubleshooting guide
@@ -73,15 +103,34 @@
 │   ├── scripts-guide.md                     # Scripts reference
 │   └── dual-machine-workflow.md             # Git workflow
 │
-├── veritable-games/                         # VG project docs
-│   ├── UNIFIED_TAG_SCHEMA_STATUS.md         # Tag system status
+├── veritable-games/                         # VG project docs (30+ files)
+│   ├── MARXIST_AUDIT_MASTER_WORKFLOW.md     # ✅ COMPLETE audit workflow
+│   ├── YOUTUBE_AUDIT_MASTER_WORKFLOW.md     # YouTube processing
+│   ├── LAPTOP_PDF_RECONVERSION_*.md         # PDF conversion (active)
+│   ├── WIREGUARD_INCIDENT_RECOVERY_*.md     # Network incident (Mar 2)
+│   ├── UNIFIED_TAG_SCHEMA_STATUS.md         # Tag system implementation
 │   ├── FORENSIC_ANALYSIS_REPORT.md          # Historical analysis
 │   ├── SCHEMA_OVERRIDE_DIAGNOSIS.md         # Schema diagnosis
-│   └── DEPLOYED_ANARCHIST_TAGS_API.ts       # API reference
+│   ├── PROCESSING_CLEANUP_GUIDE.md          # Script organization
+│   ├── CONTENT_COLLECTIONS.md               # Collection overview
+│   ├── LIBRARY_AUDIT_COMPLETION_*.md        # Deduplication completion
+│   └── [Session logs, technical analysis, reference docs]
 │
-├── server/                                  # Server management docs
+├── server/                                  # Server management docs (20+ files)
+│   ├── SERVER_PROJECT_INVENTORY.md          # Project inventory
+│   ├── DRIVE_ARCHITECTURE.md                # Storage architecture
+│   ├── REPOSITORY_ARCHITECTURE.md           # Repo organization
+│   ├── CONTAINER_PROTECTION_AND_RECOVERY.md # 🚨 Container safety
+│   ├── SSH_KEY_SETUP_FEBRUARY_2026.md       # SSH authentication
+│   ├── SSH_KEY_SECURITY_PLAN_2026.md        # Key security
 │   ├── CONTAINER_TO_GIT_AUTOMATION.md       # Container workflow
-│   └── tmate-setup-guide.md                 # Remote access
+│   ├── RECENT_WORK_DEC_2025.md              # Storage migration
+│   ├── COOLIFY_RESTORATION_*.md             # Coolify recovery
+│   ├── MONITORING_AND_BACKUP_SYSTEM.md      # Monitoring setup
+│   ├── TOKEN_ROTATION_REQUIRED.md           # ⚠️ Token security
+│   ├── BTCPAY_DISASTER_RECOVERY_*.md        # Recovery guides
+│   ├── tmate-setup-guide.md                 # Remote access
+│   └── [Incident reports, logs, historical docs]
 │
 ├── guides/                                  # User guides
 │   └── (user documentation)
@@ -89,6 +138,8 @@
 └── operations/                              # Operational procedures
     └── (runbooks and procedures)
 ```
+
+**Note**: `server/` and `veritable-games/` contain 45+ historical session logs beyond active reference docs listed above.
 
 ---
 
