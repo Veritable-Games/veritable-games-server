@@ -1,0 +1,5714 @@
+{
+  "name": "VeritableGamesInfrastructure",
+  "directed": true,
+  "strict": false,
+  "_draw_": 
+  [
+    {
+      "op": "c",
+      "grad": "none",
+      "color": "#fffffe00"
+    },
+    {
+      "op": "C",
+      "grad": "none",
+      "color": "#ffffff"
+    },
+    {
+      "op": "P",
+      "points": [[0.000,0.000],[0.000,550.800],[3912.000,550.800],[3912.000,0.000]]
+    }
+  ],
+  "bb": "0,0,3912,550.8",
+  "compound": "true",
+  "label": "",
+  "newrank": "true",
+  "rankdir": "TB",
+  "splines": "ortho",
+  "xdotversion": "1.7",
+  "_subgraph_cnt": 14,
+  "objects": [
+    {
+      "name": "cluster_home_drive",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(3)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#0000ff"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#e3f2fd"
+        },
+        {
+          "op": "P",
+          "points": [[8.000,8.000],[8.000,512.800],[1390.000,512.800],[1390.000,8.000]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [699.000,497.600],
+          "align": "c",
+          "width": 142.000,
+          "text": "Drive 1: \/home\/user"
+        },
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [699.000,482.600],
+          "align": "c",
+          "width": 166.000,
+          "text": "(122G - Git Repository)"
+        }
+      ],
+      "bb": "8,8,1390,512.8",
+      "color": "blue",
+      "compound": "true",
+      "fillcolor": "#e3f2fd",
+      "label": "Drive 1: \/home\/user\\n(122G - Git Repository)",
+      "lheight": "0.42",
+      "lp": "699,493.8",
+      "lwidth": "2.31",
+      "newrank": "true",
+      "penwidth": "3",
+      "rankdir": "TB",
+      "splines": "ortho",
+      "style": "filled",
+      "_gvid": 0,
+      "subgraphs": [
+        1,
+2,
+4,
+5
+      ],
+      "nodes": [
+        14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29
+      ],
+      "edges": [
+        0,1,2,3,4,5,6,8,9,10,11
+      ]
+    },
+    {
+      "name": "cluster_home_docs",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(3)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#daa520"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#fff9c4"
+        },
+        {
+          "op": "P",
+          "points": [[577.000,182.800],[577.000,466.800],[1015.000,466.800],[1015.000,182.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [796.000,451.600],
+          "align": "c",
+          "width": 37.000,
+          "text": "docs\/"
+        },
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [796.000,436.600],
+          "align": "c",
+          "width": 144.000,
+          "text": "Documentation Hub"
+        }
+      ],
+      "bb": "577,182.8,1015,466.8",
+      "color": "goldenrod",
+      "compound": "true",
+      "fillcolor": "#fff9c4",
+      "label": "docs\/\\nDocumentation Hub",
+      "lheight": "0.42",
+      "lp": "796,447.8",
+      "lwidth": "2.00",
+      "newrank": "true",
+      "penwidth": "3",
+      "rankdir": "TB",
+      "splines": "ortho",
+      "style": "filled",
+      "_gvid": 1,
+      "nodes": [
+        15,16,17,18,19
+      ],
+      "edges": [
+        8
+      ]
+    },
+    {
+      "name": "cluster_home_projects",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(3)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#00ff00"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#c8e6c9"
+        },
+        {
+          "op": "P",
+          "points": [[239.000,16.000],[239.000,310.800],[569.000,310.800],[569.000,16.000]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [404.000,295.600],
+          "align": "c",
+          "width": 63.000,
+          "text": "projects\/"
+        },
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [404.000,280.600],
+          "align": "c",
+          "width": 116.000,
+          "text": "Git Repositories"
+        }
+      ],
+      "bb": "239,16,569,310.8",
+      "color": "green",
+      "compound": "true",
+      "fillcolor": "#c8e6c9",
+      "label": "projects\/\\nGit Repositories",
+      "lheight": "0.42",
+      "lp": "404,291.8",
+      "lwidth": "1.61",
+      "newrank": "true",
+      "penwidth": "3",
+      "rankdir": "TB",
+      "splines": "ortho",
+      "style": "filled",
+      "_gvid": 2,
+      "subgraphs": [
+        3
+      ],
+      "nodes": [
+        20,21,22,23
+      ],
+      "edges": [
+        9,10,11
+      ]
+    },
+    {
+      "name": "cluster_vg_site",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(3)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#00ff00"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#a5d6a7"
+        },
+        {
+          "op": "P",
+          "points": [[247.000,24.000],[247.000,154.000],[381.000,154.000],[381.000,24.000]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [314.000,138.800],
+          "align": "c",
+          "width": 31.000,
+          "text": "site\/"
+        },
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [314.000,123.800],
+          "align": "c",
+          "width": 118.000,
+          "text": "(Git Submodule)"
+        }
+      ],
+      "bb": "247,24,381,154",
+      "color": "green",
+      "compound": "true",
+      "fillcolor": "#a5d6a7",
+      "label": "site\/\\n(Git Submodule)",
+      "lheight": "0.42",
+      "lp": "314,135",
+      "lwidth": "1.64",
+      "newrank": "true",
+      "penwidth": "3",
+      "rankdir": "TB",
+      "splines": "ortho",
+      "style": "filled",
+      "_gvid": 3,
+      "nodes": [
+        21
+      ]
+    },
+    {
+      "name": "cluster_home_infra",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(3)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#a020f0"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#f3e5f5"
+        },
+        {
+          "op": "P",
+          "points": [[1023.000,181.800],[1023.000,436.800],[1382.000,436.800],[1382.000,181.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1202.500,421.600],
+          "align": "c",
+          "width": 102.000,
+          "text": "Infrastructure"
+        }
+      ],
+      "bb": "1023,181.8,1382,436.8",
+      "color": "purple",
+      "compound": "true",
+      "fillcolor": "#f3e5f5",
+      "label": "Infrastructure",
+      "lheight": "0.21",
+      "lp": "1202.5,425.3",
+      "lwidth": "1.42",
+      "newrank": "true",
+      "penwidth": "3",
+      "rankdir": "TB",
+      "splines": "ortho",
+      "style": "filled",
+      "_gvid": 4,
+      "nodes": [
+        24,25,26,27
+      ]
+    },
+    {
+      "name": "cluster_home_symlinks",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(3)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#d84315"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffccbc"
+        },
+        {
+          "op": "P",
+          "points": [[16.000,181.000],[16.000,282.600],[231.000,282.600],[231.000,181.000]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [123.500,267.400],
+          "align": "c",
+          "width": 133.000,
+          "text": "Symlinks (→ \/data)"
+        }
+      ],
+      "bb": "16,181,231,282.6",
+      "color": "#d84315",
+      "compound": "true",
+      "fillcolor": "#ffccbc",
+      "label": "Symlinks (→ \/data)",
+      "lheight": "0.21",
+      "lp": "123.5,271.1",
+      "lwidth": "1.85",
+      "newrank": "true",
+      "penwidth": "3",
+      "rankdir": "TB",
+      "splines": "ortho",
+      "style": "filled",
+      "_gvid": 5,
+      "nodes": [
+        28,29
+      ]
+    },
+    {
+      "name": "cluster_data_drive",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(3)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#a020f0"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#f3e5f5"
+        },
+        {
+          "op": "P",
+          "points": [[1398.000,17.000],[1398.000,542.800],[3377.000,542.800],[3377.000,17.000]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2387.500,527.600],
+          "align": "c",
+          "width": 98.000,
+          "text": "Drive 2: \/data"
+        },
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2387.500,512.600],
+          "align": "c",
+          "width": 199.000,
+          "text": "(863G - Secondary Storage)"
+        }
+      ],
+      "bb": "1398,17,3377,542.8",
+      "color": "purple",
+      "compound": "true",
+      "fillcolor": "#f3e5f5",
+      "label": "Drive 2: \/data\\n(863G - Secondary Storage)",
+      "lheight": "0.42",
+      "lp": "2387.5,523.8",
+      "lwidth": "2.76",
+      "newrank": "true",
+      "penwidth": "3",
+      "rankdir": "TB",
+      "splines": "ortho",
+      "style": "filled",
+      "_gvid": 6,
+      "subgraphs": [
+        7,
+8,
+9,
+10,
+11,
+12
+      ],
+      "nodes": [
+        30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57
+      ],
+      "edges": [
+        16,17,18,19,20,21,22,23,24,25,26
+      ]
+    },
+    {
+      "name": "cluster_unity",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(3)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ff8c00"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffccbc"
+        },
+        {
+          "op": "P",
+          "points": [[1538.000,181.800],[1538.000,311.800],[1670.000,311.800],[1670.000,181.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1604.000,296.600],
+          "align": "c",
+          "width": 104.000,
+          "text": "unity-projects\/"
+        },
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1604.000,281.600],
+          "align": "c",
+          "width": 60.000,
+          "text": "(499GB)"
+        }
+      ],
+      "bb": "1538,181.8,1670,311.8",
+      "color": "darkorange",
+      "compound": "true",
+      "fillcolor": "#ffccbc",
+      "label": "unity-projects\/\\n(499GB)",
+      "lheight": "0.42",
+      "lp": "1604,292.8",
+      "lwidth": "1.44",
+      "newrank": "true",
+      "penwidth": "3",
+      "rankdir": "TB",
+      "splines": "ortho",
+      "style": "filled",
+      "_gvid": 7,
+      "nodes": [
+        31
+      ]
+    },
+    {
+      "name": "cluster_archives",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(3)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#00ffff"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#e1f5fe"
+        },
+        {
+          "op": "P",
+          "points": [[1872.000,25.000],[1872.000,466.800],[2118.000,466.800],[2118.000,25.000]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1995.000,451.600],
+          "align": "c",
+          "width": 65.000,
+          "text": "archives\/"
+        },
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1995.000,436.600],
+          "align": "c",
+          "width": 60.000,
+          "text": "(124GB)"
+        }
+      ],
+      "bb": "1872,25,2118,466.8",
+      "color": "cyan",
+      "compound": "true",
+      "fillcolor": "#e1f5fe",
+      "label": "archives\/\\n(124GB)",
+      "lheight": "0.42",
+      "lp": "1995,447.8",
+      "lwidth": "0.90",
+      "newrank": "true",
+      "penwidth": "3",
+      "rankdir": "TB",
+      "splines": "ortho",
+      "style": "filled",
+      "_gvid": 8,
+      "nodes": [
+        32,33,34,35
+      ],
+      "edges": [
+        25,26
+      ]
+    },
+    {
+      "name": "cluster_proj_backups",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(3)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffc0cb"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#f8bbd0"
+        },
+        {
+          "op": "P",
+          "points": [[2126.000,182.800],[2126.000,466.800],[2305.000,466.800],[2305.000,182.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2215.500,451.600],
+          "align": "c",
+          "width": 63.000,
+          "text": "projects\/"
+        },
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2215.500,436.600],
+          "align": "c",
+          "width": 124.000,
+          "text": "(50GB - Backups)"
+        }
+      ],
+      "bb": "2126,182.8,2305,466.8",
+      "color": "pink",
+      "compound": "true",
+      "fillcolor": "#f8bbd0",
+      "label": "projects\/\\n(50GB - Backups)",
+      "lheight": "0.42",
+      "lp": "2215.5,447.8",
+      "lwidth": "1.72",
+      "newrank": "true",
+      "penwidth": "3",
+      "rankdir": "TB",
+      "splines": "ortho",
+      "style": "filled",
+      "_gvid": 9,
+      "nodes": [
+        38,39,40
+      ]
+    },
+    {
+      "name": "cluster_backups",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(2)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#daa520"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#fffde7"
+        },
+        {
+          "op": "P",
+          "points": [[2313.000,182.800],[2313.000,496.800],[2915.000,496.800],[2915.000,182.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2614.000,481.600],
+          "align": "c",
+          "width": 64.000,
+          "text": "backups\/"
+        },
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2614.000,466.600],
+          "align": "c",
+          "width": 51.000,
+          "text": "(39GB)"
+        },
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2614.000,451.600],
+          "align": "c",
+          "width": 176.000,
+          "text": "Comprehensive Backups"
+        }
+      ],
+      "bb": "2313,182.8,2915,496.8",
+      "color": "goldenrod",
+      "compound": "true",
+      "fillcolor": "#fffde7",
+      "label": "backups\/\\n(39GB)\\nComprehensive Backups",
+      "lheight": "0.62",
+      "lp": "2614,470.3",
+      "lwidth": "2.44",
+      "newrank": "true",
+      "penwidth": "2",
+      "rankdir": "TB",
+      "splines": "ortho",
+      "style": "filled",
+      "_gvid": 10,
+      "nodes": [
+        41,42,43,44,45,46,47,48,49
+      ]
+    },
+    {
+      "name": "cluster_repository",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(3)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#008080"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#e0f2f1"
+        },
+        {
+          "op": "P",
+          "points": [[2923.000,182.800],[2923.000,496.800],[3203.000,496.800],[3203.000,182.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3063.000,481.600],
+          "align": "c",
+          "width": 79.000,
+          "text": "repository\/"
+        },
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3063.000,466.600],
+          "align": "c",
+          "width": 51.000,
+          "text": "(30GB)"
+        },
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3063.000,451.600],
+          "align": "c",
+          "width": 136.000,
+          "text": "Development Tools"
+        }
+      ],
+      "bb": "2923,182.8,3203,496.8",
+      "color": "teal",
+      "compound": "true",
+      "fillcolor": "#e0f2f1",
+      "label": "repository\/\\n(30GB)\\nDevelopment Tools",
+      "lheight": "0.62",
+      "lp": "3063,470.3",
+      "lwidth": "1.89",
+      "newrank": "true",
+      "penwidth": "3",
+      "rankdir": "TB",
+      "splines": "ortho",
+      "style": "filled",
+      "_gvid": 11,
+      "nodes": [
+        50,51,52,53
+      ]
+    },
+    {
+      "name": "cluster_coolify",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(3)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#90ee90"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#f1f8e9"
+        },
+        {
+          "op": "P",
+          "points": [[3211.000,182.800],[3211.000,466.800],[3369.000,466.800],[3369.000,182.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3290.000,451.600],
+          "align": "c",
+          "width": 52.000,
+          "text": "coolify\/"
+        },
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3290.000,436.600],
+          "align": "c",
+          "width": 59.000,
+          "text": "(472KB)"
+        }
+      ],
+      "bb": "3211,182.8,3369,466.8",
+      "color": "lightgreen",
+      "compound": "true",
+      "fillcolor": "#f1f8e9",
+      "label": "coolify\/\\n(472KB)",
+      "lheight": "0.42",
+      "lp": "3290,447.8",
+      "lwidth": "0.82",
+      "newrank": "true",
+      "penwidth": "3",
+      "rankdir": "TB",
+      "splines": "ortho",
+      "style": "filled",
+      "_gvid": 12,
+      "nodes": [
+        54,55,56
+      ]
+    },
+    {
+      "name": "cluster_legend",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#c0c0c0"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#f5f5f5"
+        },
+        {
+          "op": "P",
+          "points": [[3385.000,182.800],[3385.000,436.800],[3904.000,436.800],[3904.000,182.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3644.500,421.600],
+          "align": "c",
+          "width": 53.000,
+          "text": "Legend"
+        }
+      ],
+      "bb": "3385,182.8,3904,436.8",
+      "color": "gray",
+      "compound": "true",
+      "fillcolor": "#f5f5f5",
+      "label": "Legend",
+      "lheight": "0.21",
+      "lp": "3644.5,425.3",
+      "lwidth": "0.74",
+      "newrank": "true",
+      "rankdir": "TB",
+      "splines": "ortho",
+      "style": "filled",
+      "_gvid": 13,
+      "nodes": [
+        58,59,60,61,62,63
+      ],
+      "edges": [
+        27
+      ]
+    },
+    {
+      "_gvid": 14,
+      "name": "home_root",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(2)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#1976d2"
+        },
+        {
+          "op": "P",
+          "points": [[404.000,382.800],[316.000,382.800],[312.000,378.800],[312.000,346.800],[400.000,346.800],[404.000,350.800]]
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "L",
+          "points": [[400.000,378.800],[312.000,378.800]]
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "L",
+          "points": [[400.000,378.800],[400.000,346.800]]
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "L",
+          "points": [[400.000,378.800],[404.000,382.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 12.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [358.000,368.200],
+          "align": "c",
+          "width": 76.000,
+          "text": "\/home\/user"
+        },
+        {
+          "op": "F",
+          "size": 12.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [358.000,355.200],
+          "align": "c",
+          "width": 31.000,
+          "text": "122G"
+        }
+      ],
+      "fillcolor": "#1976d2",
+      "fontcolor": "white",
+      "fontname": "Courier New",
+      "fontsize": "12",
+      "height": "0.5",
+      "label": "\/home\/user\\n122G",
+      "penwidth": "2",
+      "pos": "358,364.8",
+      "shape": "box3d",
+      "style": "filled",
+      "width": "1.2778"
+    },
+    {
+      "_gvid": 15,
+      "name": "docs_server",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#fbc02d"
+        },
+        {
+          "op": "P",
+          "points": [[665.000,226.800],[662.000,230.800],[641.000,230.800],[638.000,226.800],[585.000,226.800],[585.000,190.800],[665.000,190.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [625.000,211.600],
+          "align": "c",
+          "width": 37.000,
+          "text": "server\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [625.000,201.600],
+          "align": "c",
+          "width": 64.000,
+          "text": "(Ops guides)"
+        }
+      ],
+      "fillcolor": "#fbc02d",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "server\/\\n(Ops guides)",
+      "pos": "625,208.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.1111"
+    },
+    {
+      "_gvid": 16,
+      "name": "docs_vg",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#fbc02d"
+        },
+        {
+          "op": "P",
+          "points": [[1006.500,382.800],[1003.500,386.800],[982.500,386.800],[979.500,382.800],[905.500,382.800],[905.500,346.800],[1006.500,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [956.000,367.600],
+          "align": "c",
+          "width": 85.000,
+          "text": "veritable-games\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [956.000,357.600],
+          "align": "c",
+          "width": 48.000,
+          "text": "(VG docs)"
+        }
+      ],
+      "fillcolor": "#fbc02d",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "veritable-games\/\\n(VG docs)",
+      "pos": "956,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.4028"
+    },
+    {
+      "_gvid": 17,
+      "name": "docs_deployment",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#fbc02d"
+        },
+        {
+          "op": "P",
+          "points": [[887.000,382.800],[884.000,386.800],[863.000,386.800],[860.000,382.800],[813.000,382.800],[813.000,346.800],[887.000,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [850.000,367.600],
+          "align": "c",
+          "width": 58.000,
+          "text": "deployment\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [850.000,357.600],
+          "align": "c",
+          "width": 43.000,
+          "text": "(Guides)"
+        }
+      ],
+      "fillcolor": "#fbc02d",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "deployment\/\\n(Guides)",
+      "pos": "850,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.0278"
+    },
+    {
+      "_gvid": 18,
+      "name": "docs_operations",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#fbc02d"
+        },
+        {
+          "op": "P",
+          "points": [[794.500,382.800],[791.500,386.800],[770.500,386.800],[767.500,382.800],[693.500,382.800],[693.500,346.800],[794.500,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [744.000,367.600],
+          "align": "c",
+          "width": 58.000,
+          "text": "operations\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [744.000,357.600],
+          "align": "c",
+          "width": 85.000,
+          "text": "(SSH, WireGuard)"
+        }
+      ],
+      "fillcolor": "#fbc02d",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "operations\/\\n(SSH, WireGuard)",
+      "pos": "744,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.4028"
+    },
+    {
+      "_gvid": 19,
+      "name": "docs_reference",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#fbc02d"
+        },
+        {
+          "op": "P",
+          "points": [[675.000,382.800],[672.000,386.800],[651.000,386.800],[648.000,382.800],[585.000,382.800],[585.000,346.800],[675.000,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [630.000,367.600],
+          "align": "c",
+          "width": 53.000,
+          "text": "reference\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [630.000,357.600],
+          "align": "c",
+          "width": 74.000,
+          "text": "(Architecture)"
+        }
+      ],
+      "fillcolor": "#fbc02d",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "reference\/\\n(Architecture)",
+      "pos": "630,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.25"
+    },
+    {
+      "_gvid": 20,
+      "name": "vg_main",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#2e7d32"
+        },
+        {
+          "op": "P",
+          "points": [[424.500,226.800],[421.500,230.800],[400.500,230.800],[397.500,226.800],[323.500,226.800],[323.500,190.800],[424.500,190.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [374.000,211.600],
+          "align": "c",
+          "width": 85.000,
+          "text": "veritable-games\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [374.000,201.600],
+          "align": "c",
+          "width": 64.000,
+          "text": "Main Project"
+        }
+      ],
+      "fillcolor": "#2e7d32",
+      "fontcolor": "white",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "veritable-games\/\\nMain Project",
+      "pos": "374,208.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.4028"
+    },
+    {
+      "_gvid": 21,
+      "name": "vg_site",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(2)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#388e3c"
+        },
+        {
+          "op": "P",
+          "points": [[370.500,70.000],[279.500,70.000],[275.500,66.000],[275.500,32.000],[366.500,32.000],[370.500,36.000]]
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "L",
+          "points": [[366.500,66.000],[275.500,66.000]]
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "L",
+          "points": [[366.500,66.000],[366.500,32.000]]
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "L",
+          "points": [[366.500,66.000],[370.500,70.000]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [323.000,58.800],
+          "align": "c",
+          "width": 27.000,
+          "text": "site\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [323.000,48.800],
+          "align": "c",
+          "width": 58.000,
+          "text": "Next.js App"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [323.000,38.800],
+          "align": "c",
+          "width": 79.000,
+          "text": "(Git Submodule)"
+        }
+      ],
+      "fillcolor": "#388e3c",
+      "fontcolor": "white",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.52778",
+      "label": "site\/\\nNext.js App\\n(Git Submodule)",
+      "penwidth": "2",
+      "pos": "323,51",
+      "shape": "box3d",
+      "style": "filled",
+      "width": "1.3194"
+    },
+    {
+      "_gvid": 22,
+      "name": "vg_resources",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#66bb6a"
+        },
+        {
+          "op": "P",
+          "points": [[479.000,70.000],[476.000,74.000],[455.000,74.000],[452.000,70.000],[389.000,70.000],[389.000,32.000],[479.000,32.000]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [434.000,58.800],
+          "align": "c",
+          "width": 53.000,
+          "text": "resources\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [434.000,48.800],
+          "align": "c",
+          "width": 37.000,
+          "text": "(3.1GB)"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [434.000,38.800],
+          "align": "c",
+          "width": 74.000,
+          "text": "Scripts & Data"
+        }
+      ],
+      "fillcolor": "#66bb6a",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.52778",
+      "label": "resources\/\\n(3.1GB)\\nScripts & Data",
+      "pos": "434,51",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.25"
+    },
+    {
+      "_gvid": 23,
+      "name": "vg_docs_project",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#81c784"
+        },
+        {
+          "op": "P",
+          "points": [[561.000,69.000],[558.000,73.000],[537.000,73.000],[534.000,69.000],[497.000,69.000],[497.000,33.000],[561.000,33.000]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [529.000,53.800],
+          "align": "c",
+          "width": 27.000,
+          "text": "docs\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [529.000,43.800],
+          "align": "c",
+          "width": 48.000,
+          "text": "(Project)"
+        }
+      ],
+      "fillcolor": "#81c784",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "docs\/\\n(Project)",
+      "pos": "529,51",
+      "shape": "folder",
+      "style": "filled",
+      "width": "0.88889"
+    },
+    {
+      "_gvid": 24,
+      "name": "home_btcpay",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#9c27b0"
+        },
+        {
+          "op": "P",
+          "points": [[1245.000,227.800],[1242.000,231.800],[1221.000,231.800],[1218.000,227.800],[1123.000,227.800],[1123.000,189.800],[1245.000,189.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [1184.000,216.600],
+          "align": "c",
+          "width": 106.000,
+          "text": "btcpayserver-docker\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [1184.000,206.600],
+          "align": "c",
+          "width": 48.000,
+          "text": "(Bitcoin)"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [1184.000,196.600],
+          "align": "c",
+          "width": 64.000,
+          "text": "~130 scripts"
+        }
+      ],
+      "fillcolor": "#9c27b0",
+      "fontcolor": "white",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.52778",
+      "label": "btcpayserver-docker\/\\n(Bitcoin)\\n~130 scripts",
+      "pos": "1184,208.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.6944"
+    },
+    {
+      "_gvid": 25,
+      "name": "home_wg",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ce93d8"
+        },
+        {
+          "op": "P",
+          "points": [[1374.500,226.800],[1371.500,230.800],[1350.500,230.800],[1347.500,226.800],[1263.500,226.800],[1263.500,190.800],[1374.500,190.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1319.000,211.600],
+          "align": "c",
+          "width": 95.000,
+          "text": "wireguard-backups\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1319.000,201.600],
+          "align": "c",
+          "width": 69.000,
+          "text": "(VPN configs)"
+        }
+      ],
+      "fillcolor": "#ce93d8",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "wireguard-backups\/\\n(VPN configs)",
+      "pos": "1319,208.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.5417"
+    },
+    {
+      "_gvid": 26,
+      "name": "home_scripts",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ce93d8"
+        },
+        {
+          "op": "P",
+          "points": [[1105.000,226.800],[1102.000,230.800],[1081.000,230.800],[1078.000,226.800],[1031.000,226.800],[1031.000,190.800],[1105.000,190.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1068.000,211.600],
+          "align": "c",
+          "width": 43.000,
+          "text": "scripts\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1068.000,201.600],
+          "align": "c",
+          "width": 58.000,
+          "text": "(Utilities)"
+        }
+      ],
+      "fillcolor": "#ce93d8",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "scripts\/\\n(Utilities)",
+      "pos": "1068,208.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.0278"
+    },
+    {
+      "_gvid": 27,
+      "name": "home_logs",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ce93d8"
+        },
+        {
+          "op": "P",
+          "points": [[1255.000,382.800],[1252.000,386.800],[1231.000,386.800],[1228.000,382.800],[1149.000,382.800],[1149.000,346.800],[1255.000,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1202.000,367.600],
+          "align": "c",
+          "width": 27.000,
+          "text": "logs\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1202.000,357.600],
+          "align": "c",
+          "width": 90.000,
+          "text": "(auto-deploy.log)"
+        }
+      ],
+      "fillcolor": "#ce93d8",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "logs\/\\n(auto-deploy.log)",
+      "pos": "1202,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.4722"
+    },
+    {
+      "_gvid": 28,
+      "name": "home_backups",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ff6e40"
+        },
+        {
+          "op": "E",
+          "rect": [178.000,208.800,45.010,19.600]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [178.000,211.600],
+          "align": "c",
+          "width": 43.000,
+          "text": "backups\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [178.000,201.600],
+          "align": "c",
+          "width": 48.000,
+          "text": "(symlink)"
+        }
+      ],
+      "fillcolor": "#ff6e40",
+      "fontcolor": "white",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.54997",
+      "label": "backups\/\\n(symlink)",
+      "pos": "178,208.8",
+      "shape": "ellipse",
+      "style": "filled",
+      "width": "1.2571"
+    },
+    {
+      "_gvid": 29,
+      "name": "home_archives",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ff6e40"
+        },
+        {
+          "op": "E",
+          "rect": [69.000,208.800,45.010,19.600]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [69.000,211.600],
+          "align": "c",
+          "width": 48.000,
+          "text": "archives\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [69.000,201.600],
+          "align": "c",
+          "width": 48.000,
+          "text": "(symlink)"
+        }
+      ],
+      "fillcolor": "#ff6e40",
+      "fontcolor": "white",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.54997",
+      "label": "archives\/\\n(symlink)",
+      "pos": "69,208.8",
+      "shape": "ellipse",
+      "style": "filled",
+      "width": "1.2571"
+    },
+    {
+      "_gvid": 30,
+      "name": "data_root",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(2)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#7b1fa2"
+        },
+        {
+          "op": "P",
+          "points": [[1862.000,382.800],[1812.000,382.800],[1808.000,378.800],[1808.000,346.800],[1858.000,346.800],[1862.000,350.800]]
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "L",
+          "points": [[1858.000,378.800],[1808.000,378.800]]
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "L",
+          "points": [[1858.000,378.800],[1858.000,346.800]]
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "L",
+          "points": [[1858.000,378.800],[1862.000,382.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 12.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [1835.000,368.200],
+          "align": "c",
+          "width": 38.000,
+          "text": "\/data"
+        },
+        {
+          "op": "F",
+          "size": 12.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [1835.000,355.200],
+          "align": "c",
+          "width": 31.000,
+          "text": "863G"
+        }
+      ],
+      "fillcolor": "#7b1fa2",
+      "fontcolor": "white",
+      "fontname": "Courier New",
+      "fontsize": "12",
+      "height": "0.5",
+      "label": "\/data\\n863G",
+      "penwidth": "2",
+      "pos": "1835,364.8",
+      "shape": "box3d",
+      "style": "filled",
+      "width": "0.75"
+    },
+    {
+      "_gvid": 31,
+      "name": "unity_main",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(2)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ff6f00"
+        },
+        {
+          "op": "P",
+          "points": [[1662.000,227.800],[1659.000,231.800],[1638.000,231.800],[1635.000,227.800],[1546.000,227.800],[1546.000,189.800],[1662.000,189.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [1604.000,216.600],
+          "align": "c",
+          "width": 100.000,
+          "text": "Unity Game Projects"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [1604.000,206.600],
+          "align": "c",
+          "width": 37.000,
+          "text": "(499GB)"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [1604.000,196.600],
+          "align": "c",
+          "width": 69.000,
+          "text": "~120 projects"
+        }
+      ],
+      "fillcolor": "#ff6f00",
+      "fontcolor": "white",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.52778",
+      "label": "Unity Game Projects\\n(499GB)\\n~120 projects",
+      "penwidth": "2",
+      "pos": "1604,208.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.6111"
+    },
+    {
+      "_gvid": 32,
+      "name": "arch_vg",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#01579b"
+        },
+        {
+          "op": "P",
+          "points": [[1988.500,226.800],[1985.500,230.800],[1964.500,230.800],[1961.500,226.800],[1887.500,226.800],[1887.500,190.800],[1988.500,190.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [1938.000,211.600],
+          "align": "c",
+          "width": 85.000,
+          "text": "veritable-games\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [1938.000,201.600],
+          "align": "c",
+          "width": 37.000,
+          "text": "(3.8GB)"
+        }
+      ],
+      "fillcolor": "#01579b",
+      "fontcolor": "white",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "veritable-games\/\\n(3.8GB)",
+      "pos": "1938,208.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.4028"
+    },
+    {
+      "_gvid": 33,
+      "name": "arch_db",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#0277bd"
+        },
+        {
+          "op": "P",
+          "points": [[1996.000,69.000],[1993.000,73.000],[1972.000,73.000],[1969.000,69.000],[1880.000,69.000],[1880.000,33.000],[1996.000,33.000]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [1938.000,53.800],
+          "align": "c",
+          "width": 100.000,
+          "text": "database-snapshots\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [1938.000,43.800],
+          "align": "c",
+          "width": 37.000,
+          "text": "(4.2GB)"
+        }
+      ],
+      "fillcolor": "#0277bd",
+      "fontcolor": "white",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "database-snapshots\/\\n(4.2GB)",
+      "pos": "1938,51",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.6111"
+    },
+    {
+      "_gvid": 34,
+      "name": "arch_server",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#0288d1"
+        },
+        {
+          "op": "P",
+          "points": [[2109.500,69.000],[2106.500,73.000],[2085.500,73.000],[2082.500,69.000],[2014.500,69.000],[2014.500,33.000],[2109.500,33.000]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2062.000,53.800],
+          "align": "c",
+          "width": 79.000,
+          "text": "server-backups\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2062.000,43.800],
+          "align": "c",
+          "width": 37.000,
+          "text": "(2.1GB)"
+        }
+      ],
+      "fillcolor": "#0288d1",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "server-backups\/\\n(2.1GB)",
+      "pos": "2062,51",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.3194"
+    },
+    {
+      "_gvid": 35,
+      "name": "arch_others",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#0288d1"
+        },
+        {
+          "op": "P",
+          "points": [[2022.000,382.800],[2019.000,386.800],[1998.000,386.800],[1995.000,382.800],[1968.000,382.800],[1968.000,346.800],[2022.000,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1995.000,367.600],
+          "align": "c",
+          "width": 37.000,
+          "text": "others\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1995.000,357.600],
+          "align": "c",
+          "width": 37.000,
+          "text": "(114GB)"
+        }
+      ],
+      "fillcolor": "#0288d1",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "others\/\\n(114GB)",
+      "pos": "1995,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "0.75"
+    },
+    {
+      "_gvid": 36,
+      "name": "data_company",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(2)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#c8e6c9"
+        },
+        {
+          "op": "P",
+          "points": [[1765.500,226.800],[1762.500,230.800],[1741.500,230.800],[1738.500,226.800],[1680.500,226.800],[1680.500,190.800],[1765.500,190.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1723.000,211.600],
+          "align": "c",
+          "width": 69.000,
+          "text": "company-site\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1723.000,201.600],
+          "align": "c",
+          "width": 32.000,
+          "text": "(66GB)"
+        }
+      ],
+      "fillcolor": "#c8e6c9",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "company-site\/\\n(66GB)",
+      "penwidth": "2",
+      "pos": "1723,208.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.1806"
+    },
+    {
+      "_gvid": 37,
+      "name": "data_refs",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#dcedc8"
+        },
+        {
+          "op": "P",
+          "points": [[1864.000,227.800],[1861.000,231.800],[1840.000,231.800],[1837.000,227.800],[1784.000,227.800],[1784.000,189.800],[1864.000,189.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1824.000,216.600],
+          "align": "c",
+          "width": 58.000,
+          "text": "references\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1824.000,206.600],
+          "align": "c",
+          "width": 32.000,
+          "text": "(58GB)"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1824.000,196.600],
+          "align": "c",
+          "width": 64.000,
+          "text": "Tools & Docs"
+        }
+      ],
+      "fillcolor": "#dcedc8",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.52778",
+      "label": "references\/\\n(58GB)\\nTools & Docs",
+      "pos": "1824,208.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.1111"
+    },
+    {
+      "_gvid": 38,
+      "name": "proj_enact",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ec407a"
+        },
+        {
+          "op": "P",
+          "points": [[2193.500,226.800],[2190.500,230.800],[2169.500,230.800],[2166.500,226.800],[2134.500,226.800],[2134.500,190.800],[2193.500,190.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2164.000,211.600],
+          "align": "c",
+          "width": 32.000,
+          "text": "ENACT\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2164.000,201.600],
+          "align": "c",
+          "width": 43.000,
+          "text": "(Backup)"
+        }
+      ],
+      "fillcolor": "#ec407a",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "ENACT\/\\n(Backup)",
+      "pos": "2164,208.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "0.81944"
+    },
+    {
+      "_gvid": 39,
+      "name": "proj_noxii",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ec407a"
+        },
+        {
+          "op": "P",
+          "points": [[2296.500,382.800],[2293.500,386.800],[2272.500,386.800],[2269.500,382.800],[2237.500,382.800],[2237.500,346.800],[2296.500,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2267.000,367.600],
+          "align": "c",
+          "width": 32.000,
+          "text": "NOXII\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2267.000,357.600],
+          "align": "c",
+          "width": 43.000,
+          "text": "(Backup)"
+        }
+      ],
+      "fillcolor": "#ec407a",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "NOXII\/\\n(Backup)",
+      "pos": "2267,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "0.81944"
+    },
+    {
+      "_gvid": 40,
+      "name": "proj_legacy",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ec407a"
+        },
+        {
+          "op": "P",
+          "points": [[2219.500,382.800],[2216.500,386.800],[2195.500,386.800],[2192.500,382.800],[2134.500,382.800],[2134.500,346.800],[2219.500,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2177.000,367.600],
+          "align": "c",
+          "width": 69.000,
+          "text": "NOXII-LEGACY\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2177.000,357.600],
+          "align": "c",
+          "width": 43.000,
+          "text": "(Backup)"
+        }
+      ],
+      "fillcolor": "#ec407a",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "NOXII-LEGACY\/\\n(Backup)",
+      "pos": "2177,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.1806"
+    },
+    {
+      "_gvid": 41,
+      "name": "back_daily",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#fdd835"
+        },
+        {
+          "op": "P",
+          "points": [[2375.000,226.800],[2372.000,230.800],[2351.000,230.800],[2348.000,226.800],[2321.000,226.800],[2321.000,190.800],[2375.000,190.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2348.000,206.600],
+          "align": "c",
+          "width": 32.000,
+          "text": "daily\/"
+        }
+      ],
+      "fillcolor": "#fdd835",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "daily\/",
+      "pos": "2348,208.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "0.75"
+    },
+    {
+      "_gvid": 42,
+      "name": "back_hourly",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#fdd835"
+        },
+        {
+          "op": "P",
+          "points": [[2907.000,382.800],[2904.000,386.800],[2883.000,386.800],[2880.000,382.800],[2853.000,382.800],[2853.000,346.800],[2907.000,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2880.000,362.600],
+          "align": "c",
+          "width": 37.000,
+          "text": "hourly\/"
+        }
+      ],
+      "fillcolor": "#fdd835",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "hourly\/",
+      "pos": "2880,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "0.75"
+    },
+    {
+      "_gvid": 43,
+      "name": "back_weekly",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#fdd835"
+        },
+        {
+          "op": "P",
+          "points": [[2835.000,382.800],[2832.000,386.800],[2811.000,386.800],[2808.000,382.800],[2781.000,382.800],[2781.000,346.800],[2835.000,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2808.000,362.600],
+          "align": "c",
+          "width": 37.000,
+          "text": "weekly\/"
+        }
+      ],
+      "fillcolor": "#fdd835",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "weekly\/",
+      "pos": "2808,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "0.75"
+    },
+    {
+      "_gvid": 44,
+      "name": "back_monthly",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#fdd835"
+        },
+        {
+          "op": "P",
+          "points": [[2762.500,382.800],[2759.500,386.800],[2738.500,386.800],[2735.500,382.800],[2703.500,382.800],[2703.500,346.800],[2762.500,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2733.000,362.600],
+          "align": "c",
+          "width": 43.000,
+          "text": "monthly\/"
+        }
+      ],
+      "fillcolor": "#fdd835",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "monthly\/",
+      "pos": "2733,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "0.81944"
+    },
+    {
+      "_gvid": 45,
+      "name": "back_yearly",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#fdd835"
+        },
+        {
+          "op": "P",
+          "points": [[2685.000,382.800],[2682.000,386.800],[2661.000,386.800],[2658.000,382.800],[2631.000,382.800],[2631.000,346.800],[2685.000,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2658.000,362.600],
+          "align": "c",
+          "width": 37.000,
+          "text": "yearly\/"
+        }
+      ],
+      "fillcolor": "#fdd835",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "yearly\/",
+      "pos": "2658,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "0.75"
+    },
+    {
+      "_gvid": 46,
+      "name": "back_btcpay",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#fdd835"
+        },
+        {
+          "op": "P",
+          "points": [[2613.000,382.800],[2610.000,386.800],[2589.000,386.800],[2586.000,382.800],[2559.000,382.800],[2559.000,346.800],[2613.000,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2586.000,362.600],
+          "align": "c",
+          "width": 37.000,
+          "text": "btcpay\/"
+        }
+      ],
+      "fillcolor": "#fdd835",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "btcpay\/",
+      "pos": "2586,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "0.75"
+    },
+    {
+      "_gvid": 47,
+      "name": "back_coolify",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#fdd835"
+        },
+        {
+          "op": "P",
+          "points": [[2540.500,382.800],[2537.500,386.800],[2516.500,386.800],[2513.500,382.800],[2481.500,382.800],[2481.500,346.800],[2540.500,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2511.000,362.600],
+          "align": "c",
+          "width": 43.000,
+          "text": "coolify\/"
+        }
+      ],
+      "fillcolor": "#fdd835",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "coolify\/",
+      "pos": "2511,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "0.81944"
+    },
+    {
+      "_gvid": 48,
+      "name": "back_videos",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#fdd835"
+        },
+        {
+          "op": "P",
+          "points": [[2463.000,382.800],[2460.000,386.800],[2439.000,386.800],[2436.000,382.800],[2409.000,382.800],[2409.000,346.800],[2463.000,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2436.000,362.600],
+          "align": "c",
+          "width": 37.000,
+          "text": "videos\/"
+        }
+      ],
+      "fillcolor": "#fdd835",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "videos\/",
+      "pos": "2436,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "0.75"
+    },
+    {
+      "_gvid": 49,
+      "name": "back_wireguard",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#fdd835"
+        },
+        {
+          "op": "P",
+          "points": [[2390.500,382.800],[2387.500,386.800],[2366.500,386.800],[2363.500,382.800],[2321.500,382.800],[2321.500,346.800],[2390.500,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2356.000,362.600],
+          "align": "c",
+          "width": 53.000,
+          "text": "wireguard\/"
+        }
+      ],
+      "fillcolor": "#fdd835",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "wireguard\/",
+      "pos": "2356,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "0.95833"
+    },
+    {
+      "_gvid": 50,
+      "name": "repo_aiml",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#00897b"
+        },
+        {
+          "op": "P",
+          "points": [[2985.000,226.800],[2982.000,230.800],[2961.000,230.800],[2958.000,226.800],[2931.000,226.800],[2931.000,190.800],[2985.000,190.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2958.000,211.600],
+          "align": "c",
+          "width": 32.000,
+          "text": "AI-ML\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2958.000,201.600],
+          "align": "c",
+          "width": 37.000,
+          "text": "(Tools)"
+        }
+      ],
+      "fillcolor": "#00897b",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "AI-ML\/\\n(Tools)",
+      "pos": "2958,208.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "0.75"
+    },
+    {
+      "_gvid": 51,
+      "name": "repo_3d",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#00897b"
+        },
+        {
+          "op": "P",
+          "points": [[3195.000,382.800],[3192.000,386.800],[3171.000,386.800],[3168.000,382.800],[3115.000,382.800],[3115.000,346.800],[3195.000,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3155.000,362.600],
+          "align": "c",
+          "width": 64.000,
+          "text": "3D-Graphics\/"
+        }
+      ],
+      "fillcolor": "#00897b",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "3D-Graphics\/",
+      "pos": "3155,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.1111"
+    },
+    {
+      "_gvid": 52,
+      "name": "repo_algo",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#00897b"
+        },
+        {
+          "op": "P",
+          "points": [[3097.000,382.800],[3094.000,386.800],[3073.000,386.800],[3070.000,382.800],[3023.000,382.800],[3023.000,346.800],[3097.000,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3060.000,362.600],
+          "align": "c",
+          "width": 58.000,
+          "text": "Algorithms\/"
+        }
+      ],
+      "fillcolor": "#00897b",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "Algorithms\/",
+      "pos": "3060,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.0278"
+    },
+    {
+      "_gvid": 53,
+      "name": "repo_auto",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#00897b"
+        },
+        {
+          "op": "P",
+          "points": [[3005.000,382.800],[3002.000,386.800],[2981.000,386.800],[2978.000,382.800],[2931.000,382.800],[2931.000,346.800],[3005.000,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2968.000,362.600],
+          "align": "c",
+          "width": 58.000,
+          "text": "Automation\/"
+        }
+      ],
+      "fillcolor": "#00897b",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "Automation\/",
+      "pos": "2968,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.0278"
+    },
+    {
+      "_gvid": 54,
+      "name": "cool_apps",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#558b2f"
+        },
+        {
+          "op": "P",
+          "points": [[3304.500,226.800],[3301.500,230.800],[3280.500,230.800],[3277.500,226.800],[3219.500,226.800],[3219.500,190.800],[3304.500,190.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3262.000,206.600],
+          "align": "c",
+          "width": 69.000,
+          "text": "applications\/"
+        }
+      ],
+      "fillcolor": "#558b2f",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "applications\/",
+      "pos": "3262,208.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.1806"
+    },
+    {
+      "_gvid": 55,
+      "name": "cool_db",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#558b2f"
+        },
+        {
+          "op": "P",
+          "points": [[3360.500,382.800],[3357.500,386.800],[3336.500,386.800],[3333.500,382.800],[3291.500,382.800],[3291.500,346.800],[3360.500,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3326.000,362.600],
+          "align": "c",
+          "width": 53.000,
+          "text": "databases\/"
+        }
+      ],
+      "fillcolor": "#558b2f",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "databases\/",
+      "pos": "3326,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "0.95833"
+    },
+    {
+      "_gvid": 56,
+      "name": "cool_proxy",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#558b2f"
+        },
+        {
+          "op": "P",
+          "points": [[3273.000,382.800],[3270.000,386.800],[3249.000,386.800],[3246.000,382.800],[3219.000,382.800],[3219.000,346.800],[3273.000,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3246.000,362.600],
+          "align": "c",
+          "width": 32.000,
+          "text": "proxy\/"
+        }
+      ],
+      "fillcolor": "#558b2f",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "proxy\/",
+      "pos": "3246,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "0.75"
+    },
+    {
+      "_gvid": 57,
+      "name": "data_docker",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(2)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffecb3"
+        },
+        {
+          "op": "P",
+          "points": [[1528.000,226.800],[1525.000,230.800],[1504.000,230.800],[1501.000,226.800],[1406.000,226.800],[1406.000,190.800],[1528.000,190.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1467.000,211.600],
+          "align": "c",
+          "width": 100.000,
+          "text": "docker-hdd-volumes\/"
+        },
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1467.000,201.600],
+          "align": "c",
+          "width": 106.000,
+          "text": "(Bitcoin blockchain)"
+        }
+      ],
+      "fillcolor": "#ffecb3",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "docker-hdd-volumes\/\\n(Bitcoin blockchain)",
+      "penwidth": "2",
+      "pos": "1467,208.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.6944"
+    },
+    {
+      "_gvid": 58,
+      "name": "legend_repo",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#1976d2"
+        },
+        {
+          "op": "P",
+          "points": [[3896.000,382.800],[3810.000,382.800],[3806.000,378.800],[3806.000,346.800],[3892.000,346.800],[3896.000,350.800]]
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "L",
+          "points": [[3892.000,378.800],[3806.000,378.800]]
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "L",
+          "points": [[3892.000,378.800],[3892.000,346.800]]
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "L",
+          "points": [[3892.000,378.800],[3896.000,382.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "T",
+          "pt": [3851.000,362.600],
+          "align": "c",
+          "width": 74.000,
+          "text": "Git Repository"
+        }
+      ],
+      "fillcolor": "#1976d2",
+      "fontcolor": "white",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "Git Repository",
+      "pos": "3851,364.8",
+      "shape": "box3d",
+      "style": "filled",
+      "width": "1.25"
+    },
+    {
+      "_gvid": 59,
+      "name": "legend_data",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#66bb6a"
+        },
+        {
+          "op": "P",
+          "points": [[3896.000,226.800],[3893.000,230.800],[3872.000,230.800],[3869.000,226.800],[3806.000,226.800],[3806.000,190.800],[3896.000,190.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3851.000,206.600],
+          "align": "c",
+          "width": 74.000,
+          "text": "Data Directory"
+        }
+      ],
+      "fillcolor": "#66bb6a",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "Data Directory",
+      "pos": "3851,208.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.25"
+    },
+    {
+      "_gvid": 60,
+      "name": "legend_backup",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#fdd835"
+        },
+        {
+          "op": "P",
+          "points": [[3787.500,382.800],[3784.500,386.800],[3763.500,386.800],[3760.500,382.800],[3702.500,382.800],[3702.500,346.800],[3787.500,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3745.000,362.600],
+          "align": "c",
+          "width": 69.000,
+          "text": "Backup Target"
+        }
+      ],
+      "fillcolor": "#fdd835",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "Backup Target",
+      "pos": "3745,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.1806"
+    },
+    {
+      "_gvid": 61,
+      "name": "legend_symlink",
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "dashed"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ff0000"
+        },
+        {
+          "op": "p",
+          "points": [[3684.500,382.800],[3681.500,386.800],[3660.500,386.800],[3657.500,382.800],[3583.500,382.800],[3583.500,346.800],[3684.500,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3634.000,362.600],
+          "align": "c",
+          "width": 85.000,
+          "text": "Symlink (dashed)"
+        }
+      ],
+      "color": "red",
+      "fillcolor": "#ff6e40",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "Symlink (dashed)",
+      "pos": "3634,364.8",
+      "shape": "folder",
+      "style": "dashed",
+      "width": "1.4028"
+    },
+    {
+      "_gvid": 62,
+      "name": "legend_submodule",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#0000ff"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#0000ff"
+        },
+        {
+          "op": "P",
+          "points": [[3565.500,382.800],[3562.500,386.800],[3541.500,386.800],[3538.500,382.800],[3480.500,382.800],[3480.500,346.800],[3565.500,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3523.000,362.600],
+          "align": "c",
+          "width": 69.000,
+          "text": "Git Submodule"
+        }
+      ],
+      "color": "blue",
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "Git Submodule",
+      "pos": "3523,364.8",
+      "shape": "folder",
+      "style": "filled",
+      "width": "1.1806"
+    },
+    {
+      "_gvid": 63,
+      "name": "legend_edge",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#fffffe00"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#d3d3d3"
+        },
+        {
+          "op": "P",
+          "points": [[3462.500,382.800],[3393.500,382.800],[3393.500,346.800],[3462.500,346.800]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 9.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3428.000,362.600],
+          "align": "c",
+          "width": 53.000,
+          "text": "Edge Type:"
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "9",
+      "height": "0.5",
+      "label": "Edge Type:",
+      "pos": "3428,364.8",
+      "shape": "plaintext",
+      "style": "filled",
+      "width": "0.95833"
+    }
+  ],
+  "edges": [
+    {
+      "_gvid": 0,
+      "tail": 14,
+      "head": 15,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[404.000,364.000],[431.380,364.000],[460.830,364.000],[460.830,364.000],[460.830,364.000],[460.830,214.000],[460.830,214.000],[460.830,214.000],[574.840,214.000],[574.840,214.000]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[574.840,217.500],[584.840,214.000],[574.840,210.500]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,584.84,214 404,364 431.38,364 460.83,364 460.83,364 460.83,364 460.83,214 460.83,214 460.83,214 574.84,214 574.84,214"
+    },
+    {
+      "_gvid": 1,
+      "tail": 14,
+      "head": 20,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[390.580,346.600],[390.580,346.600],[390.580,236.880],[390.580,236.880]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[394.080,236.880],[390.580,226.880],[387.080,236.880]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,390.58,226.88 390.58,346.6 390.58,346.6 390.58,236.88 390.58,236.88"
+    },
+    {
+      "_gvid": 2,
+      "tail": 14,
+      "head": 24,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[350.330,346.650],[350.330,322.550],[350.330,283.000],[350.330,283.000],[350.330,283.000],[1136.000,283.000],[1136.000,283.000],[1136.000,283.000],[1136.000,237.910],[1136.000,237.910]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[1139.500,237.910],[1136.000,227.910],[1132.500,237.910]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,1136,227.91 350.33,346.65 350.33,322.55 350.33,283 350.33,283 350.33,283 1136,283 1136,283 1136,283 1136,237.91 1136,237.91"
+    },
+    {
+      "_gvid": 3,
+      "tail": 14,
+      "head": 25,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[363.750,346.430],[363.750,324.860],[363.750,292.000],[363.750,292.000],[363.750,292.000],[1319.000,292.000],[1319.000,292.000],[1319.000,292.000],[1319.000,236.850],[1319.000,236.850]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[1322.500,236.850],[1319.000,226.850],[1315.500,236.850]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,1319,226.85 363.75,346.43 363.75,324.86 363.75,292 363.75,292 363.75,292 1319,292 1319,292 1319,292 1319,236.85 1319,236.85"
+    },
+    {
+      "_gvid": 4,
+      "tail": 14,
+      "head": 26,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[336.920,346.420],[336.920,319.890],[336.920,274.000],[336.920,274.000],[336.920,274.000],[1068.000,274.000],[1068.000,274.000],[1068.000,274.000],[1068.000,236.960],[1068.000,236.960]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[1071.500,236.960],[1068.000,226.960],[1064.500,236.960]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,1068,226.96 336.92,346.42 336.92,319.89 336.92,274 336.92,274 336.92,274 1068,274 1068,274 1068,274 1068,236.96 1068,236.96"
+    },
+    {
+      "_gvid": 5,
+      "tail": 14,
+      "head": 28,
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "dashed"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ff0000"
+        },
+        {
+          "op": "b",
+          "points": [[317.750,346.510],[317.750,305.140],[317.750,208.000],[317.750,208.000],[317.750,208.000],[233.370,208.000],[233.370,208.000]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ff0000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ff0000"
+        },
+        {
+          "op": "P",
+          "points": [[233.370,204.500],[223.370,208.000],[233.370,211.500]]
+        }
+      ],
+      "color": "red",
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,223.37,208 317.75,346.51 317.75,305.14 317.75,208 317.75,208 317.75,208 233.37,208 233.37,208",
+      "style": "dashed"
+    },
+    {
+      "_gvid": 6,
+      "tail": 14,
+      "head": 29,
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "dashed"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ff0000"
+        },
+        {
+          "op": "b",
+          "points": [[311.840,364.000],[233.780,364.000],[84.080,364.000],[84.080,364.000],[84.080,364.000],[84.080,237.520],[84.080,237.520]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ff0000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ff0000"
+        },
+        {
+          "op": "P",
+          "points": [[87.590,237.520],[84.080,227.520],[80.590,237.520]]
+        }
+      ],
+      "color": "red",
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,84.085,227.52 311.84,364 233.78,364 84.085,364 84.085,364 84.085,364 84.085,237.52 84.085,237.52",
+      "style": "dashed"
+    },
+    {
+      "_gvid": 7,
+      "tail": 14,
+      "head": 41,
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(2)"
+        },
+        {
+          "op": "S",
+          "style": "dotted"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffa500"
+        },
+        {
+          "op": "b",
+          "points": [[377.170,346.550],[377.170,330.610],[377.170,310.000],[377.170,310.000],[377.170,310.000],[2353.600,310.000],[2353.600,310.000],[2353.600,310.000],[2353.600,236.890],[2353.600,236.890]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(2)"
+        },
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffa500"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffa500"
+        },
+        {
+          "op": "P",
+          "points": [[2357.100,236.890],[2353.600,226.890],[2350.100,236.890]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 8.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1448.500,322.400],
+          "align": "c",
+          "width": 41.000,
+          "text": "backed up"
+        }
+      ],
+      "color": "orange",
+      "constraint": "false",
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "backed up",
+      "lp": "1448.5,324.3",
+      "penwidth": "2",
+      "pos": "e,2353.6,226.89 377.17,346.55 377.17,330.61 377.17,310 377.17,310 377.17,310 2353.6,310 2353.6,310 2353.6,310 2353.6,236.89 2353.6,236.89",
+      "style": "dotted"
+    },
+    {
+      "_gvid": 8,
+      "tail": 15,
+      "head": 15,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[625.000,226.820],[625.000,232.350],[625.000,237.000],[625.000,237.000],[625.000,237.000],[670.000,237.000],[670.000,237.000],[670.000,237.000],[670.000,149.000],[670.000,149.000],[670.000,149.000],[625.000,149.000],[625.000,149.000],[625.000,149.000],[625.000,180.530],[625.000,180.530]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[621.500,180.530],[625.000,190.530],[628.500,180.530]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,625,190.53 625,226.82 625,232.35 625,237 625,237 625,237 670,237 670,237 670,237 670,149 670,149 670,149 625,149 625,149 625,149 625,180.53 625,180.53"
+    },
+    {
+      "_gvid": 9,
+      "tail": 20,
+      "head": 21,
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(2)"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#0000ff"
+        },
+        {
+          "op": "b",
+          "points": [[347.000,190.700],[347.000,190.700],[347.000,80.360],[347.000,80.360]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(2)"
+        },
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#0000ff"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#0000ff"
+        },
+        {
+          "op": "P",
+          "points": [[350.500,80.360],[347.000,70.360],[343.500,80.360]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 8.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [347.500,164.600],
+          "align": "c",
+          "width": 41.000,
+          "text": "submodule"
+        }
+      ],
+      "color": "blue",
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "submodule",
+      "lp": "347.5,166.5",
+      "penwidth": "2",
+      "pos": "e,347,70.364 347,190.7 347,190.7 347,80.364 347,80.364"
+    },
+    {
+      "_gvid": 10,
+      "tail": 20,
+      "head": 22,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[406.750,190.700],[406.750,190.700],[406.750,80.360],[406.750,80.360]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[410.250,80.360],[406.750,70.360],[403.250,80.360]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,406.75,70.364 406.75,190.7 406.75,190.7 406.75,80.364 406.75,80.364"
+    },
+    {
+      "_gvid": 11,
+      "tail": 20,
+      "head": 23,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[424.750,202.000],[469.960,202.000],[529.000,202.000],[529.000,202.000],[529.000,202.000],[529.000,79.210],[529.000,79.210]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[532.500,79.210],[529.000,69.210],[525.500,79.210]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,529,69.214 424.75,202 469.96,202 529,202 529,202 529,202 529,79.214 529,79.214"
+    },
+    {
+      "_gvid": 12,
+      "tail": 20,
+      "head": 41,
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "dotted"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffa500"
+        },
+        {
+          "op": "b",
+          "points": [[414.250,226.870],[414.250,242.970],[414.250,264.000],[414.250,264.000],[414.250,264.000],[2332.200,264.000],[2332.200,264.000],[2332.200,264.000],[2332.200,236.870],[2332.200,236.870]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ffa500"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffa500"
+        },
+        {
+          "op": "P",
+          "points": [[2335.700,236.870],[2332.200,226.870],[2328.700,236.870]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 8.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [470.000,322.400],
+          "align": "c",
+          "width": 46.000,
+          "text": "DB backups"
+        }
+      ],
+      "color": "orange",
+      "constraint": "false",
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "DB backups",
+      "lp": "470,324.3",
+      "pos": "e,2332.2,226.87 414.25,226.87 414.25,242.97 414.25,264 414.25,264 414.25,264 2332.2,264 2332.2,264 2332.2,264 2332.2,236.87 2332.2,236.87",
+      "style": "dotted"
+    },
+    {
+      "_gvid": 13,
+      "tail": 22,
+      "head": 32,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#00ff00"
+        },
+        {
+          "op": "b",
+          "points": [[442.670,70.310],[442.670,87.190],[442.670,109.000],[442.670,109.000],[442.670,109.000],[1921.170,109.000],[1921.170,109.000],[1921.170,109.000],[1921.170,180.490],[1921.170,180.490]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#00ff00"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#00ff00"
+        },
+        {
+          "op": "P",
+          "points": [[1917.670,180.490],[1921.170,190.490],[1924.670,180.490]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 8.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2061.000,164.600],
+          "align": "c",
+          "width": 68.000,
+          "text": "references data"
+        }
+      ],
+      "color": "green",
+      "constraint": "false",
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "references data",
+      "lp": "2061,166.5",
+      "pos": "e,1921.2,190.49 442.67,70.313 442.67,87.185 442.67,109 442.67,109 442.67,109 1921.2,109 1921.2,109 1921.2,109 1921.2,180.49 1921.2,180.49"
+    },
+    {
+      "_gvid": 14,
+      "tail": 28,
+      "head": 41,
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(2)"
+        },
+        {
+          "op": "S",
+          "style": "dashed"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ff0000"
+        },
+        {
+          "op": "b",
+          "points": [[178.000,228.810],[178.000,255.920],[178.000,301.000],[178.000,301.000],[178.000,301.000],[2342.900,301.000],[2342.900,301.000],[2342.900,301.000],[2342.900,237.010],[2342.900,237.010]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(2)"
+        },
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ff0000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ff0000"
+        },
+        {
+          "op": "P",
+          "points": [[2346.400,237.010],[2342.900,227.010],[2339.400,237.010]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 8.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [403.000,322.400],
+          "align": "c",
+          "width": 64.000,
+          "text": "symlink target"
+        }
+      ],
+      "color": "red",
+      "constraint": "false",
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "symlink target",
+      "lp": "403,324.3",
+      "penwidth": "2",
+      "pos": "e,2342.9,227.01 178,228.81 178,255.92 178,301 178,301 178,301 2342.9,301 2342.9,301 2342.9,301 2342.9,237.01 2342.9,237.01",
+      "style": "dashed"
+    },
+    {
+      "_gvid": 15,
+      "tail": 29,
+      "head": 32,
+      "_draw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(2)"
+        },
+        {
+          "op": "S",
+          "style": "dashed"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ff0000"
+        },
+        {
+          "op": "b",
+          "points": [[53.920,227.840],[53.920,236.990],[53.920,246.000],[53.920,246.000],[53.920,246.000],[1914.330,246.000],[1914.330,246.000],[1914.330,246.000],[1914.330,236.960],[1914.330,236.960]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "setlinewidth(2)"
+        },
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#ff0000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ff0000"
+        },
+        {
+          "op": "P",
+          "points": [[1917.830,236.960],[1914.330,226.960],[1910.830,236.960]]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 8.000,
+          "face": "Courier New"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [537.000,322.400],
+          "align": "c",
+          "width": 64.000,
+          "text": "symlink target"
+        }
+      ],
+      "color": "red",
+      "constraint": "false",
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "symlink target",
+      "lp": "537,324.3",
+      "penwidth": "2",
+      "pos": "e,1914.3,226.96 53.915,227.84 53.915,236.99 53.915,246 53.915,246 53.915,246 1914.3,246 1914.3,246 1914.3,246 1914.3,236.96 1914.3,236.96",
+      "style": "dashed"
+    },
+    {
+      "_gvid": 16,
+      "tail": 30,
+      "head": 31,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[1807.590,364.000],[1746.400,364.000],[1604.000,364.000],[1604.000,364.000],[1604.000,364.000],[1604.000,237.830],[1604.000,237.830]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[1607.500,237.830],[1604.000,227.830],[1600.500,237.830]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,1604,227.83 1807.6,364 1746.4,364 1604,364 1604,364 1604,364 1604,237.83 1604,237.83"
+    },
+    {
+      "_gvid": 17,
+      "tail": 30,
+      "head": 32,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[1862.070,364.000],[1893.520,364.000],[1941.170,364.000],[1941.170,364.000],[1941.170,364.000],[1941.170,236.910],[1941.170,236.910]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[1944.670,236.910],[1941.170,226.910],[1937.670,236.910]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,1941.2,226.91 1862.1,364 1893.5,364 1941.2,364 1941.2,364 1941.2,364 1941.2,236.91 1941.2,236.91"
+    },
+    {
+      "_gvid": 18,
+      "tail": 30,
+      "head": 36,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[1807.890,355.000],[1774.740,355.000],[1723.000,355.000],[1723.000,355.000],[1723.000,355.000],[1723.000,237.020],[1723.000,237.020]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[1726.500,237.020],[1723.000,227.020],[1719.500,237.020]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,1723,227.02 1807.9,355 1774.7,355 1723,355 1723,355 1723,355 1723,237.02 1723,237.02"
+    },
+    {
+      "_gvid": 19,
+      "tail": 30,
+      "head": 37,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[1853.000,346.600],[1853.000,346.600],[1853.000,237.860],[1853.000,237.860]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[1856.500,237.860],[1853.000,227.860],[1849.500,237.860]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,1853,227.86 1853,346.6 1853,346.6 1853,237.86 1853,237.86"
+    },
+    {
+      "_gvid": 20,
+      "tail": 30,
+      "head": 38,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[1817.000,346.670],[1817.000,315.480],[1817.000,255.000],[1817.000,255.000],[1817.000,255.000],[2164.000,255.000],[2164.000,255.000],[2164.000,255.000],[2164.000,237.060],[2164.000,237.060]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[2167.500,237.060],[2164.000,227.060],[2160.500,237.060]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,2164,227.06 1817,346.67 1817,315.48 1817,255 1817,255 1817,255 2164,255 2164,255 2164,255 2164,237.06 2164,237.06"
+    },
+    {
+      "_gvid": 21,
+      "tail": 30,
+      "head": 41,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[1826.000,346.700],[1826.000,333.900],[1826.000,319.000],[1826.000,319.000],[1826.000,319.000],[2364.300,319.000],[2364.300,319.000],[2364.300,319.000],[2364.300,237.000],[2364.300,237.000]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[2367.800,237.000],[2364.300,227.000],[2360.800,237.000]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,2364.3,227 1826,346.7 1826,333.9 1826,319 1826,319 1826,319 2364.3,319 2364.3,319 2364.3,319 2364.3,237 2364.3,237"
+    },
+    {
+      "_gvid": 22,
+      "tail": 30,
+      "head": 50,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[1835.000,346.400],[1835.000,337.200],[1835.000,328.000],[1835.000,328.000],[1835.000,328.000],[2958.000,328.000],[2958.000,328.000],[2958.000,328.000],[2958.000,236.900],[2958.000,236.900]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[2961.500,236.900],[2958.000,226.900],[2954.500,236.900]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,2958,226.9 1835,346.4 1835,337.2 1835,328 1835,328 1835,328 2958,328 2958,328 2958,328 2958,236.9 2958,236.9"
+    },
+    {
+      "_gvid": 23,
+      "tail": 30,
+      "head": 54,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[1844.000,346.720],[1844.000,341.410],[1844.000,337.000],[1844.000,337.000],[1844.000,337.000],[3246.250,337.000],[3246.250,337.000],[3246.250,337.000],[3246.250,236.900],[3246.250,236.900]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[3249.750,236.900],[3246.250,226.900],[3242.750,236.900]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,3246.2,226.9 1844,346.72 1844,341.41 1844,337 1844,337 1844,337 3246.2,337 3246.2,337 3246.2,337 3246.2,236.9 3246.2,236.9"
+    },
+    {
+      "_gvid": 24,
+      "tail": 30,
+      "head": 57,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[1807.940,373.000],[1722.960,373.000],[1467.000,373.000],[1467.000,373.000],[1467.000,373.000],[1467.000,237.000],[1467.000,237.000]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[1470.500,237.000],[1467.000,227.000],[1463.500,237.000]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,1467,227 1807.9,373 1723,373 1467,373 1467,373 1467,373 1467,237 1467,237"
+    },
+    {
+      "_gvid": 25,
+      "tail": 32,
+      "head": 33,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[1954.830,190.700],[1954.830,190.700],[1954.830,79.380],[1954.830,79.380]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[1958.330,79.380],[1954.830,69.380],[1951.330,79.380]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,1954.8,69.377 1954.8,190.7 1954.8,190.7 1954.8,79.377 1954.8,79.377"
+    },
+    {
+      "_gvid": 26,
+      "tail": 32,
+      "head": 34,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[1988.820,208.000],[2004.750,208.000],[2018.250,208.000],[2018.250,208.000],[2018.250,208.000],[2018.250,79.010],[2018.250,79.010]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[2021.750,79.010],[2018.250,69.010],[2014.750,79.010]]
+        }
+      ],
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,2018.2,69.01 1988.8,208 2004.7,208 2018.2,208 2018.2,208 2018.2,208 2018.2,79.01 2018.2,79.01"
+    },
+    {
+      "_gvid": 27,
+      "tail": 58,
+      "head": 59,
+      "fontname": "Courier New",
+      "fontsize": "8",
+      "label": "",
+      "pos": "e,3851,226.88 3851,346.6 3851,346.6 3851,236.88 3851,236.88",
+      "style": "invis"
+    }
+  ]
+}
