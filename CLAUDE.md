@@ -53,6 +53,129 @@ A: I just ran /init in /home/user
 
 ---
 
+## 🎮 GODOT GAME PROJECTS (Complete Development Archive)
+
+**Status**: ✅ All 3 projects mapped and documented (March 3, 2026)
+
+### Quick Reference
+
+| Project | Location | Latest | Versions | Size | Status |
+|---------|----------|--------|----------|------|--------|
+| **NOXII** | `/data/projects/NOXII/` | v0.04 | 4 versions | 5.9GB | 🟢 Active |
+| **ENACT** | `/data/projects/ENACT/` | v0.09 | 9 versions | 16GB | 🟢 Active |
+| **NOXII-LEGACY** | `/data/projects/NOXII-LEGACY/` | v0.27 | 27 versions | 29GB | 🟠 Archive |
+| **TOTAL** | `/data/projects/` | — | **40 versions** | **50.9GB** | — |
+
+### Project Details
+
+**NOXII (5.9GB)** - Current Godot Game Engine
+- Location: `/data/projects/NOXII/`
+- Latest: `v0.04` (931MB) - Full implementation
+- Versions: v0.01 (1.2GB), v0.02 (1.2GB), v0.03 (1.3GB), v0.04 (931MB)
+- Compressed: `noxii-0.0X.tar.xz` archives available
+- Status: Active development
+- Contains: GDScript gameplay, 3D assets, scenes, physics systems, documentation
+
+**ENACT (16GB)** - Advanced Godot Game Engine
+- Location: `/data/projects/ENACT/`
+- Latest: `v0.09` (1.2GB) - Dialogue + Interaction systems
+- Versions: 9 complete versions (v0.01 through v0.09)
+- Largest: v0.05-v0.06 (1.6-1.7GB each)
+- Compressed: `enact-0.0X.tar.xz` archives available
+- Status: Active development with extensive iteration
+- Contains: Game systems, dialogue, AI, tests, optimization guides, performance fixes
+
+**NOXII-LEGACY (29GB)** - Complete Development History
+- Location: `/data/projects/NOXII-LEGACY/`
+- Versions: v0.01 through v0.27 (27 complete versions)
+- Each: ~1GB per version
+- Status: Historical archive - reference for past iterations
+- Contains: Full NOXII development timeline from initial prototype to v0.27
+
+### Project Structure (Each Version)
+
+Each project contains:
+```
+vX.XX/
+├── scripts/           # GDScript gameplay code
+├── assets/            # 3D models, textures, audio files
+├── scenes/            # Godot scenes (.tscn) and levels
+├── addons/            # Custom Godot plugins
+├── systems/           # Game mechanics (ENACT)
+├── tests/             # Validation & performance tests (ENACT)
+├── docs/              # Technical documentation
+├── project.godot      # Godot project configuration
+└── [other files]      # Configuration, assets, scripts
+```
+
+### Backups & Access
+
+**Symlinks from Home Directory:**
+```
+/home/user/projects/backups/NOXII → /data/projects/NOXII
+/home/user/projects/backups/ENACT → /data/projects/ENACT
+/home/user/projects/backups/NOXII-LEGACY → /data/projects/NOXII-LEGACY
+```
+
+**Backup Schedule:**
+- Hourly snapshots: `/data/backups/hourly/`
+- Daily backups: `/data/backups/daily/`
+- Compressed archives: `.tar.xz` files in each project
+
+### Documentation
+
+**Visualization & Maps:**
+- **godot-projects.svg** - Complete project visualization
+- **infrastructure-DEEP.svg** - Full infrastructure with Godot projects
+- See: `/home/user/docs/server/infrastructure-maps/`
+
+**Detailed Inventory:**
+- **SERVER_PROJECT_INVENTORY.md** - Complete project breakdown
+- See: `/home/user/docs/server/`
+
+**Version History:**
+- Each version (v0.XX) contains CLAUDE.md with development notes
+- Architecture docs in each version's `/docs/` directory
+
+### Accessing Projects
+
+**Browse a Version:**
+```bash
+cd /data/projects/ENACT/0.09
+ls -la
+cat CLAUDE.md  # Project-specific notes
+```
+
+**List All Versions:**
+```bash
+ls -d /data/projects/NOXII/v0.*     # NOXII versions
+ls -d /data/projects/ENACT/0.*      # ENACT versions
+ls -d /data/projects/NOXII-LEGACY/* # Legacy versions
+```
+
+**Extract Compressed Archive:**
+```bash
+cd /data/projects/ENACT
+tar -xzf enact-0.09.tar.xz
+```
+
+### Key Technologies
+
+- **Engine**: Godot 4 (GDScript)
+- **3D**: Full 3D game development with Godot's rendering
+- **Systems**: Physics, collision, animation, dialogue, interaction
+- **Platforms**: Supports Windows, macOS, Linux, mobile
+- **Testing**: Comprehensive validation and performance tests (ENACT)
+
+### Total Storage Breakdown
+
+- Active projects (NOXII + ENACT): 21.9GB
+- Legacy/historical archive (NOXII-LEGACY): 29GB
+- Compressed archives: ~5GB
+- **Total Godot storage: 50.9GB** (with backups)
+
+---
+
 ## ✅ COMPLETE: Marxist Library Metadata Enrichment Audit (Feb 24 - Mar 1, 2026)
 
 **Status**: **100% COMPLETE** - All 12,728 documents enriched
